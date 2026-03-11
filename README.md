@@ -37,56 +37,69 @@
 
 <!-- ═══════════════════ ABOUT ME ═══════════════════ -->
 
-<h2 align="center">👋 About Me</h2>
+<h2 align="center">
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"/>
+  About Me
+</h2>
 
-```javascript
-// 🧬 marways.config.js
+<p align="center">
+  <img src="https://img.shields.io/badge/🌌_Vibe_Coder-since_2023-8B5CF6?style=for-the-badge&labelColor=0D1117" alt="vibe coder"/>
+  <img src="https://img.shields.io/badge/🧪_AI_Alchemist-Turning_Ideas_→_Reality-6366F1?style=for-the-badge&labelColor=0D1117" alt="ai alchemist"/>
+  <img src="https://img.shields.io/badge/🛠️_Full--Stack_Builder-Python_×_TS_×_Java-06B6D4?style=for-the-badge&labelColor=0D1117" alt="builder"/>
+</p>
 
-const Marways = {
-    identity:     "Vibe Coder 🌌 | AI Alchemist 🧪",
-    codingSince:  2023,
-    code:         ["Python", "TypeScript", "Java", "JavaScript", "MATLAB"],
-    askMeAbout:   ["AI/ML", "MCP", "Full-Stack", "Signal Processing", "Healthcare IT"],
-    technologies: {
-        ai:        ["PyTorch", "TensorFlow", "OpenCV", "DeepSeek"],
-        frontend:  ["React", "Next.js", "Tailwind CSS"],
-        backend:   ["Node.js", "Flask", "Express"],
-        mobile:    ["Android (Java)"],
-        database:  ["MongoDB", "MySQL", "Redis"],
-        devops:    ["Docker", "GitHub Actions", "Vercel"],
-        protocol:  ["MCP (Model Context Protocol)"]
-    },
-    currentFocus: "Building AI-powered tools that make the impossible possible",
-    motto:        "const magic = (wildIdea) => AI.transform(wildIdea).intoReality()"
-};
-```
+<br/>
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🎯 What I'm Up To
+<h3 align="center">🎯 What I'm Up To</h3>
 
-- 🔭 Building **AI × MCP** tools for desktop automation
-- 🧠 Exploring **Deep Learning** for biomedical signals
-- 🏥 Creating **Healthcare AI** systems (AiliaoX)
-- 📱 Cross-platform intelligent app development
-- 📺 Sharing on [**B站 · Marways的AI创意屋**](https://space.bilibili.com/604578545)
+&nbsp;
+
+| | |
+|---|---|
+| 🔭 | Building **AI × MCP** tools for desktop automation |
+| 🧠 | Exploring **Deep Learning** for biomedical signals |
+| 🏥 | Creating **Healthcare AI** systems (AiliaoX) |
+| 📱 | Cross-platform intelligent app development |
+| 📺 | Sharing on [**B站 · Marways的AI创意屋**](https://space.bilibili.com/604578545) |
 
 </td>
 <td width="50%" valign="top">
 
-### ⚡ Quick Facts
+<h3 align="center">⚡ Quick Facts</h3>
 
-- 💡 **Wild ideas** → **production software** with AI
-- 🌌 Vibe Coder since 2023, building non-stop
-- 🎨 Design: **clean × futuristic × functional**
-- 🛠️ AI agents that **operate desktops** via MCP
-- ⭐ Open source everything — **Star if inspired!**
+&nbsp;
+
+| | |
+|---|---|
+| 💡 | **Wild ideas** → **production software** with AI |
+| 🌌 | Vibe Coder since 2023, building non-stop |
+| 🎨 | Design: **clean × futuristic × functional** |
+| 🛠️ | AI agents that **operate desktops** via MCP |
+| ⭐ | Open source everything — **Star if inspired!** |
 
 </td>
 </tr>
 </table>
+
+<br/>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="python"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="ts"/>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="java"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="js"/>
+  <img src="https://img.shields.io/badge/MATLAB-0076A8?style=flat-square&logo=mathworks&logoColor=white" alt="matlab"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="react"/>
+  <img src="https://img.shields.io/badge/Next.js-000?style=flat-square&logo=next.js&logoColor=white" alt="nextjs"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="pytorch"/>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="tf"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="docker"/>
+  <img src="https://img.shields.io/badge/MCP-8B5CF6?style=flat-square&logoColor=white" alt="mcp"/>
+</p>
 
 <br/>
 
