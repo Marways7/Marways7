@@ -45,7 +45,7 @@
 <br/>
 
 <!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
-<div align="center"><img src="./assets/divider.png" width="100%"/></div>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
 <br/>
 
 <!-- ═══════════════════════ ABOUT ME ═══════════════════════ -->
@@ -119,7 +119,7 @@ const Marways = {
 <br/>
 
 <!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
-<div align="center"><img src="./assets/divider.png" width="100%"/></div>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
 <br/>
 
 <!-- ═══════════════════════ TECH STACK ═══════════════════════ -->
@@ -177,7 +177,7 @@ const Marways = {
 <br/>
 
 <!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
-<div align="center"><img src="./assets/divider.png" width="100%"/></div>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
 <br/>
 
 <!-- ═══════════════════════ STATS DASHBOARD ═══════════════════════ -->
@@ -203,7 +203,7 @@ const Marways = {
 <br/>
 
 <!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
-<div align="center"><img src="./assets/divider.png" width="100%"/></div>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
 <br/>
 
 <!-- ═══════════════════════ FEATURED PROJECTS ═══════════════════════ -->
@@ -253,7 +253,7 @@ const Marways = {
 <br/>
 
 <!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
-<div align="center"><img src="./assets/divider.png" width="100%"/></div>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
 <br/>
 
 <!-- ═══════════════════════ CONTRIBUTION GRAPH ═══════════════════════ -->
@@ -282,7 +282,7 @@ const Marways = {
 <br/>
 
 <!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
-<div align="center"><img src="./assets/divider.png" width="100%"/></div>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
 <br/>
 
 <!-- ═══════════════════════ TROPHIES ═══════════════════════ -->
