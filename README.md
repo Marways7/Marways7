@@ -9,59 +9,41 @@
 
 -->
 
-<!-- ═══════════════════════ CUSTOM BANNER ═══════════════════════ -->
+<!-- ═══════════════════ HEADER ═══════════════════ -->
 
 <div align="center">
-  <img src="./assets/banner.png" width="100%" alt="Marways - AI Alchemist"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,30:6366F1,60:818CF8,100:06B6D4&height=200&section=header&text=MARWAYS&fontSize=70&fontColor=FFFFFF&fontAlignY=32&animation=fadeIn&desc=%E2%9C%A8%20Vibe%20Coder%20%C2%B7%20AI%20Alchemist%20%C2%B7%20Full-Stack%20Builder%20%E2%9C%A8&descSize=18&descAlignY=55&descAlign=50" width="100%"/>
 </div>
 
-<!-- ═══════════════════════ ANIMATED HEADER ═══════════════════════ -->
+<!-- Badges -->
+<p align="center">
+  <a href="https://github.com/Marways7?tab=followers"><img src="https://img.shields.io/github/followers/Marways7?style=for-the-badge&logo=github&logoColor=white&color=8B5CF6&labelColor=0D1117" alt="followers"/></a>&nbsp;
+  <a href="https://github.com/Marways7?tab=stars"><img src="https://img.shields.io/github/stars/Marways7?style=for-the-badge&logo=github&logoColor=white&color=6366F1&labelColor=0D1117" alt="stars"/></a>&nbsp;
+  <a href="https://space.bilibili.com/604578545"><img src="https://img.shields.io/badge/Bilibili-Marways-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white&labelColor=0D1117" alt="bilibili"/></a>&nbsp;
+  <img src="https://komarev.com/ghpvc/?username=Marways7&style=for-the-badge&color=06B6D4&label=Visitors&labelColor=0D1117" alt="views"/>
+</p>
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,30:6366F1,60:818CF8,100:06B6D4&height=120&section=header&text=𝕄𝔸ℝ𝕎𝔸𝕐𝕊&fontSize=60&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=⟨%20Vibe%20Coder%20·%20AI%20Alchemist%20·%20Full-Stack%20Builder%20⟩&descSize=16&descAlignY=62" width="100%"/>
-</div>
-
-<!-- ═══════════════════════ BADGES ROW ═══════════════════════ -->
-
-<div align="center">
-
-  <a href="https://github.com/Marways7?tab=followers"><img src="https://img.shields.io/github/followers/Marways7?style=for-the-badge&logo=github&logoColor=fff&color=8B5CF6&labelColor=0D1117" alt="followers"/></a>
-  <a href="https://github.com/Marways7?tab=stars"><img src="https://img.shields.io/github/stars/Marways7?style=for-the-badge&logo=github&logoColor=fff&color=6366F1&labelColor=0D1117" alt="stars"/></a>
-  <a href="https://space.bilibili.com/604578545"><img src="https://img.shields.io/badge/Bilibili-Marways-00A1D6?style=for-the-badge&logo=bilibili&logoColor=fff&labelColor=0D1117" alt="bilibili"/></a>
-  <img src="https://komarev.com/ghpvc/?username=Marways7&style=for-the-badge&color=06B6D4&label=VISITORS&labelColor=0D1117" alt="views"/>
-
-</div>
-
-<br/>
-
-<!-- ═══════════════════════ TYPING ANIMATION ═══════════════════════ -->
-
-<div align="center">
+<!-- Typing SVG -->
+<p align="center">
   <a href="https://github.com/Marways7">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=24&duration=3000&pause=1000&color=A78BFA&center=true&vCenter=true&multiline=false&repeat=true&random=false&width=800&height=45&lines=%E2%9C%A8+const+magic+%3D+(idea)+%3D%3E+AI.transform(idea)+%E2%9C%A8;%F0%9F%8C%8C+Vibe+Coder+since+2023+%7C+%E7%94%A8+AI+%E5%81%9A%E7%82%B9%E4%B8%8D%E6%97%A0%E8%81%8A%E7%9A%84%E4%B8%9C%E8%A5%BF;%F0%9F%9B%A0%EF%B8%8F+%E7%9B%B8%E4%BF%A1%E7%94%A8AI%E6%8A%8A%E5%A4%A9%E9%A9%AC%E8%A1%8C%E7%A9%BA%E7%9A%84%E6%83%B3%E6%B3%95%E5%8F%98%E6%88%90%E7%8E%B0%E5%AE%9E%E6%98%AF%E4%B8%80%E7%A7%8D%E9%AD%94%E6%B3%95;%F0%9F%A4%96+AI+%C3%97+Creativity+%3D+Unlimited+Possibilities" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&color=A78BFA&center=true&vCenter=true&repeat=true&width=650&height=40&lines=const+magic+%3D+(idea)+%3D%3E+AI.transform(idea);Vibe+Coder+since+2023;AI+%C3%97+Creativity+%3D+Magic+%E2%9C%A8;%E7%9B%B8%E4%BF%A1%E7%94%A8AI%E6%8A%8A%E5%A4%A9%E9%A9%AC%E8%A1%8C%E7%A9%BA%E7%9A%84%E6%83%B3%E6%B3%95%E5%8F%98%E6%88%90%E7%8E%B0%E5%AE%9E" alt="Typing SVG"/>
   </a>
-</div>
+</p>
 
 <br/>
 
-<!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
+<!-- ═══════════════════ DIVIDER ═══════════════════ -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
-<br/>
 
-<!-- ═══════════════════════ ABOUT ME ═══════════════════════ -->
+<!-- ═══════════════════ ABOUT ME ═══════════════════ -->
 
-<h2 align="center">
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"/>
-  &nbsp;<samp>About.me</samp>
-</h2>
-
-<div align="center">
+<h2 align="center">👋 About Me</h2>
 
 ```javascript
 // 🧬 marways.config.js
 
 const Marways = {
-    identity:     "🌌 Vibe Coder  |  🧪 AI Alchemist",
+    identity:     "Vibe Coder 🌌 | AI Alchemist 🧪",
     codingSince:  2023,
     code:         ["Python", "TypeScript", "Java", "JavaScript", "MATLAB"],
     askMeAbout:   ["AI/ML", "MCP", "Full-Stack", "Signal Processing", "Healthcare IT"],
@@ -79,198 +61,163 @@ const Marways = {
 };
 ```
 
-</div>
-
-<br/>
-
-<div align="center">
 <table>
 <tr>
 <td width="50%" valign="top">
 
-<h3 align="center">🎯 What I'm Up To</h3>
-
-&nbsp;
+### 🎯 What I'm Up To
 
 - 🔭 Building **AI × MCP** tools for desktop automation
 - 🧠 Exploring **Deep Learning** for biomedical signals
-- 🏥 Creating **Healthcare AI** systems
+- 🏥 Creating **Healthcare AI** systems (AiliaoX)
 - 📱 Cross-platform intelligent app development
 - 📺 Sharing on [**B站 · Marways的AI创意屋**](https://space.bilibili.com/604578545)
 
 </td>
 <td width="50%" valign="top">
 
-<h3 align="center">⚡ Quick Facts</h3>
+### ⚡ Quick Facts
 
-&nbsp;
-
-- 💡 **wild ideas** → **production software** with AI
+- 💡 **Wild ideas** → **production software** with AI
 - 🌌 Vibe Coder since 2023, building non-stop
 - 🎨 Design: **clean × futuristic × functional**
-- 🛠️ AI agents that **operate desktops** (MCP)
+- 🛠️ AI agents that **operate desktops** via MCP
 - ⭐ Open source everything — **Star if inspired!**
 
 </td>
 </tr>
 </table>
-</div>
 
 <br/>
 
-<!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
+<!-- ═══════════════════ DIVIDER ═══════════════════ -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
+
+<!-- ═══════════════════ TECH STACK ═══════════════════ -->
+
+<h2 align="center">🛠️ Tech Stack</h2>
+
+<p align="center"><i>Technologies I love working with</i></p>
+
 <br/>
 
-<!-- ═══════════════════════ TECH STACK ═══════════════════════ -->
-
-<h2 align="center">
-  <samp>🛠️ Tech.stack()</samp>
-</h2>
-
-<br/>
-
-<div align="center">
-
-<!-- Languages -->
-<h4>💻 Languages</h4>
-<p>
+<h4 align="center">💻 Languages</h4>
+<p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=py,ts,js,java,matlab,html,css,md&theme=dark&perline=8" alt="languages"/>
   </a>
 </p>
 
-<!-- Frameworks & Libraries -->
-<h4>🧰 Frameworks & Libraries</h4>
-<p>
+<h4 align="center">🧰 Frameworks & Libraries</h4>
+<p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,flask,tailwind,electron&theme=dark&perline=8" alt="frameworks"/>
   </a>
 </p>
 
-<!-- AI & Machine Learning -->
-<h4>🤖 AI & Machine Learning</h4>
-<p>
+<h4 align="center">🤖 AI & Machine Learning</h4>
+<p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv&theme=dark&perline=8" alt="ai-ml"/>
+    <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv&theme=dark&perline=8" alt="ai"/>
   </a>
 </p>
 
-<!-- Databases & Infrastructure -->
-<h4>🗄️ Databases & Cloud</h4>
-<p>
+<h4 align="center">🗄️ Databases & Cloud</h4>
+<p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=mongodb,mysql,redis,docker,vercel,cloudflare&theme=dark&perline=8" alt="databases"/>
   </a>
 </p>
 
-<!-- Dev Tools -->
-<h4>⚙️ Dev Tools</h4>
-<p>
+<h4 align="center">⚙️ Dev Tools</h4>
+<p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=git,github,vscode,vim,figma,postman,linux,powershell&theme=dark&perline=8" alt="tools"/>
   </a>
 </p>
 
-</div>
-
 <br/>
 
-<!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
+<!-- ═══════════════════ DIVIDER ═══════════════════ -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
-<br/>
 
-<!-- ═══════════════════════ STATS DASHBOARD ═══════════════════════ -->
+<!-- ═══════════════════ GITHUB STATS ═══════════════════ -->
 
-<h2 align="center">
-  <samp>📊 Stats.dashboard()</samp>
-</h2>
+<h2 align="center">📊 GitHub Stats</h2>
 
 <br/>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&ring_color=A78BFA&include_all_commits=true&count_private=true&custom_title=⚡%20Marways's%20GitHub%20Stats" height="180"/>
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&langs_count=8" height="180"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&ring_color=A78BFA&include_all_commits=true&count_private=true" height="170"/>
+  &nbsp;&nbsp;
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&langs_count=8" height="170"/>
 </div>
 
 <br/>
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=Marways7&theme=tokyonight_duo&hide_border=true&background=0D1117&ring=A78BFA&fire=67E8F9&currStreakLabel=A78BFA&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555" width="56%"/>
-</div>
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Marways7&theme=tokyonight_duo&hide_border=true&background=0D1117&ring=A78BFA&fire=67E8F9&currStreakLabel=A78BFA&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555" width="52%"/>
+</p>
 
 <br/>
 
-<!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
+<!-- ═══════════════════ DIVIDER ═══════════════════ -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
-<br/>
 
-<!-- ═══════════════════════ FEATURED PROJECTS ═══════════════════════ -->
+<!-- ═══════════════════ FEATURED PROJECTS ═══════════════════ -->
 
-<h2 align="center">
-  <samp>🚀 Featured.projects()</samp>
-</h2>
-<p align="center"><samp>A curated collection of my finest creations</samp></p>
+<h2 align="center">🚀 Featured Projects</h2>
+
+<p align="center"><i>A curated collection of my finest creations</i></p>
 
 <br/>
 
-<div align="center">
+<p align="center">
+  <a href="https://github.com/Marways7/ECG_IdentificationX">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=ECG_IdentificationX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/Marways7/AiliaoX">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=AiliaoX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
+  </a>
+</p>
 
-<!-- Row 1 -->
-<a href="https://github.com/Marways7/ECG_IdentificationX">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=ECG_IdentificationX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
-</a>
-&nbsp;
-<a href="https://github.com/Marways7/AiliaoX">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=AiliaoX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
-</a>
+<p align="center">
+  <a href="https://github.com/Marways7/cua_desktop_operator_skill">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_skill&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/Marways7/DeepReadX">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=DeepReadX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
+  </a>
+</p>
 
-<br/><br/>
-
-<!-- Row 2 -->
-<a href="https://github.com/Marways7/cua_desktop_operator_skill">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_skill&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
-</a>
-&nbsp;
-<a href="https://github.com/Marways7/DeepReadX">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=DeepReadX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
-</a>
-
-<br/><br/>
-
-<!-- Row 3 -->
-<a href="https://github.com/Marways7/college_student_self-rescue_guide_website">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=college_student_self-rescue_guide_website&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
-</a>
-&nbsp;
-<a href="https://github.com/Marways7/cua_desktop_operator_cli_skill">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_cli_skill&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
-</a>
-
-</div>
+<p align="center">
+  <a href="https://github.com/Marways7/college_student_self-rescue_guide_website">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=college_student_self-rescue_guide_website&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/Marways7/cua_desktop_operator_cli_skill">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_cli_skill&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9" width="47%"/>
+  </a>
+</p>
 
 <br/>
 
-<!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
+<!-- ═══════════════════ DIVIDER ═══════════════════ -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
-<br/>
 
-<!-- ═══════════════════════ CONTRIBUTION GRAPH ═══════════════════════ -->
+<!-- ═══════════════════ CONTRIBUTION GRAPH ═══════════════════ -->
 
-<h2 align="center">
-  <samp>📈 Contributions.visualize()</samp>
-</h2>
+<h2 align="center">📈 Contribution Activity</h2>
 
 <br/>
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=0D1117&color=A78BFA&line=67E8F9&point=FFFFFF&area_color=8B5CF6&area=true&hide_border=true&custom_title=📈%20Contribution%20Activity" width="95%"/>
-</div>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=0D1117&color=A78BFA&line=67E8F9&point=FFFFFF&area_color=8B5CF6&area=true&hide_border=true" width="95%"/>
+</p>
 
-<br/>
-
-<!-- Snake Animation -->
+<!-- Snake -->
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/output/github-snake-dark.svg" />
@@ -281,81 +228,61 @@ const Marways = {
 
 <br/>
 
-<!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
+<!-- ═══════════════════ DIVIDER ═══════════════════ -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
-<br/>
 
-<!-- ═══════════════════════ TROPHIES ═══════════════════════ -->
+<!-- ═══════════════════ TROPHIES ═══════════════════ -->
 
-<h2 align="center">
-  <samp>🏆 Achievements.unlock()</samp>
-</h2>
+<h2 align="center">🏆 GitHub Trophies</h2>
 
 <br/>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=discord&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" width="85%"/>
+</p>
+
+<br/>
+
+<!-- ═══════════════════ DIVIDER ═══════════════════ -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
+
+<!-- ═══════════════════ QUOTE ═══════════════════ -->
+
+<h2 align="center">💭 Dev Quote</h2>
+
+<br/>
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border=true" width="60%"/>
+</p>
+
+<br/>
+
+<!-- ═══════════════════ CONNECT ═══════════════════ -->
+
+<h2 align="center">🤝 Connect With Me</h2>
+
+<br/>
+
+<p align="center">
+  <a href="https://github.com/Marways7"><img src="https://img.shields.io/badge/GitHub-Marways7-181717?style=for-the-badge&logo=github&logoColor=white" alt="github"/></a>&nbsp;
+  <a href="https://space.bilibili.com/604578545"><img src="https://img.shields.io/badge/Bilibili-Marways-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" alt="bilibili"/></a>
+</p>
+
+<br/>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=10&margin-h=10" width="90%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,30:6366F1,60:818CF8,100:06B6D4&height=120&section=footer&text=⭐%20Star%20if%20inspired!%20Happy%20Coding!%20💜&fontSize=18&fontColor=FFFFFF&fontAlignY=72&animation=twinkling" width="100%"/>
 </div>
 
-<br/>
-
-<!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
-<div align="center"><img src="./assets/divider.png" width="100%"/></div>
-<br/>
-
-<!-- ═══════════════════════ QUOTE ═══════════════════════ -->
-
-<h2 align="center">
-  <samp>💭 Random.devQuote()</samp>
-</h2>
-
-<br/>
-
-<div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border=true" width="65%"/>
-</div>
-
-<br/>
-
-<!-- ═══════════════════════ CONNECT ═══════════════════════ -->
-
-<h2 align="center">
-  <samp>🤝 Connect.with(me)</samp>
-</h2>
-
-<br/>
-
-<div align="center">
-  <a href="https://github.com/Marways7">
-    <img src="https://img.shields.io/badge/-GitHub-0D1117?style=for-the-badge&logo=github&logoColor=FFFFFF"/>
-  </a>
-  &nbsp;
-  <a href="https://space.bilibili.com/604578545">
-    <img src="https://img.shields.io/badge/-Bilibili-0D1117?style=for-the-badge&logo=bilibili&logoColor=00A1D6"/>
-  </a>
-</div>
-
-<br/>
-
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,30:6366F1,60:818CF8,100:06B6D4&height=150&section=footer&text=Thanks%20for%20visiting!%20⭐&fontSize=24&fontColor=FFFFFF&fontAlignY=72&animation=twinkling" width="100%"/>
-</div>
-
-<div align="center">
-  <br/>
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=4000&pause=1500&color=A78BFA&center=true&vCenter=true&repeat=true&width=550&lines=⭐+如果这些项目对你有启发，别吝啬一个+Star+⭐;🚀+Let's+build+the+future+together!;Happy+Coding!+💜+See+you+around!" alt="footer"/>
-  <br/><br/>
-</div>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=14&duration=4000&pause=1500&color=A78BFA&center=true&vCenter=true&repeat=true&width=500&lines=%E5%A6%82%E6%9E%9C%E8%BF%99%E4%BA%9B%E9%A1%B9%E7%9B%AE%E5%AF%B9%E4%BD%A0%E6%9C%89%E5%90%AF%E5%8F%91%EF%BC%8C%E5%88%AB%E5%90%9D%E5%95%AC%E4%B8%80%E4%B8%AA+Star+%E2%AD%90;Let's+build+the+future+together!+%F0%9F%9A%80" alt="footer"/>
+</p>
 
 <!-- 
-
-  ╔══════════════════════════════════════════════════════╗
-  ║                                                      ║
-  ║          Made with 💜 and a lot of ☕               ║
-  ║          github.com/Marways7                         ║
-  ║                                                      ║
-  ╚══════════════════════════════════════════════════════╝
-
+  ╔══════════════════════════════════════════════╗
+  ║  Made with 💜 and ☕  |  github.com/Marways7  ║
+  ╚══════════════════════════════════════════════╝
 -->
