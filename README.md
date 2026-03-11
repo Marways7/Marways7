@@ -241,23 +241,7 @@
 
 <br/>
 
-<!-- ═══════════════════ DIVIDER ═══════════════════ -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
 
-<!-- ═══════════════════ TROPHIES ═══════════════════ -->
-
-<h2 align="center">🏆 GitHub Trophies</h2>
-
-<br/>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=onestar&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8&rank=-C,-B" width="85%"/>
-</p>
-
-<!-- If trophies don't load, the API may be temporarily down. Try alternative: -->
-<!-- <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=radical&no-frame=true&column=7" width="85%"/> -->
-
-<br/>
 
 <!-- ═══════════════════ DIVIDER ═══════════════════ -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:06B6D4,100:8B5CF6&height=2" width="100%"/>
