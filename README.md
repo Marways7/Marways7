@@ -238,8 +238,11 @@ const Marways = {
 <br/>
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=discord&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" width="85%"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=onestar&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8&rank=-C,-B" width="85%"/>
 </p>
+
+<!-- If trophies don't load, the API may be temporarily down. Try alternative: -->
+<!-- <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=radical&no-frame=true&column=7" width="85%"/> -->
 
 <br/>
 
