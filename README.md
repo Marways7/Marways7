@@ -1,289 +1,109 @@
-<!-- =============================== HEADER =============================== -->
+<!-- 
+
+    ███╗   ███╗ █████╗ ██████╗ ██╗    ██╗ █████╗ ██╗   ██╗███████╗
+    ████╗ ████║██╔══██╗██╔══██╗██║    ██║██╔══██╗╚██╗ ██╔╝██╔════╝
+    ██╔████╔██║███████║██████╔╝██║ █╗ ██║███████║ ╚████╔╝ ███████╗
+    ██║╚██╔╝██║██╔══██║██╔══██╗██║███╗██║██╔══██║  ╚██╔╝  ╚════██║
+    ██║ ╚═╝ ██║██║  ██║██║  ██║╚███╔███╔╝██║  ██║   ██║   ███████║
+    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝
+
+-->
+
+<!-- ═══════════════════════ ANIMATED SVG HEADER ═══════════════════════ -->
 
 <div align="center">
-
-<!-- Animated Waving Header -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,25:6366F1,50:06B6D4,75:10B981,100:8B5CF6&height=220&section=header&text=𝐌𝐀𝐑𝐖𝐀𝐘𝐒&fontSize=72&fontColor=FFFFFF&fontAlignY=35&animation=fadeIn&desc=🌌%20Vibe%20Coder%20%20|%20%20AI%20Alchemist%20%20|%20%20Idea%20→%20Reality&descSize=18&descAlignY=58&descAlign=50" />
-
-<!-- Profile Views & Stars Badges -->
-<br/>
-  
-[![Profile Views](https://komarev.com/ghpvc/?username=Marways7&style=for-the-badge&color=6366F1&label=PROFILE+VIEWS)](https://github.com/Marways7)
-[![GitHub followers](https://img.shields.io/github/followers/Marways7?style=for-the-badge&logo=github&color=8B5CF6&labelColor=1a1b27)](https://github.com/Marways7?tab=followers)
-[![GitHub stars](https://img.shields.io/github/stars/Marways7?style=for-the-badge&logo=github&color=06B6D4&labelColor=1a1b27)](https://github.com/Marways7)
-[![Bilibili](https://img.shields.io/badge/Bilibili-Marways-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white&labelColor=1a1b27)](https://space.bilibili.com/604578545)
-
+  <img src="./assets/header.svg" width="100%" alt="Marways - Vibe Coder · AI Alchemist · Builder"/>
 </div>
 
-<!-- =============================== TYPING SVG =============================== -->
+<!-- ═══════════════════════ SOCIAL BADGES ═══════════════════════ -->
 
 <div align="center">
-  <br/>
-  <a href="https://github.com/Marways7">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=800&height=100&lines=🌌+Vibe+Coder+since+2023+%7C+用+AI+做点不无聊的东西;🤖+AI+×+Creativity+%3D+Magic+✨;🛠️+相信用AI把天马行空的想法变成现实是一种魔法;⚡+Full-Stack+Developer+%26+AI+Enthusiast+%26+Builder" alt="Typing SVG" />
+  <a href="https://github.com/Marways7?tab=followers">
+    <img src="https://img.shields.io/github/followers/Marways7?style=for-the-badge&logo=github&logoColor=fff&color=8B5CF6&labelColor=0D1117&label=Followers" alt="followers"/>
   </a>
-  <br/>
+  <img src="https://img.shields.io/badge/dynamic/json?url=https://api.github.com/users/Marways7&query=$.public_repos&style=for-the-badge&logo=github&logoColor=fff&label=Repos&color=6366F1&labelColor=0D1117" alt="repos"/>
+  <a href="https://space.bilibili.com/604578545">
+    <img src="https://img.shields.io/badge/Bilibili-Marways的AI创意屋-00A1D6?style=for-the-badge&logo=bilibili&logoColor=fff&labelColor=0D1117" alt="bilibili"/>
+  </a>
+  <img src="https://komarev.com/ghpvc/?username=Marways7&style=for-the-badge&color=06B6D4&label=VISITORS&labelColor=0D1117" alt="views"/>
 </div>
 
-<!-- Wave Divider -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,100:06B6D4&height=2" width="100%"/>
+<br/>
 
-<!-- =============================== ABOUT ME =============================== -->
+<!-- ═══════════════════════ TYPING SVG ═══════════════════════ -->
 
 <div align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1200&color=A78BFA&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=700&height=110&lines=%E2%9C%A8+const+magic+%3D+(idea)+%3D%3E+AI.transform(idea);+%E2%9C%A8;%F0%9F%8C%8C+Vibe+Coder+since+2023+%7C+%E7%94%A8+AI+%E5%81%9A%E7%82%B9%E4%B8%8D%E6%97%A0%E8%81%8A%E7%9A%84%E4%B8%9C%E8%A5%BF;%F0%9F%9B%A0%EF%B8%8F+%E7%9B%B8%E4%BF%A1%E7%94%A8AI%E6%8A%8A%E5%A4%A9%E9%A9%AC%E8%A1%8C%E7%A9%BA%E7%9A%84%E6%83%B3%E6%B3%95%E5%8F%98%E6%88%90%E7%8E%B0%E5%AE%9E%E6%98%AF%E4%B8%80%E7%A7%8D%E9%AD%94%E6%B3%95;%F0%9F%A4%96+AI+%C3%97+Creativity+%3D+Unlimited+Possibilities" alt="Typing SVG" />
+  </a>
+</div>
+
+<br/>
+
+<!-- ═══════════════════════ WAVE DIVIDER ═══════════════════════ -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:8B5CF6,50:6366F1,100:06B6D4&height=1.5" width="100%"/>
+
+<br/>
+
+<!-- ═══════════════════════ ABOUT ME ═══════════════════════ -->
+
+<div align="center">
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
   <h2>
-    <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"/>
-    &nbsp;𝐀𝐛𝐨𝐮𝐭 𝐌𝐞
+    <samp>&gt; About.me</samp>
   </h2>
 </div>
 
 <div align="center">
-<table>
-<tr>
-<td width="50%" valign="top">
 
-```yaml
-👨‍💻 Name:         Marways
-🌌 Identity:     Vibe Coder
-🧪 Philosophy:   AI × Creativity = Magic
-📅 Coding Since: 2023
-🌍 Timezone:     UTC+8
-🎯 Focus:        AI, Full-Stack, Creative Tech
-📺 Bilibili:     Marways 的 AI 创意屋
+```js
+// 🧬 marways.config.js
+
+const Marways = {
+    identity: "Vibe Coder 🌌 | AI Alchemist 🧪",
+    code: ["Python", "TypeScript", "Java", "JavaScript", "MATLAB"],
+    askMeAbout: ["AI/ML", "MCP", "Full-Stack", "Signal Processing", "Healthcare IT"],
+    technologies: {
+        ai_ml:       ["PyTorch", "TensorFlow", "OpenCV", "DeepSeek"],
+        frontEnd:    ["React", "Next.js", "Tailwind CSS"],
+        backEnd:     ["Node.js", "Flask", "Express"],
+        mobileApp:   ["Android (Java)"],
+        databases:   ["MongoDB", "MySQL", "Redis"],
+        devOps:      ["Docker", "GitHub Actions", "Vercel"],
+        protocols:   ["MCP (Model Context Protocol)"]
+    },
+    currentFocus: "Building AI-powered tools that make the impossible possible",
+    funFact: "I believe coding with AI is modern-day alchemy ⚗️"
+};
 ```
 
-</td>
-<td width="50%" valign="top">
-
-**🚀 What I Do**
-
-- 🤖 Build **AI-powered** applications that solve real problems
-- 🧠 Deep Learning & Signal Processing (ECG, NLP)
-- 🏥 Healthcare AI & Medical Informatics
-- 📱 Cross-platform development (Web, Android, Desktop)
-- 🛠️ MCP (Model Context Protocol) skill builder
-- ⭐ Turn **wild ideas** into working software with AI
-
-</td>
-</tr>
-</table>
 </div>
 
 <br/>
-
-<!-- Animated Line -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- =============================== TECH STACK =============================== -->
-
-<div align="center">
-  <h2>🛠️ 𝐓𝐞𝐜𝐡 𝐒𝐭𝐚𝐜𝐤 & 𝐓𝐨𝐨𝐥𝐬</h2>
-  <p><i>Technologies I love working with</i></p>
-</div>
-
-<div align="center">
-
-#### 💻 Languages
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,typescript,javascript,java,matlab,html,css,markdown&theme=dark&perline=8" />
-  </a>
-</p>
-
-#### 🧰 Frameworks & Libraries  
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,pytorch,flask,androidstudio,electron,tailwind&theme=dark&perline=8" />
-  </a>
-</p>
-
-#### 🤖 AI & Data
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,opencv&theme=dark&perline=8" />
-  </a>
-  <img src="https://img.shields.io/badge/DeepSeek-4D6BFF?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+PHBhdGggZD0iTTEyIDJMMyAxNGgxOEwxMiAyeiIvPjwvc3ZnPg==&logoColor=white" height="48"/>
-  <img src="https://img.shields.io/badge/MCP-6366F1?style=for-the-badge&logoColor=white" height="48"/>
-</p>
-
-#### 🗄️ Databases & Cloud
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=mongodb,mysql,redis,docker,vercel,cloudflare&theme=dark&perline=8" />
-  </a>
-</p>
-
-#### ⚙️ Dev Tools
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=git,github,vscode,vim,figma,postman,linux,powershell&theme=dark&perline=8" />
-  </a>
-</p>
-
-</div>
-
-<br/>
-
-<!-- Animated Line -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- =============================== GITHUB TROPHIES =============================== -->
-
-<div align="center">
-  <h2>🏆 𝐆𝐢𝐭𝐇𝐮𝐛 𝐓𝐫𝐨𝐩𝐡𝐢𝐞𝐬</h2>
-</div>
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=-1&margin-w=15&margin-h=15" width="100%" />
-</div>
-
-<br/>
-
-<!-- Animated Line -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- =============================== GITHUB STATS =============================== -->
-
-<div align="center">
-  <h2>📊 𝐆𝐢𝐭𝐇𝐮𝐛 𝐒𝐭𝐚𝐭𝐬</h2>
-</div>
-
-<div align="center">
-  <a href="https://github.com/Marways7">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&icon_color=06B6D4&text_color=C9D1D9&ring_color=8B5CF6&include_all_commits=true&count_private=true&custom_title=Marways's%20GitHub%20Stats" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/Marways7">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&text_color=C9D1D9&langs_count=8" />
-  </a>
-</div>
-
-<br/>
-
-<div align="center">
-  <a href="https://github.com/Marways7">
-    <img src="https://github-readme-streak-stats.herokuapp.com?user=Marways7&theme=tokyonight&hide_border=true&background=0D1117&ring=8B5CF6&fire=06B6D4&currStreakLabel=8B5CF6&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555" width="60%" />
-  </a>
-</div>
-
-<br/>
-
-<!-- Animated Line -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- =============================== FEATURED PROJECTS =============================== -->
-
-<div align="center">
-  <h2>🚀 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐝 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬</h2>
-  <p><i>A curated collection of my finest work</i></p>
-</div>
 
 <div align="center">
 <table>
 <tr>
 <td width="50%" valign="top">
 
-<h3 align="center">🫀 ECG_IdentificationX</h3>
+<h3 align="center">🎯 What I'm Up To</h3>
 
-<div align="center">
-
-[![Repo](https://img.shields.io/badge/-Repository-8B5CF6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Marways7/ECG_IdentificationX)
-[![Stars](https://img.shields.io/github/stars/Marways7/ECG_IdentificationX?style=for-the-badge&color=06B6D4&labelColor=1a1b27)](https://github.com/Marways7/ECG_IdentificationX/stargazers)
-
-</div>
-
-<p align="center"><strong>Deep Learning ECG Biometric Identification System</strong></p>
-<p align="center">基于深度学习的ECG心电身份识别系统，准确率高达 <strong>98.44%</strong> 🎯</p>
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white"/>
-<img src="https://img.shields.io/badge/Deep_Learning-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"/>
-</p>
+- 🔭 Building **AI × MCP** tools for desktop automation
+- 🧠 Exploring **Deep Learning** for biomedical signals (ECG)
+- 🏥 Creating **Healthcare AI** systems (AiliaoX)
+- 📱 Developing **cross-platform** intelligent apps
+- 📺 Sharing AI creative projects on [**Bilibili**](https://space.bilibili.com/604578545)
 
 </td>
 <td width="50%" valign="top">
 
-<h3 align="center">🏥 AiliaoX</h3>
+<h3 align="center">⚡ Quick Facts</h3>
 
-<div align="center">
-
-[![Repo](https://img.shields.io/badge/-Repository-8B5CF6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Marways7/AiliaoX)
-[![Stars](https://img.shields.io/github/stars/Marways7/AiliaoX?style=for-the-badge&color=06B6D4&labelColor=1a1b27)](https://github.com/Marways7/AiliaoX/stargazers)
-
-</div>
-
-<p align="center"><strong>AI-Driven Hospital Information System</strong></p>
-<p align="center">通过 MCP 和多 AI 模型，实现自然语言与数据库的无缝交互 🤖</p>
-<p align="center">
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/MCP-6366F1?style=flat-square&logoColor=white"/>
-<img src="https://img.shields.io/badge/Healthcare_AI-10B981?style=flat-square&logoColor=white"/>
-</p>
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-<h3 align="center">🖥️ CUA Desktop Operator</h3>
-
-<div align="center">
-
-[![Repo](https://img.shields.io/badge/-Repository-8B5CF6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Marways7/cua_desktop_operator_skill)
-[![Stars](https://img.shields.io/github/stars/Marways7/cua_desktop_operator_skill?style=for-the-badge&color=06B6D4&labelColor=1a1b27)](https://github.com/Marways7/cua_desktop_operator_skill/stargazers)
-
-</div>
-
-<p align="center"><strong>MCP Skill for AI Desktop Automation</strong></p>
-<p align="center">让任何 AI Agent 操控 Windows 桌面——即插即用，无需云端 🛠️</p>
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/MCP-6366F1?style=flat-square&logoColor=white"/>
-<img src="https://img.shields.io/badge/Automation-FF6B35?style=flat-square&logoColor=white"/>
-</p>
-
-</td>
-<td width="50%" valign="top">
-
-<h3 align="center">📖 DeepReadX</h3>
-
-<div align="center">
-
-[![Repo](https://img.shields.io/badge/-Repository-8B5CF6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Marways7/DeepReadX)
-[![Stars](https://img.shields.io/github/stars/Marways7/DeepReadX?style=for-the-badge&color=06B6D4&labelColor=1a1b27)](https://github.com/Marways7/DeepReadX/stargazers)
-
-</div>
-
-<p align="center"><strong>AI-Powered PDF Reader for Android</strong></p>
-<p align="center">AI 辅助理解的 PDF 阅读器，一键把晦涩内容变通俗 📚</p>
-<p align="center">
-<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/>
-<img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white"/>
-<img src="https://img.shields.io/badge/DeepSeek-4D6BFF?style=flat-square&logoColor=white"/>
-</p>
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top" colspan="2">
-
-<h3 align="center">🎓 大学生自救指南网站</h3>
-
-<div align="center">
-
-[![Repo](https://img.shields.io/badge/-Repository-8B5CF6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Marways7/college_student_self-rescue_guide_website)
-[![Stars](https://img.shields.io/github/stars/Marways7/college_student_self-rescue_guide_website?style=for-the-badge&color=06B6D4&labelColor=1a1b27)](https://github.com/Marways7/college_student_self-rescue_guide_website/stargazers)
-
-</div>
-
-<p align="center"><strong>Full-Stack Learning Resource Platform</strong></p>
-<p align="center">面向校园学习场景的全栈 Web 项目，聚焦"资料发现、管理、运营"三大核心 🌐</p>
-<p align="center">
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
-<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white"/>
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
-</p>
+- 💡 I turn **wild ideas** → **production software** with AI
+- 🌌 **Vibe Coder** since 2023, building non-stop
+- 🎨 Design aesthetic: **clean × futuristic × functional**
+- 🛠️ MCP skill architect — AI agents that **operate desktops**
+- ⭐ Open source everything — Star if inspired!
 
 </td>
 </tr>
@@ -292,29 +112,242 @@
 
 <br/>
 
-<!-- Animated Line -->
+<!-- ═══════════════════════ ANIMATED DIVIDER ═══════════════════════ -->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<br/>
 
-<!-- =============================== ACTIVITY GRAPH =============================== -->
+<!-- ═══════════════════════ TECH STACK ═══════════════════════ -->
 
 <div align="center">
-  <h2>📈 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐆𝐫𝐚𝐩𝐡</h2>
+  <h2>
+    <samp>&gt; Tech.stack()</samp>
+  </h2>
+  <p><samp>⟨ technologies I love working with ⟩</samp></p>
 </div>
 
+<br/>
+
+<div align="center">
+  
+<details open>
+<summary><b>🔤 Languages</b></summary>
+<br/>
+<p>
+  <img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=3776AB"/>
+  <img src="https://img.shields.io/badge/TypeScript-0D1117?style=for-the-badge&logo=typescript&logoColor=3178C6"/>
+  <img src="https://img.shields.io/badge/JavaScript-0D1117?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
+  <img src="https://img.shields.io/badge/Java-0D1117?style=for-the-badge&logo=openjdk&logoColor=ED8B00"/>
+  <img src="https://img.shields.io/badge/MATLAB-0D1117?style=for-the-badge&logo=mathworks&logoColor=e16737"/>
+  <img src="https://img.shields.io/badge/HTML5-0D1117?style=for-the-badge&logo=html5&logoColor=E34F26"/>
+  <img src="https://img.shields.io/badge/CSS3-0D1117?style=for-the-badge&logo=css3&logoColor=1572B6"/>
+  <img src="https://img.shields.io/badge/Markdown-0D1117?style=for-the-badge&logo=markdown&logoColor=FFFFFF"/>
+</p>
+</details>
+
+<details open>
+<summary><b>🧰 Frameworks & Libraries</b></summary>
+<br/>
+<p>
+  <img src="https://img.shields.io/badge/React-0D1117?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Next.js-0D1117?style=for-the-badge&logo=next.js&logoColor=FFFFFF"/>
+  <img src="https://img.shields.io/badge/Node.js-0D1117?style=for-the-badge&logo=node.js&logoColor=339933"/>
+  <img src="https://img.shields.io/badge/Flask-0D1117?style=for-the-badge&logo=flask&logoColor=FFFFFF"/>
+  <img src="https://img.shields.io/badge/Tailwind-0D1117?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4"/>
+  <img src="https://img.shields.io/badge/Electron-0D1117?style=for-the-badge&logo=electron&logoColor=47848F"/>
+</p>
+</details>
+
+<details open>
+<summary><b>🤖 AI & Machine Learning</b></summary>
+<br/>
+<p>
+  <img src="https://img.shields.io/badge/PyTorch-0D1117?style=for-the-badge&logo=pytorch&logoColor=EE4C2C"/>
+  <img src="https://img.shields.io/badge/TensorFlow-0D1117?style=for-the-badge&logo=tensorflow&logoColor=FF6F00"/>
+  <img src="https://img.shields.io/badge/OpenCV-0D1117?style=for-the-badge&logo=opencv&logoColor=5C3EE8"/>
+  <img src="https://img.shields.io/badge/DeepSeek-0D1117?style=for-the-badge&logoColor=4D6BFF&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzRENkJGRiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMkw0IDE0aDhsLTQgOCA4LTEwSDEwbDItMTJ6Ii8+PC9zdmc+&label=DeepSeek"/>
+  <img src="https://img.shields.io/badge/MCP-0D1117?style=for-the-badge&logoColor=8B5CF6&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzhCNUNGNiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptMCAxOGMtNC40IDAtOC0zLjYtOC04czMuNi04IDgtOCA4IDMuNiA4IDgtMy42IDgtOCA4em0tMi0zaDR2LTJoLTR2Mm0wLTRoNHYtNmgtNHY2eiIvPjwvc3ZnPg==&label=MCP"/>
+</p>
+</details>
+
+<details open>
+<summary><b>🗄️ Databases & Infrastructure</b></summary>
+<br/>
+<p>
+  <img src="https://img.shields.io/badge/MongoDB-0D1117?style=for-the-badge&logo=mongodb&logoColor=47A248"/>
+  <img src="https://img.shields.io/badge/MySQL-0D1117?style=for-the-badge&logo=mysql&logoColor=4479A1"/>
+  <img src="https://img.shields.io/badge/Redis-0D1117?style=for-the-badge&logo=redis&logoColor=DC382D"/>
+  <img src="https://img.shields.io/badge/Docker-0D1117?style=for-the-badge&logo=docker&logoColor=2496ED"/>
+  <img src="https://img.shields.io/badge/Vercel-0D1117?style=for-the-badge&logo=vercel&logoColor=FFFFFF"/>
+  <img src="https://img.shields.io/badge/Cloudflare-0D1117?style=for-the-badge&logo=cloudflare&logoColor=F38020"/>
+</p>
+</details>
+
+<details open>
+<summary><b>⚙️ Tools & Environment</b></summary>
+<br/>
+<p>
+  <img src="https://img.shields.io/badge/Git-0D1117?style=for-the-badge&logo=git&logoColor=F05032"/>
+  <img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=FFFFFF"/>
+  <img src="https://img.shields.io/badge/VS_Code-0D1117?style=for-the-badge&logo=visualstudiocode&logoColor=007ACC"/>
+  <img src="https://img.shields.io/badge/Cursor-0D1117?style=for-the-badge&logoColor=FFFFFF&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iI0ZGRiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNCAyMGwxNi0xNnYxMkg4bC00IDR6Ii8+PC9zdmc+&label=Cursor"/>
+  <img src="https://img.shields.io/badge/Figma-0D1117?style=for-the-badge&logo=figma&logoColor=F24E1E"/>
+  <img src="https://img.shields.io/badge/Postman-0D1117?style=for-the-badge&logo=postman&logoColor=FF6C37"/>
+  <img src="https://img.shields.io/badge/Linux-0D1117?style=for-the-badge&logo=linux&logoColor=FCC624"/>
+</p>
+</details>
+
+</div>
+
+<br/>
+
+<!-- ═══════════════════════ ANIMATED DIVIDER ═══════════════════════ -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<br/>
+
+<!-- ═══════════════════════ GITHUB TROPHIES ═══════════════════════ -->
+
+<div align="center">
+  <h2>
+    <samp>&gt; Achievements.unlock()</samp>
+  </h2>
+</div>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=-1&margin-w=10&margin-h=10" width="100%" alt="trophies"/>
+</p>
+
+<br/>
+
+<!-- ═══════════════════════ ANIMATED DIVIDER ═══════════════════════ -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<br/>
+
+<!-- ═══════════════════════ STATS DASHBOARD ═══════════════════════ -->
+
+<div align="center">
+  <h2>
+    <samp>&gt; Stats.dashboard()</samp>
+  </h2>
+</div>
+
+<br/>
+
+<div align="center">
+
+  <!-- Row 1: Stats + Languages -->
+  <a href="https://github.com/Marways7">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=transparent&hide_border=true&bg_color=00000000&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&ring_color=A78BFA&include_all_commits=true&count_private=true&custom_title=⚡%20GitHub%20Stats"/>
+      <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=transparent&hide_border=true&title_color=8B5CF6&icon_color=06B6D4&include_all_commits=true&count_private=true&custom_title=⚡%20GitHub%20Stats" alt="stats"/>
+    </picture>
+  </a>
+  &nbsp;
+  <a href="https://github.com/Marways7">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=transparent&hide_border=true&bg_color=00000000&title_color=A78BFA&text_color=C9D1D9&langs_count=8"/>
+      <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=transparent&hide_border=true&title_color=8B5CF6&langs_count=8" alt="langs"/>
+    </picture>
+  </a>
+
+</div>
+
+<br/>
+
+<div align="center">
+
+  <!-- Row 2: Streak -->
+  <a href="https://github.com/Marways7">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=Marways7&theme=transparent&hide_border=true&ring=A78BFA&fire=67E8F9&currStreakLabel=A78BFA&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555&background=00000000"/>
+      <img src="https://streak-stats.demolab.com?user=Marways7&theme=transparent&hide_border=true&ring=8B5CF6&fire=06B6D4&currStreakLabel=8B5CF6" width="55%" alt="streak"/>
+    </picture>
+  </a>
+
+</div>
+
+<br/>
+
+<!-- ═══════════════════════ ANIMATED DIVIDER ═══════════════════════ -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<br/>
+
+<!-- ═══════════════════════ FEATURED PROJECTS ═══════════════════════ -->
+
+<div align="center">
+  <h2>
+    <samp>&gt; Featured.projects()</samp>
+  </h2>
+  <p><samp>⟨ a curated collection of my finest creations ⟩</samp></p>
+</div>
+
+<br/>
+
+<!-- Project 1: ECG_IdentificationX -->
+<div align="center">
+<a href="https://github.com/Marways7/ECG_IdentificationX">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=ECG_IdentificationX&theme=transparent&hide_border=true&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&bg_color=0D1117" width="47%"/>
+</a>
+&nbsp;
+<!-- Project 2: AiliaoX -->
+<a href="https://github.com/Marways7/AiliaoX">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=AiliaoX&theme=transparent&hide_border=true&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&bg_color=0D1117" width="47%"/>
+</a>
+</div>
+
+<br/>
+
+<div align="center">
+<!-- Project 3: cua_desktop_operator_skill -->
+<a href="https://github.com/Marways7/cua_desktop_operator_skill">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_skill&theme=transparent&hide_border=true&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&bg_color=0D1117" width="47%"/>
+</a>
+&nbsp;
+<!-- Project 4: DeepReadX -->
+<a href="https://github.com/Marways7/DeepReadX">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=DeepReadX&theme=transparent&hide_border=true&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&bg_color=0D1117" width="47%"/>
+</a>
+</div>
+
+<br/>
+
+<div align="center">
+<!-- Project 5: college_student_self-rescue_guide_website -->
+<a href="https://github.com/Marways7/college_student_self-rescue_guide_website">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=college_student_self-rescue_guide_website&theme=transparent&hide_border=true&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&bg_color=0D1117" width="47%"/>
+</a>
+&nbsp;
+<!-- Project 6: cua_desktop_operator_cli_skill -->
+<a href="https://github.com/Marways7/cua_desktop_operator_cli_skill">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_cli_skill&theme=transparent&hide_border=true&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&bg_color=0D1117" width="47%"/>
+</a>
+</div>
+
+<br/>
+
+<!-- ═══════════════════════ ANIMATED DIVIDER ═══════════════════════ -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<br/>
+
+<!-- ═══════════════════════ CONTRIBUTION GRAPH ═══════════════════════ -->
+
+<div align="center">
+  <h2>
+    <samp>&gt; Contributions.visualize()</samp>
+  </h2>
+</div>
+
+<br/>
+
+<!-- Activity Graph -->
 <div align="center">
   <a href="https://github.com/Marways7">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=0D1117&color=8B5CF6&line=06B6D4&point=FFFFFF&area_color=8B5CF6&area=true&hide_border=true&custom_title=Marways's%20Contribution%20Graph" width="95%"/>
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=0D1117&color=A78BFA&line=67E8F9&point=FFFFFF&area_color=8B5CF6&area=true&hide_border=true&custom_title=📈%20Contribution%20Activity" width="95%"/>
   </a>
 </div>
 
 <br/>
 
-<!-- =============================== SNAKE ANIMATION =============================== -->
-
-<div align="center">
-  <h2>🐍 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧 𝐒𝐧𝐚𝐤𝐞</h2>
-</div>
-
+<!-- Snake Animation -->
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/output/github-snake-dark.svg" />
@@ -323,48 +356,70 @@
   </picture>
 </div>
 
-> 💡 **Tip**: To enable the snake animation, add a GitHub Actions workflow to your profile repo. See [Platane/snk](https://github.com/Platane/snk) for setup instructions.
+<br/>
+
+<!-- ═══════════════════════ ANIMATED DIVIDER ═══════════════════════ -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<br/>
+
+<!-- ═══════════════════════ SPOTIFY / QUOTE ═══════════════════════ -->
+
+<div align="center">
+  <h2>
+    <samp>&gt; Random.devQuote()</samp>
+  </h2>
+</div>
 
 <br/>
 
-<!-- Animated Line -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<!-- =============================== CONNECT =============================== -->
-
 <div align="center">
-  <h2>🤝 𝐂𝐨𝐧𝐧𝐞𝐜𝐭 𝐖𝐢𝐭𝐡 𝐌𝐞</h2>
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&border=true&quote=Any+sufficiently+advanced+technology+is+indistinguishable+from+magic." width="70%"/>
 </div>
 
+<br/>
+
+<!-- ═══════════════════════ CONNECT ═══════════════════════ -->
+
 <div align="center">
-  <a href="https://github.com/Marways7">
-    <img src="https://img.shields.io/badge/GitHub-Marways7-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <h2>
+    <samp>&gt; Connect.with(me)</samp>
+  </h2>
+</div>
+
+<br/>
+
+<div align="center">
+  <a href="https://github.com/Marways7" target="_blank">
+    <img src="https://img.shields.io/badge/-%20GitHub-0D1117?style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=0D1117"/>
   </a>
   &nbsp;
-  <a href="https://space.bilibili.com/604578545">
-    <img src="https://img.shields.io/badge/Bilibili-Marways-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" />
+  <a href="https://space.bilibili.com/604578545" target="_blank">
+    <img src="https://img.shields.io/badge/-%20Bilibili-0D1117?style=for-the-badge&logo=bilibili&logoColor=00A1D6&labelColor=0D1117"/>
   </a>
 </div>
 
-<br/>
+<br/><br/>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
 
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" width="70%"/>
-</div>
-
-<br/>
-
-<!-- =============================== FOOTER =============================== -->
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,25:6366F1,50:06B6D4,75:10B981,100:8B5CF6&height=120&section=footer" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,25:6366F1,50:818CF8,75:67E8F9,100:06B6D4&height=150&section=footer&text=Thanks%20for%20visiting%20✨&fontSize=24&fontColor=FFFFFF&fontAlignY=72&animation=twinkling" width="100%"/>
 </div>
 
 <div align="center">
   <br/>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=4000&pause=1000&color=8B5CF6&center=true&vCenter=true&repeat=true&width=500&lines=Thanks+for+visiting!+⭐+Star+if+inspired!;If+my+projects+inspired+you,+drop+a+Star!+✨;Happy+Coding!+🚀+Let's+build+the+future!" alt="Footer Typing SVG" />
-  <br/><br/>
-  <p>
-    <i>⭐ 如果这些项目对你有启发，别吝啬一个 Star ⭐</i>
-  </p>
+  <a href="https://github.com/Marways7">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=4000&pause=1500&color=A78BFA&center=true&vCenter=true&repeat=true&width=550&lines=⭐+如果这些项目对你有启发，别吝啬一个+Star+⭐;🚀+Let's+build+the+future+together!;Happy+Coding!+💜+See+you+around!" alt="footer"/>
+  </a>
 </div>
+
+<!-- 
+
+  ╔══════════════════════════════════════════════════════╗
+  ║                                                      ║
+  ║          Made with 💜 and a lot of ☕               ║
+  ║          github.com/Marways7                         ║
+  ║                                                      ║
+  ╚══════════════════════════════════════════════════════╝
+
+-->
