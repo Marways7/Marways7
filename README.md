@@ -104,6 +104,29 @@
 </table>
 </div>
 
+<!-- Weekly Coding Breakdown -->
+<br/>
+
+<div align="center">
+<table>
+<tr>
+<td>
+
+```text
+🕐 Weekly Development Breakdown
+
+AI & Agents       ██████████████░░░░░░░   65.2%
+Frontend (React)   ████░░░░░░░░░░░░░░░░░   15.8%
+Backend (Python)   ███░░░░░░░░░░░░░░░░░░   10.5%
+Documentation      ██░░░░░░░░░░░░░░░░░░░    5.3%
+DevOps / CI-CD     █░░░░░░░░░░░░░░░░░░░░    3.2%
+```
+
+</td>
+</tr>
+</table>
+</div>
+
 <br/>
 
 <!-- ═══════════════════ ANIMATED DIVIDER ═══════════════════ -->
@@ -123,57 +146,75 @@
 
 <div align="center">
 
-<details open>
-<summary><b>💻 Languages</b></summary>
-<br/>
+<!-- Languages -->
+<h4>💻 Languages</h4>
 <p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=py,ts,js,java,matlab,html,css,md&theme=dark&perline=8" alt="languages"/>
-  </a>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MATLAB-0076A8?style=flat-square&logo=mathworks&logoColor=white"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white"/>
 </p>
-</details>
 
-<details open>
-<summary><b>🧰 Frameworks & Libraries</b></summary>
-<br/>
+<!-- Frameworks -->
+<h4>🧰 Frameworks & Libraries</h4>
 <p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,flask,tailwind,electron&theme=dark&perline=8" alt="frameworks"/>
-  </a>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white"/>
 </p>
-</details>
 
-<details open>
-<summary><b>🤖 AI & Machine Learning</b></summary>
-<br/>
+<!-- AI -->
+<h4>🤖 AI & Machine Learning</h4>
 <p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv&theme=dark&perline=8" alt="ai"/>
-  </a>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Claude_AI-CC9B7A?style=flat-square&logo=anthropic&logoColor=white"/>
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white"/>
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white"/>
 </p>
-</details>
 
-<details open>
-<summary><b>🗄️ Databases & Cloud</b></summary>
-<br/>
+<!-- Databases & Cloud -->
+<h4>🗄️ Databases & Cloud</h4>
 <p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=mongodb,mysql,redis,docker,vercel,cloudflare&theme=dark&perline=8" alt="databases"/>
-  </a>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white"/>
 </p>
-</details>
 
-<details open>
-<summary><b>⚙️ Dev Tools</b></summary>
-<br/>
+<!-- Dev Tools -->
+<h4>⚙️ Dev Tools</h4>
 <p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=git,github,vscode,vim,figma,postman,linux,powershell&theme=dark&perline=8" alt="tools"/>
-  </a>
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Cursor-000000?style=flat-square&logo=cursor&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vim-019733?style=flat-square&logo=vim&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black"/>
 </p>
-</details>
 
 </div>
+
+<br/>
+
+<!-- Skill Icons (visual summary) -->
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=py,ts,js,react,nextjs,nodejs,flask,tailwind,electron,pytorch,tensorflow,opencv,mongodb,mysql,redis,docker,vercel,cloudflare,git,github,vscode,vim,figma,linux&theme=dark&perline=12" alt="tech stack"/>
+  </a>
+</p>
 
 <br/>
 
@@ -190,24 +231,79 @@
 
 <br/>
 
+<!-- Stats + Languages side by side -->
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&ring_color=A78BFA&include_all_commits=true&count_private=true" height="180"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&ring_color=A78BFA&include_all_commits=true&count_private=true"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=default&hide_border=true&include_all_commits=true&count_private=true"/>
+    <img src="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&ring_color=A78BFA&include_all_commits=true&count_private=true" height="180"/>
+  </picture>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&langs_count=8" height="180"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&langs_count=8"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=default&hide_border=true&langs_count=8"/>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&langs_count=8" height="180"/>
+  </picture>
 </div>
 
 <br/>
 
+<!-- Streak Stats -->
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=Marways7&theme=tokyonight_duo&hide_border=true&background=0D1117&ring=A78BFA&fire=67E8F9&currStreakLabel=A78BFA&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555" width="55%"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=Marways7&theme=tokyonight_duo&hide_border=true&background=0D1117&ring=A78BFA&fire=67E8F9&currStreakLabel=A78BFA&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=Marways7&theme=default&hide_border=true"/>
+    <img src="https://streak-stats.demolab.com?user=Marways7&theme=tokyonight_duo&hide_border=true&background=0D1117&ring=A78BFA&fire=67E8F9&currStreakLabel=A78BFA&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=555555" width="55%"/>
+  </picture>
 </p>
 
 <br/>
 
 <!-- GitHub Trophies -->
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10" width="90%"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-trophy.vercel.app/?username=Marways7&theme=flat&no-frame=true&no-bg=true&column=7&margin-w=10"/>
+    <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10" width="90%"/>
+  </picture>
 </p>
+
+<br/>
+
+<!-- Profile Summary Cards -->
+<p align="center">
+  <a href="https://github.com/Marways7">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/0-profile-details.svg"/>
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/default/0-profile-details.svg"/>
+      <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/0-profile-details.svg" width="90%"/>
+    </picture>
+  </a>
+</p>
+
+<div align="center">
+  <a href="https://github.com/Marways7">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/1-repos-per-language.svg"/>
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/default/1-repos-per-language.svg"/>
+      <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/1-repos-per-language.svg" width="32%"/>
+    </picture>
+  </a>
+  <a href="https://github.com/Marways7">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg"/>
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/default/2-most-commit-language.svg"/>
+      <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg" width="32%"/>
+    </picture>
+  </a>
+  <a href="https://github.com/Marways7">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/3-stats.svg"/>
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/default/3-stats.svg"/>
+      <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/3-stats.svg" width="32%"/>
+    </picture>
+  </a>
+</div>
 
 <br/>
 
@@ -227,34 +323,40 @@
 <br/>
 
 <div align="center">
-  <a href="https://github.com/Marways7/ECG_IdentificationX">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=ECG_IdentificationX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
-  </a>
-  &nbsp;
-  <a href="https://github.com/Marways7/AiliaoX">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=AiliaoX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
-  </a>
+
+<!-- Row 1 -->
+<a href="https://github.com/Marways7/ECG_IdentificationX">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=ECG_IdentificationX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
+</a>&nbsp;
+<a href="https://github.com/Marways7/AiliaoX">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=AiliaoX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
+</a>
+
+<!-- Row 2 -->
+<a href="https://github.com/Marways7/cua_desktop_operator_skill">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_skill&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
+</a>&nbsp;
+<a href="https://github.com/Marways7/DeepReadX">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=DeepReadX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
+</a>
+
+<!-- Row 3 -->
+<a href="https://github.com/Marways7/college_student_self-rescue_guide_website">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=college_student_self-rescue_guide_website&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
+</a>&nbsp;
+<a href="https://github.com/Marways7/cua_desktop_operator_cli_skill">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_cli_skill&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
+</a>
+
 </div>
 
-<div align="center">
-  <a href="https://github.com/Marways7/cua_desktop_operator_skill">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_skill&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
-  </a>
-  &nbsp;
-  <a href="https://github.com/Marways7/DeepReadX">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=DeepReadX&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
-  </a>
-</div>
+<br/>
 
-<div align="center">
-  <a href="https://github.com/Marways7/college_student_self-rescue_guide_website">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=college_student_self-rescue_guide_website&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
+<p align="center">
+  <a href="https://github.com/Marways7?tab=repositories">
+    <img src="https://img.shields.io/badge/View_All_Repositories-%E2%86%92-A78BFA?style=for-the-badge&labelColor=1A1B27" alt="View All"/>
   </a>
-  &nbsp;
-  <a href="https://github.com/Marways7/cua_desktop_operator_cli_skill">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Marways7&repo=cua_desktop_operator_cli_skill&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&description_lines_count=2" width="47%"/>
-  </a>
-</div>
+</p>
 
 <br/>
 
@@ -271,8 +373,22 @@
 
 <br/>
 
+<!-- Activity Graph -->
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=0D1117&color=A78BFA&line=67E8F9&point=FFFFFF&area_color=8B5CF6&area=true&hide_border=true&custom_title=Contribution%20Graph" width="95%"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=0D1117&color=A78BFA&line=67E8F9&point=FFFFFF&area_color=8B5CF6&area=true&hide_border=true&custom_title=Contribution%20Graph"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=FFFFFF&color=6366F1&line=06B6D4&point=7C3AED&area_color=818CF8&area=true&hide_border=true&custom_title=Contribution%20Graph"/>
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=0D1117&color=A78BFA&line=67E8F9&point=FFFFFF&area_color=8B5CF6&area=true&hide_border=true&custom_title=Contribution%20Graph" width="95%"/>
+  </picture>
+</p>
+
+<!-- 3D Contribution Graph -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-south-season-animate.svg"/>
+    <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="95%"/>
+  </picture>
 </p>
 
 <!-- Snake Animation -->
