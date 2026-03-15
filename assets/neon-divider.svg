@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="12" viewBox="0 0 1200 12">
+  <defs>
+    <linearGradient id="neon-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0"/>
+      <stop offset="15%" style="stop-color:#a78bfa;stop-opacity:1">
+        <animate attributeName="stop-color" values="#a78bfa;#67e8f9;#c084fc;#a78bfa" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#67e8f9;stop-opacity:1">
+        <animate attributeName="stop-color" values="#67e8f9;#c084fc;#a78bfa;#67e8f9" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="85%" style="stop-color:#c084fc;stop-opacity:1">
+        <animate attributeName="stop-color" values="#c084fc;#a78bfa;#67e8f9;#c084fc" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="neon-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Glow layer -->
+  <rect x="50" y="4" width="1100" height="4" rx="2" fill="url(#neon-line)" filter="url(#neon-glow)" opacity="0.6"/>
+  <!-- Core line -->
+  <rect x="50" y="5" width="1100" height="2" rx="1" fill="url(#neon-line)" opacity="0.9"/>
+  <!-- Center diamond -->
+  <polygon points="600,0 606,6 600,12 594,6" fill="#67e8f9" filter="url(#neon-glow)" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+  </polygon>
+</svg>
