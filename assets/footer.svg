@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="160" viewBox="0 0 1200 160">
+  <defs>
+    <linearGradient id="ft-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a">
+        <animate attributeName="stop-color" values="#0a0a1a;#0d1033;#0a0a1a" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#1a1040">
+        <animate attributeName="stop-color" values="#1a1040;#0d2847;#1a1040" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="ft-text" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa">
+        <animate attributeName="stop-color" values="#a78bfa;#67e8f9;#a78bfa" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#67e8f9">
+        <animate attributeName="stop-color" values="#67e8f9;#c084fc;#67e8f9" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="ft-glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="ft-glow-sm">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="160" fill="url(#ft-bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.03">
+    <line x1="0" y1="40" x2="1200" y2="40" stroke="#a78bfa" stroke-width="0.5"/>
+    <line x1="0" y1="80" x2="1200" y2="80" stroke="#a78bfa" stroke-width="0.5"/>
+    <line x1="0" y1="120" x2="1200" y2="120" stroke="#a78bfa" stroke-width="0.5"/>
+  </g>
+
+  <!-- Top neon line -->
+  <rect x="100" y="0" width="1000" height="2" rx="1" fill="url(#ft-text)" opacity="0.4"/>
+
+  <!-- Floating particles -->
+  <circle cx="150" cy="50" r="1.5" fill="#a78bfa" filter="url(#ft-glow-sm)" opacity="0.5">
+    <animate attributeName="cy" values="50;35;50" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="120" r="1" fill="#67e8f9" filter="url(#ft-glow-sm)" opacity="0.4">
+    <animate attributeName="cy" values="120;105;120" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="900" cy="40" r="1.2" fill="#c084fc" filter="url(#ft-glow-sm)" opacity="0.5">
+    <animate attributeName="cy" values="40;55;40" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1050" cy="100" r="1" fill="#818cf8" filter="url(#ft-glow-sm)" opacity="0.4">
+    <animate attributeName="cy" values="100;85;100" dur="3.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Main text -->
+  <text x="600" y="65" font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="22" fill="url(#ft-text)" text-anchor="middle" filter="url(#ft-glow)" letter-spacing="2">
+    Made with &#x1F49C; and &#x2615; by Marways
+  </text>
+
+  <!-- Sub text -->
+  <text x="600" y="95" font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="13" fill="#64748b" text-anchor="middle" letter-spacing="1">
+    "The best way to predict the future is to build it."
+  </text>
+
+  <!-- Star decoration -->
+  <text x="600" y="130" font-family="'Fira Code', monospace" font-size="14" fill="url(#ft-text)" text-anchor="middle" opacity="0.6" filter="url(#ft-glow-sm)">
+    &#x2B50; Star if inspired! &#x2B50;
+  </text>
+
+  <!-- Decorative dots -->
+  <circle cx="520" cy="140" r="2" fill="#a78bfa" opacity="0.3" filter="url(#ft-glow-sm)">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="560" cy="140" r="2" fill="#6366f1" opacity="0.3" filter="url(#ft-glow-sm)">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+  </circle>
+  <circle cx="600" cy="140" r="2" fill="#67e8f9" opacity="0.3" filter="url(#ft-glow-sm)">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+  </circle>
+  <circle cx="640" cy="140" r="2" fill="#6366f1" opacity="0.3" filter="url(#ft-glow-sm)">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+  </circle>
+  <circle cx="680" cy="140" r="2" fill="#c084fc" opacity="0.3" filter="url(#ft-glow-sm)">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+  </circle>
+</svg>
