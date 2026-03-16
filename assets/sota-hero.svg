@@ -1,0 +1,485 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="auto">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&amp;family=Orbitron:wght@700;900&amp;display=swap');
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        33% { transform: translateY(-10px) translateX(5px); }
+        66% { transform: translateY(5px) translateX(-5px); }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 1; }
+      }
+      @keyframes drift {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-450px); }
+      }
+      @keyframes orbit-cw {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes orbit-ccw {
+        0% { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
+      @keyframes matrixRain {
+        0% { transform: translateY(-50px); opacity: 0; }
+        20% { opacity: 0.8; }
+        80% { opacity: 0.8; }
+        100% { transform: translateY(500px); opacity: 0; }
+      }
+      @keyframes typeRotate1 {
+        0%, 25%, 100% { opacity: 1; transform: translateY(0); }
+        30%, 95% { opacity: 0; transform: translateY(-20px); }
+      }
+      @keyframes typeRotate2 {
+        0%, 30%, 100% { opacity: 0; transform: translateY(20px); }
+        35%, 60% { opacity: 1; transform: translateY(0); }
+        65%, 95% { opacity: 0; transform: translateY(-20px); }
+      }
+      @keyframes typeRotate3 {
+        0%, 65%, 100% { opacity: 0; transform: translateY(20px); }
+        70%, 95% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes glitch {
+        0% { transform: translate(0) }
+        20% { transform: translate(-2px, 2px) }
+        40% { transform: translate(-2px, -2px) }
+        60% { transform: translate(2px, 2px) }
+        80% { transform: translate(2px, -2px) }
+        100% { transform: translate(0) }
+      }
+      @keyframes pulse {
+        0% { stroke-opacity: 0.1; stroke-width: 1; }
+        50% { stroke-opacity: 0.8; stroke-width: 3; }
+        100% { stroke-opacity: 0.1; stroke-width: 1; }
+      }
+      @keyframes shootingStar {
+        0% { transform: translateX(0) translateY(0); opacity: 1; }
+        100% { transform: translateX(-800px) translateY(800px); opacity: 0; }
+      }
+      @keyframes gridMove {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 40px; }
+      }
+
+      .text-marways {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 110px;
+        font-weight: 900;
+        fill: url(#text-grad);
+        filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.6));
+      }
+      
+      .text-subtitle {
+        font-family: 'Fira Code', monospace;
+        font-size: 24px;
+        font-weight: 600;
+        fill: #C9D1D9;
+      }
+      
+      .glow-orbit {
+        fill: none;
+        stroke-linecap: round;
+        stroke-width: 2;
+      }
+    </style>
+    
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0614" />
+      <stop offset="50%" stop-color="#0e0a1f" />
+      <stop offset="100%" stop-color="#050814" />
+    </linearGradient>
+    
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#67E8F9" />
+      <stop offset="25%" stop-color="#06B6D4" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="75%" stop-color="#A78BFA" />
+      <stop offset="100%" stop-color="#F472B6" />
+    </linearGradient>
+
+    <radialGradient id="glow-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </radialGradient>
+    
+    <radialGradient id="glow-grad-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)" />
+
+  <circle cx="20%" cy="50%" r="400" fill="url(#glow-grad)" style="mix-blend-mode: screen;" />
+  <circle cx="80%" cy="50%" r="500" fill="url(#glow-grad-cyan)" style="mix-blend-mode: screen;" />
+  <circle cx="50%" cy="50%" r="300" fill="url(#glow-grad)" style="mix-blend-mode: screen;" />
+<circle cx="543" cy="132" r="1.2843411411347752" fill="#FFFFFF" style="animation: twinkle 3.462475710055103s infinite 0.877643125338835s alternate; opacity: 0.25418208969722983" />
+  <circle cx="858" cy="194" r="0.5103233446212829" fill="#FFFFFF" style="animation: twinkle 4.913961643217316s infinite 1.4682271360272925s alternate; opacity: 0.6283144087178475" />
+  <circle cx="76" cy="303" r="1.7810641449143467" fill="#FFFFFF" style="animation: twinkle 2.8856514757311724s infinite 1.5547755662926273s alternate; opacity: 0.5740443572010979" />
+  <circle cx="1096" cy="61" r="1.7911927741163562" fill="#FFFFFF" style="animation: twinkle 2.303170602173717s infinite 0.6650540556939277s alternate; opacity: 0.520192195076971" />
+  <circle cx="1014" cy="353" r="1.6587332154688585" fill="#FFFFFF" style="animation: twinkle 3.439979462044363s infinite 3.1413793319461303s alternate; opacity: 0.48099000891677834" />
+  <circle cx="995" cy="395" r="0.9840909247032641" fill="#FFFFFF" style="animation: twinkle 3.9048424785803766s infinite 2.1889710798898605s alternate; opacity: 0.33062221607501785" />
+  <circle cx="99" cy="436" r="1.254761967486296" fill="#FFFFFF" style="animation: twinkle 5.056332180399837s infinite 3.5471496861745404s alternate; opacity: 0.5587034791858513" />
+  <circle cx="780" cy="109" r="1.1193960218401986" fill="#FFFFFF" style="animation: twinkle 5.351206031252749s infinite 3.050652168216097s alternate; opacity: 0.3944379433888643" />
+  <circle cx="492" cy="395" r="1.1835703180035217" fill="#FFFFFF" style="animation: twinkle 2.8867098805483633s infinite 1.8990845093354913s alternate; opacity: 0.4600926149961896" />
+  <circle cx="1009" cy="306" r="1.446200368392887" fill="#FFFFFF" style="animation: twinkle 2.951513635518174s infinite 1.26818826862886s alternate; opacity: 0.3418017101404727" />
+  <circle cx="951" cy="431" r="1.4545140355195239" fill="#FFFFFF" style="animation: twinkle 2.809727692759502s infinite 4.84169128215003s alternate; opacity: 0.7952158196269217" />
+  <circle cx="455" cy="51" r="1.1633041602328265" fill="#FFFFFF" style="animation: twinkle 2.125966832630911s infinite 1.3579474582237165s alternate; opacity: 0.7122885913284562" />
+  <circle cx="1127" cy="90" r="2.447526691756656" fill="#FFFFFF" style="animation: twinkle 4.773500877059689s infinite 4.726067073295806s alternate; opacity: 0.6024015571922723" />
+  <circle cx="564" cy="365" r="1.577219239846085" fill="#FFFFFF" style="animation: twinkle 3.6874187435563606s infinite 0.9205795232914649s alternate; opacity: 0.36492849698875474" />
+  <circle cx="61" cy="354" r="0.5908034721288047" fill="#FFFFFF" style="animation: twinkle 5.372268771727359s infinite 2.4954252525128973s alternate; opacity: 0.5930684800547051" />
+  <circle cx="45" cy="338" r="2.454254004923511" fill="#FFFFFF" style="animation: twinkle 2.7116469677857005s infinite 0.27732012838692366s alternate; opacity: 0.2895317027352891" />
+  <circle cx="927" cy="296" r="2.060014670390722" fill="#FFFFFF" style="animation: twinkle 2.8269472154706063s infinite 4.2612645315007995s alternate; opacity: 0.7884381374150138" />
+  <circle cx="1045" cy="243" r="0.5379268762256086" fill="#FFFFFF" style="animation: twinkle 5.236880540897806s infinite 1.225824788973927s alternate; opacity: 0.743676900535125" />
+  <circle cx="841" cy="93" r="1.107619419975229" fill="#FFFFFF" style="animation: twinkle 4.001440681861563s infinite 0.847716315466282s alternate; opacity: 0.28260045305660575" />
+  <circle cx="558" cy="432" r="1.4406157097318923" fill="#FFFFFF" style="animation: twinkle 2.440308583439124s infinite 4.126124847221575s alternate; opacity: 0.3502837396274503" />
+  <circle cx="851" cy="379" r="0.7966964880194041" fill="#FFFFFF" style="animation: twinkle 2.263492069630922s infinite 2.6395666257266033s alternate; opacity: 0.17066377495035928" />
+  <circle cx="217" cy="7" r="1.3107118121474644" fill="#FFFFFF" style="animation: twinkle 5.755126277925148s infinite 3.6352498456001534s alternate; opacity: 0.14522364271464994" />
+  <circle cx="924" cy="234" r="2.2044295581841795" fill="#FFFFFF" style="animation: twinkle 2.877178383168274s infinite 1.0819702101529067s alternate; opacity: 0.6372464887184046" />
+  <circle cx="367" cy="121" r="1.2472383946353416" fill="#FFFFFF" style="animation: twinkle 3.5154411509075993s infinite 3.98322592393864s alternate; opacity: 0.7456966292731615" />
+  <circle cx="358" cy="102" r="2.006212421191792" fill="#FFFFFF" style="animation: twinkle 2.4311361644951344s infinite 1.117311288723783s alternate; opacity: 0.3959106624452494" />
+  <circle cx="631" cy="20" r="1.2925409410613542" fill="#FFFFFF" style="animation: twinkle 4.113378582007667s infinite 1.1468124958815695s alternate; opacity: 0.5638831274513738" />
+  <circle cx="561" cy="25" r="2.349624403970858" fill="#FFFFFF" style="animation: twinkle 4.009101413992364s infinite 0.8318387901881369s alternate; opacity: 0.34376795755271805" />
+  <circle cx="742" cy="393" r="0.8243860658739555" fill="#FFFFFF" style="animation: twinkle 4.848375127376004s infinite 0.7828865149405423s alternate; opacity: 0.46934133526571875" />
+  <circle cx="1118" cy="439" r="1.385370463142796" fill="#FFFFFF" style="animation: twinkle 5.942508426027372s infinite 4.349892811691848s alternate; opacity: 0.714325919625136" />
+  <circle cx="159" cy="154" r="0.9458721300466382" fill="#FFFFFF" style="animation: twinkle 4.806274633860548s infinite 1.6984063529647542s alternate; opacity: 0.2256742096644722" />
+  <circle cx="999" cy="338" r="1.905733830259687" fill="#FFFFFF" style="animation: twinkle 3.029546633327398s infinite 3.5335991447944233s alternate; opacity: 0.30216150262244934" />
+  <circle cx="625" cy="155" r="1.655622105066852" fill="#FFFFFF" style="animation: twinkle 2.0536511035306586s infinite 2.3131504909194094s alternate; opacity: 0.10454550900106335" />
+  <circle cx="314" cy="244" r="2.3534665191432484" fill="#FFFFFF" style="animation: twinkle 4.152005587604055s infinite 1.2411947040356452s alternate; opacity: 0.11915053785619374" />
+  <circle cx="1172" cy="160" r="2.177637603664351" fill="#FFFFFF" style="animation: twinkle 2.490830111374748s infinite 1.0625627702673608s alternate; opacity: 0.41904610100911743" />
+  <circle cx="1125" cy="58" r="0.9104031336124032" fill="#FFFFFF" style="animation: twinkle 4.68741864720942s infinite 1.0460133543157708s alternate; opacity: 0.7447616020409712" />
+  <circle cx="938" cy="203" r="2.210716441117557" fill="#FFFFFF" style="animation: twinkle 2.4378935874274226s infinite 4.677851820729082s alternate; opacity: 0.5614484640207728" />
+  <circle cx="1093" cy="36" r="0.9571430595730268" fill="#FFFFFF" style="animation: twinkle 5.620160531940517s infinite 4.220282431897792s alternate; opacity: 0.6508842029133417" />
+  <circle cx="829" cy="157" r="1.8704539251926686" fill="#FFFFFF" style="animation: twinkle 2.050639337404443s infinite 2.9897900817284846s alternate; opacity: 0.547158316341255" />
+  <circle cx="89" cy="401" r="1.7001890203236063" fill="#FFFFFF" style="animation: twinkle 2.6835633368663214s infinite 3.8247761968355616s alternate; opacity: 0.21427249483753846" />
+  <circle cx="585" cy="119" r="2.220436790696751" fill="#FFFFFF" style="animation: twinkle 3.5297348511387465s infinite 0.6524147624721871s alternate; opacity: 0.6780180494682513" />
+  <circle cx="296" cy="2" r="1.50085963761647" fill="#FFFFFF" style="animation: twinkle 5.0876097546229495s infinite 0.16385279185068047s alternate; opacity: 0.17003004217135798" />
+  <circle cx="22" cy="25" r="1.658739662343662" fill="#FFFFFF" style="animation: twinkle 4.548965156736813s infinite 3.5123173162483927s alternate; opacity: 0.50841517053808" />
+  <circle cx="506" cy="18" r="0.9745777114189829" fill="#FFFFFF" style="animation: twinkle 2.625481486923547s infinite 4.553724478753198s alternate; opacity: 0.6809174939282836" />
+  <circle cx="274" cy="143" r="0.9722577306973625" fill="#FFFFFF" style="animation: twinkle 2.909010527136741s infinite 1.941981640745637s alternate; opacity: 0.4394475492239427" />
+  <circle cx="894" cy="15" r="1.052176924934642" fill="#FFFFFF" style="animation: twinkle 5.137962065375808s infinite 3.386787673210985s alternate; opacity: 0.3378637350480267" />
+  <circle cx="517" cy="446" r="2.0606895346830294" fill="#FFFFFF" style="animation: twinkle 5.801807200653593s infinite 0.9506984495772558s alternate; opacity: 0.32434732830320945" />
+  <circle cx="481" cy="67" r="0.6346107893383317" fill="#FFFFFF" style="animation: twinkle 2.026942212965705s infinite 1.1000088301139743s alternate; opacity: 0.28081546621369036" />
+  <circle cx="1135" cy="440" r="2.2750231987473195" fill="#FFFFFF" style="animation: twinkle 5.040399495394398s infinite 4.597987241046705s alternate; opacity: 0.7907564977529734" />
+  <circle cx="796" cy="218" r="2.4762476697660833" fill="#FFFFFF" style="animation: twinkle 5.156971576649408s infinite 2.5645578850388184s alternate; opacity: 0.6402121517641151" />
+  <circle cx="1085" cy="341" r="2.3507324672495713" fill="#FFFFFF" style="animation: twinkle 2.9402248803042634s infinite 3.9251920228959607s alternate; opacity: 0.7551206624901241" />
+  <circle cx="1095" cy="121" r="0.9671972586539224" fill="#FFFFFF" style="animation: twinkle 3.069548366891318s infinite 4.957612053706811s alternate; opacity: 0.4015030049279439" />
+  <circle cx="60" cy="179" r="1.0114643778169246" fill="#FFFFFF" style="animation: twinkle 4.125094353696211s infinite 3.2214078656685285s alternate; opacity: 0.4806016260238022" />
+  <circle cx="170" cy="322" r="0.7614031002350796" fill="#FFFFFF" style="animation: twinkle 2.2435839841196668s infinite 4.5281384068481465s alternate; opacity: 0.3983055811575896" />
+  <circle cx="862" cy="297" r="1.8455067530602354" fill="#FFFFFF" style="animation: twinkle 2.6407078119519762s infinite 2.0612050879540265s alternate; opacity: 0.41803189932371165" />
+  <circle cx="870" cy="115" r="2.140960976400343" fill="#FFFFFF" style="animation: twinkle 4.848817032189596s infinite 1.4240186058643785s alternate; opacity: 0.3243960577786812" />
+  <circle cx="480" cy="80" r="0.6283974089346371" fill="#FFFFFF" style="animation: twinkle 3.562191555242572s infinite 2.2098202045199993s alternate; opacity: 0.6735085200476173" />
+  <circle cx="988" cy="44" r="0.6330588038934557" fill="#FFFFFF" style="animation: twinkle 2.5890111370388524s infinite 3.4183161844328795s alternate; opacity: 0.5850709176240033" />
+  <circle cx="960" cy="117" r="2.1181699658814273" fill="#FFFFFF" style="animation: twinkle 4.676912474704967s infinite 3.670192635583441s alternate; opacity: 0.10797383148265988" />
+  <circle cx="156" cy="434" r="1.7154294644147607" fill="#FFFFFF" style="animation: twinkle 3.3031762183503535s infinite 2.845985854692377s alternate; opacity: 0.2140194142389223" />
+  <circle cx="873" cy="371" r="1.3187386145386133" fill="#FFFFFF" style="animation: twinkle 2.6719881006730923s infinite 3.3427322534016186s alternate; opacity: 0.18360753169928296" />
+  <circle cx="1042" cy="292" r="0.7075956319249745" fill="#FFFFFF" style="animation: twinkle 2.750666753152396s infinite 4.257671989472456s alternate; opacity: 0.47335816928563335" />
+  <circle cx="403" cy="91" r="2.108741856601042" fill="#FFFFFF" style="animation: twinkle 2.0422992367674198s infinite 1.1315855541944664s alternate; opacity: 0.4408875359953228" />
+  <circle cx="142" cy="281" r="1.1234111405211282" fill="#FFFFFF" style="animation: twinkle 3.537474204149237s infinite 1.5342760997619076s alternate; opacity: 0.6132606816360926" />
+  <circle cx="26" cy="69" r="1.535350510457491" fill="#FFFFFF" style="animation: twinkle 3.3728864694334937s infinite 1.421011120896332s alternate; opacity: 0.75342433436714" />
+  <circle cx="900" cy="108" r="1.7241588904722185" fill="#FFFFFF" style="animation: twinkle 5.429115915960643s infinite 1.5147520866316349s alternate; opacity: 0.6257959571218952" />
+  <circle cx="996" cy="68" r="0.8785272949133323" fill="#FFFFFF" style="animation: twinkle 2.402621336650779s infinite 1.6088196316192893s alternate; opacity: 0.4501974096889074" />
+  <circle cx="188" cy="14" r="1.4229974905087646" fill="#FFFFFF" style="animation: twinkle 5.456749048311946s infinite 3.4329837097768765s alternate; opacity: 0.534307889177255" />
+  <circle cx="109" cy="283" r="2.278708381195696" fill="#FFFFFF" style="animation: twinkle 4.1236778265428615s infinite 4.64702113379275s alternate; opacity: 0.5334331396595612" />
+  <circle cx="511" cy="6" r="0.5554394979928925" fill="#FFFFFF" style="animation: twinkle 4.601072588080241s infinite 2.0759591085724534s alternate; opacity: 0.16478271238327669" />
+  <circle cx="767" cy="65" r="0.6454556100579214" fill="#FFFFFF" style="animation: twinkle 4.146812661380253s infinite 4.294935447086084s alternate; opacity: 0.30656342214389987" />
+  <circle cx="780" cy="435" r="2.0360578498626998" fill="#FFFFFF" style="animation: twinkle 2.7950754058330607s infinite 0.10710812861153607s alternate; opacity: 0.20536685242928743" />
+  <circle cx="168" cy="372" r="1.6387254921120857" fill="#FFFFFF" style="animation: twinkle 3.204003107980946s infinite 1.4448435933761998s alternate; opacity: 0.12788974890469795" />
+  <circle cx="1124" cy="132" r="1.0938754777062185" fill="#FFFFFF" style="animation: twinkle 4.579024287257333s infinite 3.817317498107982s alternate; opacity: 0.2812996379266268" />
+  <circle cx="799" cy="96" r="2.2883383194876945" fill="#FFFFFF" style="animation: twinkle 5.899169077907246s infinite 0.14676060598944052s alternate; opacity: 0.49606150728860765" />
+  <circle cx="542" cy="209" r="2.1481070953317882" fill="#FFFFFF" style="animation: twinkle 5.450031175012814s infinite 0.5790539267106071s alternate; opacity: 0.6511806005579199" />
+  <circle cx="523" cy="387" r="0.8630771084024045" fill="#FFFFFF" style="animation: twinkle 4.5661848848475s infinite 4.409081204771047s alternate; opacity: 0.14445260835024953" />
+  <circle cx="62" cy="168" r="2.3748924045804456" fill="#FFFFFF" style="animation: twinkle 4.601612277320622s infinite 2.5924482078931677s alternate; opacity: 0.3091671174319458" />
+  <circle cx="453" cy="67" r="0.8006003135848943" fill="#FFFFFF" style="animation: twinkle 5.196887980790052s infinite 3.483539935832382s alternate; opacity: 0.19290577394454034" />
+  <circle cx="915" cy="28" r="2.367254340442266" fill="#FFFFFF" style="animation: twinkle 5.980428524378096s infinite 3.689820728817187s alternate; opacity: 0.5066622174672791" />
+  <circle cx="244" cy="395" r="2.0561579699082557" fill="#FFFFFF" style="animation: twinkle 3.1938658573656364s infinite 2.885045642075377s alternate; opacity: 0.16545541188893326" />
+  <circle cx="791" cy="389" r="1.9084625408598717" fill="#FFFFFF" style="animation: twinkle 4.150739374786559s infinite 1.4400658295746382s alternate; opacity: 0.5802998638105303" />
+  <circle cx="402" cy="22" r="0.652153700824261" fill="#FFFFFF" style="animation: twinkle 4.195821212667375s infinite 0.8498433020710472s alternate; opacity: 0.14727703225497701" />
+  <circle cx="287" cy="57" r="1.4426354519766902" fill="#FFFFFF" style="animation: twinkle 3.393973942444542s infinite 4.608362003218014s alternate; opacity: 0.25631512822585867" />
+  <circle cx="240" cy="85" r="1.94508721803883" fill="#FFFFFF" style="animation: twinkle 5.95637168306835s infinite 1.9840782552929408s alternate; opacity: 0.17995139311806385" />
+  <circle cx="1139" cy="261" r="1.721331139078221" fill="#FFFFFF" style="animation: twinkle 4.899954317604314s infinite 4.328832857448401s alternate; opacity: 0.4224088016492429" />
+  <circle cx="718" cy="146" r="1.7651843921029289" fill="#FFFFFF" style="animation: twinkle 2.7091880300057056s infinite 4.529369431251432s alternate; opacity: 0.5085205347212373" />
+  <circle cx="192" cy="286" r="0.8705867994000038" fill="#FFFFFF" style="animation: twinkle 2.7864676388489493s infinite 0.7897455698204031s alternate; opacity: 0.5312355117029818" />
+  <circle cx="1001" cy="49" r="0.5846991012032121" fill="#FFFFFF" style="animation: twinkle 4.141194395337667s infinite 4.984806046030773s alternate; opacity: 0.516311377999859" />
+  <circle cx="410" cy="307" r="0.6293716571833112" fill="#FFFFFF" style="animation: twinkle 2.122127671276588s infinite 0.9232153470382459s alternate; opacity: 0.6075223133529728" />
+  <circle cx="1094" cy="446" r="1.9715655046251794" fill="#FFFFFF" style="animation: twinkle 2.1389493683192464s infinite 3.8433295088816646s alternate; opacity: 0.7981502182729726" />
+  <circle cx="269" cy="37" r="2.2392496184715616" fill="#FFFFFF" style="animation: twinkle 2.8546290163492474s infinite 3.8571992716545274s alternate; opacity: 0.6083969851246522" />
+  <circle cx="142" cy="234" r="1.1867099760271203" fill="#FFFFFF" style="animation: twinkle 4.05852711796302s infinite 1.65270108789222s alternate; opacity: 0.4259993444936313" />
+  <circle cx="1088" cy="418" r="0.6945484994250222" fill="#FFFFFF" style="animation: twinkle 5.586569290826356s infinite 3.7531538763396015s alternate; opacity: 0.1515818668674163" />
+  <circle cx="1153" cy="171" r="2.1434878996126154" fill="#FFFFFF" style="animation: twinkle 5.7509852058648745s infinite 0.7860259838071681s alternate; opacity: 0.7763943901953113" />
+  <circle cx="240" cy="305" r="0.7429429052851755" fill="#FFFFFF" style="animation: twinkle 2.458397541014924s infinite 3.0806498886709406s alternate; opacity: 0.7712388440747681" />
+  <circle cx="519" cy="402" r="1.4886219761811528" fill="#FFFFFF" style="animation: twinkle 4.622441458696715s infinite 2.231607003135087s alternate; opacity: 0.16967662474270348" />
+  <circle cx="170" cy="82" r="0.6630403893578591" fill="#FFFFFF" style="animation: twinkle 4.741076841488395s infinite 0.1903612122553494s alternate; opacity: 0.2538771145265948" />
+  <circle cx="357" cy="203" r="0.5700663016552239" fill="#FFFFFF" style="animation: twinkle 2.604128747278415s infinite 2.016132038633655s alternate; opacity: 0.45933603607022955" />
+  <circle cx="621" cy="127" r="1.1403372940183172" fill="#FFFFFF" style="animation: twinkle 3.655022263487584s infinite 1.2681910494660953s alternate; opacity: 0.5032359623876445" />
+  <circle cx="1084" cy="124" r="2.4426485842275687" fill="#FFFFFF" style="animation: twinkle 4.5330616341214665s infinite 4.660276526436105s alternate; opacity: 0.5505763964414765" />
+  <circle cx="578" cy="130" r="0.6501004731628013" fill="#FFFFFF" style="animation: twinkle 4.309954339303294s infinite 2.8562838401816224s alternate; opacity: 0.4331211613280296" />
+  <circle cx="589" cy="151" r="0.5528298505944598" fill="#FFFFFF" style="animation: twinkle 3.7515597988023295s infinite 0.4300463030644025s alternate; opacity: 0.4264631777162313" />
+  <circle cx="614" cy="113" r="0.9197099100908059" fill="#FFFFFF" style="animation: twinkle 5.914767656858171s infinite 0.5242100894132423s alternate; opacity: 0.3887808544491732" />
+  <circle cx="1081" cy="432" r="2.243575276425995" fill="#FFFFFF" style="animation: twinkle 5.0165009864160135s infinite 3.7974758643661906s alternate; opacity: 0.3634258830085626" />
+  <circle cx="289" cy="322" r="1.3466677659419315" fill="#FFFFFF" style="animation: twinkle 3.820394057504068s infinite 0.18621487817399973s alternate; opacity: 0.2024750784023733" />
+  <circle cx="455" cy="188" r="0.7451309243885984" fill="#FFFFFF" style="animation: twinkle 3.2023335933727646s infinite 0.8468539766967681s alternate; opacity: 0.6239660253889235" />
+  <circle cx="4" cy="345" r="0.6751140856441968" fill="#FFFFFF" style="animation: twinkle 5.724813029236698s infinite 0.5771362249993944s alternate; opacity: 0.39063559231939016" />
+  <circle cx="1061" cy="273" r="2.1347887730017208" fill="#FFFFFF" style="animation: twinkle 4.1920804998240895s infinite 4.920097139177701s alternate; opacity: 0.33279875847221674" />
+  <circle cx="467" cy="40" r="0.9781921913193519" fill="#FFFFFF" style="animation: twinkle 4.8907836535167215s infinite 2.662614595161524s alternate; opacity: 0.798175447216292" />
+  <circle cx="315" cy="105" r="1.2727804457234628" fill="#FFFFFF" style="animation: twinkle 3.1540309489445972s infinite 1.0156531392283759s alternate; opacity: 0.6718930880165175" />
+  <circle cx="761" cy="154" r="0.5867387062664935" fill="#FFFFFF" style="animation: twinkle 5.476836175086413s infinite 2.70441375141739s alternate; opacity: 0.5387652927806346" />
+  <circle cx="1117" cy="70" r="1.727688113136334" fill="#FFFFFF" style="animation: twinkle 5.264162999454227s infinite 2.203477673748196s alternate; opacity: 0.16156374753794467" />
+  <circle cx="1081" cy="64" r="1.2772304988202388" fill="#FFFFFF" style="animation: twinkle 2.194381889380578s infinite 2.8592721068083495s alternate; opacity: 0.5084093213649531" />
+  <circle cx="944" cy="114" r="2.0371136859871877" fill="#FFFFFF" style="animation: twinkle 3.0691671089119765s infinite 3.594168981178758s alternate; opacity: 0.5557073082984033" />
+  <circle cx="231" cy="160" r="1.970203881319928" fill="#FFFFFF" style="animation: twinkle 5.647626609327769s infinite 4.807040437189147s alternate; opacity: 0.3680627304586711" />
+  <circle cx="825" cy="67" r="2.438999450740199" fill="#FFFFFF" style="animation: twinkle 2.6922616046291665s infinite 4.299945494654127s alternate; opacity: 0.15828969966690515" />
+  <circle cx="1143" cy="394" r="2.368705504912217" fill="#FFFFFF" style="animation: twinkle 3.7790368440731057s infinite 0.045928093641022794s alternate; opacity: 0.3782143690550086" />
+  <circle cx="213" cy="248" r="1.7232251988872473" fill="#FFFFFF" style="animation: twinkle 3.014232506253319s infinite 4.0927945245075055s alternate; opacity: 0.11671703206960468" />
+  <circle cx="330" cy="279" r="1.1714789124310607" fill="#FFFFFF" style="animation: twinkle 4.1503805504823s infinite 2.196537205874922s alternate; opacity: 0.5198828900180156" />
+  <circle cx="155" cy="192" r="1.9351242949231013" fill="#FFFFFF" style="animation: twinkle 2.6460919923274773s infinite 2.012211779271036s alternate; opacity: 0.7050017201863221" />
+  <circle cx="1089" cy="38" r="2.1521996409682482" fill="#FFFFFF" style="animation: twinkle 2.894273787105278s infinite 1.692805359865119s alternate; opacity: 0.6541700203159879" />
+  <circle cx="234" cy="239" r="1.035724850944684" fill="#FFFFFF" style="animation: twinkle 2.7116871017186335s infinite 2.045555084098999s alternate; opacity: 0.42257368920905947" />
+  <circle cx="993" cy="357" r="2.3949092769127702" fill="#FFFFFF" style="animation: twinkle 2.3856811766800994s infinite 4.039973797998202s alternate; opacity: 0.7218574745741598" />
+  <circle cx="91" cy="190" r="2.1198596012654054" fill="#FFFFFF" style="animation: twinkle 2.158700956311529s infinite 2.868657125300726s alternate; opacity: 0.4038118659527372" />
+  <circle cx="587" cy="126" r="0.8642127682264364" fill="#FFFFFF" style="animation: twinkle 3.9470462318266786s infinite 2.465228103396058s alternate; opacity: 0.6621297175379777" />
+  <circle cx="352" cy="227" r="2.0761975417990204" fill="#FFFFFF" style="animation: twinkle 4.541969361316729s infinite 3.671897884973367s alternate; opacity: 0.6865197160767903" />
+  <circle cx="894" cy="375" r="1.2794680952436794" fill="#FFFFFF" style="animation: twinkle 5.135658571215659s infinite 1.9583062870538375s alternate; opacity: 0.69229837957151" />
+  <circle cx="1083" cy="389" r="0.5763133390647119" fill="#FFFFFF" style="animation: twinkle 2.581250720461759s infinite 2.811990118917084s alternate; opacity: 0.25236468153078495" />
+  <circle cx="503" cy="18" r="2.225677228872896" fill="#FFFFFF" style="animation: twinkle 5.272598804881229s infinite 4.160251661541194s alternate; opacity: 0.3746850757818778" />
+  <circle cx="322" cy="373" r="0.6864135800129771" fill="#FFFFFF" style="animation: twinkle 2.799182777935525s infinite 0.679744608854494s alternate; opacity: 0.7080241793948983" />
+  <circle cx="665" cy="105" r="1.6469804206391543" fill="#FFFFFF" style="animation: twinkle 2.620924107985758s infinite 3.90516400152444s alternate; opacity: 0.4823723776035832" />
+  <circle cx="756" cy="437" r="2.126114261628927" fill="#FFFFFF" style="animation: twinkle 3.8224879651725723s infinite 2.3568844175974215s alternate; opacity: 0.2835551399478054" />
+  <circle cx="1015" cy="266" r="1.1332107105164642" fill="#FFFFFF" style="animation: twinkle 3.0929766146401327s infinite 3.2538292079780056s alternate; opacity: 0.1545551433035578" />
+  <circle cx="622" cy="226" r="0.9515033140397959" fill="#FFFFFF" style="animation: twinkle 2.8744078409568514s infinite 0.7523233878174795s alternate; opacity: 0.3166562231543819" />
+  <circle cx="625" cy="173" r="1.099520084756259" fill="#FFFFFF" style="animation: twinkle 3.246574911230238s infinite 1.959621580730357s alternate; opacity: 0.16340309612099463" />
+  <circle cx="907" cy="138" r="1.2591766686624548" fill="#FFFFFF" style="animation: twinkle 5.022996026301543s infinite 0.6173556800059604s alternate; opacity: 0.12888830538894214" />
+  <circle cx="801" cy="106" r="1.4937878811732062" fill="#FFFFFF" style="animation: twinkle 2.024668074131267s infinite 3.3152873374318546s alternate; opacity: 0.7234182910816479" />
+  <circle cx="373" cy="326" r="0.7367602088771252" fill="#FFFFFF" style="animation: twinkle 3.3465512752305004s infinite 1.151355039745479s alternate; opacity: 0.14902636977812628" />
+  <circle cx="45" cy="83" r="0.9915332788388946" fill="#FFFFFF" style="animation: twinkle 5.11908563559836s infinite 2.113236703192852s alternate; opacity: 0.43853388144760996" />
+  <circle cx="634" cy="159" r="2.4409101470686023" fill="#FFFFFF" style="animation: twinkle 5.515202568589698s infinite 4.106894466394139s alternate; opacity: 0.6340114345988792" />
+  <circle cx="853" cy="258" r="2.319299512129468" fill="#FFFFFF" style="animation: twinkle 4.006593136298296s infinite 4.226760954170457s alternate; opacity: 0.20343342089527208" />
+  <circle cx="916" cy="145" r="1.6539780829799189" fill="#FFFFFF" style="animation: twinkle 3.3570838554959774s infinite 0.12059336512937335s alternate; opacity: 0.15886356398597787" />
+  <circle cx="658" cy="421" r="2.0673414241181973" fill="#FFFFFF" style="animation: twinkle 4.285830236805029s infinite 1.5530494069435479s alternate; opacity: 0.40858943169458406" />
+  <circle cx="99" cy="352" r="0.8041924318770239" fill="#FFFFFF" style="animation: twinkle 5.982487990232133s infinite 4.656313338133994s alternate; opacity: 0.7792970723844205" />
+  <circle cx="279" cy="82" r="1.454178724215187" fill="#FFFFFF" style="animation: twinkle 2.907466947247678s infinite 1.3433256776151263s alternate; opacity: 0.2316034928023031" />
+  <circle cx="1114" cy="150" r="1.3455301272975182" fill="#FFFFFF" style="animation: twinkle 2.2430532976804063s infinite 4.592619519724163s alternate; opacity: 0.19877893321854578" />
+  <circle cx="23" cy="405" r="2.3952030828642172" fill="#FFFFFF" style="animation: twinkle 5.449940995039156s infinite 0.7867512035217683s alternate; opacity: 0.6840598601122493" />
+  <circle cx="171" cy="377" r="2.2448846767424584" fill="#FFFFFF" style="animation: twinkle 3.2862896985406014s infinite 4.956034791609098s alternate; opacity: 0.2398245124225049" />
+  <circle cx="1052" cy="296" r="1.6672749661047401" fill="#FFFFFF" style="animation: twinkle 5.056294528238892s infinite 0.3567762240402905s alternate; opacity: 0.6910153811096854" />
+  <circle cx="521" cy="379" r="2.024403694455514" fill="#FFFFFF" style="animation: twinkle 5.271462600183355s infinite 1.1604475472159548s alternate; opacity: 0.10114823071231077" />
+  <g style="animation: shootingStar 1.7484544348590834s infinite 1.2203533176980907s linear; opacity: 0;">
+    <line x1="1297" y1="151" x2="1147" y2="301" stroke="white" stroke-width="2" style="filter: blur(1px);" stroke-opacity="0.8" />
+    <circle cx="1147" cy="301" r="2" fill="#fff" />
+  </g>
+
+  <g style="animation: shootingStar 1.7806804348751724s infinite 7.177347064625553s linear; opacity: 0;">
+    <line x1="1433" y1="-75" x2="1283" y2="75" stroke="white" stroke-width="2" style="filter: blur(1px);" stroke-opacity="0.8" />
+    <circle cx="1283" cy="75" r="2" fill="#fff" />
+  </g>
+
+  <g style="animation: shootingStar 2.2451858073555537s infinite 9.89807994997413s linear; opacity: 0;">
+    <line x1="1497" y1="38" x2="1347" y2="188" stroke="white" stroke-width="2" style="filter: blur(1px);" stroke-opacity="0.8" />
+    <circle cx="1347" cy="188" r="2" fill="#fff" />
+  </g>
+
+  <g style="animation: shootingStar 2.7892460615548043s infinite 4.264234693125587s linear; opacity: 0;">
+    <line x1="824" y1="47" x2="674" y2="197" stroke="white" stroke-width="2" style="filter: blur(1px);" stroke-opacity="0.8" />
+    <circle cx="674" cy="197" r="2" fill="#fff" />
+  </g>
+
+  <g style="animation: shootingStar 2.4990982884970725s infinite 2.906820533261233s linear; opacity: 0;">
+    <line x1="694" y1="-104" x2="544" y2="46" stroke="white" stroke-width="2" style="filter: blur(1px);" stroke-opacity="0.8" />
+    <circle cx="544" cy="46" r="2" fill="#fff" />
+  </g>
+
+  <g style="animation: shootingStar 2.0820073952188447s infinite 1.869171870346391s linear; opacity: 0;">
+    <line x1="1510" y1="136" x2="1360" y2="286" stroke="white" stroke-width="2" style="filter: blur(1px);" stroke-opacity="0.8" />
+    <circle cx="1360" cy="286" r="2" fill="#fff" />
+  </g>
+<line x1="588" y1="70" x2="630" y2="88" stroke="#06B6D4" stroke-opacity="0.24768453788272185" stroke-width="1" style="animation: pulse 4.322678748864682s infinite 0.2600452597725651s" />
+  <line x1="588" y1="70" x2="652" y2="79" stroke="#06B6D4" stroke-opacity="0.18456761823924636" stroke-width="1" style="animation: pulse 3.33823264854379s infinite 3.020833858069013s" />
+  <line x1="630" y1="88" x2="652" y2="79" stroke="#06B6D4" stroke-opacity="0.32076757117330196" stroke-width="1" style="animation: pulse 5.751103957303648s infinite 1.54873946565161s" />
+  <line x1="630" y1="88" x2="735" y2="95" stroke="#06B6D4" stroke-opacity="0.049223084504632156" stroke-width="1" style="animation: pulse 4.75261931088658s infinite 0.43259946760328116s" />
+  <line x1="538" y1="351" x2="461" y2="348" stroke="#06B6D4" stroke-opacity="0.14313860200922024" stroke-width="1" style="animation: pulse 3.26220960762406s infinite 2.0213705338829904s" />
+  <line x1="538" y1="351" x2="631" y2="366" stroke="#06B6D4" stroke-opacity="0.08599363063784837" stroke-width="1" style="animation: pulse 3.2552088714273837s infinite 0.8661982161210622s" />
+  <line x1="538" y1="351" x2="533" y2="388" stroke="#06B6D4" stroke-opacity="0.2755456353160369" stroke-width="1" style="animation: pulse 6.485476801623208s infinite 2.4966180869477212s" />
+  <line x1="538" y1="351" x2="493" y2="285" stroke="#06B6D4" stroke-opacity="0.13372946088611304" stroke-width="1" style="animation: pulse 6.6791452200838854s infinite 1.6140453254614195s" />
+  <line x1="538" y1="351" x2="435" y2="352" stroke="#06B6D4" stroke-opacity="0.056650485818184264" stroke-width="1" style="animation: pulse 5.346522548147081s infinite 0.38910833126626754s" />
+  <line x1="973" y1="80" x2="1032" y2="71" stroke="#06B6D4" stroke-opacity="0.20105835584830967" stroke-width="1" style="animation: pulse 4.4637646102079245s infinite 1.6385519546559553s" />
+  <line x1="973" y1="80" x2="923" y2="143" stroke="#06B6D4" stroke-opacity="0.1318996870986948" stroke-width="1" style="animation: pulse 6.69013917509471s infinite 0.5549254037608069s" />
+  <line x1="1016" y1="253" x2="1129" y2="281" stroke="#06B6D4" stroke-opacity="0.011942157805194099" stroke-width="1" style="animation: pulse 3.135803698609136s infinite 3.0307314388097284s" />
+  <line x1="1016" y1="253" x2="1027" y2="221" stroke="#06B6D4" stroke-opacity="0.28720717122874245" stroke-width="1" style="animation: pulse 5.9881636676079175s infinite 0.6236208997002217s" />
+  <line x1="468" y1="248" x2="512" y2="215" stroke="#06B6D4" stroke-opacity="0.2166666666666667" stroke-width="1" style="animation: pulse 4.619021147179847s infinite 0.3815441243816897s" />
+  <line x1="468" y1="248" x2="461" y2="348" stroke="#06B6D4" stroke-opacity="0.06585099797312642" stroke-width="1" style="animation: pulse 5.600683911316751s infinite 1.9458112727908445s" />
+  <line x1="468" y1="248" x2="493" y2="285" stroke="#06B6D4" stroke-opacity="0.2511525762548926" stroke-width="1" style="animation: pulse 6.201880454012297s infinite 3.904244409491112s" />
+  <line x1="468" y1="248" x2="435" y2="352" stroke="#06B6D4" stroke-opacity="0.03629987932669341" stroke-width="1" style="animation: pulse 3.7305963506814175s infinite 0.9006439645097339s" />
+  <line x1="675" y1="203" x2="679" y2="250" stroke="#06B6D4" stroke-opacity="0.24276698113238995" stroke-width="1" style="animation: pulse 5.112814836699414s infinite 1.697796476820017s" />
+  <line x1="1119" y1="83" x2="1125" y2="147" stroke="#06B6D4" stroke-opacity="0.18573121760015737" stroke-width="1" style="animation: pulse 3.2470681795768748s infinite 2.5078197219471408s" />
+  <line x1="1119" y1="83" x2="1032" y2="71" stroke="#06B6D4" stroke-opacity="0.10725437663391105" stroke-width="1" style="animation: pulse 3.9477373249921834s infinite 0.2606641698433809s" />
+  <line x1="1119" y1="83" x2="1146" y2="93" stroke="#06B6D4" stroke-opacity="0.3040254663407469" stroke-width="1" style="animation: pulse 3.2775535989188676s infinite 3.2183652513893546s" />
+  <line x1="339" y1="248" x2="389" y2="157" stroke="#06B6D4" stroke-opacity="0.053894685263446276" stroke-width="1" style="animation: pulse 3.917204039237369s infinite 2.0479647753168853s" />
+  <line x1="339" y1="248" x2="260" y2="169" stroke="#06B6D4" stroke-opacity="0.027590428575084938" stroke-width="1" style="animation: pulse 6.894327413001198s infinite 3.8754388409185414s" />
+  <line x1="242" y1="69" x2="327" y2="94" stroke="#06B6D4" stroke-opacity="0.10466591422217753" stroke-width="1" style="animation: pulse 6.2166500427883715s infinite 3.3406362373744924s" />
+  <line x1="242" y1="69" x2="239" y2="69" stroke="#06B6D4" stroke-opacity="0.39" stroke-width="1" style="animation: pulse 6.234799564217587s infinite 3.7899607079084543s" />
+  <line x1="242" y1="69" x2="208" y2="128" stroke="#06B6D4" stroke-opacity="0.17301492951689046" stroke-width="1" style="animation: pulse 4.841303216685833s infinite 3.47394916242925s" />
+  <line x1="242" y1="69" x2="260" y2="169" stroke="#06B6D4" stroke-opacity="0.061309712109852345" stroke-width="1" style="animation: pulse 5.076058471222929s infinite 0.9972990187398887s" />
+  <line x1="512" y1="215" x2="493" y2="285" stroke="#06B6D4" stroke-opacity="0.15822416258948546" stroke-width="1" style="animation: pulse 6.2542699375242865s infinite 1.1230720391027256s" />
+  <line x1="461" y1="348" x2="533" y2="388" stroke="#06B6D4" stroke-opacity="0.12544986290701332" stroke-width="1" style="animation: pulse 5.0455523949505565s infinite 1.5928624728891245s" />
+  <line x1="461" y1="348" x2="493" y2="285" stroke="#06B6D4" stroke-opacity="0.16446278897427313" stroke-width="1" style="animation: pulse 6.82523951562152s infinite 0.13280205555546898s" />
+  <line x1="461" y1="348" x2="435" y2="352" stroke="#06B6D4" stroke-opacity="0.3123136904135606" stroke-width="1" style="animation: pulse 3.747653374236183s infinite 0.48298458094868835s" />
+  <line x1="631" y1="366" x2="745" y2="398" stroke="#06B6D4" stroke-opacity="0.005313063583581768" stroke-width="1" style="animation: pulse 4.602951787912561s infinite 1.3680765264398387s" />
+  <line x1="631" y1="366" x2="533" y2="388" stroke="#06B6D4" stroke-opacity="0.06520321254694084" stroke-width="1" style="animation: pulse 6.000181786283681s infinite 0.47865354702428675s" />
+  <line x1="652" y1="79" x2="735" y2="95" stroke="#06B6D4" stroke-opacity="0.11823966054661117" stroke-width="1" style="animation: pulse 3.302931549150365s infinite 3.4676295122036054s" />
+  <line x1="1129" y1="281" x2="1027" y2="221" stroke="#06B6D4" stroke-opacity="0.005538341533679603" stroke-width="1" style="animation: pulse 6.646179958544883s infinite 2.179808390958261s" />
+  <line x1="1125" y1="147" x2="1146" y2="93" stroke="#06B6D4" stroke-opacity="0.20686792084172034" stroke-width="1" style="animation: pulse 5.786495936578018s infinite 3.9789566122889384s" />
+  <line x1="899" y1="328" x2="908" y2="370" stroke="#06B6D4" stroke-opacity="0.2568217893672365" stroke-width="1" style="animation: pulse 4.199396755826447s infinite 1.2289935435176647s" />
+  <line x1="327" y1="94" x2="389" y2="157" stroke="#06B6D4" stroke-opacity="0.10536274656603402" stroke-width="1" style="animation: pulse 6.787737429862936s infinite 3.770152751222885s" />
+  <line x1="327" y1="94" x2="239" y2="69" stroke="#06B6D4" stroke-opacity="0.0950592042889491" stroke-width="1" style="animation: pulse 5.281813949231141s infinite 2.8902864116097713s" />
+  <line x1="327" y1="94" x2="260" y2="169" stroke="#06B6D4" stroke-opacity="0.06477205101934329" stroke-width="1" style="animation: pulse 4.294037740459178s infinite 3.783819341777283s" />
+  <line x1="327" y1="94" x2="445" y2="95" stroke="#06B6D4" stroke-opacity="0.006652542626468439" stroke-width="1" style="animation: pulse 5.258866817850347s infinite 3.9068826689967016s" />
+  <line x1="389" y1="157" x2="465" y2="97" stroke="#06B6D4" stroke-opacity="0.0772341750157279" stroke-width="1" style="animation: pulse 4.456177554216307s infinite 1.283192922901562s" />
+  <line x1="389" y1="157" x2="445" y2="95" stroke="#06B6D4" stroke-opacity="0.12151201901059437" stroke-width="1" style="animation: pulse 4.842280392071727s infinite 2.2619602615119385s" />
+  <line x1="239" y1="69" x2="208" y2="128" stroke="#06B6D4" stroke-opacity="0.17783889729397823" stroke-width="1" style="animation: pulse 4.809784325274139s infinite 0.7913539507333294s" />
+  <line x1="239" y1="69" x2="260" y2="169" stroke="#06B6D4" stroke-opacity="0.05939596139929418" stroke-width="1" style="animation: pulse 4.725004774315165s infinite 1.736118022082593s" />
+  <line x1="786" y1="286" x2="745" y2="398" stroke="#06B6D4" stroke-opacity="0.0024379852707812066" stroke-width="1" style="animation: pulse 6.13036071332547s infinite 2.6047983528690724s" />
+  <line x1="786" y1="286" x2="803" y2="172" stroke="#06B6D4" stroke-opacity="0.015798085492652582" stroke-width="1" style="animation: pulse 5.5605122225745s infinite 3.1669341850241604s" />
+  <line x1="786" y1="286" x2="679" y2="250" stroke="#06B6D4" stroke-opacity="0.023687482122755954" stroke-width="1" style="animation: pulse 6.167736112767859s infinite 3.7730970719939276s" />
+  <line x1="208" y1="128" x2="260" y2="169" stroke="#06B6D4" stroke-opacity="0.17926889158475592" stroke-width="1" style="animation: pulse 3.597845421783716s infinite 2.880274733223437s" />
+  <line x1="208" y1="128" x2="97" y2="139" stroke="#06B6D4" stroke-opacity="0.028187621985974687" stroke-width="1" style="animation: pulse 5.0844623199962555s infinite 2.5197972548680974s" />
+  <line x1="465" y1="97" x2="445" y2="95" stroke="#06B6D4" stroke-opacity="0.33300082919252744" stroke-width="1" style="animation: pulse 3.866049277832274s infinite 0.7817148862557359s" />
+  <line x1="803" y1="172" x2="735" y2="95" stroke="#06B6D4" stroke-opacity="0.057574014485530706" stroke-width="1" style="animation: pulse 6.154125298110493s infinite 1.07907744725647s" />
+  <line x1="80" y1="216" x2="97" y2="139" stroke="#06B6D4" stroke-opacity="0.1371523466171157" stroke-width="1" style="animation: pulse 4.376414095586087s infinite 1.350435103816368s" />
+  <line x1="1032" y1="71" x2="1146" y2="93" stroke="#06B6D4" stroke-opacity="0.012988659368000244" stroke-width="1" style="animation: pulse 4.920452161657618s infinite 0.3027008815371399s" />
+  <line x1="533" y1="388" x2="493" y2="285" stroke="#06B6D4" stroke-opacity="0.031685520844543014" stroke-width="1" style="animation: pulse 3.0092635717468266s infinite 0.04947536218110704s" />
+  <line x1="533" y1="388" x2="435" y2="352" stroke="#06B6D4" stroke-opacity="0.05198978303631501" stroke-width="1" style="animation: pulse 5.842458138874631s infinite 2.277737956857559s" />
+  <line x1="493" y1="285" x2="435" y2="352" stroke="#06B6D4" stroke-opacity="0.1046094863480624" stroke-width="1" style="animation: pulse 4.98950370268398s infinite 1.579271747701923s" /><g style="animation: float 18.638646389575765s infinite 4.204825396131547s ease-in-out; transform-origin: 588px 70px;"><circle cx="588" cy="70" r="1.616295023467409" fill="#8B5CF6" /></g>
+  <g style="animation: float 18.60200457724298s infinite 3.763009705873514s ease-in-out; transform-origin: 630px 88px;"><circle cx="630" cy="88" r="2.419519554075242" fill="#8B5CF6" /></g>
+  <g style="animation: float 17.162352653888973s infinite 3.6332863871359495s ease-in-out; transform-origin: 538px 351px;"><circle cx="538" cy="351" r="1.8700871721883119" fill="#8B5CF6" /></g>
+  <g style="animation: float 10.435132860701938s infinite 0.8336776467863766s ease-in-out; transform-origin: 973px 80px;"><circle cx="973" cy="80" r="2.7009599274624296" fill="#8B5CF6" /></g>
+  <g style="animation: float 13.322084802263301s infinite 3.383605337861513s ease-in-out; transform-origin: 1016px 253px;"><circle cx="1016" cy="253" r="2.2042174093417675" fill="#8B5CF6" /></g>
+  <g style="animation: float 17.92824130802248s infinite 3.318390307215842s ease-in-out; transform-origin: 468px 248px;"><circle cx="468" cy="248" r="2.1657264507542315" fill="#8B5CF6" /></g>
+  <g style="animation: float 12.683914861037852s infinite 1.109370456183928s ease-in-out; transform-origin: 675px 203px;"><circle cx="675" cy="203" r="1.0364505335966931" fill="#8B5CF6" /></g>
+  <g style="animation: float 14.62491616133762s infinite 4.244483336279661s ease-in-out; transform-origin: 1119px 83px;"><circle cx="1119" cy="83" r="1.163979771126606" fill="#8B5CF6" /></g>
+  <g style="animation: float 14.246185548808919s infinite 3.345371831484844s ease-in-out; transform-origin: 339px 248px;"><circle cx="339" cy="248" r="2.2737693911979977" fill="#8B5CF6" /></g>
+  <g style="animation: float 12.875627449436585s infinite 3.5927736545986955s ease-in-out; transform-origin: 242px 69px;"><circle cx="242" cy="69" r="1.1478943138454685" fill="#8B5CF6" /></g>
+  <g style="animation: float 16.02127372628155s infinite 0.6989344309189899s ease-in-out; transform-origin: 512px 215px;"><circle cx="512" cy="215" r="2.376065179543505" fill="#8B5CF6" /></g>
+  <g style="animation: float 14.546074144851284s infinite 3.2357774483776245s ease-in-out; transform-origin: 461px 348px;"><circle cx="461" cy="348" r="1.5553182714478309" fill="#8B5CF6" /></g>
+  <g style="animation: float 14.348658004579828s infinite 1.541452041720509s ease-in-out; transform-origin: 631px 366px;"><circle cx="631" cy="366" r="2.258657426013363" fill="#8B5CF6" /></g>
+  <g style="animation: float 18.564223321499746s infinite 3.832683070579541s ease-in-out; transform-origin: 652px 79px;"><circle cx="652" cy="79" r="1.8944211636311525" fill="#8B5CF6" /></g>
+  <g style="animation: float 18.572334743272364s infinite 3.5541830754022037s ease-in-out; transform-origin: 1129px 281px;"><circle cx="1129" cy="281" r="1.2443329702625308" fill="#8B5CF6" /></g>
+  <g style="animation: float 16.783792868445182s infinite 3.4077728545418884s ease-in-out; transform-origin: 1027px 221px;"><circle cx="1027" cy="221" r="2.586130114547353" fill="#8B5CF6" /></g>
+  <g style="animation: float 13.037266046251599s infinite 1.2547390385488773s ease-in-out; transform-origin: 1125px 147px;"><circle cx="1125" cy="147" r="2.919647959148934" fill="#8B5CF6" /></g>
+  <g style="animation: float 17.48250907996682s infinite 2.6054794410427213s ease-in-out; transform-origin: 899px 328px;"><circle cx="899" cy="328" r="1.3784091591614707" fill="#8B5CF6" /></g>
+  <g style="animation: float 11.518203509598663s infinite 1.7625713920413921s ease-in-out; transform-origin: 327px 94px;"><circle cx="327" cy="94" r="1.205236772081422" fill="#8B5CF6" /></g>
+  <g style="animation: float 13.97912052975559s infinite 3.317963730152402s ease-in-out; transform-origin: 389px 157px;"><circle cx="389" cy="157" r="2.802993336765368" fill="#8B5CF6" /></g>
+  <g style="animation: float 17.533081222127336s infinite 3.229029735691471s ease-in-out; transform-origin: 239px 69px;"><circle cx="239" cy="69" r="2.2854733732451895" fill="#8B5CF6" /></g>
+  <g style="animation: float 18.664429487485467s infinite 2.9617665463212086s ease-in-out; transform-origin: 786px 286px;"><circle cx="786" cy="286" r="1.8055477760549712" fill="#8B5CF6" /></g>
+  <g style="animation: float 10.690387692027416s infinite 4.380093066985696s ease-in-out; transform-origin: 208px 128px;"><circle cx="208" cy="128" r="1.6198809004847308" fill="#8B5CF6" /></g>
+  <g style="animation: float 15.017869035776107s infinite 4.471528201484648s ease-in-out; transform-origin: 745px 398px;"><circle cx="745" cy="398" r="2.0492875541590863" fill="#8B5CF6" /></g>
+  <g style="animation: float 19.20337036720823s infinite 0.11532303400248411s ease-in-out; transform-origin: 465px 97px;"><circle cx="465" cy="97" r="2.3388010088883777" fill="#8B5CF6" /></g>
+  <g style="animation: float 13.648409132395734s infinite 2.273119915438685s ease-in-out; transform-origin: 803px 172px;"><circle cx="803" cy="172" r="2.3081174963959885" fill="#8B5CF6" /></g>
+  <g style="animation: float 12.040330936936737s infinite 3.4881703026203614s ease-in-out; transform-origin: 80px 216px;"><circle cx="80" cy="216" r="1.798501791986293" fill="#8B5CF6" /></g>
+  <g style="animation: float 19.095293616797015s infinite 1.9369426091279158s ease-in-out; transform-origin: 1032px 71px;"><circle cx="1032" cy="71" r="1.8855322700651873" fill="#8B5CF6" /></g>
+  <g style="animation: float 14.116993594120586s infinite 3.7948092109098304s ease-in-out; transform-origin: 1146px 93px;"><circle cx="1146" cy="93" r="2.3342678170539375" fill="#8B5CF6" /></g>
+  <g style="animation: float 14.598140273973872s infinite 4.726924767788372s ease-in-out; transform-origin: 923px 143px;"><circle cx="923" cy="143" r="2.193791807169489" fill="#8B5CF6" /></g>
+  <g style="animation: float 11.192623675294934s infinite 0.4192409606695985s ease-in-out; transform-origin: 533px 388px;"><circle cx="533" cy="388" r="1.191754802700972" fill="#8B5CF6" /></g>
+  <g style="animation: float 19.492836084702557s infinite 3.9569086525598256s ease-in-out; transform-origin: 493px 285px;"><circle cx="493" cy="285" r="1.0571360923849435" fill="#8B5CF6" /></g>
+  <g style="animation: float 18.058242982279936s infinite 0.6723378826999876s ease-in-out; transform-origin: 908px 370px;"><circle cx="908" cy="370" r="1.6304395004548669" fill="#8B5CF6" /></g>
+  <g style="animation: float 12.822105880582994s infinite 4.099650778163539s ease-in-out; transform-origin: 260px 169px;"><circle cx="260" cy="169" r="2.2163042860178543" fill="#8B5CF6" /></g>
+  <g style="animation: float 11.41059860204637s infinite 3.5361999931079406s ease-in-out; transform-origin: 679px 250px;"><circle cx="679" cy="250" r="2.305397492257123" fill="#8B5CF6" /></g>
+  <g style="animation: float 14.55541418315629s infinite 3.8928342665684927s ease-in-out; transform-origin: 435px 352px;"><circle cx="435" cy="352" r="2.770350219246915" fill="#8B5CF6" /></g>
+  <g style="animation: float 19.79423157214407s infinite 0.1284476881077068s ease-in-out; transform-origin: 98px 370px;"><circle cx="98" cy="370" r="1.810488996671402" fill="#8B5CF6" /></g>
+  <g style="animation: float 11.172971258190731s infinite 2.4575059762900313s ease-in-out; transform-origin: 445px 95px;"><circle cx="445" cy="95" r="1.877698085868996" fill="#8B5CF6" /></g>
+  <g style="animation: float 17.605902082012605s infinite 4.139923140925333s ease-in-out; transform-origin: 735px 95px;"><circle cx="735" cy="95" r="1.1567129045943167" fill="#8B5CF6" /></g>
+  <g style="animation: float 10.597990120384104s infinite 0.03954207974358859s ease-in-out; transform-origin: 97px 139px;"><circle cx="97" cy="139" r="1.394906719848087" fill="#8B5CF6" /></g>
+  <g style="transform-origin: 150px 225px; animation: floatSlow 8s infinite 0s ease-in-out;">
+    <g style="transform-origin: 150px 225px; animation: orbit-cw 33.61598704864524s infinite linear;">
+      <circle cx="150" cy="225" r="147" class="glow-orbit" stroke="#8B5CF6" stroke-dasharray="12 17" opacity="0.3482476585959551" preserveAspectRatio="xMidYMid slice" />
+      <circle cx="150" cy="225" r="185" class="glow-orbit" stroke="#06B6D4" stroke-dasharray="2 4 60 10" opacity="0.3344964302248721" />
+    </g>
+  </g>
+  <g style="transform-origin: 1050px 225px; animation: floatSlow 8s infinite 2s ease-in-out;">
+    <g style="transform-origin: 1050px 225px; animation: orbit-ccw 38.109201645005555s infinite linear;">
+      <circle cx="1050" cy="225" r="98" class="glow-orbit" stroke="#06B6D4" stroke-dasharray="29 11" opacity="0.49663435682651264" preserveAspectRatio="xMidYMid slice" />
+      <circle cx="1050" cy="225" r="173" class="glow-orbit" stroke="#F472B6" stroke-dasharray="2 4 30 10" opacity="0.4502925653284647" />
+    </g>
+  </g>
+  <g stroke="#06B6D4" fill="none" stroke-width="2" opacity="0.4" style="animation: float 15s infinite ease-in-out;">
+    <polygon points="100,80 120,60 140,60 160,80 140,100 120,100" />
+    <polygon points="1050,350 1070,330 1090,330 1110,350 1090,370 1070,370" />
+    <polygon points="200,380 215,365 235,365 250,380 235,395 215,395" style="stroke: #8B5CF6; animation: glitch 3s infinite alternate;"/>
+    <rect x="850" y="80" width="30" height="30" style="stroke: #A78BFA; transform: rotate(45deg); transform-origin: 865px 95px; animation: orbit-cw 10s infinite linear;" />
+  </g>
+<g style="animation: matrixRain 9.243695619346429s infinite 13.358980188131724s linear; opacity: 0;"><text x="724" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">></text><text x="724" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">}</text><text x="724" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">#</text><text x="724" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">H</text><text x="724" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">$</text><text x="724" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">T</text><text x="724" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">w</text><text x="724" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">~</text></g>
+  <g style="animation: matrixRain 10.284937290198197s infinite 4.4728018586544325s linear; opacity: 0;"><text x="282" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">m</text><text x="282" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">$</text><text x="282" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">q</text><text x="282" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">}</text><text x="282" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">P</text><text x="282" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">)</text><text x="282" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">R</text><text x="282" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">o</text><text x="282" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">*</text></g>
+  <g style="animation: matrixRain 8.24463218653458s infinite 1.7202002975751114s linear; opacity: 0;"><text x="166" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">e</text><text x="166" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">~</text><text x="166" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">{</text><text x="166" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">k</text><text x="166" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">!</text><text x="166" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">1</text><text x="166" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">]</text><text x="166" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333"><</text></g>
+  <g style="animation: matrixRain 8.960457319230777s infinite 14.054093748806881s linear; opacity: 0;"><text x="1072" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">k</text><text x="1072" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">e</text><text x="1072" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">+</text><text x="1072" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">e</text><text x="1072" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">-</text><text x="1072" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">m</text><text x="1072" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">y</text><text x="1072" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">o</text><text x="1072" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">*</text><text x="1072" y="135" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4">m</text><text x="1072" y="150" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.33333333333333337">-</text><text x="1072" y="165" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.2666666666666667">o</text></g>
+  <g style="animation: matrixRain 10.155076376492683s infinite 14.75606235105924s linear; opacity: 0;"><text x="781" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">a</text><text x="781" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">0</text><text x="781" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">y</text><text x="781" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">{</text></g>
+  <g style="animation: matrixRain 5.210576447636952s infinite 9.959815780657s linear; opacity: 0;"><text x="1130" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">B</text><text x="1130" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">+</text><text x="1130" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">g</text><text x="1130" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">N</text><text x="1130" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">{</text><text x="1130" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">}</text><text x="1130" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">X</text><text x="1130" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">o</text><text x="1130" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">)</text></g>
+  <g style="animation: matrixRain 6.962815868438204s infinite 13.003437369373385s linear; opacity: 0;"><text x="83" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">J</text><text x="83" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">i</text><text x="83" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">a</text><text x="83" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">J</text><text x="83" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">H</text><text x="83" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">B</text><text x="83" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">]</text><text x="83" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">/</text></g>
+  <g style="animation: matrixRain 5.103090560398938s infinite 8.786959673056401s linear; opacity: 0;"><text x="340" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">!</text><text x="340" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">=</text><text x="340" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">{</text><text x="340" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">g</text></g>
+  <g style="animation: matrixRain 10.916896282644444s infinite 1.1322544779474648s linear; opacity: 0;"><text x="57" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">!</text><text x="57" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">%</text><text x="57" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">%</text><text x="57" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">m</text><text x="57" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">{</text><text x="57" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">i</text></g>
+  <g style="animation: matrixRain 6.812583971353841s infinite 1.9386530034907783s linear; opacity: 0;"><text x="750" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">y</text><text x="750" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">k</text><text x="750" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">V</text><text x="750" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">$</text><text x="750" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">H</text><text x="750" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">1</text><text x="750" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">></text><text x="750" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">s</text><text x="750" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">!</text><text x="750" y="135" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4">y</text><text x="750" y="150" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.33333333333333337">m</text></g>
+  <g style="animation: matrixRain 5.676987290623409s infinite 13.36647309839262s linear; opacity: 0;"><text x="298" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">+</text><text x="298" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">g</text><text x="298" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">~</text><text x="298" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">g</text><text x="298" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">R</text><text x="298" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">~</text><text x="298" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">[</text><text x="298" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">y</text><text x="298" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">)</text></g>
+  <g style="animation: matrixRain 9.368549926824944s infinite 4.819155740550245s linear; opacity: 0;"><text x="1016" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">m</text><text x="1016" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">/</text><text x="1016" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">X</text><text x="1016" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">)</text><text x="1016" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">k</text></g>
+  <g style="animation: matrixRain 5.361826795536805s infinite 13.833756892338425s linear; opacity: 0;"><text x="1078" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">@</text><text x="1078" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">o</text><text x="1078" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">k</text><text x="1078" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">@</text><text x="1078" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">y</text><text x="1078" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667"><</text><text x="1078" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">s</text><text x="1078" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">c</text><text x="1078" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">D</text></g>
+  <g style="animation: matrixRain 8.61258681967285s infinite 7.7454406000661145s linear; opacity: 0;"><text x="121" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">P</text><text x="121" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">-</text><text x="121" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">m</text><text x="121" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">{</text><text x="121" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">!</text></g>
+  <g style="animation: matrixRain 7.49944474095377s infinite 5.639447618386402s linear; opacity: 0;"><text x="509" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">N</text><text x="509" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">N</text><text x="509" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">#</text><text x="509" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">!</text><text x="509" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">*</text><text x="509" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">=</text><text x="509" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">-</text><text x="509" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">{</text><text x="509" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">o</text><text x="509" y="135" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4">q</text><text x="509" y="150" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.33333333333333337">)</text></g>
+  <g style="animation: matrixRain 9.845572361697169s infinite 11.638351096879024s linear; opacity: 0;"><text x="580" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">o</text><text x="580" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">+</text><text x="580" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">q</text><text x="580" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">X</text></g>
+  <g style="animation: matrixRain 5.333634715091886s infinite 8.121151403946126s linear; opacity: 0;"><text x="554" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">g</text><text x="554" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">B</text><text x="554" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">{</text><text x="554" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">Z</text><text x="554" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">[</text><text x="554" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">P</text><text x="554" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6"><</text><text x="554" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">/</text><text x="554" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">P</text><text x="554" y="135" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4">[</text><text x="554" y="150" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.33333333333333337">k</text></g>
+  <g style="animation: matrixRain 5.241081319162438s infinite 3.5019169049208383s linear; opacity: 0;"><text x="215" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">R</text><text x="215" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">></text><text x="215" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667"><</text><text x="215" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">[</text><text x="215" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">D</text><text x="215" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">m</text><text x="215" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">u</text></g>
+  <g style="animation: matrixRain 5.9170508738783525s infinite 2.666676914284638s linear; opacity: 0;"><text x="897" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">Z</text><text x="897" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">*</text><text x="897" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">[</text><text x="897" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">#</text></g>
+  <g style="animation: matrixRain 5.51307638558923s infinite 3.6378066505477538s linear; opacity: 0;"><text x="251" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">~</text><text x="251" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">+</text><text x="251" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">{</text><text x="251" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">-</text><text x="251" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">Z</text><text x="251" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667"><</text><text x="251" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">B</text><text x="251" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">q</text></g>
+  <g style="animation: matrixRain 6.323167420783811s infinite 3.0913556295824036s linear; opacity: 0;"><text x="1018" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">w</text><text x="1018" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">%</text><text x="1018" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">N</text><text x="1018" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">]</text><text x="1018" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">)</text><text x="1018" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">@</text><text x="1018" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">[</text><text x="1018" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">></text></g>
+  <g style="animation: matrixRain 8.303868108740021s infinite 12.46211379499448s linear; opacity: 0;"><text x="304" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">+</text><text x="304" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">y</text><text x="304" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">H</text><text x="304" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">D</text><text x="304" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">R</text><text x="304" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">D</text><text x="304" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">g</text><text x="304" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">i</text></g>
+  <g style="animation: matrixRain 8.874301705589952s infinite 10.523606158691228s linear; opacity: 0;"><text x="100" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">^</text><text x="100" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">0</text><text x="100" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">!</text><text x="100" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">s</text><text x="100" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">{</text><text x="100" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">e</text></g>
+  <g style="animation: matrixRain 9.300069350241579s infinite 11.12218099997372s linear; opacity: 0;"><text x="1075" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">F</text><text x="1075" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">*</text><text x="1075" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">#</text><text x="1075" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">c</text><text x="1075" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">R</text><text x="1075" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">T</text><text x="1075" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">~</text><text x="1075" y="105" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.5333333333333333">1</text><text x="1075" y="120" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4666666666666667">V</text><text x="1075" y="135" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.4">+</text><text x="1075" y="150" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.33333333333333337">H</text></g>
+  <g style="animation: matrixRain 5.998172930309773s infinite 8.07913726611046s linear; opacity: 0;"><text x="160" y="0" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="1.0">}</text><text x="160" y="15" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.9333333333333333">g</text><text x="160" y="30" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8666666666666667">V</text><text x="160" y="45" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.8">R</text><text x="160" y="60" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.7333333333333334">k</text><text x="160" y="75" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6666666666666667">w</text><text x="160" y="90" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="0.6">^</text></g>
+  <!-- Decorative Bracket Left -->
+  <text x="50" y="270" font-family="'Orbitron', sans-serif" font-size="200px" font-weight="900" fill="#ffffff" opacity="0.05">&lt;</text>
+  <!-- Decorative Bracket Right -->
+  <text x="1050" y="270" font-family="'Orbitron', sans-serif" font-size="200px" font-weight="900" fill="#ffffff" opacity="0.05">&gt;</text>
+
+  <!-- Title Text -->
+  <g style="animation: float 10s infinite ease-in-out;">
+    <text x="50%" y="220" text-anchor="middle" dominant-baseline="middle" class="text-marways" filter="url(#neon-glow)">
+      MARWAYS
+    </text>
+    <text x="50%" y="220" text-anchor="middle" dominant-baseline="middle" class="text-marways" style="fill: transparent; stroke: #FFFFFF; stroke-width: 2px; stroke-dasharray: 2000; animation: pulse 4s infinite;">
+      MARWAYS
+    </text>
+  </g>
+
+  <!-- Dynamic Rotating Subtitles (Simulates Typing/Fading) -->
+  <g style="animation: float 10s infinite 1s ease-in-out;">
+    <rect x="250" y="280" width="700" height="50" fill="#0D1117" opacity="0.6" rx="10" stroke="#8B5CF6" stroke-width="1" />
+    
+    <!-- String 1 -->
+    <text x="50%" y="312" text-anchor="middle" class="text-subtitle" style="animation: typeRotate1 15s infinite; opacity: 1;">
+      <tspan fill="#A78BFA">✨ Vibe Coder · AI Alchemist · Full-Stack Builder ✨</tspan>
+    </text>
+    
+    <!-- String 2 -->
+    <text x="50%" y="312" text-anchor="middle" class="text-subtitle" style="animation: typeRotate2 15s infinite; opacity: 0;">
+      <tspan fill="#F472B6">const</tspan> <tspan fill="#67E8F9">magic</tspan> = (<tspan fill="#A78BFA">idea</tspan>) =&gt; <tspan fill="#67E8F9">AI</tspan>.transform(<tspan fill="#A78BFA">idea</tspan>).deploy();
+    </text>
+    
+    <!-- String 3 -->
+    <text x="50%" y="312" text-anchor="middle" class="text-subtitle" style="animation: typeRotate3 15s infinite; opacity: 0;">
+      <tspan fill="#06B6D4">🚀 AI × Creativity = Infinite Possibilities 🚀</tspan>
+    </text>
+  </g>
+
+</svg>

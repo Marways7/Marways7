@@ -12,28 +12,23 @@
 -->
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
-<!-- ║                     ANIMATED HEADER                         ║ -->
+<!-- ║                SOTA ANIMATED HERO BANNER                    ║ -->
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
 
 <div align="center">
   <a href="https://github.com/Marways7">
-    <img src="./assets/header.svg" width="100%"/>
+    <img src="./assets/sota-hero.svg" width="100%" alt="Marways SOTA Banner"/>
   </a>
 </div>
 
+<br/>
+
 <!-- Status Badges -->
 <p align="center">
-  <a href="https://github.com/Marways7?tab=followers"><img src="https://img.shields.io/github/followers/Marways7?style=for-the-badge&logo=github&logoColor=white&color=8B5CF6&labelColor=0D1117" alt="followers"/></a>&nbsp;
-  <a href="https://github.com/Marways7?tab=stars"><img src="https://img.shields.io/github/stars/Marways7?style=for-the-badge&logo=github&logoColor=white&color=6366F1&labelColor=0D1117" alt="stars"/></a>&nbsp;
-  <a href="https://space.bilibili.com/604578545"><img src="https://img.shields.io/badge/Bilibili-Marways-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white&labelColor=0D1117" alt="bilibili"/></a>&nbsp;
-  <img src="https://komarev.com/ghpvc/?username=Marways7&style=for-the-badge&color=06B6D4&label=VISITORS&labelColor=0D1117" alt="views"/>
-</p>
-
-<!-- Dynamic Typing -->
-<p align="center">
-  <a href="https://github.com/Marways7">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=A78BFA&center=true&vCenter=true&repeat=true&width=720&height=40&lines=%F0%9F%92%AB+const+magic+%3D+(idea)+%3D%3E+AI.transform(idea).deploy();%F0%9F%8C%8C+Vibe+Coder+%C2%B7+AI+Alchemist+%C2%B7+Full-Stack+Builder;%F0%9F%A7%AA+AI+%C3%97+Creativity+%3D+Infinite+Possibilities;%E2%9C%A8+%E7%94%A8AI%E6%8A%8A%E5%A4%A9%E9%A9%AC%E8%A1%8C%E7%A9%BA%E7%9A%84%E6%83%B3%E6%B3%95%E5%8F%98%E6%88%90%E7%8E%B0%E5%AE%9E+%E2%9C%A8" alt="Typing SVG"/>
-  </a>
+  <a href="https://github.com/Marways7?tab=followers"><img src="https://img.shields.io/github/followers/Marways7?style=for-the-badge&logo=github&logoColor=white&color=8B5CF6&labelColor=0a0614" alt="followers"/></a>&nbsp;
+  <a href="https://github.com/Marways7?tab=stars"><img src="https://img.shields.io/github/stars/Marways7?style=for-the-badge&logo=github&logoColor=white&color=6366F1&labelColor=0a0614" alt="stars"/></a>&nbsp;
+  <a href="https://space.bilibili.com/604578545"><img src="https://img.shields.io/badge/Bilibili-Marways-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white&labelColor=0a0614" alt="bilibili"/></a>&nbsp;
+  <img src="https://komarev.com/ghpvc/?username=Marways7&style=for-the-badge&color=06B6D4&label=VISITORS&labelColor=0a0614" alt="views"/>
 </p>
 
 <br/>
