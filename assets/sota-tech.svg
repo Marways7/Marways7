@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="auto">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;display=swap');
+      
+      @keyframes spin-cw {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes spin-ccw {
+        0% { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
+      @keyframes counter-spin-cw {
+        0% { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
+      @keyframes counter-spin-ccw {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes pulse-core {
+        0%, 100% { filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8)); transform: scale(1); }
+        50% { filter: drop-shadow(0 0 50px rgba(6, 182, 212, 1)); transform: scale(1.05); }
+      }
+      
+      .orbit {
+        fill: none;
+        stroke: rgba(139, 92, 246, 0.3);
+        stroke-width: 1;
+        stroke-dasharray: 4 8;
+      }
+      
+      .orbit-glow {
+        fill: none;
+        stroke: rgba(6, 182, 212, 0.5);
+        stroke-width: 2;
+        stroke-dasharray: 100 200;
+        filter: blur(2px);
+      }
+
+      .core-text {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 24px;
+        font-weight: 900;
+        fill: #FFFFFF;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      
+      .node-bg {
+        fill: #0D1117;
+        stroke: #A78BFA;
+        stroke-width: 2;
+      }
+    </style>
+    
+    <radialGradient id="core-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F472B6"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </radialGradient>
+    
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814" />
+      <stop offset="100%" stop-color="#0a0614" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Space Canvas -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="15" />
+
+  <g style="transform-origin: 600px 300px; transform: rotate(15deg);">
+    <ellipse cx="600" cy="300" rx="180" ry="70" class="orbit" />
+    <ellipse cx="600" cy="300" rx="180" ry="70" class="orbit-glow" style="animation: spin-cw 30.0s infinite linear;" />
+    
+    <!-- Rotating Container for Items -->
+    <g style="transform-origin: 600px 300px; animation: spin-cw 20s infinite linear;">
+
+      <g style="transform-origin: 780.0px 300.0px; animation: counter-spin-cw 20s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 780.0px 300.0px; transform: rotate(-15deg);">
+          <circle cx="780.0" cy="300.0" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" x="765.0" y="285.0" width="30" height="30" />
+        </g>
+      </g>
+
+      <g style="transform-origin: 510.00000000000006px 360.6217782649107px; animation: counter-spin-cw 20s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 510.00000000000006px 360.6217782649107px; transform: rotate(-15deg);">
+          <circle cx="510.00000000000006" cy="360.6217782649107" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" x="495.00000000000006" y="345.6217782649107" width="30" height="30" />
+        </g>
+      </g>
+
+      <g style="transform-origin: 509.9999999999999px 239.3782217350893px; animation: counter-spin-cw 20s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 509.9999999999999px 239.3782217350893px; transform: rotate(-15deg);">
+          <circle cx="509.9999999999999" cy="239.3782217350893" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" x="494.9999999999999" y="224.3782217350893" width="30" height="30" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g style="transform-origin: 600px 300px; transform: rotate(-10deg);">
+    <ellipse cx="600" cy="300" rx="300" ry="100" class="orbit" />
+    <ellipse cx="600" cy="300" rx="300" ry="100" class="orbit-glow" style="animation: spin-ccw 45.0s infinite linear;" />
+    
+    <!-- Rotating Container for Items -->
+    <g style="transform-origin: 600px 300px; animation: spin-ccw 30s infinite linear;">
+
+      <g style="transform-origin: 900.0px 300.0px; animation: counter-spin-ccw 30s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 900.0px 300.0px; transform: rotate(10deg);">
+          <circle cx="900.0" cy="300.0" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" x="885.0" y="285.0" width="30" height="30" />
+        </g>
+      </g>
+
+      <g style="transform-origin: 600.0px 400.0px; animation: counter-spin-ccw 30s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 600.0px 400.0px; transform: rotate(10deg);">
+          <circle cx="600.0" cy="400.0" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" x="585.0" y="385.0" width="30" height="30" />
+        </g>
+      </g>
+
+      <g style="transform-origin: 300.0px 300.0px; animation: counter-spin-ccw 30s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 300.0px 300.0px; transform: rotate(10deg);">
+          <circle cx="300.0" cy="300.0" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" x="285.0" y="285.0" width="30" height="30" />
+        </g>
+      </g>
+
+      <g style="transform-origin: 600.0px 200.0px; animation: counter-spin-ccw 30s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 600.0px 200.0px; transform: rotate(10deg);">
+          <circle cx="600.0" cy="200.0" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" x="585.0" y="185.0" width="30" height="30" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g style="transform-origin: 600px 300px; transform: rotate(5deg);">
+    <ellipse cx="600" cy="300" rx="450" ry="140" class="orbit" />
+    <ellipse cx="600" cy="300" rx="450" ry="140" class="orbit-glow" style="animation: spin-cw 67.5s infinite linear;" />
+    
+    <!-- Rotating Container for Items -->
+    <g style="transform-origin: 600px 300px; animation: spin-cw 45s infinite linear;">
+
+      <g style="transform-origin: 1050.0px 300.0px; animation: counter-spin-cw 45s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 1050.0px 300.0px; transform: rotate(-5deg);">
+          <circle cx="1050.0" cy="300.0" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" x="1035.0" y="285.0" width="30" height="30" />
+        </g>
+      </g>
+
+      <g style="transform-origin: 375.0000000000001px 421.24355652982143px; animation: counter-spin-cw 45s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 375.0000000000001px 421.24355652982143px; transform: rotate(-5deg);">
+          <circle cx="375.0000000000001" cy="421.24355652982143" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" x="360.0000000000001" y="406.24355652982143" width="30" height="30" />
+        </g>
+      </g>
+
+      <g style="transform-origin: 374.9999999999998px 178.75644347017862px; animation: counter-spin-cw 45s infinite linear;">
+        <!-- Counter native tilt to keep perfectly flat visually -->
+        <g style="transform-origin: 374.9999999999998px 178.75644347017862px; transform: rotate(-5deg);">
+          <circle cx="374.9999999999998" cy="178.75644347017862" r="25" class="node-bg" />
+          <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" x="359.9999999999998" y="163.75644347017862" width="30" height="30" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g style="transform-origin: 600px 300px; animation: pulse-core 4s infinite ease-in-out;">
+    <circle cx="600" cy="300" r="50" fill="url(#core-grad)" />
+    <circle cx="600" cy="300" r="60" fill="none" stroke="#F472B6" stroke-width="2" stroke-dasharray="10 10" style="animation: spin-cw 15s infinite linear;" />
+    <circle cx="600" cy="300" r="75" fill="none" stroke="#06B6D4" stroke-width="1" stroke-dasharray="5 20 40 10" style="animation: spin-ccw 20s infinite linear;" />
+    <text x="600" y="300" class="core-text">AI CORE</text>
+  </g>
+</svg>

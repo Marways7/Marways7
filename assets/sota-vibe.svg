@@ -1,0 +1,514 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" width="100%" height="auto">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&amp;display=swap');
+      
+      .bar {
+        fill: url(#bar-grad);
+        rx: 4;
+      }
+      
+      .vibe-text {
+        font-family: 'Fira Code', monospace;
+        font-size: 16px;
+        font-weight: 600;
+        fill: #C9D1D9;
+        letter-spacing: 4px;
+        text-anchor: middle;
+      }
+    </style>
+    
+    <linearGradient id="bar-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#F472B6" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0a0614" rx="10"/>
+
+  <style>
+    @keyframes bounce-0 {
+      0%, 100% { height: 26px; y: 77px; }
+      50% { height: 20px; y: 80px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="240" y="77" width="8" height="26" class="bar" style="animation: bounce-0 1.1377185589029555s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-1 {
+      0%, 100% { height: 25px; y: 78px; }
+      50% { height: 20px; y: 80px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="252" y="78" width="8" height="25" class="bar" style="animation: bounce-1 1.1536730967083035s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-2 {
+      0%, 100% { height: 15px; y: 83px; }
+      50% { height: 31px; y: 75px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="264" y="83" width="8" height="15" class="bar" style="animation: bounce-2 0.9134296559349462s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-3 {
+      0%, 100% { height: 12px; y: 84px; }
+      50% { height: 35px; y: 73px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="276" y="84" width="8" height="12" class="bar" style="animation: bounce-3 1.3863864929925254s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-4 {
+      0%, 100% { height: 18px; y: 81px; }
+      50% { height: 20px; y: 80px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="288" y="81" width="8" height="18" class="bar" style="animation: bounce-4 0.9322531653141655s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-5 {
+      0%, 100% { height: 18px; y: 81px; }
+      50% { height: 34px; y: 73px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="300" y="81" width="8" height="18" class="bar" style="animation: bounce-5 0.6260853020550287s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-6 {
+      0%, 100% { height: 19px; y: 81px; }
+      50% { height: 20px; y: 80px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="312" y="81" width="8" height="19" class="bar" style="animation: bounce-6 0.8097014952374959s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-7 {
+      0%, 100% { height: 17px; y: 82px; }
+      50% { height: 20px; y: 80px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="324" y="82" width="8" height="17" class="bar" style="animation: bounce-7 0.8965857273065614s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-8 {
+      0%, 100% { height: 20px; y: 80px; }
+      50% { height: 46px; y: 67px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="336" y="80" width="8" height="20" class="bar" style="animation: bounce-8 0.5153270811370649s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-9 {
+      0%, 100% { height: 14px; y: 83px; }
+      50% { height: 36px; y: 72px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="348" y="83" width="8" height="14" class="bar" style="animation: bounce-9 0.9100274611609386s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-10 {
+      0%, 100% { height: 12px; y: 84px; }
+      50% { height: 35px; y: 73px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="360" y="84" width="8" height="12" class="bar" style="animation: bounce-10 1.4545141453277008s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-11 {
+      0%, 100% { height: 17px; y: 82px; }
+      50% { height: 35px; y: 73px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="372" y="82" width="8" height="17" class="bar" style="animation: bounce-11 1.2267361120021973s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-12 {
+      0%, 100% { height: 19px; y: 81px; }
+      50% { height: 49px; y: 66px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="384" y="81" width="8" height="19" class="bar" style="animation: bounce-12 0.8297064934586713s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-13 {
+      0%, 100% { height: 27px; y: 77px; }
+      50% { height: 63px; y: 59px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="396" y="77" width="8" height="27" class="bar" style="animation: bounce-13 0.7840200386859072s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-14 {
+      0%, 100% { height: 28px; y: 76px; }
+      50% { height: 77px; y: 52px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="408" y="76" width="8" height="28" class="bar" style="animation: bounce-14 1.3258708916271509s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-15 {
+      0%, 100% { height: 15px; y: 83px; }
+      50% { height: 60px; y: 60px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="420" y="83" width="8" height="15" class="bar" style="animation: bounce-15 0.7067756563624181s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-16 {
+      0%, 100% { height: 19px; y: 81px; }
+      50% { height: 55px; y: 63px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="432" y="81" width="8" height="19" class="bar" style="animation: bounce-16 1.1871015378712124s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-17 {
+      0%, 100% { height: 30px; y: 75px; }
+      50% { height: 46px; y: 67px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="444" y="75" width="8" height="30" class="bar" style="animation: bounce-17 0.9650929735570042s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-18 {
+      0%, 100% { height: 27px; y: 77px; }
+      50% { height: 93px; y: 44px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="456" y="77" width="8" height="27" class="bar" style="animation: bounce-18 1.1949952378943332s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-19 {
+      0%, 100% { height: 22px; y: 79px; }
+      50% { height: 58px; y: 61px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="468" y="79" width="8" height="22" class="bar" style="animation: bounce-19 1.4350541875700848s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-20 {
+      0%, 100% { height: 17px; y: 82px; }
+      50% { height: 87px; y: 47px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="480" y="82" width="8" height="17" class="bar" style="animation: bounce-20 0.9360799411456161s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-21 {
+      0%, 100% { height: 21px; y: 80px; }
+      50% { height: 116px; y: 32px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="492" y="80" width="8" height="21" class="bar" style="animation: bounce-21 0.6846106201489132s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-22 {
+      0%, 100% { height: 30px; y: 75px; }
+      50% { height: 112px; y: 34px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="504" y="75" width="8" height="30" class="bar" style="animation: bounce-22 0.7094075869037504s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-23 {
+      0%, 100% { height: 28px; y: 76px; }
+      50% { height: 89px; y: 46px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="516" y="76" width="8" height="28" class="bar" style="animation: bounce-23 1.4549489346413573s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-24 {
+      0%, 100% { height: 28px; y: 76px; }
+      50% { height: 74px; y: 53px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="528" y="76" width="8" height="28" class="bar" style="animation: bounce-24 1.236513623863926s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-25 {
+      0%, 100% { height: 23px; y: 79px; }
+      50% { height: 97px; y: 42px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="540" y="79" width="8" height="23" class="bar" style="animation: bounce-25 0.9135890828802967s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-26 {
+      0%, 100% { height: 11px; y: 85px; }
+      50% { height: 149px; y: 16px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="552" y="85" width="8" height="11" class="bar" style="animation: bounce-26 0.9399561676991098s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-27 {
+      0%, 100% { height: 22px; y: 79px; }
+      50% { height: 121px; y: 30px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="564" y="79" width="8" height="22" class="bar" style="animation: bounce-27 1.4346698451796056s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-28 {
+      0%, 100% { height: 21px; y: 80px; }
+      50% { height: 70px; y: 55px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="576" y="80" width="8" height="21" class="bar" style="animation: bounce-28 1.140223185126589s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-29 {
+      0%, 100% { height: 16px; y: 82px; }
+      50% { height: 114px; y: 33px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="588" y="82" width="8" height="16" class="bar" style="animation: bounce-29 1.426889601305532s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-30 {
+      0%, 100% { height: 14px; y: 83px; }
+      50% { height: 175px; y: 3px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="600" y="83" width="8" height="14" class="bar" style="animation: bounce-30 0.7845228502265938s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-31 {
+      0%, 100% { height: 14px; y: 83px; }
+      50% { height: 113px; y: 34px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="612" y="83" width="8" height="14" class="bar" style="animation: bounce-31 1.052521713327898s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-32 {
+      0%, 100% { height: 19px; y: 81px; }
+      50% { height: 84px; y: 48px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="624" y="81" width="8" height="19" class="bar" style="animation: bounce-32 0.9520239356955554s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-33 {
+      0%, 100% { height: 12px; y: 84px; }
+      50% { height: 101px; y: 40px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="636" y="84" width="8" height="12" class="bar" style="animation: bounce-33 0.5726413492772806s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-34 {
+      0%, 100% { height: 14px; y: 83px; }
+      50% { height: 118px; y: 31px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="648" y="83" width="8" height="14" class="bar" style="animation: bounce-34 1.1108654939336708s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-35 {
+      0%, 100% { height: 30px; y: 75px; }
+      50% { height: 70px; y: 55px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="660" y="75" width="8" height="30" class="bar" style="animation: bounce-35 0.7925593131641777s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-36 {
+      0%, 100% { height: 15px; y: 83px; }
+      50% { height: 96px; y: 42px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="672" y="83" width="8" height="15" class="bar" style="animation: bounce-36 1.000797783118237s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-37 {
+      0%, 100% { height: 19px; y: 81px; }
+      50% { height: 123px; y: 29px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="684" y="81" width="8" height="19" class="bar" style="animation: bounce-37 1.022400100433848s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-38 {
+      0%, 100% { height: 30px; y: 75px; }
+      50% { height: 57px; y: 62px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="696" y="75" width="8" height="30" class="bar" style="animation: bounce-38 1.0142104107834058s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-39 {
+      0%, 100% { height: 26px; y: 77px; }
+      50% { height: 56px; y: 62px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="708" y="77" width="8" height="26" class="bar" style="animation: bounce-39 1.2367206146755056s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-40 {
+      0%, 100% { height: 24px; y: 78px; }
+      50% { height: 106px; y: 37px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="720" y="78" width="8" height="24" class="bar" style="animation: bounce-40 0.983821107231856s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-41 {
+      0%, 100% { height: 21px; y: 80px; }
+      50% { height: 88px; y: 46px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="732" y="80" width="8" height="21" class="bar" style="animation: bounce-41 1.4951595471392307s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-42 {
+      0%, 100% { height: 23px; y: 79px; }
+      50% { height: 63px; y: 59px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="744" y="79" width="8" height="23" class="bar" style="animation: bounce-42 0.7959559985123613s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-43 {
+      0%, 100% { height: 18px; y: 81px; }
+      50% { height: 50px; y: 65px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="756" y="81" width="8" height="18" class="bar" style="animation: bounce-43 1.3932764980718275s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-44 {
+      0%, 100% { height: 24px; y: 78px; }
+      50% { height: 46px; y: 67px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="768" y="78" width="8" height="24" class="bar" style="animation: bounce-44 1.417986906198974s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-45 {
+      0%, 100% { height: 26px; y: 77px; }
+      50% { height: 78px; y: 51px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="780" y="77" width="8" height="26" class="bar" style="animation: bounce-45 1.2095912683479955s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-46 {
+      0%, 100% { height: 27px; y: 77px; }
+      50% { height: 46px; y: 67px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="792" y="77" width="8" height="27" class="bar" style="animation: bounce-46 1.3241827697750848s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-47 {
+      0%, 100% { height: 29px; y: 76px; }
+      50% { height: 52px; y: 64px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="804" y="76" width="8" height="29" class="bar" style="animation: bounce-47 0.605510951578986s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-48 {
+      0%, 100% { height: 10px; y: 85px; }
+      50% { height: 69px; y: 56px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="816" y="85" width="8" height="10" class="bar" style="animation: bounce-48 1.241874556760656s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-49 {
+      0%, 100% { height: 25px; y: 78px; }
+      50% { height: 48px; y: 66px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="828" y="78" width="8" height="25" class="bar" style="animation: bounce-49 1.1405765474987821s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-50 {
+      0%, 100% { height: 18px; y: 81px; }
+      50% { height: 53px; y: 64px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="840" y="81" width="8" height="18" class="bar" style="animation: bounce-50 0.8486749173606852s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-51 {
+      0%, 100% { height: 18px; y: 81px; }
+      50% { height: 37px; y: 72px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="852" y="81" width="8" height="18" class="bar" style="animation: bounce-51 1.0021738001013034s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-52 {
+      0%, 100% { height: 28px; y: 76px; }
+      50% { height: 33px; y: 74px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="864" y="76" width="8" height="28" class="bar" style="animation: bounce-52 0.5695515949056932s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-53 {
+      0%, 100% { height: 26px; y: 77px; }
+      50% { height: 40px; y: 70px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="876" y="77" width="8" height="26" class="bar" style="animation: bounce-53 0.7860524729690385s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-54 {
+      0%, 100% { height: 18px; y: 81px; }
+      50% { height: 29px; y: 76px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="888" y="81" width="8" height="18" class="bar" style="animation: bounce-54 0.7737749664843615s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-55 {
+      0%, 100% { height: 24px; y: 78px; }
+      50% { height: 35px; y: 73px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="900" y="78" width="8" height="24" class="bar" style="animation: bounce-55 1.2328731695835373s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-56 {
+      0%, 100% { height: 19px; y: 81px; }
+      50% { height: 35px; y: 73px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="912" y="81" width="8" height="19" class="bar" style="animation: bounce-56 1.141588899797184s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-57 {
+      0%, 100% { height: 14px; y: 83px; }
+      50% { height: 25px; y: 78px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="924" y="83" width="8" height="14" class="bar" style="animation: bounce-57 0.9562948182880192s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-58 {
+      0%, 100% { height: 23px; y: 79px; }
+      50% { height: 31px; y: 75px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="936" y="79" width="8" height="23" class="bar" style="animation: bounce-58 0.832212572018977s infinite ease-in-out;" />
+
+  <style>
+    @keyframes bounce-59 {
+      0%, 100% { height: 19px; y: 81px; }
+      50% { height: 36px; y: 72px; filter: drop-shadow(0 0 8px rgba(244,114,182,0.8)); }
+    }
+  </style>
+  <rect x="948" y="81" width="8" height="19" class="bar" style="animation: bounce-59 1.0303872117844652s infinite ease-in-out;" />
+
+  <text x="50%" y="170" class="vibe-text">/// VIBE_SYS.PROCESS(LIVE_DATA) ///</text>
+  <circle cx="440" cy="165" r="4" fill="#67E8F9">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+  </circle>
+</svg>

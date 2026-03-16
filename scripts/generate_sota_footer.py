@@ -69,7 +69,7 @@ svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width
 ''')
 
 # Code Rain background
-rain_chars = "10!@#$%&*+^~aBcDeFgHiJk"
+rain_chars = "10!@#$%=+*-/^~aBcDeFgHiJkLmNoPqRsTuVwXyZ"
 for i in range(20):
     x = random.randint(50, width-50)
     delay = random.uniform(0, 10)
