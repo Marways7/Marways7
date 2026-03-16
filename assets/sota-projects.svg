@@ -26,6 +26,7 @@
         fill: #0D1117;
         stroke: #A78BFA;
         stroke-width: 1.5;
+        filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.2));
       }
       
       .hud-glow {
@@ -37,18 +38,18 @@
 
       .title-font {
         font-family: 'Orbitron', sans-serif;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
         fill: #67E8F9;
       }
       .desc-font {
         font-family: 'Fira Code', monospace;
-        font-size: 14px;
+        font-size: 13px;
         fill: #C9D1D9;
       }
       .lang-font {
         font-family: 'Fira Code', monospace;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 600;
       }
       
@@ -63,11 +64,12 @@
     
     <linearGradient id="scan-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#06B6D4" stop-opacity="0" />
-      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
     </linearGradient>
   </defs>
 
+  <!-- Deep space background -->
   <rect width="100%" height="100%" class="bg" rx="15" />
 
   <!-- Data Pad: ECG_IdentificationX -->
@@ -99,15 +101,18 @@
     <text x="30" y="90" class="desc-font">Deep Learning ST-Segment Classification</text>
     <text x="30" y="115" class="desc-font">System achieving SOTA in biomedical signals.</text>
     
-    <!-- Language Circle -->
-    <circle cx="35" cy="200" r="6" fill="#E16737" style="animation: blink 4s infinite;" />
-    <text x="50" y="205" class="lang-font" fill="#E16737">MATLAB</text>
-    
-    <!-- Star Icon -->
-    <svg x="280" y="188" viewBox="0 0 16 16" width="16" height="16">
-      <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
-    </svg>
-    <text x="305" y="202" class="lang-font" fill="#C9D1D9">15</text>
+    <!-- Status / Metrics Footer -->
+    <g transform="translate(0, 200)">
+        <!-- Language Circle -->
+        <circle cx="35" cy="0" r="6" fill="#3572A5" style="animation: blink 4s infinite;" />
+        <text x="50" y="5" class="lang-font" fill="#3572A5">Python</text>
+        
+        <!-- Star Icon -->
+        <svg x="250" y="-12" viewBox="0 0 16 16" width="16" height="16">
+          <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+        </svg>
+        <text x="275" y="2" class="lang-font" fill="#C9D1D9">2</text>
+    </g>
   </g>
 
   <!-- Data Pad: AiliaoX -->
@@ -139,18 +144,21 @@
     <text x="30" y="90" class="desc-font">Intelligent Medical Healthcare System.</text>
     <text x="30" y="115" class="desc-font">Bridging AI and Real-world Medicine.</text>
     
-    <!-- Language Circle -->
-    <circle cx="35" cy="200" r="6" fill="#3178C6" style="animation: blink 4s infinite;" />
-    <text x="50" y="205" class="lang-font" fill="#3178C6">TypeScript</text>
-    
-    <!-- Star Icon -->
-    <svg x="280" y="188" viewBox="0 0 16 16" width="16" height="16">
-      <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
-    </svg>
-    <text x="305" y="202" class="lang-font" fill="#C9D1D9">24</text>
+    <!-- Status / Metrics Footer -->
+    <g transform="translate(0, 200)">
+        <!-- Language Circle -->
+        <circle cx="35" cy="0" r="6" fill="#3178C6" style="animation: blink 4s infinite;" />
+        <text x="50" y="5" class="lang-font" fill="#3178C6">TypeScript</text>
+        
+        <!-- Star Icon -->
+        <svg x="250" y="-12" viewBox="0 0 16 16" width="16" height="16">
+          <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+        </svg>
+        <text x="275" y="2" class="lang-font" fill="#C9D1D9">2</text>
+    </g>
   </g>
 
-  <!-- Data Pad: cua_desktop -->
+  <!-- Data Pad: DeepReadX -->
   <g transform="translate(195, 320)" style="animation: float 6s infinite 1.0s ease-in-out;">
     <g class="scan-group">
       <rect width="400" height="240" rx="10" class="hud-frame" />
@@ -173,24 +181,27 @@
     </svg>
     
     <!-- Title -->
-    <text x="55" y="47" class="title-font" style="animation: neonPulse 3s infinite 1.0s;">cua_desktop</text>
+    <text x="55" y="47" class="title-font" style="animation: neonPulse 3s infinite 1.0s;">DeepReadX</text>
     
     <!-- Description -->
-    <text x="30" y="90" class="desc-font">Computer Use Automation.</text>
-    <text x="30" y="115" class="desc-font">AI operating complete desktop via MCP.</text>
+    <text x="30" y="90" class="desc-font">Autonomous Research Agent.</text>
+    <text x="30" y="115" class="desc-font">Reads, digests, and outputs deep insights.</text>
     
-    <!-- Language Circle -->
-    <circle cx="35" cy="200" r="6" fill="#3572A5" style="animation: blink 4s infinite;" />
-    <text x="50" y="205" class="lang-font" fill="#3572A5">Python</text>
-    
-    <!-- Star Icon -->
-    <svg x="280" y="188" viewBox="0 0 16 16" width="16" height="16">
-      <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
-    </svg>
-    <text x="305" y="202" class="lang-font" fill="#C9D1D9">89</text>
+    <!-- Status / Metrics Footer -->
+    <g transform="translate(0, 200)">
+        <!-- Language Circle -->
+        <circle cx="35" cy="0" r="6" fill="#A78BFA" style="animation: blink 4s infinite;" />
+        <text x="50" y="5" class="lang-font" fill="#A78BFA">Unknown</text>
+        
+        <!-- Star Icon -->
+        <svg x="250" y="-12" viewBox="0 0 16 16" width="16" height="16">
+          <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+        </svg>
+        <text x="275" y="2" class="lang-font" fill="#C9D1D9">—</text>
+    </g>
   </g>
 
-  <!-- Data Pad: DeepReadX -->
+  <!-- Data Pad: cua_desktop_operator_skill -->
   <g transform="translate(645, 320)" style="animation: float 6s infinite 1.5s ease-in-out;">
     <g class="scan-group">
       <rect width="400" height="240" rx="10" class="hud-frame" />
@@ -213,20 +224,23 @@
     </svg>
     
     <!-- Title -->
-    <text x="55" y="47" class="title-font" style="animation: neonPulse 3s infinite 1.5s;">DeepReadX</text>
+    <text x="55" y="47" class="title-font" style="animation: neonPulse 3s infinite 1.5s;">cua_desktop_operator_skill</text>
     
     <!-- Description -->
-    <text x="30" y="90" class="desc-font">Autonomous Research Agent.</text>
-    <text x="30" y="115" class="desc-font">Reads, digests, and outputs deep insights.</text>
+    <text x="30" y="90" class="desc-font">Computer Use Automation.</text>
+    <text x="30" y="115" class="desc-font">AI operating complete desktop via MCP.</text>
     
-    <!-- Language Circle -->
-    <circle cx="35" cy="200" r="6" fill="#DA5B0B" style="animation: blink 4s infinite;" />
-    <text x="50" y="205" class="lang-font" fill="#DA5B0B">Jupyter Notebook</text>
-    
-    <!-- Star Icon -->
-    <svg x="280" y="188" viewBox="0 0 16 16" width="16" height="16">
-      <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
-    </svg>
-    <text x="305" y="202" class="lang-font" fill="#C9D1D9">42</text>
+    <!-- Status / Metrics Footer -->
+    <g transform="translate(0, 200)">
+        <!-- Language Circle -->
+        <circle cx="35" cy="0" r="6" fill="#3572A5" style="animation: blink 4s infinite;" />
+        <text x="50" y="5" class="lang-font" fill="#3572A5">Python</text>
+        
+        <!-- Star Icon -->
+        <svg x="250" y="-12" viewBox="0 0 16 16" width="16" height="16">
+          <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+        </svg>
+        <text x="275" y="2" class="lang-font" fill="#C9D1D9">2</text>
+    </g>
   </g>
 </svg>

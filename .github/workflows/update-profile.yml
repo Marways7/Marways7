@@ -1,0 +1,38 @@
+name: Update SOTA Profile SVGs
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'        # Run every 12 hours
+  workflow_dispatch:              # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write             # Allow pushing to the repo
+      
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Build Dynamic Cybernetic Projects
+        run: python scripts/build_dynamic_projects.py
+
+      - name: Build Tech Engine Orbit (Base64)
+        run: python scripts/generate_sota_tech.py
+        
+      - name: Build Terminal Bio
+        run: python scripts/generate_terminal_bio.py
+
+      - name: Commit & Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/*.svg
+          git commit -m "🤖 auto-update: SOTA SVG components" || echo "No changes to commit"
+          git push
