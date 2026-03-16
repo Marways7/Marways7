@@ -271,9 +271,23 @@ DevOps / CI-CD     █░░░░░░░░░░░░░░░░░░░�
   <img src="https://media.giphy.com/media/WjR5aB9Z1n3jB5N92Z/giphy.gif" width="30"/>
 </h2>
 
-<p align="center">
-  <img src="./assets/sota-projects.svg" width="100%" alt="SOTA Cybernetic Projects HUD"/>
-</p>
+<div align="center">
+  <a href="https://github.com/Marways7/ECG_IdentificationX">
+    <img src="./assets/sota-project-1.svg" width="45%" alt="ECG IdentificationX"/>
+  </a>
+  <a href="https://github.com/Marways7/AiliaoX">
+    <img src="./assets/sota-project-2.svg" width="45%" alt="AiliaoX"/>
+  </a>
+</div>
+
+<div align="center">
+  <a href="https://github.com/Marways7/DeepReadX">
+    <img src="./assets/sota-project-3.svg" width="45%" alt="DeepReadX"/>
+  </a>
+  <a href="https://github.com/Marways7/cua_desktop_operator_skill">
+    <img src="./assets/sota-project-4.svg" width="45%" alt="CUA Desktop Operator"/>
+  </a>
+</div>
 
 <br/>
 
@@ -333,17 +347,17 @@ DevOps / CI-CD     █░░░░░░░░░░░░░░░░░░░�
 <p align="center"><img src="./assets/neon-divider.svg" width="95%"/></p>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
-<!-- ║                       HACKER TERMINAL BIO                     ║ -->
+<!-- ║                     TERMINAL PROFILE                        ║ -->
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
 
 <h2 align="center">
   <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="30"/>
-  &nbsp;全息极客终端 · Hacker Terminal&nbsp;
+  &nbsp;全息名片 · Terminal Profile&nbsp;
   <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="30"/>
 </h2>
 
 <p align="center">
-  <img src="./assets/terminal-bio.svg" width="90%" alt="Hacker Terminal Bio"/>
+  <img src="./assets/terminal-bio.svg" width="90%" alt="Terminal Profile"/>
 </p>
 
 <br/>

@@ -1,6 +1,6 @@
 import math
 import urllib.request
-import base64
+import re
 import os
 
 width = 1200
@@ -26,22 +26,45 @@ logos = {
     "nextjs": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
 }
 
-def get_base64_image(url):
+def extract_svg_content(url):
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=10) as response:
-            data = response.read()
-            mime = "image/svg+xml" if url.endswith(".svg") else "image/png"
-            b64 = base64.b64encode(data).decode('utf-8')
-            return f"data:{mime};base64,{b64}"
+            svg_data = response.read().decode('utf-8')
+            
+            # Very crude but effective regex to extract everything inside the <svg> tags
+            # We want to keep paths, polygons, linearGradients, etc., but discard the outer <svg>
+            match = re.search(r'<svg[^>]*>(.*?)</svg>', svg_data, re.IGNORECASE | re.DOTALL)
+            if match:
+                inner_content = match.group(1)
+                
+                # Check for viewBox to properly scale the inner content
+                vb_match = re.search(r'viewBox="([^"]+)"', svg_data)
+                scale = 1.0
+                translate = (0,0)
+                if vb_match:
+                    parts = [float(p) for p in vb_match.group(1).split()]
+                    # Assume icons are typically 128x128 max in devicons
+                    w = parts[2]
+                    h = parts[3]
+                    scale = 40.0 / max(w, h) # We want icons to be ~40px
+                    translate = (-parts[0], -parts[1])
+                else:
+                    scale = 40.0 / 128.0 # fallback assumption
+                
+                return inner_content, scale, translate
+            return None, 1.0, (0,0)
+            
     except Exception as e:
         print(f"Failed to fetch {url}: {e}")
-        return ""
+        return None, 1.0, (0,0)
 
-print("Fetching icons and generating Base64 payloads (this takes a few seconds)...")
-b64_logos = {}
+print("Fetching raw SVGs and extracting vector paths (immune to CSP)...")
+raw_icons = {}
 for name, url in logos.items():
-    b64_logos[name] = get_base64_image(url)
+    content, scale, translate = extract_svg_content(url)
+    if content:
+        raw_icons[name] = {"content": content, "scale": scale, "translate": translate}
 
 svg_parts = []
 
@@ -103,7 +126,6 @@ svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width
         filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.5));
       }}
       
-      /* Hexagon background for deep tech feel */
       .hex-bg {{
         fill: none;
         stroke: rgba(255, 255, 255, 0.05);
@@ -123,7 +145,6 @@ svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width
       <stop offset="100%" stop-color="#050814" />
     </linearGradient>
 
-    <!-- Star field definition -->
     <pattern id="stars" width="100" height="100" patternUnits="userSpaceOnUse">
       <circle cx="2" cy="2" r="1.5" fill="#fff" opacity="0.1"/>
       <circle cx="50" cy="80" r="1" fill="#fff" opacity="0.2"/>
@@ -148,7 +169,6 @@ for row in range(-10, 10):
         if col % 2 != 0:
             y += hex_size * math.sqrt(3) / 2
         
-        # Hexagon polygon
         points = []
         for i in range(6):
             angle_deg = 60 * i
@@ -186,12 +206,17 @@ for idx, orbit in enumerate(orbits_data):
     items = orbit["items"]
     n = len(items)
     for i, item in enumerate(items):
-        if not b64_logos.get(item): continue # Skip if failed to fetch
+        icon_data = raw_icons.get(item)
+        if not icon_data: continue
+        
         angle = 2 * math.pi * i / n
         x = cx + rx * math.cos(angle)
         y = cy + ry * math.sin(angle)
         
-        # Each item needs its own counter-rotation to stay upright
+        s = icon_data["scale"]
+        tx = icon_data["translate"][0]
+        ty = icon_data["translate"][1]
+        
         svg_parts.append(f'''
       <g style="transform-origin: {x}px {y}px; animation: {counter_dir} {dur}s infinite linear;">
         <!-- Counter native tilt to keep perfectly flat visually -->
@@ -199,7 +224,11 @@ for idx, orbit in enumerate(orbits_data):
           <!-- Connection lines to core (ghostly) -->
           <line x1="{x}" y1="{y}" x2="{cx - (x - cx)}" y2="{cy - (y - cy)}" stroke="rgba(139, 92, 246, 0.1)" stroke-width="1" />
           <circle cx="{x}" cy="{y}" r="28" class="node-bg" />
-          <image href="{b64_logos[item]}" x="{x-18}" y="{y-18}" width="36" height="36" />
+          
+          <!-- NATIVE EMBEDDED PATHS (Immune to CSP) -->
+          <g transform="translate({x-20}, {y-20}) scale({s}) translate({tx}, {ty})">
+             {icon_data["content"]}
+          </g>
         </g>
       </g>
 ''')
@@ -225,4 +254,4 @@ svg_parts.append('</svg>')
 os.makedirs('assets', exist_ok=True)
 with open('assets/sota-tech.svg', 'w', encoding='utf-8') as f:
     f.write("".join(svg_parts))
-print("SOTA Base64 Tech Orbit SVG generated at assets/sota-tech.svg")
+print("SOTA Native Vector Tech Orbit SVG generated at assets/sota-tech.svg")

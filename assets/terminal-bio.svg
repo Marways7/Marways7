@@ -26,18 +26,18 @@
         50% { opacity: 0; }
       }
       
-      /* Typing effect delays */
-      .typing-1 { opacity: 0; animation: type-in 0.1s forwards 0.5s; }
-      .typing-1-out { opacity: 0; animation: type-in 0.1s forwards 2.0s; }
+      /* Typing effect delays (Significantly slower for readability) */
+      .typing-1 { opacity: 0; animation: type-in 0.1s forwards 1.0s; }
+      .typing-1-out { opacity: 0; animation: type-in 0.1s forwards 3.5s; }
       
-      .typing-2 { opacity: 0; animation: type-in 0.1s forwards 3.0s; }
-      .typing-2-out { opacity: 0; animation: type-in 0.1s forwards 4.5s; }
+      .typing-2 { opacity: 0; animation: type-in 0.1s forwards 6.5s; }
+      .typing-2-out { opacity: 0; animation: type-in 0.1s forwards 9.0s; }
       
-      .typing-3 { opacity: 0; animation: type-in 0.1s forwards 5.5s; }
-      .typing-3-out { opacity: 0; animation: type-in 0.1s forwards 7.0s; }
+      .typing-3 { opacity: 0; animation: type-in 0.1s forwards 12.0s; }
+      .typing-3-out { opacity: 0; animation: type-in 0.1s forwards 14.5s; }
       
-      .typing-4 { opacity: 0; animation: type-in 0.1s forwards 8.0s; }
-      .typing-4-out { opacity: 0; animation: type-in 0.1s forwards 9.5s; }
+      .typing-4 { opacity: 0; animation: type-in 0.1s forwards 16.5s; }
+      .typing-4-out { opacity: 0; animation: type-in 0.1s forwards 18.0s; }
       
       @keyframes type-in {
         to { opacity: 1; }
@@ -46,17 +46,17 @@
       /* The final blinking cursor */
       .final-cursor {
         opacity: 0;
-        animation: type-in 0.1s forwards 10.5s, blink 1s step-end infinite 10.5s;
+        animation: type-in 0.1s forwards 18.0s, blink 1s step-end infinite 18.0s;
       }
       
       /* Hide previous cursors as we move down */
-      .c1 { animation: cursor-hide 0.1s forwards 1.8s; }
-      .c2 { opacity: 0; animation: type-in 0.1s forwards 1.8s, blink 1s step-end infinite 1.8s, cursor-hide 0.1s forwards 2.8s; }
-      .c3 { opacity: 0; animation: type-in 0.1s forwards 2.8s, blink 1s step-end infinite 2.8s, cursor-hide 0.1s forwards 4.3s; }
-      .c4 { opacity: 0; animation: type-in 0.1s forwards 4.3s, blink 1s step-end infinite 4.3s, cursor-hide 0.1s forwards 5.3s; }
-      .c5 { opacity: 0; animation: type-in 0.1s forwards 5.3s, blink 1s step-end infinite 5.3s, cursor-hide 0.1s forwards 6.8s; }
-      .c6 { opacity: 0; animation: type-in 0.1s forwards 6.8s, blink 1s step-end infinite 6.8s, cursor-hide 0.1s forwards 7.8s; }
-      .c7 { opacity: 0; animation: type-in 0.1s forwards 7.8s, blink 1s step-end infinite 7.8s, cursor-hide 0.1s forwards 9.3s; }
+      .c1 { animation: cursor-hide 0.1s forwards 3.3s; }
+      .c2 { opacity: 0; animation: type-in 0.1s forwards 3.3s, blink 1s step-end infinite 3.3s, cursor-hide 0.1s forwards 6.3s; }
+      .c3 { opacity: 0; animation: type-in 0.1s forwards 6.3s, blink 1s step-end infinite 6.3s, cursor-hide 0.1s forwards 8.8s; }
+      .c4 { opacity: 0; animation: type-in 0.1s forwards 8.8s, blink 1s step-end infinite 8.8s, cursor-hide 0.1s forwards 11.8s; }
+      .c5 { opacity: 0; animation: type-in 0.1s forwards 11.8s, blink 1s step-end infinite 11.8s, cursor-hide 0.1s forwards 14.3s; }
+      .c6 { opacity: 0; animation: type-in 0.1s forwards 14.3s, blink 1s step-end infinite 14.3s, cursor-hide 0.1s forwards 16.3s; }
+      .c7 { opacity: 0; animation: type-in 0.1s forwards 16.3s, blink 1s step-end infinite 16.3s, cursor-hide 0.1s forwards 17.8s; }
       
       @keyframes cursor-hide {
         to { opacity: 0; }
