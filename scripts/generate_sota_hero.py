@@ -218,7 +218,7 @@ svg_parts.append('''
 
 # Code rain/Matrix effect (faded in background)
 rain = []
-chars = "10<>{}()[]!@#$%=+*-/^~aBcDeFgHiJkLmNoPqRsTuVwXyZ"
+chars = "10{}()[]!@#$%=+*-/^~aBcDeFgHiJkLmNoPqRsTuVwXyZ"
 for i in range(25):
     x = random.randint(50, width-50)
     delay = random.uniform(0, 15)
