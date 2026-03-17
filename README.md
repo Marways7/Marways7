@@ -210,12 +210,12 @@ DevOps / CI-CD     █░░░░░░░░░░░░░░░░░░░�
 
 <br/>
 
-<!-- Trophies -->
+<!-- Productive Time (fallback for unstable trophy card) -->
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10"/>
-    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-trophy.vercel.app/?username=Marways7&theme=flat&no-frame=true&no-bg=true&column=7&margin-w=10"/>
-    <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10" width="90%"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Marways7&theme=tokyonight&utcOffset=8"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Marways7&theme=default&utcOffset=8"/>
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Marways7&theme=tokyonight&utcOffset=8" width="90%"/>
   </picture>
 </p>
 
