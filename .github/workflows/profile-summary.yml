@@ -17,10 +17,17 @@ jobs:
     name: Generate Summary Cards
     steps:
       - uses: actions/checkout@v4
-      - uses: vn7n24fez6k/github-profile-summary-cards@release
+        with:
+          ref: output
+          fetch-depth: 0
+      - name: Configure git identity for auto-commit
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - uses: vn7n24fzkq/github-profile-summary-cards@974577f1823715ca047e9976548634816a3a0264 # release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
-          BRANCH_NAME: main
+          BRANCH_NAME: output
           UTC_OFFSET: 8
