@@ -180,14 +180,6 @@ def build_svg(metrics):
         fill: #8B949E;
         text-anchor: middle;
       }}
-      .meta {{
-        font-family: 'Fira Code', monospace;
-        font-size: 10px;
-        fill: #6E7681;
-        text-anchor: end;
-        letter-spacing: 0.8px;
-      }}
-      
       @keyframes float-hex {{
         0%, 100% {{ transform: translateY(0); }}
         50% {{ transform: translateY(-6px); }}
@@ -222,12 +214,7 @@ def build_svg(metrics):
 """
         )
 
-    svg_parts.append(
-        f"""
-  <text x="{WIDTH - 24}" y="{HEIGHT - 18}" class="meta">AUTO-REFRESHED VIA GITHUB ACTIONS</text>
-</svg>
-"""
-    )
+    svg_parts.append("</svg>\n")
     return "".join(svg_parts)
 
 

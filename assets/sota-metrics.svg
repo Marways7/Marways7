@@ -31,14 +31,6 @@
         fill: #8B949E;
         text-anchor: middle;
       }
-      .meta {
-        font-family: 'Fira Code', monospace;
-        font-size: 10px;
-        fill: #6E7681;
-        text-anchor: end;
-        letter-spacing: 0.8px;
-      }
-      
       @keyframes float-hex {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-6px); }
@@ -80,6 +72,4 @@
     <text x="650" y="150" class="value">2020</text>
     <text x="650" y="180" class="label">VIBE SINCE</text>
   </g>
-
-  <text x="776" y="262" class="meta">AUTO-REFRESHED VIA GITHUB ACTIONS</text>
 </svg>
