@@ -2,8 +2,11 @@ name: Update SOTA Profile SVGs
 
 on:
   schedule:
-    - cron: '0 */12 * * *'        # Run every 12 hours
+    - cron: '0 */6 * * *'         # Run every 6 hours
   workflow_dispatch:              # Allow manual trigger
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -22,6 +25,11 @@ jobs:
 
       - name: Build Dynamic Cybernetic Projects
         run: python scripts/build_dynamic_projects.py
+
+      - name: Build Live SOTA Metrics
+        run: python scripts/generate_sota_metrics.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Tech Engine Orbit (Base64)
         run: python scripts/generate_sota_tech.py
