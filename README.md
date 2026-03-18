@@ -41,17 +41,7 @@
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
 
 <p align="center">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FMarways7&query=%24.public_repos&suffix=%20repos&style=for-the-badge&logo=github&logoColor=white&label=PUBLIC%20REPOS&color=8B5CF6&labelColor=0a0614" alt="Public Repositories"/>
-  &nbsp;
-  <img src="https://img.shields.io/github/followers/Marways7?style=for-the-badge&logo=github&logoColor=white&label=FOLLOWERS&color=6366F1&labelColor=0a0614" alt="Followers"/>
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FMarways7&query=%24.following&suffix=%20following&style=for-the-badge&logo=github&logoColor=white&label=FOLLOWING&color=06B6D4&labelColor=0a0614" alt="Following"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FMarways7&query=%24.public_gists&suffix=%20gists&style=for-the-badge&logo=github&logoColor=white&label=PUBLIC%20GISTS&color=F472B6&labelColor=0a0614" alt="Public Gists"/>
-</p>
-<p align="center">
-  <sub>Live profile metrics powered by GitHub API via Shields.</sub>
+  <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/assets/sota-metrics.svg" width="95%" alt="SOTA Metrics"/>
 </p>
 
 <br/>
