@@ -23,6 +23,11 @@ jobs:
       - name: Build Dynamic Cybernetic Projects
         run: python scripts/build_dynamic_projects.py
 
+      - name: Build Live SOTA Metrics
+        run: python scripts/generate_sota_metrics.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build Tech Engine Orbit (Base64)
         run: python scripts/generate_sota_tech.py
         
