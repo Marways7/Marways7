@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: output-branch-publish
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,12 +31,39 @@ jobs:
           UTC_OFFSET: 8
           AUTO_PUSH: false
 
-      - name: Push profile summary cards to output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: profile-summary-card-output
-          target_dir: profile-summary-card-output
-          keep_history: true
+      - name: Publish profile summary cards to output branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          publish_dir="$(mktemp -d)"
+          git clone --branch output "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$publish_dir"
+
+          mkdir -p "$publish_dir/profile-summary-card-output"
+          rsync -a --delete profile-summary-card-output/ "$publish_dir/profile-summary-card-output/"
+
+          cd "$publish_dir"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile-summary-card-output
+
+          if git diff --cached --quiet; then
+            echo "No profile summary card changes to publish."
+            exit 0
+          fi
+
+          git commit -m "🤖 update profile summary cards"
+
+          for attempt in 1 2 3; do
+            git fetch origin output
+            git rebase origin/output
+            if git push origin HEAD:output; then
+              echo "Published profile summary cards on attempt ${attempt}."
+              exit 0
+            fi
+            sleep 5
+          done
+
+          echo "Failed to publish profile summary cards after retries." >&2
+          exit 1
