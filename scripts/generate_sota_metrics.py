@@ -12,10 +12,10 @@ GITHUB_USER = os.environ.get("GITHUB_USER", "Marways7")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
 DEFAULT_METRICS = {
-    "repo_count": "18",
-    "star_count": "51",
-    "contributions_year": "850+",
-    "created_year": "2020",
+    "repo_count": "7",
+    "star_count": "10",
+    "contributions_year": "110",
+    "created_year": "2023",
 }
 
 
