@@ -2,6 +2,7 @@ import json
 import math
 import os
 import urllib.request
+from datetime import datetime, timedelta, timezone
 from urllib.error import URLError, HTTPError
 
 
@@ -13,7 +14,7 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 DEFAULT_METRICS = {
     "repo_count": "18",
     "star_count": "51",
-    "followers": "0",
+    "contributions_year": "850+",
     "created_year": "2020",
 }
 
@@ -32,6 +33,29 @@ def github_get(url):
     request = urllib.request.Request(url, headers=build_headers())
     with urllib.request.urlopen(request, timeout=20) as response:
         return json.loads(response.read().decode("utf-8"))
+
+
+def github_graphql(query, variables):
+    if not GITHUB_TOKEN:
+        raise URLError("GITHUB_TOKEN is required for GraphQL contribution queries")
+
+    payload = json.dumps({"query": query, "variables": variables}).encode("utf-8")
+    request = urllib.request.Request(
+        "https://api.github.com/graphql",
+        data=payload,
+        headers={
+            **build_headers(),
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=20) as response:
+        data = json.loads(response.read().decode("utf-8"))
+
+    if data.get("errors"):
+        raise URLError(f"GraphQL errors: {data['errors']}")
+
+    return data["data"]
 
 
 def format_compact(value):
@@ -60,10 +84,35 @@ def fetch_live_metrics():
         total_stars += sum(repo.get("stargazers_count", 0) for repo in repos)
         repo_page += 1
 
+    end_date = datetime.now(timezone.utc)
+    start_date = end_date - timedelta(days=365)
+    contributions_query = """
+    query($login: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $login) {
+        contributionsCollection(from: $from, to: $to) {
+          contributionCalendar {
+            totalContributions
+          }
+        }
+      }
+    }
+    """
+    contributions_data = github_graphql(
+        contributions_query,
+        {
+            "login": GITHUB_USER,
+            "from": start_date.isoformat(),
+            "to": end_date.isoformat(),
+        },
+    )
+    total_contributions = (
+        contributions_data["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+    )
+
     return {
-        "repo_count": format_compact(user.get("public_repos", total_repos)),
+        "repo_count": format_compact(total_repos or user.get("public_repos", 0)),
         "star_count": format_compact(total_stars),
-        "followers": format_compact(user.get("followers", 0)),
+        "contributions_year": format_compact(total_contributions),
         "created_year": str(user.get("created_at", "2020"))[:4],
     }
 
@@ -89,10 +138,10 @@ def draw_hexagon(cx, cy, radius):
 
 
 METRIC_LAYOUT = [
-    {"key": "repo_count", "label": "PUBLIC REPOSITORIES", "cx": 140, "cy": 140, "delay": 0},
-    {"key": "star_count", "label": "TOTAL STARS", "cx": 310, "cy": 140, "delay": 0.4},
-    {"key": "followers", "label": "FOLLOWERS", "cx": 480, "cy": 140, "delay": 0.8},
-    {"key": "created_year", "label": "ACTIVE SINCE", "cx": 650, "cy": 140, "delay": 1.2},
+    {"key": "repo_count", "label": "TOTAL REPOSITORIES", "cx": 140, "cy": 140, "delay": 0},
+    {"key": "star_count", "label": "STARS EARNED", "cx": 310, "cy": 140, "delay": 0.4},
+    {"key": "contributions_year", "label": "CONTRIBUTIONS/YR", "cx": 480, "cy": 140, "delay": 0.8},
+    {"key": "created_year", "label": "VIBE SINCE", "cx": 650, "cy": 140, "delay": 1.2},
 ]
 
 

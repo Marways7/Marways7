@@ -31,6 +31,13 @@
         fill: #8B949E;
         text-anchor: middle;
       }
+      .meta {
+        font-family: 'Fira Code', monospace;
+        font-size: 10px;
+        fill: #6E7681;
+        text-anchor: end;
+        letter-spacing: 0.8px;
+      }
       
       @keyframes float-hex {
         0%, 100% { transform: translateY(0); }
@@ -44,54 +51,35 @@
     </style>
   </defs>
 
-  <!-- Background Canvas -->
   <rect width="100%" height="100%" class="bg" rx="15" />
 
-  <!-- Metric Box: TOTAL REPOSITORIES -->
   <g style="animation: float-hex 4s infinite 0s ease-in-out; transform-origin: 140px 140px;">
-    <!-- Outer scanning ring -->
     <polygon points="213.6121593216773,97.5 213.6121593216773,182.5 140.0,225.0 66.3878406783227,182.5 66.38784067832272,97.5 139.99999999999997,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 0s linear;" />
-    <!-- Inner Core Hex -->
     <polygon points="204.9519052838329,102.5 204.9519052838329,177.5 140.0,215.0 75.0480947161671,177.5 75.0480947161671,102.5 140.0,65.0" class="hex-frame" />
-    
-    <!-- Data -->
     <text x="140" y="150" class="value">18</text>
     <text x="140" y="180" class="label">TOTAL REPOSITORIES</text>
   </g>
 
-  <!-- Metric Box: STARS EARNED -->
   <g style="animation: float-hex 4s infinite 0.4s ease-in-out; transform-origin: 310px 140px;">
-    <!-- Outer scanning ring -->
     <polygon points="383.61215932167727,97.5 383.61215932167727,182.5 310.0,225.0 236.3878406783227,182.5 236.38784067832273,97.5 310.0,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 0.4s linear;" />
-    <!-- Inner Core Hex -->
     <polygon points="374.9519052838329,102.5 374.9519052838329,177.5 310.0,215.0 245.0480947161671,177.5 245.0480947161671,102.5 310.0,65.0" class="hex-frame" />
-    
-    <!-- Data -->
     <text x="310" y="150" class="value">51</text>
     <text x="310" y="180" class="label">STARS EARNED</text>
   </g>
 
-  <!-- Metric Box: CONTRIBUTIONS/YR -->
   <g style="animation: float-hex 4s infinite 0.8s ease-in-out; transform-origin: 480px 140px;">
-    <!-- Outer scanning ring -->
     <polygon points="553.6121593216773,97.5 553.6121593216773,182.5 480.0,225.0 406.38784067832273,182.5 406.38784067832273,97.5 480.0,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 0.8s linear;" />
-    <!-- Inner Core Hex -->
     <polygon points="544.951905283833,102.5 544.951905283833,177.5 480.0,215.0 415.0480947161671,177.5 415.0480947161671,102.5 480.0,65.0" class="hex-frame" />
-    
-    <!-- Data -->
     <text x="480" y="150" class="value">850+</text>
     <text x="480" y="180" class="label">CONTRIBUTIONS/YR</text>
   </g>
 
-  <!-- Metric Box: VIBE SINCE -->
   <g style="animation: float-hex 4s infinite 1.2s ease-in-out; transform-origin: 650px 140px;">
-    <!-- Outer scanning ring -->
     <polygon points="723.6121593216773,97.5 723.6121593216773,182.5 650.0,225.0 576.3878406783227,182.5 576.3878406783227,97.5 650.0,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 1.2s linear;" />
-    <!-- Inner Core Hex -->
     <polygon points="714.951905283833,102.5 714.951905283833,177.5 650.0,215.0 585.048094716167,177.5 585.048094716167,102.5 650.0,65.0" class="hex-frame" />
-    
-    <!-- Data -->
     <text x="650" y="150" class="value">2020</text>
     <text x="650" y="180" class="label">VIBE SINCE</text>
   </g>
+
+  <text x="776" y="262" class="meta">AUTO-REFRESHED VIA GITHUB ACTIONS</text>
 </svg>
