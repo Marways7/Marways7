@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: main-branch-auto-update
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,8 +43,23 @@ jobs:
 
       - name: Commit & Push Changes
         run: |
+          set -euo pipefail
+
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add assets/*.svg
-          git commit -m "🤖 auto-update: SOTA SVG components" || echo "No changes to commit"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "🤖 auto-update: SOTA SVG components"
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              echo "Pushed SVG refresh on attempt ${attempt}."
+              exit 0
+            fi
+            sleep 5
+          done
+
+          echo "Failed to push SVG refresh after retries." >&2
+          exit 1
