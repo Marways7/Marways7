@@ -8,6 +8,8 @@ from urllib.error import URLError, HTTPError
 
 WIDTH = 800
 HEIGHT = 280
+REQUEST_TIMEOUT = 20
+GITHUB_API_VERSION = "2022-11-28"
 GITHUB_USER = os.environ.get("GITHUB_USER", "Marways7")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
@@ -22,6 +24,7 @@ DEFAULT_METRICS = {
 def build_headers():
     headers = {
         "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": GITHUB_API_VERSION,
         "User-Agent": "Marways7-profile-generator",
     }
     if GITHUB_TOKEN:
@@ -31,7 +34,7 @@ def build_headers():
 
 def github_get(url):
     request = urllib.request.Request(url, headers=build_headers())
-    with urllib.request.urlopen(request, timeout=20) as response:
+    with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
         return json.loads(response.read().decode("utf-8"))
 
 
@@ -49,7 +52,7 @@ def github_graphql(query, variables):
         },
         method="POST",
     )
-    with urllib.request.urlopen(request, timeout=20) as response:
+    with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
         data = json.loads(response.read().decode("utf-8"))
 
     if data.get("errors"):
@@ -122,7 +125,7 @@ def load_metrics():
         metrics = fetch_live_metrics()
         print(f"Fetched live metrics for {GITHUB_USER}: {metrics}")
         return metrics
-    except (URLError, HTTPError, TimeoutError, json.JSONDecodeError) as exc:
+    except (URLError, HTTPError, TimeoutError, json.JSONDecodeError, KeyError, TypeError) as exc:
         print(f"Failed to fetch live metrics for {GITHUB_USER}: {exc}")
         print("Using fallback metrics so SVG generation can still complete.")
         return DEFAULT_METRICS.copy()
