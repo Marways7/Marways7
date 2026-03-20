@@ -9,7 +9,10 @@ from urllib.error import URLError, HTTPError
 WIDTH = 800
 HEIGHT = 280
 REQUEST_TIMEOUT = 20
+REPO_PAGE_SIZE = 100
 GITHUB_API_VERSION = "2022-11-28"
+GITHUB_REST_API_ROOT = "https://api.github.com"
+GITHUB_GRAPHQL_API_URL = f"{GITHUB_REST_API_ROOT}/graphql"
 GITHUB_USER = os.environ.get("GITHUB_USER", "Marways7")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
@@ -44,7 +47,7 @@ def github_graphql(query, variables):
 
     payload = json.dumps({"query": query, "variables": variables}).encode("utf-8")
     request = urllib.request.Request(
-        "https://api.github.com/graphql",
+        GITHUB_GRAPHQL_API_URL,
         data=payload,
         headers={
             **build_headers(),
@@ -70,7 +73,7 @@ def format_compact(value):
 
 
 def fetch_live_metrics():
-    user = github_get(f"https://api.github.com/users/{GITHUB_USER}")
+    user = github_get(f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}")
 
     repo_page = 1
     total_stars = 0
@@ -78,7 +81,7 @@ def fetch_live_metrics():
 
     while True:
         repos = github_get(
-            f"https://api.github.com/users/{GITHUB_USER}/repos?per_page=100&page={repo_page}&type=owner"
+            f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}/repos?per_page={REPO_PAGE_SIZE}&page={repo_page}&type=owner"
         )
         if not repos:
             break
@@ -116,7 +119,7 @@ def fetch_live_metrics():
         "repo_count": format_compact(total_repos or user.get("public_repos", 0)),
         "star_count": format_compact(total_stars),
         "contributions_year": format_compact(total_contributions),
-        "created_year": str(user.get("created_at", "2020"))[:4],
+        "created_year": str(user.get("created_at", DEFAULT_METRICS["created_year"]))[:4],
     }
 
 
