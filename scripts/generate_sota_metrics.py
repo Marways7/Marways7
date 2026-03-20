@@ -10,6 +10,7 @@ WIDTH = 800
 HEIGHT = 280
 REQUEST_TIMEOUT = 20
 REPO_PAGE_SIZE = 100
+CONTRIBUTIONS_LOOKBACK_DAYS = 365
 GITHUB_API_VERSION = "2022-11-28"
 GITHUB_REST_API_ROOT = "https://api.github.com"
 GITHUB_GRAPHQL_API_URL = f"{GITHUB_REST_API_ROOT}/graphql"
@@ -22,6 +23,18 @@ DEFAULT_METRICS = {
     "contributions_year": "110",
     "created_year": "2023",
 }
+
+CONTRIBUTIONS_QUERY = """
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    contributionsCollection(from: $from, to: $to) {
+      contributionCalendar {
+        totalContributions
+      }
+    }
+  }
+}
+"""
 
 
 def build_headers():
@@ -91,20 +104,9 @@ def fetch_live_metrics():
         repo_page += 1
 
     end_date = datetime.now(timezone.utc)
-    start_date = end_date - timedelta(days=365)
-    contributions_query = """
-    query($login: String!, $from: DateTime!, $to: DateTime!) {
-      user(login: $login) {
-        contributionsCollection(from: $from, to: $to) {
-          contributionCalendar {
-            totalContributions
-          }
-        }
-      }
-    }
-    """
+    start_date = end_date - timedelta(days=CONTRIBUTIONS_LOOKBACK_DAYS)
     contributions_data = github_graphql(
-        contributions_query,
+        CONTRIBUTIONS_QUERY,
         {
             "login": GITHUB_USER,
             "from": start_date.isoformat(),
