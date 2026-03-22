@@ -88,20 +88,17 @@ def format_compact(value):
 def fetch_live_metrics():
     user = github_get(f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}")
 
-    repo_page = 1
+    public_repo_count = int(user.get("public_repos", 0) or 0)
+    repo_pages = math.ceil(public_repo_count / REPO_PAGE_SIZE)
     total_stars = 0
     total_repos = 0
 
-    while True:
+    for repo_page in range(1, repo_pages + 1):
         repos = github_get(
             f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}/repos?per_page={REPO_PAGE_SIZE}&page={repo_page}&type=owner"
         )
-        if not repos:
-            break
-
         total_repos += len(repos)
         total_stars += sum(repo.get("stargazers_count", 0) for repo in repos)
-        repo_page += 1
 
     end_date = datetime.now(timezone.utc)
     start_date = end_date - timedelta(days=CONTRIBUTIONS_LOOKBACK_DAYS)
@@ -118,7 +115,7 @@ def fetch_live_metrics():
     )
 
     return {
-        "repo_count": format_compact(total_repos or user.get("public_repos", 0)),
+        "repo_count": format_compact(total_repos or public_repo_count),
         "star_count": format_compact(total_stars),
         "contributions_year": format_compact(total_contributions),
         "created_year": str(user.get("created_at", DEFAULT_METRICS["created_year"]))[:4],
