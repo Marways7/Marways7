@@ -48,10 +48,14 @@ def build_headers():
     return headers
 
 
-def github_get(url):
-    request = urllib.request.Request(url, headers=build_headers())
+def read_json_response(request):
     with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
         return json.loads(response.read().decode("utf-8"))
+
+
+def github_get(url):
+    request = urllib.request.Request(url, headers=build_headers())
+    return read_json_response(request)
 
 
 def github_graphql(query, variables):
@@ -68,8 +72,7 @@ def github_graphql(query, variables):
         },
         method="POST",
     )
-    with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
-        data = json.loads(response.read().decode("utf-8"))
+    data = read_json_response(request)
 
     if data.get("errors"):
         raise URLError(f"GraphQL errors: {data['errors']}")
