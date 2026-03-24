@@ -37,6 +37,12 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 
+HEXAGON_UNIT_VECTORS = [
+    (math.cos(math.radians(60 * i - 30)), math.sin(math.radians(60 * i - 30)))
+    for i in range(6)
+]
+
+
 def build_headers():
     headers = {
         "Accept": "application/vnd.github+json",
@@ -137,12 +143,10 @@ def load_metrics():
 
 
 def draw_hexagon(cx, cy, radius):
-    points = []
-    for i in range(6):
-        angle_deg = 60 * i - 30
-        angle_rad = math.pi / 180 * angle_deg
-        points.append(f"{cx + radius * math.cos(angle_rad)},{cy + radius * math.sin(angle_rad)}")
-    return " ".join(points)
+    return " ".join(
+        f"{cx + radius * unit_x},{cy + radius * unit_y}"
+        for unit_x, unit_y in HEXAGON_UNIT_VECTORS
+    )
 
 
 METRIC_LAYOUT = [
