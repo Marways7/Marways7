@@ -11,6 +11,8 @@ HEIGHT = 280
 REQUEST_TIMEOUT = 20
 REPO_PAGE_SIZE = 100
 CONTRIBUTIONS_LOOKBACK_DAYS = 365
+HEXAGON_INNER_RADIUS = 75
+HEXAGON_OUTER_RADIUS = 85
 GITHUB_API_VERSION = "2022-11-28"
 GITHUB_REST_API_ROOT = "https://api.github.com"
 GITHUB_GRAPHQL_API_URL = f"{GITHUB_REST_API_ROOT}/graphql"
@@ -210,8 +212,8 @@ def build_svg(metrics):
 
     for panel in METRIC_LAYOUT:
         cx, cy, delay = panel["cx"], panel["cy"], panel["delay"]
-        hex_str = draw_hexagon(cx, cy, 75)
-        outer_hex = draw_hexagon(cx, cy, 85)
+        hex_str = draw_hexagon(cx, cy, HEXAGON_INNER_RADIUS)
+        outer_hex = draw_hexagon(cx, cy, HEXAGON_OUTER_RADIUS)
         value = metrics[panel["key"]]
         label = panel["label"]
 

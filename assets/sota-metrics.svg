@@ -62,7 +62,7 @@
   <g style="animation: float-hex 4s infinite 0.8s ease-in-out; transform-origin: 480px 140px;">
     <polygon points="553.6121593216773,97.5 553.6121593216773,182.5 480.0,225.0 406.38784067832273,182.5 406.38784067832273,97.5 480.0,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 0.8s linear;" />
     <polygon points="544.951905283833,102.5 544.951905283833,177.5 480.0,215.0 415.0480947161671,177.5 415.0480947161671,102.5 480.0,65.0" class="hex-frame" />
-    <text x="480" y="150" class="value">249</text>
+    <text x="480" y="150" class="value">110</text>
     <text x="480" y="180" class="label">CONTRIBUTIONS/YR</text>
   </g>
 
