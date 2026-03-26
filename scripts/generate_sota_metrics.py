@@ -18,6 +18,7 @@ GITHUB_REST_API_ROOT = "https://api.github.com"
 GITHUB_GRAPHQL_API_URL = f"{GITHUB_REST_API_ROOT}/graphql"
 GITHUB_USER = os.environ.get("GITHUB_USER", "Marways7")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+METRICS_OUTPUT_PATH = "assets/sota-metrics.svg"
 
 DEFAULT_METRICS = {
     "repo_count": "7",
@@ -234,10 +235,10 @@ def build_svg(metrics):
 
 def main():
     metrics = load_metrics()
-    os.makedirs("assets", exist_ok=True)
-    with open("assets/sota-metrics.svg", "w", encoding="utf-8") as output:
+    os.makedirs(os.path.dirname(METRICS_OUTPUT_PATH), exist_ok=True)
+    with open(METRICS_OUTPUT_PATH, "w", encoding="utf-8") as output:
         output.write(build_svg(metrics))
-    print("SOTA live metrics hologram generated at assets/sota-metrics.svg")
+    print(f"SOTA live metrics hologram generated at {METRICS_OUTPUT_PATH}")
 
 
 if __name__ == "__main__":
