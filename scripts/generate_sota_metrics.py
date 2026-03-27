@@ -2,6 +2,7 @@ import json
 import math
 import os
 import urllib.request
+from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from urllib.error import URLError, HTTPError
 
@@ -18,7 +19,7 @@ GITHUB_REST_API_ROOT = "https://api.github.com"
 GITHUB_GRAPHQL_API_URL = f"{GITHUB_REST_API_ROOT}/graphql"
 GITHUB_USER = os.environ.get("GITHUB_USER", "Marways7")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-METRICS_OUTPUT_PATH = "assets/sota-metrics.svg"
+METRICS_OUTPUT_PATH = Path("assets/sota-metrics.svg")
 
 DEFAULT_METRICS = {
     "repo_count": "7",
@@ -235,9 +236,8 @@ def build_svg(metrics):
 
 def main():
     metrics = load_metrics()
-    os.makedirs(os.path.dirname(METRICS_OUTPUT_PATH), exist_ok=True)
-    with open(METRICS_OUTPUT_PATH, "w", encoding="utf-8") as output:
-        output.write(build_svg(metrics))
+    METRICS_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    METRICS_OUTPUT_PATH.write_text(build_svg(metrics), encoding="utf-8")
     print(f"SOTA live metrics hologram generated at {METRICS_OUTPUT_PATH}")
 
 
