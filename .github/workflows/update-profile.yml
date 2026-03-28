@@ -2,8 +2,15 @@ name: Update SOTA Profile SVGs
 
 on:
   schedule:
-    - cron: '0 */12 * * *'        # Run every 12 hours
+    - cron: '0 */6 * * *'         # Run every 6 hours
   workflow_dispatch:              # Allow manual trigger
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: main-branch-auto-update
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -23,6 +30,11 @@ jobs:
       - name: Build Dynamic Cybernetic Projects
         run: python scripts/build_dynamic_projects.py
 
+      - name: Build Live SOTA Metrics
+        run: python scripts/generate_sota_metrics.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build Tech Engine Orbit (Base64)
         run: python scripts/generate_sota_tech.py
         
@@ -31,8 +43,23 @@ jobs:
 
       - name: Commit & Push Changes
         run: |
+          set -euo pipefail
+
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add assets/*.svg
-          git commit -m "🤖 auto-update: SOTA SVG components" || echo "No changes to commit"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "🤖 auto-update: SOTA SVG components"
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              echo "Pushed SVG refresh on attempt ${attempt}."
+              exit 0
+            fi
+            sleep 5
+          done
+
+          echo "Failed to push SVG refresh after retries." >&2
+          exit 1
