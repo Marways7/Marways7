@@ -103,13 +103,14 @@ def fetch_live_metrics():
 
     public_repo_count = int(user.get("public_repos", 0) or 0)
     repo_pages = math.ceil(public_repo_count / REPO_PAGE_SIZE)
+    repos_api_prefix = (
+        f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}/repos?per_page={REPO_PAGE_SIZE}&type=owner"
+    )
     total_stars = 0
     total_repos = 0
 
     for repo_page in range(1, repo_pages + 1):
-        repos = github_get(
-            f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}/repos?per_page={REPO_PAGE_SIZE}&page={repo_page}&type=owner"
-        )
+        repos = github_get(f"{repos_api_prefix}&page={repo_page}")
         total_repos += len(repos)
         total_stars += sum(repo.get("stargazers_count", 0) for repo in repos)
 
