@@ -98,6 +98,13 @@ def format_compact(value):
     return str(value)
 
 
+def extract_created_year(user):
+    created_at = user.get("created_at")
+    if isinstance(created_at, str) and len(created_at) >= 4:
+        return created_at[:4]
+    return DEFAULT_METRICS["created_year"]
+
+
 def fetch_live_metrics():
     user = github_get(f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}")
 
@@ -132,7 +139,7 @@ def fetch_live_metrics():
         "repo_count": format_compact(total_repos or public_repo_count),
         "star_count": format_compact(total_stars),
         "contributions_year": format_compact(total_contributions),
-        "created_year": str(user.get("created_at", DEFAULT_METRICS["created_year"]))[:4],
+        "created_year": extract_created_year(user),
     }
 
 
