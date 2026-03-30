@@ -41,7 +41,7 @@
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
 
 <p align="center">
-  <img src="./assets/sota-metrics.svg" width="95%" alt="SOTA Metrics"/>
+  <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/assets/sota-metrics.svg" width="95%" alt="SOTA Metrics"/>
 </p>
 
 <br/>
@@ -210,12 +210,12 @@ DevOps / CI-CD     █░░░░░░░░░░░░░░░░░░░�
 
 <br/>
 
-<!-- Trophies -->
+<!-- Productive Time (fallback for unstable trophy card) -->
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10"/>
-    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-trophy.vercel.app/?username=Marways7&theme=flat&no-frame=true&no-bg=true&column=7&margin-w=10"/>
-    <img src="https://github-profile-trophy.vercel.app/?username=Marways7&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=10" width="90%"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Marways7&theme=tokyonight&utcOffset=8"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Marways7&theme=default&utcOffset=8"/>
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Marways7&theme=tokyonight&utcOffset=8" width="90%"/>
   </picture>
 </p>
 
@@ -225,9 +225,9 @@ DevOps / CI-CD     █░░░░░░░░░░░░░░░░░░░�
 <p align="center">
   <a href="https://github.com/Marways7">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/0-profile-details.svg"/>
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/default/0-profile-details.svg"/>
-      <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/0-profile-details.svg" width="90%"/>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Marways7&theme=tokyonight"/>
+      <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Marways7&theme=default"/>
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Marways7&theme=tokyonight" width="90%"/>
     </picture>
   </a>
 </p>
@@ -235,23 +235,23 @@ DevOps / CI-CD     █░░░░░░░░░░░░░░░░░░░�
 <div align="center">
   <a href="https://github.com/Marways7">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/1-repos-per-language.svg"/>
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/default/1-repos-per-language.svg"/>
-      <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/1-repos-per-language.svg" width="32%"/>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Marways7&theme=tokyonight"/>
+      <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Marways7&theme=default"/>
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Marways7&theme=tokyonight" width="32%"/>
     </picture>
   </a>
   <a href="https://github.com/Marways7">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg"/>
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/default/2-most-commit-language.svg"/>
-      <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg" width="32%"/>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Marways7&theme=tokyonight"/>
+      <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Marways7&theme=default"/>
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Marways7&theme=tokyonight" width="32%"/>
     </picture>
   </a>
   <a href="https://github.com/Marways7">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/3-stats.svg"/>
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/default/3-stats.svg"/>
-      <img src="https://raw.githubusercontent.com/Marways7/Marways7/main/profile-summary-card-output/tokyonight/3-stats.svg" width="32%"/>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Marways7&theme=tokyonight"/>
+      <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Marways7&theme=default"/>
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Marways7&theme=tokyonight" width="32%"/>
     </picture>
   </a>
 </div>
