@@ -106,13 +106,12 @@ def extract_created_year(user):
 
 
 def fetch_live_metrics():
-    user = github_get(f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}")
+    user_api_root = f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}"
+    user = github_get(user_api_root)
 
     public_repo_count = int(user.get("public_repos", 0) or 0)
     repo_pages = math.ceil(public_repo_count / REPO_PAGE_SIZE)
-    repos_api_prefix = (
-        f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}/repos?per_page={REPO_PAGE_SIZE}&type=owner"
-    )
+    repos_api_prefix = f"{user_api_root}/repos?per_page={REPO_PAGE_SIZE}&type=owner"
     total_stars = 0
     total_repos = 0
 
