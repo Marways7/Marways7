@@ -111,7 +111,7 @@ def fetch_live_metrics():
     user = github_get(user_api_root)
 
     public_repo_count = int(user.get("public_repos", 0) or 0)
-    repo_pages = math.ceil(public_repo_count / REPO_PAGE_SIZE)
+    repo_pages = (public_repo_count + REPO_PAGE_SIZE - 1) // REPO_PAGE_SIZE
     repos_api_prefix = f"{user_api_root}/repos?{REPOS_LIST_QUERY}"
     total_stars = 0
     total_repos = 0
