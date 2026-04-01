@@ -21,6 +21,7 @@ GITHUB_USER = os.environ.get("GITHUB_USER", "Marways7")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 METRICS_OUTPUT_PATH = Path("assets/sota-metrics.svg")
 REPOS_LIST_QUERY = f"per_page={REPO_PAGE_SIZE}&type=owner"
+GITHUB_USER_AGENT = "Marways7-profile-generator"
 
 DEFAULT_METRICS = {
     "repo_count": "7",
@@ -52,7 +53,7 @@ def build_headers():
     headers = {
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": GITHUB_API_VERSION,
-        "User-Agent": "Marways7-profile-generator",
+        "User-Agent": GITHUB_USER_AGENT,
     }
     if GITHUB_TOKEN:
         headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
