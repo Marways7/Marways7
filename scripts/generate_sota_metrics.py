@@ -49,12 +49,15 @@ HEXAGON_UNIT_VECTORS = [
 ]
 
 
+GITHUB_BASE_HEADERS = {
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": GITHUB_API_VERSION,
+    "User-Agent": GITHUB_USER_AGENT,
+}
+
+
 def build_headers():
-    headers = {
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": GITHUB_API_VERSION,
-        "User-Agent": GITHUB_USER_AGENT,
-    }
+    headers = GITHUB_BASE_HEADERS.copy()
     if GITHUB_TOKEN:
         headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
     return headers
