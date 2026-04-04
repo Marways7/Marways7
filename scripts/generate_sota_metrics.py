@@ -22,6 +22,8 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 METRICS_OUTPUT_PATH = Path("assets/sota-metrics.svg")
 REPOS_LIST_QUERY = f"per_page={REPO_PAGE_SIZE}&type=owner"
 GITHUB_USER_AGENT = "Marways7-profile-generator"
+THOUSAND = 1_000
+MILLION = 1_000_000
 
 DEFAULT_METRICS = {
     "repo_count": "7",
@@ -96,10 +98,10 @@ def github_graphql(query, variables):
 
 
 def format_compact(value):
-    if value >= 1_000_000:
-        return f"{value / 1_000_000:.1f}M".rstrip("0").rstrip(".")
-    if value >= 1_000:
-        return f"{value / 1_000:.1f}k".rstrip("0").rstrip(".")
+    if value >= MILLION:
+        return f"{value / MILLION:.1f}M".rstrip("0").rstrip(".")
+    if value >= THOUSAND:
+        return f"{value / THOUSAND:.1f}k".rstrip("0").rstrip(".")
     return str(value)
 
 
