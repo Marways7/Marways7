@@ -137,9 +137,10 @@ def fetch_live_metrics():
             "to": end_date.isoformat(),
         },
     )
-    total_contributions = (
-        contributions_data["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
-    )
+    user_contributions = contributions_data.get("user") or {}
+    contribution_collection = user_contributions.get("contributionsCollection") or {}
+    contribution_calendar = contribution_collection.get("contributionCalendar") or {}
+    total_contributions = int(contribution_calendar.get("totalContributions", 0) or 0)
 
     return {
         "repo_count": format_compact(total_repos or public_repo_count),
