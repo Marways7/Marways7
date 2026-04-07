@@ -231,7 +231,7 @@ def build_svg(metrics):
         cx, cy, delay = panel["cx"], panel["cy"], panel["delay"]
         hex_str = draw_hexagon(cx, cy, HEXAGON_INNER_RADIUS)
         outer_hex = draw_hexagon(cx, cy, HEXAGON_OUTER_RADIUS)
-        value = metrics[panel["key"]]
+        value = metrics.get(panel["key"], DEFAULT_METRICS[panel["key"]])
         label = panel["label"]
 
         svg_parts.append(
