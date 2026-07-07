@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 118" width="100%" height="auto" role="img" aria-label="TERMINAL">
+  <defs>
+    <style>
+      @keyframes sweep { 0% { transform:translateX(-260px); opacity:0; } 15% { opacity:1; } 85% { opacity:1; } 100% { transform:translateX(260px); opacity:0; } }
+      @keyframes spin { to { transform:rotate(360deg); } }
+      @keyframes breathe { 0%,100% { opacity:.45; } 50% { opacity:1; } }
+      @keyframes dotTravelL { 0% { transform:translateX(0); opacity:0; } 10% { opacity:1; } 90% { opacity:1; } 100% { transform:translateX(117px); opacity:0; } }
+      @keyframes dotTravelR { 0% { transform:translateX(0); opacity:0; } 10% { opacity:1; } 90% { opacity:1; } 100% { transform:translateX(-117px); opacity:0; } }
+    </style>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset=".55" stop-color="#06B6D4"/><stop offset="1" stop-color="#EC4899"/></linearGradient>
+    <linearGradient id="lineL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10B981" stop-opacity="0"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity=".85"/>
+    </linearGradient>
+    <linearGradient id="lineR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#10B981" stop-opacity="0"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity=".85"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10B981" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="barClip"><rect x="420" y="78" width="260" height="4"/></clipPath>
+  </defs>
+
+  <g transform="translate(60.0,92.0)"><path d="M16.7 0.0Q13.4 0.0 10.8 -1.8Q8.1 -3.6 6.4 -6.5Q4.8 -9.4 4.8 -12.6V-48.3Q4.8 -51.6 6.4 -54.3Q8.1 -57.1 10.8 -58.8Q13.4 -60.5 16.7 -60.5H52.5Q55.8 -60.5 58.5 -58.8Q61.2 -57.1 62.8 -54.3Q64.4 -51.6 64.4 -48.3V-12.6Q64.4 -9.4 62.8 -6.5Q61.2 -3.6 58.5 -1.8Q55.8 0.0 52.5 0.0H16.7ZM22.8 -12.7H52.0Q52.2 -12.7 52.3 -12.8Q52.5 -12.9 52.5 -13.2V-37.5ZM16.7 -23.4 46.5 -48.2H17.2Q17.1 -48.2 16.9 -48.1Q16.7 -48.0 16.7 -47.7Z M88.8 0.0Q85.5 0.0 82.8 -1.6Q80.1 -3.3 78.5 -6.0Q76.8 -8.7 76.8 -11.8V-48.6Q76.8 -51.9 78.5 -54.6Q80.1 -57.3 82.8 -58.9Q85.5 -60.5 88.8 -60.5H127.1V-48.6H89.3Q89.1 -48.6 88.9 -48.4Q88.8 -48.2 88.8 -48.0V-37.3Q88.8 -37.1 88.9 -37.0Q89.1 -36.8 89.3 -36.8H124.6Q127.7 -36.8 130.5 -35.2Q133.2 -33.6 134.8 -30.9Q136.5 -28.2 136.5 -24.9V-11.8Q136.5 -8.7 134.8 -6.0Q133.2 -3.3 130.5 -1.6Q127.7 0.0 124.6 0.0H88.8ZM89.3 -11.9H124.1Q124.2 -11.9 124.4 -12.1Q124.6 -12.3 124.6 -12.4V-24.3Q124.6 -24.4 124.4 -24.6Q124.2 -24.8 124.1 -24.8H88.8V-12.4Q88.8 -12.3 88.9 -12.1Q89.1 -11.9 89.3 -11.9Z" fill="none" stroke="#10B981" stroke-width="1.6" opacity=".38"/></g><g transform="translate(899.1,92.0)"><path d="M16.7 0.0Q13.4 0.0 10.8 -1.8Q8.1 -3.6 6.4 -6.5Q4.8 -9.4 4.8 -12.6V-48.3Q4.8 -51.6 6.4 -54.3Q8.1 -57.1 10.8 -58.8Q13.4 -60.5 16.7 -60.5H52.5Q55.8 -60.5 58.5 -58.8Q61.2 -57.1 62.8 -54.3Q64.4 -51.6 64.4 -48.3V-12.6Q64.4 -9.4 62.8 -6.5Q61.2 -3.6 58.5 -1.8Q55.8 0.0 52.5 0.0H16.7ZM22.8 -12.7H52.0Q52.2 -12.7 52.3 -12.8Q52.5 -12.9 52.5 -13.2V-37.5ZM16.7 -23.4 46.5 -48.2H17.2Q17.1 -48.2 16.9 -48.1Q16.7 -48.0 16.7 -47.7Z M88.8 0.0Q85.5 0.0 82.8 -1.6Q80.1 -3.3 78.5 -6.0Q76.8 -8.7 76.8 -11.8V-48.6Q76.8 -51.9 78.5 -54.6Q80.1 -57.3 82.8 -58.9Q85.5 -60.5 88.8 -60.5H127.1V-48.6H89.3Q89.1 -48.6 88.9 -48.4Q88.8 -48.2 88.8 -48.0V-37.3Q88.8 -37.1 88.9 -37.0Q89.1 -36.8 89.3 -36.8H124.6Q127.7 -36.8 130.5 -35.2Q133.2 -33.6 134.8 -30.9Q136.5 -28.2 136.5 -24.9V-11.8Q136.5 -8.7 134.8 -6.0Q133.2 -3.3 130.5 -1.6Q127.7 0.0 124.6 0.0H88.8ZM89.3 -11.9H124.1Q124.2 -11.9 124.4 -12.1Q124.6 -12.3 124.6 -12.4V-24.3Q124.6 -24.4 124.4 -24.6Q124.2 -24.8 124.1 -24.8H88.8V-12.4Q88.8 -12.3 88.9 -12.1Q89.1 -11.9 89.3 -11.9Z" fill="none" stroke="#10B981" stroke-width="1.6" opacity=".18"/></g>
+
+  <line x1="130" y1="50" x2="373" y2="50" stroke="url(#lineL)" stroke-width="1.6"/>
+  <line x1="727" y1="50" x2="970" y2="50" stroke="url(#lineR)" stroke-width="1.6"/>
+  <g style="animation:dotTravelL 3.2s ease-in-out infinite">
+    <circle cx="150" cy="50" r="3" fill="#10B981"/>
+  </g>
+  <g style="animation:dotTravelR 3.2s ease-in-out 1.6s infinite">
+    <circle cx="950" cy="50" r="3" fill="#10B981"/>
+  </g>
+
+  <rect x="357" y="44" width="12" height="12" fill="none" stroke="#10B981"
+    stroke-width="1.6" transform="rotate(45 363 50)"
+    style="transform-origin:363px 50px;animation:spin 8s linear infinite"/>
+  <rect x="731" y="44" width="12" height="12" fill="none" stroke="#10B981"
+    stroke-width="1.6" transform="rotate(45 737 50)"
+    style="transform-origin:737px 50px;animation:spin 8s linear infinite reverse"/>
+
+  <g transform="translate(417.2,62.0)"><path d="M12.3 0.0V-23.0H0.8V-28.8H29.6V-23.0H18.1V0.0Z M36.7 0.0V-28.8H63.2V-23.0H42.5V-17.3H59.2V-11.5H42.5V-5.8H63.2V0.0Z M93.9 0.0 85.4 -10.2H92.9L100.0 -1.8V0.0ZM71.2 0.0V-28.8H94.2Q95.8 -28.8 97.1 -28.0Q98.4 -27.2 99.2 -25.9Q100.0 -24.6 100.0 -23.0V-15.4Q100.0 -13.8 99.2 -12.5Q98.4 -11.2 97.1 -10.5Q95.8 -9.7 94.2 -9.7L77.0 -9.6V0.0ZM77.2 -15.5H94.0Q94.1 -15.5 94.1 -15.5Q94.2 -15.6 94.2 -15.7V-22.8Q94.2 -22.9 94.1 -22.9Q94.1 -23.0 94.0 -23.0H77.2Q77.1 -23.0 77.1 -22.9Q77.0 -22.9 77.0 -22.8V-15.7Q77.0 -15.6 77.1 -15.5Q77.1 -15.5 77.2 -15.5Z M108.2 0.0V-28.8H114.4L124.4 -16.8L134.5 -28.8H140.6V0.0H134.8V-20.2L124.4 -7.8L114.0 -20.2V0.0Z M148.6 0.0V-28.8H154.3V0.0Z M161.9 0.0V-28.8H168.0L184.9 -8.7V-28.8H190.7V0.0H184.6L167.7 -20.2V0.0Z M199.3 0.0V-23.0Q199.3 -24.6 200.1 -25.9Q200.8 -27.2 202.1 -28.0Q203.4 -28.8 205.0 -28.8H222.3Q223.9 -28.8 225.2 -28.0Q226.5 -27.2 227.3 -25.9Q228.1 -24.6 228.1 -23.0V0.0H222.2V-9.5H205.0V0.0H199.3ZM205.0 -15.2H222.2V-22.8Q222.2 -22.9 222.2 -22.9Q222.1 -23.0 222.0 -23.0H205.3Q205.2 -23.0 205.1 -22.9Q205.0 -22.9 205.0 -22.8V-15.2Z M236.7 0.0V-28.8H242.4V-5.8H265.5V0.0Z" fill="url(#ink)" /></g>
+
+  <g clip-path="url(#barClip)">
+    <rect x="420" y="78" width="260" height="3" rx="1.5" fill="url(#bar)"
+      style="animation:sweep 3s ease-in-out infinite"/>
+  </g>
+
+  <text x="550.0" y="106" text-anchor="middle" font-family="-apple-system,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15"
+    fill="#8B949E" letter-spacing="3" style="animation:breathe 4s ease-in-out infinite">终端名片 · root@marways</text>
+</svg>

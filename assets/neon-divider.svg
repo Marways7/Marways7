@@ -1,33 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="12" viewBox="0 0 1200 12">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 30" width="100%" height="auto" aria-hidden="true">
   <defs>
-    <linearGradient id="neon-line" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0"/>
-      <stop offset="15%" style="stop-color:#a78bfa;stop-opacity:1">
-        <animate attributeName="stop-color" values="#a78bfa;#67e8f9;#c084fc;#a78bfa" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" style="stop-color:#67e8f9;stop-opacity:1">
-        <animate attributeName="stop-color" values="#67e8f9;#c084fc;#a78bfa;#67e8f9" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="85%" style="stop-color:#c084fc;stop-opacity:1">
-        <animate attributeName="stop-color" values="#c084fc;#a78bfa;#67e8f9;#c084fc" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:0"/>
+    <style>
+      @keyframes flow { to { stroke-dashoffset:-144; } }
+      @keyframes spark { 0% { transform:translateX(0); opacity:0; } 8% { opacity:1; } 92% { opacity:1; } 100% { transform:translateX(480px); opacity:0; } }
+      @keyframes sparkR { 0% { transform:translateX(0); opacity:0; } 8% { opacity:1; } 92% { opacity:1; } 100% { transform:translateX(-480px); opacity:0; } }
+      @keyframes pulse { 0%,100% { transform:scale(1); opacity:.9; } 50% { transform:scale(1.35); opacity:.45; } }
+    </style>
+    <linearGradient id="dl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0"/>
+      <stop offset="1" stop-color="#06B6D4" stop-opacity=".8"/>
     </linearGradient>
-    <filter id="neon-glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="dr" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0"/>
+      <stop offset="1" stop-color="#06B6D4" stop-opacity=".8"/>
+    </linearGradient>
   </defs>
-  <!-- Glow layer -->
-  <rect x="50" y="4" width="1100" height="4" rx="2" fill="url(#neon-line)" filter="url(#neon-glow)" opacity="0.6"/>
-  <!-- Core line -->
-  <rect x="50" y="5" width="1100" height="2" rx="1" fill="url(#neon-line)" opacity="0.9"/>
-  <!-- Center diamond -->
-  <polygon points="600,0 606,6 600,12 594,6" fill="#67e8f9" filter="url(#neon-glow)" opacity="0.8">
-    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
-  </polygon>
+  <line x1="30" y1="15.0" x2="560" y2="15.0" stroke="url(#dl)" stroke-width="1.5" stroke-dasharray="10 8" style="animation:flow 4s linear infinite"/>
+  <line x1="640" y1="15.0" x2="1170" y2="15.0" stroke="url(#dr)" stroke-width="1.5" stroke-dasharray="10 8" style="animation:flow 4s linear infinite reverse"/>
+  <g style="animation:spark 5s ease-in-out infinite"><circle cx="60" cy="15.0" r="2.6" fill="#67E8F9"/></g>
+  <g style="animation:sparkR 5s ease-in-out 2.5s infinite"><circle cx="1140" cy="15.0" r="2.6" fill="#A78BFA"/></g>
+  <rect x="594.0" y="9.0" width="12" height="12" fill="none" stroke="#8B5CF6" stroke-width="1.6"
+    transform="rotate(45 600.0 15.0)" style="transform-origin:600.0px 15.0px;animation:pulse 2.6s ease-in-out infinite"/>
+  <circle cx="600.0" cy="15.0" r="2" fill="#EC4899"/>
 </svg>

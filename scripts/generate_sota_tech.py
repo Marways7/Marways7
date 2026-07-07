@@ -1,257 +1,199 @@
+"""Tech orbit — assets/sota-tech.svg.
+
+Real devicon vectors are inlined at build time (immune to GitHub's CSP),
+arranged on three tilted orbits around a pulsing AI core.
+"""
+
 import math
-import urllib.request
+import random
 import re
-import os
+import urllib.request
 
-width = 1200
-height = 650
+from svgtools import (ASSETS_DIR, MONO_STACK, PALETTE, display_text,
+                      write_svg)
 
-logos = {
-    "python": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-    "js": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-    "ts": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-    "react": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    "nodejs": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-    "java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-    "docker": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-    "pytorch": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg",
-    "tensorflow": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
-    "mongodb": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-    "mysql": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
-    "redis": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
-    "git": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-    "vscode": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
-    "html": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-    "css": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-    "nextjs": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+random.seed(42)
+P = PALETTE
+W, H = 1200, 620
+CX, CY = W / 2, H / 2 - 10
+
+ICON_BASE = "https://raw.githubusercontent.com/devicons/devicon/master/icons"
+ICONS = {
+    "python": f"{ICON_BASE}/python/python-original.svg",
+    "typescript": f"{ICON_BASE}/typescript/typescript-original.svg",
+    "javascript": f"{ICON_BASE}/javascript/javascript-original.svg",
+    "react": f"{ICON_BASE}/react/react-original.svg",
+    "html5": f"{ICON_BASE}/html5/html5-original.svg",
+    "css3": f"{ICON_BASE}/css3/css3-original.svg",
+    "pytorch": f"{ICON_BASE}/pytorch/pytorch-original.svg",
+    "tensorflow": f"{ICON_BASE}/tensorflow/tensorflow-original.svg",
+    "nodejs": f"{ICON_BASE}/nodejs/nodejs-original.svg",
+    "nextjs": f"{ICON_BASE}/nextjs/nextjs-original.svg",
+    "docker": f"{ICON_BASE}/docker/docker-original.svg",
+    "mongodb": f"{ICON_BASE}/mongodb/mongodb-original.svg",
+    "java": f"{ICON_BASE}/java/java-original.svg",
+    "mysql": f"{ICON_BASE}/mysql/mysql-original.svg",
+    "redis": f"{ICON_BASE}/redis/redis-original.svg",
+    "git": f"{ICON_BASE}/git/git-original.svg",
+    "linux": f"{ICON_BASE}/linux/linux-original.svg",
+    "vscode": f"{ICON_BASE}/vscode/vscode-original.svg",
 }
 
-def extract_svg_content(url):
+FALLBACK_COLORS = {
+    "python": "#3776AB", "typescript": "#3178C6", "javascript": "#F7DF1E",
+    "react": "#61DAFB", "html5": "#E34C26", "css3": "#1572B6",
+    "pytorch": "#EE4C2C", "tensorflow": "#FF6F00", "nodejs": "#339933",
+    "nextjs": "#888888", "docker": "#2496ED", "mongodb": "#47A248",
+    "java": "#E76F00", "mysql": "#00758F", "redis": "#DC382D",
+    "git": "#F05032", "linux": "#FBC02D", "vscode": "#007ACC",
+}
+
+
+def fetch_icon(name, url):
+    """Return (inner_svg, scale, translate) sized for a 40px box."""
     try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=10) as response:
-            svg_data = response.read().decode('utf-8')
-            
-            # Very crude but effective regex to extract everything inside the <svg> tags
-            # We want to keep paths, polygons, linearGradients, etc., but discard the outer <svg>
-            match = re.search(r'<svg[^>]*>(.*?)</svg>', svg_data, re.IGNORECASE | re.DOTALL)
-            if match:
-                inner_content = match.group(1)
-                
-                # Check for viewBox to properly scale the inner content
-                vb_match = re.search(r'viewBox="([^"]+)"', svg_data)
-                scale = 1.0
-                translate = (0,0)
-                if vb_match:
-                    parts = [float(p) for p in vb_match.group(1).split()]
-                    # Assume icons are typically 128x128 max in devicons
-                    w = parts[2]
-                    h = parts[3]
-                    scale = 40.0 / max(w, h) # We want icons to be ~40px
-                    translate = (-parts[0], -parts[1])
-                else:
-                    scale = 40.0 / 128.0 # fallback assumption
-                
-                return inner_content, scale, translate
-            return None, 1.0, (0,0)
-            
-    except Exception as e:
-        print(f"Failed to fetch {url}: {e}")
-        return None, 1.0, (0,0)
-
-print("Fetching raw SVGs and extracting vector paths (immune to CSP)...")
-raw_icons = {}
-for name, url in logos.items():
-    content, scale, translate = extract_svg_content(url)
-    if content:
-        raw_icons[name] = {"content": content, "scale": scale, "translate": translate}
-
-svg_parts = []
-
-svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="auto">
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;display=swap');
-      
-      @keyframes spin-cw {{
-        0% {{ transform: rotate(0deg); }}
-        100% {{ transform: rotate(360deg); }}
-      }}
-      @keyframes spin-ccw {{
-        0% {{ transform: rotate(360deg); }}
-        100% {{ transform: rotate(0deg); }}
-      }}
-      @keyframes counter-spin-cw {{
-        0% {{ transform: rotate(360deg); }}
-        100% {{ transform: rotate(0deg); }}
-      }}
-      @keyframes counter-spin-ccw {{
-        0% {{ transform: rotate(0deg); }}
-        100% {{ transform: rotate(360deg); }}
-      }}
-      @keyframes pulse-core {{
-        0%, 100% {{ filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8)); transform: scale(1); }}
-        50% {{ filter: drop-shadow(0 0 50px rgba(6, 182, 212, 1)); transform: scale(1.05); }}
-      }}
-      
-      .orbit {{
-        fill: none;
-        stroke: rgba(139, 92, 246, 0.2);
-        stroke-width: 1.5;
-        stroke-dasharray: 6 12;
-      }}
-      
-      .orbit-glow {{
-        fill: none;
-        stroke: rgba(6, 182, 212, 0.6);
-        stroke-width: 2.5;
-        stroke-dasharray: 100 250;
-        filter: blur(2px);
-      }}
-
-      .core-text {{
-        font-family: 'Orbitron', sans-serif;
-        font-size: 26px;
-        font-weight: 900;
-        fill: #FFFFFF;
-        text-anchor: middle;
-        dominant-baseline: middle;
-        letter-spacing: 2px;
-      }}
-      
-      .node-bg {{
-        fill: #0D1117;
-        stroke: #A78BFA;
-        stroke-width: 2.5;
-        filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.5));
-      }}
-      
-      .hex-bg {{
-        fill: none;
-        stroke: rgba(255, 255, 255, 0.05);
-        stroke-width: 1;
-      }}
-    </style>
-    
-    <radialGradient id="core-grad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#F472B6"/>
-      <stop offset="50%" stop-color="#8B5CF6"/>
-      <stop offset="100%" stop-color="#06B6D4"/>
-    </radialGradient>
-    
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050814" />
-      <stop offset="50%" stop-color="#0f0c29" />
-      <stop offset="100%" stop-color="#050814" />
-    </linearGradient>
-
-    <pattern id="stars" width="100" height="100" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.5" fill="#fff" opacity="0.1"/>
-      <circle cx="50" cy="80" r="1" fill="#fff" opacity="0.2"/>
-      <circle cx="90" cy="40" r="2" fill="#fff" opacity="0.15"/>
-    </pattern>
-    
-  </defs>
-
-  <!-- Deep Space Canvas -->
-  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="15" />
-  <rect width="100%" height="100%" fill="url(#stars)" rx="15" />
-''')
-
-cx, cy = width // 2, height // 2
-
-# Draw highly technical background hex grid
-hex_size = 40
-for row in range(-10, 10):
-    for col in range(-15, 15):
-        x = cx + col * hex_size * 1.5
-        y = cy + row * hex_size * math.sqrt(3)
-        if col % 2 != 0:
-            y += hex_size * math.sqrt(3) / 2
-        
-        points = []
-        for i in range(6):
-            angle_deg = 60 * i
-            angle_rad = math.pi / 180 * angle_deg
-            px = x + hex_size * math.cos(angle_rad)
-            py = y + hex_size * math.sin(angle_rad)
-            points.append(f"{px},{py}")
-        svg_parts.append(f'<polygon points="{", ".join(points)}" class="hex-bg"/>')
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = resp.read().decode("utf-8")
+        match = re.search(r"<svg[^>]*>(.*?)</svg>", data, re.IGNORECASE | re.DOTALL)
+        if not match:
+            return None
+        inner = match.group(1)
+        vb = re.search(r'viewBox="([^"]+)"', data)
+        if vb:
+            x0, y0, vw, vh = (float(v) for v in vb.group(1).split())
+            return inner, 40.0 / max(vw, vh), (-x0, -y0)
+        return inner, 40.0 / 128.0, (0, 0)
+    except Exception as exc:  # noqa: BLE001 - fallback glyph below
+        print(f"[tech] icon fetch failed for {name}: {exc}")
+        return None
 
 
-orbits_data = [
-    {"r_x": 220, "r_y": 80, "duration": 22, "dir": "cw", "tilt": 18, "items": ["python", "js", "ts", "react", "html", "css"]},
-    {"r_x": 380, "r_y": 120, "duration": 35, "dir": "ccw", "tilt": -12, "items": ["nodejs", "java", "nextjs", "docker", "mongodb", "mysql"]},
-    {"r_x": 550, "r_y": 180, "duration": 50, "dir": "cw", "tilt": 8, "items": ["pytorch", "tensorflow", "redis", "git", "vscode"]}
+print("[tech] inlining devicon vectors ...")
+raw_icons = {name: fetch_icon(name, url) for name, url in ICONS.items()}
+
+ORBITS = [
+    {"rx": 218, "ry": 74, "dur": 26, "dir": 1, "tilt": 14,
+     "items": ["python", "typescript", "javascript", "react", "html5", "css3"]},
+    {"rx": 375, "ry": 122, "dur": 40, "dir": -1, "tilt": -10,
+     "items": ["pytorch", "tensorflow", "nodejs", "nextjs", "docker", "mongodb"]},
+    {"rx": 532, "ry": 172, "dur": 56, "dir": 1, "tilt": 7,
+     "items": ["java", "mysql", "redis", "git", "linux", "vscode"]},
 ]
 
-for idx, orbit in enumerate(orbits_data):
-    rx, ry = orbit["r_x"], orbit["r_y"]
-    dur = orbit["duration"]
-    direction = "spin-cw" if orbit["dir"] == "cw" else "spin-ccw"
-    counter_dir = "counter-spin-cw" if orbit["dir"] == "cw" else "counter-spin-ccw"
-    tilt = orbit["tilt"]
-    
-    # Draw Orbit Rings
-    svg_parts.append(f'''
-  <g style="transform-origin: {cx}px {cy}px; transform: rotate({tilt}deg);">
-    <ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" class="orbit" />
-    <ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" class="orbit-glow" style="animation: {direction} {dur*1.5}s infinite linear;" />
-    
-    <!-- Rotating Container for Items -->
-    <g style="transform-origin: {cx}px {cy}px; animation: {direction} {dur}s infinite linear;">
-''')
-    
-    # Draw Items on the orbit
-    items = orbit["items"]
-    n = len(items)
-    for i, item in enumerate(items):
-        icon_data = raw_icons.get(item)
-        if not icon_data: continue
-        
-        angle = 2 * math.pi * i / n
-        x = cx + rx * math.cos(angle)
-        y = cy + ry * math.sin(angle)
-        
-        s = icon_data["scale"]
-        tx = icon_data["translate"][0]
-        ty = icon_data["translate"][1]
-        
-        svg_parts.append(f'''
-      <g style="transform-origin: {x}px {y}px; animation: {counter_dir} {dur}s infinite linear;">
-        <!-- Counter native tilt to keep perfectly flat visually -->
-        <g style="transform-origin: {x}px {y}px; transform: rotate({-tilt}deg);">
-          <!-- Connection lines to core (ghostly) -->
-          <line x1="{x}" y1="{y}" x2="{cx - (x - cx)}" y2="{cy - (y - cy)}" stroke="rgba(139, 92, 246, 0.1)" stroke-width="1" />
-          <circle cx="{x}" cy="{y}" r="28" class="node-bg" />
-          
-          <!-- NATIVE EMBEDDED PATHS (Immune to CSP) -->
-          <g transform="translate({x-20}, {y-20}) scale({s}) translate({tx}, {ty})">
-             {icon_data["content"]}
-          </g>
+parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="100%" height="auto" role="img" aria-label="Tech stack orbit">
+  <defs>
+    <style>
+      @keyframes spinCW  {{ to {{ transform:rotate(360deg); }} }}
+      @keyframes spinCCW {{ to {{ transform:rotate(-360deg); }} }}
+      @keyframes corePulse {{
+        0%,100% {{ transform:scale(1); filter:drop-shadow(0 0 18px rgba(139,92,246,.7)); }}
+        50% {{ transform:scale(1.06); filter:drop-shadow(0 0 42px rgba(34,211,238,.9)); }}
+      }}
+      @keyframes twinkle {{ 0%,100% {{ opacity:.12; }} 50% {{ opacity:.8; }} }}
+      @keyframes breathe {{ 0%,100% {{ opacity:.5; }} 50% {{ opacity:1; }} }}
+      @keyframes arcFlow {{ to {{ stroke-dashoffset:-1200; }} }}
+      .mono {{ font-family:{MONO_STACK}; }}
+      .orbitRing {{ fill:none; stroke:rgba(139,92,246,.22); stroke-width:1.4; stroke-dasharray:5 9; }}
+      .node {{ fill:#0D1117; stroke:rgba(167,139,250,.65); stroke-width:2;
+               filter:drop-shadow(0 0 9px rgba(139,92,246,.45)); }}
+    </style>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="{P["bg_deep"]}"/>
+      <stop offset=".5" stop-color="#0C0A22"/>
+      <stop offset="1" stop-color="#071018"/>
+    </linearGradient>
+    <radialGradient id="coreGrad" cx="50%" cy="42%" r="60%">
+      <stop offset="0" stop-color="#F472B6"/>
+      <stop offset=".55" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#0EA5B7"/>
+    </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="50%" r="72%">
+      <stop offset=".62" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".55"/>
+    </radialGradient>
+    <radialGradient id="coreHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="frame"><rect width="{W}" height="{H}" rx="16"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+  <rect width="{W}" height="{H}" fill="url(#bgGrad)"/>
+  <circle cx="{CX}" cy="{CY}" r="360" fill="url(#coreHalo)"/>
+''']
+
+for _ in range(70):
+    x, y = random.uniform(6, W - 6), random.uniform(6, H - 6)
+    parts.append(
+        f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{random.uniform(.5, 1.7):.1f}" fill="#E6EDF3" '
+        f'style="animation:twinkle {random.uniform(2.5, 6):.1f}s ease-in-out {random.uniform(0, 5):.1f}s infinite"/>')
+
+for orbit in ORBITS:
+    rx, ry, dur, tilt = orbit["rx"], orbit["ry"], orbit["dur"], orbit["tilt"]
+    spin = "spinCW" if orbit["dir"] == 1 else "spinCCW"
+    counter = "spinCCW" if orbit["dir"] == 1 else "spinCW"
+    circumference = 2 * math.pi * math.sqrt((rx * rx + ry * ry) / 2)
+    parts.append(f'''
+  <g style="transform-origin:{CX}px {CY}px;transform:rotate({tilt}deg)">
+    <ellipse cx="{CX}" cy="{CY}" rx="{rx}" ry="{ry}" class="orbitRing"/>
+    <ellipse cx="{CX}" cy="{CY}" rx="{rx}" ry="{ry}" fill="none" stroke="rgba(34,211,238,.6)"
+      stroke-width="2" stroke-dasharray="90 {circumference:.0f}" stroke-linecap="round"
+      style="animation:arcFlow {dur * 1.1:.0f}s linear infinite"/>
+    <g style="transform-origin:{CX}px {CY}px;animation:{spin} {dur}s linear infinite">''')
+
+    for i, item in enumerate(orbit["items"]):
+        angle = 2 * math.pi * i / len(orbit["items"])
+        x = CX + rx * math.cos(angle)
+        y = CY + ry * math.sin(angle)
+        icon = raw_icons.get(item)
+        if icon:
+            inner, scale, (tx, ty) = icon
+            glyph = (f'<g transform="translate({x - 20:.1f},{y - 20:.1f}) '
+                     f'scale({scale:.4f}) translate({tx},{ty})">{inner}</g>')
+        else:
+            color = FALLBACK_COLORS.get(item, P["violet_light"])
+            glyph = (f'<circle cx="{x:.1f}" cy="{y:.1f}" r="14" fill="{color}"/>'
+                     f'<text x="{x:.1f}" y="{y + 5:.1f}" text-anchor="middle" class="mono" '
+                     f'font-size="14" font-weight="700" fill="#0D1117">{item[0].upper()}</text>')
+        parts.append(f'''
+      <g style="transform-origin:{x:.1f}px {y:.1f}px;animation:{counter} {dur}s linear infinite">
+        <g style="transform-origin:{x:.1f}px {y:.1f}px;transform:rotate({-tilt}deg)">
+          <circle cx="{x:.1f}" cy="{y:.1f}" r="27" class="node"/>
+          {glyph}
         </g>
-      </g>
-''')
-        
-    svg_parts.append('    </g>\n  </g>')
+      </g>''')
+    parts.append("\n    </g>\n  </g>")
 
-# Central Glowing AI Core
-svg_parts.append(f'''
-  <g style="transform-origin: {cx}px {cy}px; animation: pulse-core 4s infinite ease-in-out;">
-    <circle cx="{cx}" cy="{cy}" r="65" fill="url(#core-grad)" />
-    <!-- Outer Spinners -->
-    <circle cx="{cx}" cy="{cy}" r="75" fill="none" stroke="#F472B6" stroke-width="3" stroke-dasharray="15 30" style="animation: spin-cw 10s infinite linear;" />
-    <circle cx="{cx}" cy="{cy}" r="90" fill="none" stroke="#06B6D4" stroke-width="2" stroke-dasharray="5 20 40 10" style="animation: spin-ccw 15s infinite linear;" />
-    <!-- Geometric inner glow -->
-    <polygon points="{cx},{cy-50} {cx+43},{cy-25} {cx+43},{cy+25} {cx},{cy+50} {cx-43},{cy+25} {cx-43},{cy-25}" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" style="animation: spin-cw 20s infinite linear;" />
-    
-    <text x="{cx}" y="{cy}" class="core-text">AI CORE</text>
+core_text = display_text("AI", 40, CX, CY + 6, "#FFFFFF", 3, "middle")
+core_sub = display_text("CORE", 13, CX, CY + 30, "rgba(230,237,243,.85)", 5, "middle")
+parts.append(f'''
+  <g style="transform-origin:{CX}px {CY}px;animation:corePulse 4.5s ease-in-out infinite">
+    <circle cx="{CX}" cy="{CY}" r="62" fill="url(#coreGrad)"/>
+    <circle cx="{CX}" cy="{CY}" r="74" fill="none" stroke="#F472B6" stroke-width="2.4"
+      stroke-dasharray="16 30" style="transform-origin:{CX}px {CY}px;animation:spinCW 11s linear infinite"/>
+    <circle cx="{CX}" cy="{CY}" r="88" fill="none" stroke="#22D3EE" stroke-width="1.6"
+      stroke-dasharray="4 18 40 12" style="transform-origin:{CX}px {CY}px;animation:spinCCW 17s linear infinite"/>
+    <polygon points="{CX},{CY - 50} {CX + 43},{CY - 25} {CX + 43},{CY + 25} {CX},{CY + 50} {CX - 43},{CY + 25} {CX - 43},{CY - 25}"
+      fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.6"
+      style="transform-origin:{CX}px {CY}px;animation:spinCW 24s linear infinite"/>
+    {core_text}
+    {core_sub}
   </g>
+
+  <g class="mono" font-size="12" fill="{P["muted"]}" letter-spacing="2">
+    <text x="34" y="{H - 74}">ORBIT-01 <tspan fill="{P["cyan_light"]}">LANGUAGES / FRONTEND</tspan></text>
+    <text x="34" y="{H - 52}">ORBIT-02 <tspan fill="{P["violet_light"]}">AI / RUNTIME / DATA</tspan></text>
+    <text x="34" y="{H - 30}">ORBIT-03 <tspan fill="{P["pink"]}">INFRA / TOOLING</tspan></text>
+    <text x="{W - 34}" y="{H - 30}" text-anchor="end" style="animation:breathe 3s ease-in-out infinite"><tspan fill="{P["green"]}">●</tspan> ALL SYSTEMS ROTATING</text>
+  </g>
+
+  <rect width="{W}" height="{H}" fill="url(#vign)" pointer-events="none"/>
+  </g>
+  <rect x=".8" y=".8" width="{W - 1.6}" height="{H - 1.6}" rx="15" fill="none"
+    stroke="{P["violet"]}" stroke-opacity=".38" stroke-width="1.5"/>
+</svg>
 ''')
 
-svg_parts.append('</svg>')
-
-os.makedirs('assets', exist_ok=True)
-with open('assets/sota-tech.svg', 'w', encoding='utf-8') as f:
-    f.write("".join(svg_parts))
-print("SOTA Native Vector Tech Orbit SVG generated at assets/sota-tech.svg")
+write_svg(ASSETS_DIR / "sota-tech.svg", "".join(parts))

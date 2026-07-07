@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 118" width="100%" height="auto" role="img" aria-label="CONNECT">
+  <defs>
+    <style>
+      @keyframes sweep { 0% { transform:translateX(-260px); opacity:0; } 15% { opacity:1; } 85% { opacity:1; } 100% { transform:translateX(260px); opacity:0; } }
+      @keyframes spin { to { transform:rotate(360deg); } }
+      @keyframes breathe { 0%,100% { opacity:.45; } 50% { opacity:1; } }
+      @keyframes dotTravelL { 0% { transform:translateX(0); opacity:0; } 10% { opacity:1; } 90% { opacity:1; } 100% { transform:translateX(109px); opacity:0; } }
+      @keyframes dotTravelR { 0% { transform:translateX(0); opacity:0; } 10% { opacity:1; } 90% { opacity:1; } 100% { transform:translateX(-109px); opacity:0; } }
+    </style>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset=".55" stop-color="#06B6D4"/><stop offset="1" stop-color="#EC4899"/></linearGradient>
+    <linearGradient id="lineL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#EC4899" stop-opacity="0"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity=".85"/>
+    </linearGradient>
+    <linearGradient id="lineR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#EC4899" stop-opacity="0"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity=".85"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#EC4899" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="barClip"><rect x="420" y="78" width="260" height="4"/></clipPath>
+  </defs>
+
+  <g transform="translate(60.0,92.0)"><path d="M16.7 0.0Q13.4 0.0 10.8 -1.8Q8.1 -3.6 6.4 -6.5Q4.8 -9.4 4.8 -12.6V-48.3Q4.8 -51.6 6.4 -54.3Q8.1 -57.1 10.8 -58.8Q13.4 -60.5 16.7 -60.5H52.5Q55.8 -60.5 58.5 -58.8Q61.2 -57.1 62.8 -54.3Q64.4 -51.6 64.4 -48.3V-12.6Q64.4 -9.4 62.8 -6.5Q61.2 -3.6 58.5 -1.8Q55.8 0.0 52.5 0.0H16.7ZM22.8 -12.7H52.0Q52.2 -12.7 52.3 -12.8Q52.5 -12.9 52.5 -13.2V-37.5ZM16.7 -23.4 46.5 -48.2H17.2Q17.1 -48.2 16.9 -48.1Q16.7 -48.0 16.7 -47.7Z M110.6 0.0V-48.1Q110.6 -48.3 110.5 -48.4Q110.4 -48.6 110.1 -48.6H72.3V-60.6H110.7Q114.0 -60.6 116.7 -59.0Q119.3 -57.4 120.9 -54.7Q122.5 -52.0 122.5 -48.6V0.0Z" fill="none" stroke="#EC4899" stroke-width="1.6" opacity=".38"/></g><g transform="translate(912.5,92.0)"><path d="M16.7 0.0Q13.4 0.0 10.8 -1.8Q8.1 -3.6 6.4 -6.5Q4.8 -9.4 4.8 -12.6V-48.3Q4.8 -51.6 6.4 -54.3Q8.1 -57.1 10.8 -58.8Q13.4 -60.5 16.7 -60.5H52.5Q55.8 -60.5 58.5 -58.8Q61.2 -57.1 62.8 -54.3Q64.4 -51.6 64.4 -48.3V-12.6Q64.4 -9.4 62.8 -6.5Q61.2 -3.6 58.5 -1.8Q55.8 0.0 52.5 0.0H16.7ZM22.8 -12.7H52.0Q52.2 -12.7 52.3 -12.8Q52.5 -12.9 52.5 -13.2V-37.5ZM16.7 -23.4 46.5 -48.2H17.2Q17.1 -48.2 16.9 -48.1Q16.7 -48.0 16.7 -47.7Z M110.6 0.0V-48.1Q110.6 -48.3 110.5 -48.4Q110.4 -48.6 110.1 -48.6H72.3V-60.6H110.7Q114.0 -60.6 116.7 -59.0Q119.3 -57.4 120.9 -54.7Q122.5 -52.0 122.5 -48.6V0.0Z" fill="none" stroke="#EC4899" stroke-width="1.6" opacity=".18"/></g>
+
+  <line x1="130" y1="50" x2="381" y2="50" stroke="url(#lineL)" stroke-width="1.6"/>
+  <line x1="719" y1="50" x2="970" y2="50" stroke="url(#lineR)" stroke-width="1.6"/>
+  <g style="animation:dotTravelL 3.2s ease-in-out infinite">
+    <circle cx="150" cy="50" r="3" fill="#EC4899"/>
+  </g>
+  <g style="animation:dotTravelR 3.2s ease-in-out 1.6s infinite">
+    <circle cx="950" cy="50" r="3" fill="#EC4899"/>
+  </g>
+
+  <rect x="365" y="44" width="12" height="12" fill="none" stroke="#EC4899"
+    stroke-width="1.6" transform="rotate(45 371 50)"
+    style="transform-origin:371px 50px;animation:spin 8s linear infinite"/>
+  <rect x="723" y="44" width="12" height="12" fill="none" stroke="#EC4899"
+    stroke-width="1.6" transform="rotate(45 729 50)"
+    style="transform-origin:729px 50px;animation:spin 8s linear infinite reverse"/>
+
+  <g transform="translate(424.8,62.0)"><path d="M8.0 0.0Q6.4 0.0 5.1 -0.8Q3.8 -1.6 3.0 -2.9Q2.2 -4.2 2.2 -5.8V-23.0Q2.2 -24.6 3.0 -25.9Q3.8 -27.2 5.1 -28.0Q6.4 -28.8 8.0 -28.8H31.0V-23.0H9.4Q8.7 -23.0 8.4 -22.7Q8.0 -22.3 8.0 -21.6V-7.2Q8.0 -6.5 8.4 -6.2Q8.7 -5.8 9.4 -5.8H31.0V0.0Z M44.8 0.0Q43.2 0.0 41.9 -0.8Q40.6 -1.6 39.8 -2.9Q39.0 -4.2 39.0 -5.8V-23.0Q39.0 -24.6 39.8 -25.9Q40.6 -27.2 41.9 -28.0Q43.2 -28.8 44.8 -28.8H62.1Q63.6 -28.8 64.9 -28.0Q66.2 -27.2 67.0 -25.9Q67.8 -24.6 67.8 -23.0V-5.8Q67.8 -4.2 67.0 -2.9Q66.2 -1.6 64.9 -0.8Q63.6 0.0 62.1 0.0ZM45.0 -5.8H61.8Q61.9 -5.8 61.9 -5.9Q62.0 -5.9 62.0 -6.0V-22.8Q62.0 -22.9 61.9 -22.9Q61.9 -23.0 61.8 -23.0H45.0Q44.9 -23.0 44.9 -22.9Q44.8 -22.9 44.8 -22.8V-6.0Q44.8 -5.9 44.9 -5.9Q44.9 -5.8 45.0 -5.8Z M76.2 0.0V-28.8H82.4L99.2 -8.7V-28.8H105.0V0.0H98.9L82.0 -20.2V0.0Z M113.5 0.0V-28.8H119.6L136.5 -8.7V-28.8H142.3V0.0H136.2L119.3 -20.2V0.0Z M150.9 0.0V-28.8H177.4V-23.0H156.7V-17.3H173.4V-11.5H156.7V-5.8H177.4V0.0Z M191.2 0.0Q189.6 0.0 188.3 -0.8Q187.0 -1.6 186.2 -2.9Q185.4 -4.2 185.4 -5.8V-23.0Q185.4 -24.6 186.2 -25.9Q187.0 -27.2 188.3 -28.0Q189.6 -28.8 191.2 -28.8H214.2V-23.0H192.6Q191.9 -23.0 191.6 -22.7Q191.2 -22.3 191.2 -21.6V-7.2Q191.2 -6.5 191.6 -6.2Q191.9 -5.8 192.6 -5.8H214.2V0.0Z M232.4 0.0V-23.0H220.9V-28.8H249.7V-23.0H238.2V0.0Z" fill="url(#ink)" /></g>
+
+  <g clip-path="url(#barClip)">
+    <rect x="420" y="78" width="260" height="3" rx="1.5" fill="url(#bar)"
+      style="animation:sweep 3s ease-in-out infinite"/>
+  </g>
+
+  <text x="550.0" y="106" text-anchor="middle" font-family="-apple-system,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15"
+    fill="#8B949E" letter-spacing="3" style="animation:breathe 4s ease-in-out infinite">联系我 · 一起创造点什么</text>
+</svg>
