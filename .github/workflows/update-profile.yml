@@ -25,19 +25,28 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
-      - name: Build Dynamic Cybernetic Projects
+      - name: Install Dependencies (vector typography)
+        run: pip install fonttools brotli
+
+      - name: Build Aurora Hero Banner
+        run: python scripts/generate_sota_hero.py
+
+      - name: Build Section Headers / Divider / Footer
+        run: python scripts/generate_sections.py
+
+      - name: Build Dynamic Project Cards
         run: python scripts/build_dynamic_projects.py
 
-      - name: Build Live SOTA Metrics
+      - name: Build Live Metrics Board
         run: python scripts/generate_sota_metrics.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Tech Engine Orbit (Base64)
+      - name: Build Tech Orbit (inlined vectors)
         run: python scripts/generate_sota_tech.py
-        
+
       - name: Build Terminal Bio
         run: python scripts/generate_terminal_bio.py
 
