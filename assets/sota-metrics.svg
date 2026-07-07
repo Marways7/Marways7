@@ -1,75 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 250" width="100%" height="auto" role="img" aria-label="Live GitHub metrics">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Fira+Code:wght@600&amp;display=swap');
-      
-      .bg { fill: #0D1117; }
-      
-      .hex-frame {
-        fill: rgba(139, 92, 246, 0.05);
-        stroke: #A78BFA;
-        stroke-width: 2;
-        filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.4));
-      }
-      .hex-frame:hover {
-        fill: rgba(6, 182, 212, 0.1);
-        stroke: #06B6D4;
-        filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.8));
-      }
-      
-      .value {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 34px;
-        font-weight: 900;
-        fill: #67E8F9;
-        text-anchor: middle;
-      }
-      .label {
-        font-family: 'Fira Code', monospace;
-        font-size: 14px;
-        font-weight: 600;
-        fill: #8B949E;
-        text-anchor: middle;
-      }
-      @keyframes float-hex {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-6px); }
-      }
-      
-      @keyframes pulse-ring {
-        0% { stroke-dasharray: 0 100; opacity: 0.8; }
-        100% { stroke-dasharray: 100 0; opacity: 0; }
-      }
+      @keyframes tileIn { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+      @keyframes floatTile { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-5px); } }
+      @keyframes numGlow { 0%,100% { filter:drop-shadow(0 0 2px rgba(103,232,249,.25)); } 50% { filter:drop-shadow(0 0 9px rgba(139,92,246,.6)); } }
+      @keyframes scan { 0% { transform:translateX(-220px); opacity:0; } 10% { opacity:.6; } 90% { opacity:.6; } 100% { transform:translateX(1320px); opacity:0; } }
+      @keyframes breathe { 0%,100% { opacity:.5; } 50% { opacity:1; } }
+      .mono { font-family:ui-monospace,'SFMono-Regular','SF Mono','Cascadia Code','JetBrains Mono',Menlo,Consolas,monospace; }
+      .sans { font-family:-apple-system,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; }
     </style>
+    <linearGradient id="scanG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#67E8F9" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#67E8F9" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#67E8F9" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#22D3EE" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="board"><rect width="1100" height="250" rx="16"/></clipPath>
   </defs>
 
-  <rect width="100%" height="100%" class="bg" rx="15" />
+  <g clip-path="url(#board)">
+    <rect width="1100" height="250" fill="#0D1117"/>
+    <line x1="40" y1="24" x2="340.0" y2="24" stroke="url(#hair)" stroke-width="1.4"/>
+    <line x1="760.0" y1="24" x2="1060" y2="24" stroke="url(#hair)" stroke-width="1.4"/>
+    <text x="550.0" y="29" text-anchor="middle" class="mono" font-size="12" letter-spacing="4"
+      fill="#8B949E"><tspan fill="#34D399">●</tspan> LIVE TELEMETRY — 实时数据流</text>
 
-  <g style="animation: float-hex 4s infinite 0s ease-in-out; transform-origin: 140px 140px;">
-    <polygon points="213.6121593216773,97.5 213.6121593216773,182.5 140.0,225.0 66.3878406783227,182.5 66.38784067832272,97.5 139.99999999999997,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 0s linear;" />
-    <polygon points="204.9519052838329,102.5 204.9519052838329,177.5 140.0,215.0 75.0480947161671,177.5 75.0480947161671,102.5 140.0,65.0" class="hex-frame" />
-    <text x="140" y="150" class="value">7</text>
-    <text x="140" y="180" class="label">TOTAL REPOSITORIES</text>
+    
+  <g style="animation:tileIn .8s cubic-bezier(.2,.8,.2,1) 0.00s both">
+    <g style="animation:floatTile 5.5s ease-in-out 0.00s infinite">
+      <rect x="20.0" y="46" width="196" height="168" rx="14"
+        fill="#161B22" fill-opacity=".92" stroke="#8B5CF6" stroke-opacity=".3" stroke-width="1.2"/>
+      <path d="M 34.0 47.5 H 202.0" stroke="#A78BFA" stroke-opacity=".9"
+        stroke-width="2.5" stroke-linecap="round"/>
+      <g transform="translate(36.0,62) scale(1.15)" opacity=".95"><path fill="#A78BFA" fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"/></g>
+      <path d="M 192.0 206 h 16" stroke="#A78BFA" stroke-opacity=".55" stroke-width="2"/>
+      <g style="animation:numGlow 3.4s ease-in-out 0.00s infinite"><g transform="translate(94.1,138.0)"><path d="M8.9 0.0V-19.3L7.2 -17.2H0.0L8.5 -27.4H14.3V0.0Z M18.5 0.0V-10.6Q18.5 -12.0 19.3 -13.3Q20.0 -14.5 21.2 -15.2Q22.4 -15.9 23.9 -15.9H39.9Q40.0 -15.9 40.0 -16.0Q40.1 -16.1 40.1 -16.1V-21.7Q40.1 -21.8 40.0 -21.9Q40.0 -22.0 39.9 -22.0H24.1Q24.1 -22.0 24.0 -21.9Q23.9 -21.8 23.9 -21.7V-19.7H18.5V-22.0Q18.5 -23.5 19.3 -24.7Q20.0 -25.9 21.2 -26.6Q22.4 -27.4 23.9 -27.4H40.1Q41.6 -27.4 42.8 -26.6Q44.0 -25.9 44.8 -24.7Q45.5 -23.5 45.5 -22.0V-15.9Q45.5 -14.4 44.8 -13.2Q44.0 -12.0 42.8 -11.2Q41.6 -10.5 40.1 -10.5H24.1Q24.1 -10.5 24.0 -10.4Q23.9 -10.3 23.9 -10.3V-5.6Q23.9 -5.5 24.0 -5.5Q24.1 -5.4 24.1 -5.4H45.5V0.0Z" fill="#A78BFA" /></g></g>
+      <text x="118.0" y="170" text-anchor="middle" class="mono"
+        font-size="11.5" letter-spacing="2" fill="#8B949E">REPOSITORIES</text>
+      <text x="118.0" y="192" text-anchor="middle" class="sans"
+        font-size="11" letter-spacing="3" fill="#8B949E" opacity=".75">仓库</text>
+    </g>
+  </g>
+  <g style="animation:tileIn .8s cubic-bezier(.2,.8,.2,1) 0.35s both">
+    <g style="animation:floatTile 5.5s ease-in-out 0.35s infinite">
+      <rect x="236.0" y="46" width="196" height="168" rx="14"
+        fill="#161B22" fill-opacity=".92" stroke="#8B5CF6" stroke-opacity=".3" stroke-width="1.2"/>
+      <path d="M 250.0 47.5 H 418.0" stroke="#FBBF24" stroke-opacity=".9"
+        stroke-width="2.5" stroke-linecap="round"/>
+      <g transform="translate(252.0,62) scale(1.15)" opacity=".95"><path fill="#FBBF24" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></g>
+      <path d="M 408.0 206 h 16" stroke="#FBBF24" stroke-opacity=".55" stroke-width="2"/>
+      <g style="animation:numGlow 3.4s ease-in-out 0.35s infinite"><g transform="translate(301.9,138.0)"><path d="M2.2 0.0V-10.6Q2.2 -12.0 2.9 -13.3Q3.6 -14.5 4.9 -15.2Q6.1 -15.9 7.6 -15.9H23.5Q23.6 -15.9 23.7 -16.0Q23.8 -16.1 23.8 -16.1V-21.7Q23.8 -21.8 23.7 -21.9Q23.6 -22.0 23.5 -22.0H7.8Q7.7 -22.0 7.6 -21.9Q7.6 -21.8 7.6 -21.7V-19.7H2.2V-22.0Q2.2 -23.5 2.9 -24.7Q3.6 -25.9 4.9 -26.6Q6.1 -27.4 7.6 -27.4H23.8Q25.2 -27.4 26.4 -26.6Q27.7 -25.9 28.4 -24.7Q29.1 -23.5 29.1 -22.0V-15.9Q29.1 -14.4 28.4 -13.2Q27.7 -12.0 26.4 -11.2Q25.2 -10.5 23.8 -10.5H7.8Q7.7 -10.5 7.6 -10.4Q7.6 -10.3 7.6 -10.3V-5.6Q7.6 -5.5 7.6 -5.5Q7.7 -5.4 7.8 -5.4H29.1V0.0Z M40.6 0.0Q39.1 0.0 37.9 -0.7Q36.7 -1.5 35.9 -2.7Q35.2 -3.9 35.2 -5.4V-22.0Q35.2 -23.5 35.9 -24.7Q36.7 -25.9 37.9 -26.6Q39.1 -27.4 40.6 -27.4H57.9V-22.0H40.8Q40.8 -22.0 40.7 -21.9Q40.6 -21.8 40.6 -21.7V-16.9Q40.6 -16.8 40.7 -16.7Q40.8 -16.6 40.8 -16.6H56.8Q58.2 -16.6 59.5 -15.9Q60.7 -15.2 61.4 -14.0Q62.2 -12.8 62.2 -11.3V-5.4Q62.2 -3.9 61.4 -2.7Q60.7 -1.5 59.5 -0.7Q58.2 0.0 56.8 0.0H40.6ZM40.8 -5.4H56.6Q56.6 -5.4 56.7 -5.5Q56.8 -5.5 56.8 -5.6V-11.0Q56.8 -11.1 56.7 -11.1Q56.6 -11.2 56.6 -11.2H40.6V-5.6Q40.6 -5.5 40.7 -5.5Q40.8 -5.4 40.8 -5.4Z" fill="#FBBF24" /></g></g>
+      <text x="334.0" y="170" text-anchor="middle" class="mono"
+        font-size="11.5" letter-spacing="2" fill="#8B949E">STARS EARNED</text>
+      <text x="334.0" y="192" text-anchor="middle" class="sans"
+        font-size="11" letter-spacing="3" fill="#8B949E" opacity=".75">星标</text>
+    </g>
+  </g>
+  <g style="animation:tileIn .8s cubic-bezier(.2,.8,.2,1) 0.70s both">
+    <g style="animation:floatTile 5.5s ease-in-out 0.70s infinite">
+      <rect x="452.0" y="46" width="196" height="168" rx="14"
+        fill="#161B22" fill-opacity=".92" stroke="#8B5CF6" stroke-opacity=".3" stroke-width="1.2"/>
+      <path d="M 466.0 47.5 H 634.0" stroke="#67E8F9" stroke-opacity=".9"
+        stroke-width="2.5" stroke-linecap="round"/>
+      <g transform="translate(468.0,62) scale(1.15)" opacity=".95"><path fill="#67E8F9" d="M9.5 0 2.2 9.3h4.2L5.6 16l7.4-9.6H8.6L9.5 0z"/></g>
+      <path d="M 624.0 206 h 16" stroke="#67E8F9" stroke-opacity=".55" stroke-width="2"/>
+      <g style="animation:numGlow 3.4s ease-in-out 0.70s infinite"><g transform="translate(501.3,138.0)"><path d="M2.2 0.0V-10.6Q2.2 -12.0 2.9 -13.3Q3.6 -14.5 4.9 -15.2Q6.1 -15.9 7.6 -15.9H23.5Q23.6 -15.9 23.7 -16.0Q23.8 -16.1 23.8 -16.1V-21.7Q23.8 -21.8 23.7 -21.9Q23.6 -22.0 23.5 -22.0H7.8Q7.7 -22.0 7.6 -21.9Q7.6 -21.8 7.6 -21.7V-19.7H2.2V-22.0Q2.2 -23.5 2.9 -24.7Q3.6 -25.9 4.9 -26.6Q6.1 -27.4 7.6 -27.4H23.8Q25.2 -27.4 26.4 -26.6Q27.7 -25.9 28.4 -24.7Q29.1 -23.5 29.1 -22.0V-15.9Q29.1 -14.4 28.4 -13.2Q27.7 -12.0 26.4 -11.2Q25.2 -10.5 23.8 -10.5H7.8Q7.7 -10.5 7.6 -10.4Q7.6 -10.3 7.6 -10.3V-5.6Q7.6 -5.5 7.6 -5.5Q7.7 -5.4 7.8 -5.4H29.1V0.0Z M40.6 0.0Q39.1 0.0 37.9 -0.7Q36.7 -1.5 35.9 -2.7Q35.2 -3.9 35.2 -5.4V-22.0Q35.2 -23.5 35.9 -24.7Q36.7 -25.9 37.9 -26.6Q39.1 -27.4 40.6 -27.4H57.9V-22.0H40.8Q40.8 -22.0 40.7 -21.9Q40.6 -21.8 40.6 -21.7V-16.9Q40.6 -16.8 40.7 -16.7Q40.8 -16.6 40.8 -16.6H56.8Q58.2 -16.6 59.5 -15.9Q60.7 -15.2 61.4 -14.0Q62.2 -12.8 62.2 -11.3V-5.4Q62.2 -3.9 61.4 -2.7Q60.7 -1.5 59.5 -0.7Q58.2 0.0 56.8 0.0H40.6ZM40.8 -5.4H56.6Q56.6 -5.4 56.7 -5.5Q56.8 -5.5 56.8 -5.6V-11.0Q56.8 -11.1 56.7 -11.1Q56.6 -11.2 56.6 -11.2H40.6V-5.6Q40.6 -5.5 40.7 -5.5Q40.8 -5.4 40.8 -5.4Z M73.3 0.0Q71.8 0.0 70.6 -0.8Q69.3 -1.6 68.6 -2.9Q67.9 -4.3 67.9 -5.7V-21.8Q67.9 -23.3 68.6 -24.6Q69.3 -25.8 70.6 -26.6Q71.8 -27.4 73.3 -27.4H89.4Q90.9 -27.4 92.1 -26.6Q93.4 -25.8 94.1 -24.6Q94.8 -23.3 94.8 -21.8V-5.7Q94.8 -4.3 94.1 -2.9Q93.4 -1.6 92.1 -0.8Q90.9 0.0 89.4 0.0H73.3ZM76.0 -5.7H89.2Q89.3 -5.7 89.4 -5.8Q89.4 -5.9 89.4 -6.0V-17.0ZM73.3 -10.6 86.7 -21.8H73.5Q73.4 -21.8 73.3 -21.8Q73.3 -21.7 73.3 -21.6Z" fill="#67E8F9" /></g></g>
+      <text x="550.0" y="170" text-anchor="middle" class="mono"
+        font-size="11.5" letter-spacing="2" fill="#8B949E">COMMITS · 365D</text>
+      <text x="550.0" y="192" text-anchor="middle" class="sans"
+        font-size="11" letter-spacing="3" fill="#8B949E" opacity=".75">年度提交</text>
+    </g>
+  </g>
+  <g style="animation:tileIn .8s cubic-bezier(.2,.8,.2,1) 1.05s both">
+    <g style="animation:floatTile 5.5s ease-in-out 1.05s infinite">
+      <rect x="668.0" y="46" width="196" height="168" rx="14"
+        fill="#161B22" fill-opacity=".92" stroke="#8B5CF6" stroke-opacity=".3" stroke-width="1.2"/>
+      <path d="M 682.0 47.5 H 850.0" stroke="#F472B6" stroke-opacity=".9"
+        stroke-width="2.5" stroke-linecap="round"/>
+      <g transform="translate(684.0,62) scale(1.15)" opacity=".95"><path fill="#F472B6" d="M5.5 3.5a2.5 2.5 0 115 0 2.5 2.5 0 01-5 0zM2 13.2C2 10.6 4.7 9 8 9s6 1.6 6 4.2c0 .5-.4.8-.9.8H2.9c-.5 0-.9-.3-.9-.8z"/></g>
+      <path d="M 840.0 206 h 16" stroke="#F472B6" stroke-opacity=".55" stroke-width="2"/>
+      <g style="animation:numGlow 3.4s ease-in-out 1.05s infinite"><g transform="translate(750.4,138.0)"><path d="M7.6 0.0Q6.1 0.0 4.9 -0.7Q3.6 -1.5 2.9 -2.7Q2.2 -3.9 2.2 -5.4V-22.0Q2.2 -23.5 2.9 -24.7Q3.6 -25.9 4.9 -26.6Q6.1 -27.4 7.6 -27.4H24.9V-22.0H7.8Q7.7 -22.0 7.6 -21.9Q7.6 -21.8 7.6 -21.7V-16.9Q7.6 -16.8 7.6 -16.7Q7.7 -16.6 7.8 -16.6H23.8Q25.2 -16.6 26.4 -15.9Q27.7 -15.2 28.4 -14.0Q29.1 -12.8 29.1 -11.3V-5.4Q29.1 -3.9 28.4 -2.7Q27.7 -1.5 26.4 -0.7Q25.2 0.0 23.8 0.0H7.6ZM7.8 -5.4H23.5Q23.6 -5.4 23.7 -5.5Q23.8 -5.5 23.8 -5.6V-11.0Q23.8 -11.1 23.7 -11.1Q23.6 -11.2 23.5 -11.2H7.6V-5.6Q7.6 -5.5 7.6 -5.5Q7.7 -5.4 7.8 -5.4Z" fill="#F472B6" /></g></g>
+      <text x="766.0" y="170" text-anchor="middle" class="mono"
+        font-size="11.5" letter-spacing="2" fill="#8B949E">FOLLOWERS</text>
+      <text x="766.0" y="192" text-anchor="middle" class="sans"
+        font-size="11" letter-spacing="3" fill="#8B949E" opacity=".75">关注者</text>
+    </g>
+  </g>
+  <g style="animation:tileIn .8s cubic-bezier(.2,.8,.2,1) 1.40s both">
+    <g style="animation:floatTile 5.5s ease-in-out 1.40s infinite">
+      <rect x="884.0" y="46" width="196" height="168" rx="14"
+        fill="#161B22" fill-opacity=".92" stroke="#8B5CF6" stroke-opacity=".3" stroke-width="1.2"/>
+      <path d="M 898.0 47.5 H 1066.0" stroke="#34D399" stroke-opacity=".9"
+        stroke-width="2.5" stroke-linecap="round"/>
+      <g transform="translate(900.0,62) scale(1.15)" opacity=".95"><path fill="#34D399" d="M8 0l1.8 6.2L16 8l-6.2 1.8L8 16 6.2 9.8 0 8l6.2-1.8L8 0z"/></g>
+      <path d="M 1056.0 206 h 16" stroke="#34D399" stroke-opacity=".55" stroke-width="2"/>
+      <g style="animation:numGlow 3.4s ease-in-out 1.40s infinite"><g transform="translate(916.7,138.0)"><path d="M2.2 0.0V-10.6Q2.2 -12.0 2.9 -13.3Q3.6 -14.5 4.9 -15.2Q6.1 -15.9 7.6 -15.9H23.5Q23.6 -15.9 23.7 -16.0Q23.8 -16.1 23.8 -16.1V-21.7Q23.8 -21.8 23.7 -21.9Q23.6 -22.0 23.5 -22.0H7.8Q7.7 -22.0 7.6 -21.9Q7.6 -21.8 7.6 -21.7V-19.7H2.2V-22.0Q2.2 -23.5 2.9 -24.7Q3.6 -25.9 4.9 -26.6Q6.1 -27.4 7.6 -27.4H23.8Q25.2 -27.4 26.4 -26.6Q27.7 -25.9 28.4 -24.7Q29.1 -23.5 29.1 -22.0V-15.9Q29.1 -14.4 28.4 -13.2Q27.7 -12.0 26.4 -11.2Q25.2 -10.5 23.8 -10.5H7.8Q7.7 -10.5 7.6 -10.4Q7.6 -10.3 7.6 -10.3V-5.6Q7.6 -5.5 7.6 -5.5Q7.7 -5.4 7.8 -5.4H29.1V0.0Z M40.6 0.0Q39.1 0.0 37.9 -0.8Q36.7 -1.6 35.9 -2.9Q35.2 -4.3 35.2 -5.7V-21.8Q35.2 -23.3 35.9 -24.6Q36.7 -25.8 37.9 -26.6Q39.1 -27.4 40.6 -27.4H56.8Q58.3 -27.4 59.5 -26.6Q60.7 -25.8 61.4 -24.6Q62.2 -23.3 62.2 -21.8V-5.7Q62.2 -4.3 61.4 -2.9Q60.7 -1.6 59.5 -0.8Q58.3 0.0 56.8 0.0H40.6ZM43.3 -5.7H56.6Q56.6 -5.7 56.7 -5.8Q56.8 -5.9 56.8 -6.0V-17.0ZM40.6 -10.6 54.1 -21.8H40.8Q40.8 -21.8 40.7 -21.8Q40.6 -21.7 40.6 -21.6Z M68.4 0.0V-10.6Q68.4 -12.0 69.1 -13.3Q69.9 -14.5 71.1 -15.2Q72.3 -15.9 73.8 -15.9H89.8Q89.8 -15.9 89.9 -16.0Q90.0 -16.1 90.0 -16.1V-21.7Q90.0 -21.8 89.9 -21.9Q89.8 -22.0 89.8 -22.0H74.0Q73.9 -22.0 73.9 -21.9Q73.8 -21.8 73.8 -21.7V-19.7H68.4V-22.0Q68.4 -23.5 69.1 -24.7Q69.9 -25.9 71.1 -26.6Q72.3 -27.4 73.8 -27.4H90.0Q91.4 -27.4 92.7 -26.6Q93.9 -25.9 94.6 -24.7Q95.4 -23.5 95.4 -22.0V-15.9Q95.4 -14.4 94.6 -13.2Q93.9 -12.0 92.7 -11.2Q91.4 -10.5 90.0 -10.5H74.0Q73.9 -10.5 73.9 -10.4Q73.8 -10.3 73.8 -10.3V-5.6Q73.8 -5.5 73.9 -5.5Q73.9 -5.4 74.0 -5.4H95.4V0.0Z M106.7 0.0Q105.2 0.0 104.0 -0.7Q102.8 -1.5 102.0 -2.7Q101.3 -3.9 101.3 -5.4V-7.3H106.7V-5.6Q106.7 -5.5 106.8 -5.5Q106.8 -5.4 106.9 -5.4H122.6Q122.7 -5.4 122.8 -5.5Q122.9 -5.5 122.9 -5.6V-10.9Q122.9 -11.0 122.8 -11.0Q122.7 -11.1 122.6 -11.1H105.9V-16.5H121.6Q121.7 -16.5 121.7 -16.6Q121.8 -16.6 121.8 -16.7V-21.7Q121.8 -21.8 121.7 -21.9Q121.7 -22.0 121.6 -22.0H106.9Q106.8 -22.0 106.8 -21.9Q106.7 -21.8 106.7 -21.7V-19.8H101.3V-22.0Q101.3 -23.5 102.0 -24.7Q102.8 -25.9 104.0 -26.6Q105.2 -27.4 106.7 -27.4H121.8Q123.3 -27.4 124.5 -26.6Q125.8 -25.9 126.5 -24.7Q127.2 -23.5 127.2 -22.0V-16.5Q127.2 -16.0 127.1 -15.6Q127.1 -15.1 126.9 -14.7Q127.6 -14.0 127.9 -13.1Q128.3 -12.1 128.3 -11.1V-5.4Q128.3 -3.9 127.5 -2.7Q126.8 -1.5 125.6 -0.7Q124.4 0.0 122.9 0.0H106.7Z" fill="#34D399" /></g></g>
+      <text x="982.0" y="170" text-anchor="middle" class="mono"
+        font-size="11.5" letter-spacing="2" fill="#8B949E">VIBE SINCE</text>
+      <text x="982.0" y="192" text-anchor="middle" class="sans"
+        font-size="11" letter-spacing="3" fill="#8B949E" opacity=".75">启程之年</text>
+    </g>
   </g>
 
-  <g style="animation: float-hex 4s infinite 0.4s ease-in-out; transform-origin: 310px 140px;">
-    <polygon points="383.61215932167727,97.5 383.61215932167727,182.5 310.0,225.0 236.3878406783227,182.5 236.38784067832273,97.5 310.0,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 0.4s linear;" />
-    <polygon points="374.9519052838329,102.5 374.9519052838329,177.5 310.0,215.0 245.0480947161671,177.5 245.0480947161671,102.5 310.0,65.0" class="hex-frame" />
-    <text x="310" y="150" class="value">10</text>
-    <text x="310" y="180" class="label">STARS EARNED</text>
-  </g>
+    <rect x="0" y="0" width="200" height="250" fill="url(#scanG)"
+      style="animation:scan 6.5s ease-in-out infinite"/>
 
-  <g style="animation: float-hex 4s infinite 0.8s ease-in-out; transform-origin: 480px 140px;">
-    <polygon points="553.6121593216773,97.5 553.6121593216773,182.5 480.0,225.0 406.38784067832273,182.5 406.38784067832273,97.5 480.0,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 0.8s linear;" />
-    <polygon points="544.951905283833,102.5 544.951905283833,177.5 480.0,215.0 415.0480947161671,177.5 415.0480947161671,102.5 480.0,65.0" class="hex-frame" />
-    <text x="480" y="150" class="value">332</text>
-    <text x="480" y="180" class="label">CONTRIBUTIONS/YR</text>
+    <path d="M 18 40 L 18 18 L 40 18" fill="none" stroke="#22D3EE" stroke-width="2" opacity=".7"/>
+    <path d="M 1082 210 L 1082 232 L 1060 232" fill="none" stroke="#22D3EE" stroke-width="2" opacity=".7"/>
+    <circle cx="26" cy="226" r="3" fill="#34D399" style="animation:breathe 2.2s ease-in-out infinite"/>
+    <text x="38" y="230" class="mono" font-size="11" letter-spacing="2" fill="#8B949E">SYNCED · EVERY 6H</text>
   </g>
-
-  <g style="animation: float-hex 4s infinite 1.2s ease-in-out; transform-origin: 650px 140px;">
-    <polygon points="723.6121593216773,97.5 723.6121593216773,182.5 650.0,225.0 576.3878406783227,182.5 576.3878406783227,97.5 650.0,55.0" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite 1.2s linear;" />
-    <polygon points="714.951905283833,102.5 714.951905283833,177.5 650.0,215.0 585.048094716167,177.5 585.048094716167,102.5 650.0,65.0" class="hex-frame" />
-    <text x="650" y="150" class="value">2023</text>
-    <text x="650" y="180" class="label">VIBE SINCE</text>
-  </g>
+  <rect x=".8" y=".8" width="1098.4" height="248.4" rx="15" fill="none"
+    stroke="#8B5CF6" stroke-opacity=".38" stroke-width="1.5"/>
 </svg>

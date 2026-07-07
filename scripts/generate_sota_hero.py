@@ -1,283 +1,291 @@
+"""AURORA CYBERPUNK hero banner — assets/sota-hero.svg.
+
+All display typography is baked to vector paths (see svgtools), so the
+banner renders identically inside GitHub's sandboxed <img> pipeline.
+"""
+
+import math
 import random
 
-width = 1200
-height = 450
+from svgtools import (ASSETS_DIR, MONO_STACK, PALETTE, display_text,
+                      display_text_width, write_svg)
 
-svg_parts = []
+random.seed(2077)  # deterministic output → no diff churn on scheduled runs
 
-# SVG Header & Defs
-svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="auto">
+W, H = 1280, 420
+CX = W / 2
+P = PALETTE
+
+parts = []
+
+# ---------------------------------------------------------------- defs / css
+parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="100%" height="auto" role="img" aria-label="Marways — Vibe Coder and AI Builder">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&amp;family=Orbitron:wght@700;900&amp;display=swap');
-      
-      @keyframes float {{
-        0%, 100% {{ transform: translateY(0) translateX(0); }}
-        33% {{ transform: translateY(-10px) translateX(5px); }}
-        66% {{ transform: translateY(5px) translateX(-5px); }}
+      @keyframes twinkle {{ 0%,100% {{ opacity:.15; }} 50% {{ opacity:.9; }} }}
+      @keyframes floaty  {{ 0%,100% {{ transform:translateY(0); }} 50% {{ transform:translateY(-8px); }} }}
+      @keyframes auroraA {{ 0%,100% {{ transform:translate(0,0) scale(1); }} 50% {{ transform:translate(60px,18px) scale(1.15); }} }}
+      @keyframes auroraB {{ 0%,100% {{ transform:translate(0,0) scale(1.1); }} 50% {{ transform:translate(-70px,-14px) scale(0.95); }} }}
+      @keyframes auroraC {{ 0%,100% {{ transform:translate(0,0); }} 50% {{ transform:translate(30px,-24px); }} }}
+      @keyframes shoot {{
+        0%   {{ transform:translate(0,0); opacity:0; }}
+        6%   {{ opacity:.9; }}
+        22%  {{ transform:translate(-460px,300px); opacity:0; }}
+        100% {{ transform:translate(-460px,300px); opacity:0; }}
       }}
-      @keyframes floatSlow {{
-        0%, 100% {{ transform: translateY(0); }}
-        50% {{ transform: translateY(-20px); }}
+      @keyframes gridFall {{
+        0%   {{ transform:translateY(0); opacity:0; }}
+        12%  {{ opacity:.55; }}
+        100% {{ transform:translateY(115px); opacity:0; }}
       }}
-      @keyframes twinkle {{
-        0%, 100% {{ opacity: 0.2; }}
-        50% {{ opacity: 1; }}
-      }}
-      @keyframes drift {{
-        0% {{ transform: translateY(0); }}
-        100% {{ transform: translateY(-{height}px); }}
-      }}
-      @keyframes orbit-cw {{
-        0% {{ transform: rotate(0deg); }}
-        100% {{ transform: rotate(360deg); }}
-      }}
-      @keyframes orbit-ccw {{
-        0% {{ transform: rotate(360deg); }}
-        100% {{ transform: rotate(0deg); }}
-      }}
-      @keyframes matrixRain {{
-        0% {{ transform: translateY(-50px); opacity: 0; }}
-        20% {{ opacity: 0.8; }}
-        80% {{ opacity: 0.8; }}
-        100% {{ transform: translateY(500px); opacity: 0; }}
-      }}
-      @keyframes typeRotate1 {{
-        0%, 25%, 100% {{ opacity: 1; transform: translateY(0); }}
-        30%, 95% {{ opacity: 0; transform: translateY(-20px); }}
-      }}
-      @keyframes typeRotate2 {{
-        0%, 30%, 100% {{ opacity: 0; transform: translateY(20px); }}
-        35%, 60% {{ opacity: 1; transform: translateY(0); }}
-        65%, 95% {{ opacity: 0; transform: translateY(-20px); }}
-      }}
-      @keyframes typeRotate3 {{
-        0%, 65%, 100% {{ opacity: 0; transform: translateY(20px); }}
-        70%, 95% {{ opacity: 1; transform: translateY(0); }}
-      }}
+      @keyframes spin    {{ to {{ transform:rotate(360deg); }} }}
+      @keyframes spinRev {{ to {{ transform:rotate(-360deg); }} }}
+      @keyframes cursorBlink {{ 0%,49% {{ opacity:1; }} 50%,100% {{ opacity:0; }} }}
       @keyframes glitch {{
-        0% {{ transform: translate(0) }}
-        20% {{ transform: translate(-2px, 2px) }}
-        40% {{ transform: translate(-2px, -2px) }}
-        60% {{ transform: translate(2px, 2px) }}
-        80% {{ transform: translate(2px, -2px) }}
-        100% {{ transform: translate(0) }}
+        0%,93%,100% {{ transform:translate(0,0); opacity:0; }}
+        94%  {{ transform:translate(-5px,2px); opacity:.55; }}
+        95%  {{ transform:translate(4px,-2px); opacity:.4; }}
+        96%  {{ transform:translate(-3px,1px); opacity:.5; }}
+        97%  {{ transform:translate(0,0); opacity:0; }}
       }}
-      @keyframes pulse {{
-        0% {{ stroke-opacity: 0.1; stroke-width: 1; }}
-        50% {{ stroke-opacity: 0.8; stroke-width: 3; }}
-        100% {{ stroke-opacity: 0.1; stroke-width: 1; }}
-      }}
-      @keyframes shootingStar {{
-        0% {{ transform: translateX(0) translateY(0); opacity: 1; }}
-        100% {{ transform: translateX(-800px) translateY(800px); opacity: 0; }}
-      }}
-      @keyframes gridMove {{
-        0% {{ background-position: 0 0; }}
-        100% {{ background-position: 0 40px; }}
-      }}
+      @keyframes waveSlide  {{ to {{ transform:translateX(-320px); }} }}
+      @keyframes waveSlide2 {{ to {{ transform:translateX(-440px); }} }}
+      @keyframes phrase1 {{ 0%,4% {{opacity:0;}} 7%,29% {{opacity:1;}} 32%,100% {{opacity:0;}} }}
+      @keyframes phrase2 {{ 0%,37% {{opacity:0;}} 40%,62% {{opacity:1;}} 65%,100% {{opacity:0;}} }}
+      @keyframes phrase3 {{ 0%,70% {{opacity:0;}} 73%,95% {{opacity:1;}} 98%,100% {{opacity:0;}} }}
+      @keyframes breathe {{ 0%,100% {{ opacity:.5; }} 50% {{ opacity:1; }} }}
+      @keyframes dashFlow {{ to {{ stroke-dashoffset:-200; }} }}
 
-      .text-marways {{
-        font-family: 'Orbitron', sans-serif;
-        font-size: 110px;
-        font-weight: 900;
-        fill: url(#text-grad);
-        filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.6));
-      }}
-      
-      .text-subtitle {{
-        font-family: 'Fira Code', monospace;
-        font-size: 24px;
-        font-weight: 600;
-        fill: #C9D1D9;
-      }}
-      
-      .glow-orbit {{
-        fill: none;
-        stroke-linecap: round;
-        stroke-width: 2;
-      }}
+      .mono {{ font-family:{MONO_STACK}; }}
+      .star {{ fill:#E6EDF3; }}
+      .hud  {{ fill:none; stroke:{P["cyan"]}; stroke-width:2; opacity:.65; }}
     </style>
-    
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0614" />
-      <stop offset="50%" stop-color="#0e0a1f" />
-      <stop offset="100%" stop-color="#050814" />
-    </linearGradient>
-    
-    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#67E8F9" />
-      <stop offset="25%" stop-color="#06B6D4" />
-      <stop offset="50%" stop-color="#8B5CF6" />
-      <stop offset="75%" stop-color="#A78BFA" />
-      <stop offset="100%" stop-color="#F472B6" />
+
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="{P["bg_deep"]}"/>
+      <stop offset=".55" stop-color="{P["bg_mid"]}"/>
+      <stop offset="1" stop-color="#060B18"/>
     </linearGradient>
 
-    <radialGradient id="glow-grad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    <radialGradient id="blobViolet" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="{P["violet"]}" stop-opacity=".34"/>
+      <stop offset="1" stop-color="{P["violet"]}" stop-opacity="0"/>
     </radialGradient>
-    
-    <radialGradient id="glow-grad-cyan" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+    <radialGradient id="blobCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="{P["cyan"]}" stop-opacity=".26"/>
+      <stop offset="1" stop-color="{P["cyan"]}" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blobPink" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="{P["pink"]}" stop-opacity=".2"/>
+      <stop offset="1" stop-color="{P["pink"]}" stop-opacity="0"/>
     </radialGradient>
 
-    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="{P["cyan_light"]}"/>
+      <stop offset=".35" stop-color="{P["violet_light"]}"/>
+      <stop offset=".7" stop-color="{P["violet"]}"/>
+      <stop offset="1" stop-color="{P["pink"]}"/>
+    </linearGradient>
+
+    <linearGradient id="sheen" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="{W}" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".46" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".85"/>
+      <stop offset=".54" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="translate"
+        from="-{W} 0" to="{W} 0" dur="5.5s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="hairline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="{P["violet"]}" stop-opacity="0"/>
+      <stop offset=".5" stop-color="{P["cyan"]}"/>
+      <stop offset="1" stop-color="{P["pink"]}" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
     </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="frame"><rect width="{W}" height="{H}" rx="18"/></clipPath>
   </defs>
 
-  <rect width="100%" height="100%" fill="url(#bg-grad)" />
+  <g clip-path="url(#frame)">
+  <rect width="{W}" height="{H}" fill="url(#bgGrad)"/>
+
+  <g style="mix-blend-mode:screen">
+    <ellipse cx="250" cy="150" rx="430" ry="230" fill="url(#blobViolet)" style="animation:auroraA 16s ease-in-out infinite"/>
+    <ellipse cx="1030" cy="190" rx="470" ry="250" fill="url(#blobCyan)"  style="animation:auroraB 20s ease-in-out infinite"/>
+    <ellipse cx="660" cy="360" rx="500" ry="200" fill="url(#blobPink)"   style="animation:auroraC 24s ease-in-out infinite"/>
+  </g>
 ''')
 
-# Central Glowing Ambience
-svg_parts.append(f'''
-  <circle cx="20%" cy="50%" r="400" fill="url(#glow-grad)" style="mix-blend-mode: screen;" />
-  <circle cx="80%" cy="50%" r="500" fill="url(#glow-grad-cyan)" style="mix-blend-mode: screen;" />
-  <circle cx="50%" cy="50%" r="300" fill="url(#glow-grad)" style="mix-blend-mode: screen;" />
-''')
-
-# Starfield Generator
+# ------------------------------------------------------------------ starfield
 stars = []
-for i in range(150):
-    x = random.randint(0, width)
-    y = random.randint(0, height)
-    r = random.uniform(0.5, 2.5)
-    duration = random.uniform(2, 6)
-    delay = random.uniform(0, 5)
-    stars.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#FFFFFF" style="animation: twinkle {duration}s infinite {delay}s alternate; opacity: {random.uniform(0.1, 0.8)}" />')
-svg_parts.append("\n  ".join(stars))
+for _ in range(90):
+    x, y = random.uniform(8, W - 8), random.uniform(8, H - 60)
+    r = random.uniform(0.5, 1.9)
+    dur, delay = random.uniform(2.2, 6.5), random.uniform(0, 6)
+    stars.append(
+        f'<circle class="star" cx="{x:.0f}" cy="{y:.0f}" r="{r:.1f}" '
+        f'style="animation:twinkle {dur:.1f}s ease-in-out {delay:.1f}s infinite"/>')
+parts.append("  " + "\n  ".join(stars))
 
-# Shooting Stars (multiple, animated natively)
+# -------------------------------------------------------------- shooting stars
+for i in range(4):
+    sx = random.uniform(520, W + 260)
+    sy = random.uniform(-40, 120)
+    delay = 2.5 * i + random.uniform(0, 2)
+    parts.append(f'''
+  <g style="animation:shoot {random.uniform(9, 13):.1f}s linear {delay:.1f}s infinite;opacity:0">
+    <line x1="{sx:.0f}" y1="{sy:.0f}" x2="{sx + 130:.0f}" y2="{sy - 86:.0f}"
+      stroke="#E6EDF3" stroke-width="1.6" stroke-linecap="round" opacity=".8" filter="url(#soft)"/>
+    <circle cx="{sx:.0f}" cy="{sy:.0f}" r="2" fill="#fff"/>
+  </g>''')
+
+# --------------------------------------------------------- perspective horizon
+VPX, VPY = CX, 302
+rays = []
+for i in range(-13, 14):
+    bx = VPX + i * 110
+    rays.append(f'<line x1="{VPX}" y1="{VPY}" x2="{bx:.0f}" y2="{H + 30}" '
+                f'stroke="{P["violet"]}" stroke-opacity=".16" stroke-width="1"/>')
+falls = []
 for i in range(6):
-    x_start = random.randint(600, width+400)
-    y_start = random.randint(-200, height//2)
-    delay = random.uniform(0, 10)
-    dur = random.uniform(1.5, 3)
-    svg_parts.append(f'''
-  <g style="animation: shootingStar {dur}s infinite {delay}s linear; opacity: 0;">
-    <line x1="{x_start}" y1="{y_start}" x2="{x_start-150}" y2="{y_start+150}" stroke="white" stroke-width="2" style="filter: blur(1px);" stroke-opacity="0.8" />
-    <circle cx="{x_start-150}" cy="{y_start+150}" r="2" fill="#fff" />
-  </g>
-''')
+    falls.append(
+        f'<line x1="0" y1="{VPY + 4}" x2="{W}" y2="{VPY + 4}" stroke="{P["cyan"]}" '
+        f'stroke-opacity=".3" stroke-width="1" '
+        f'style="animation:gridFall 4.2s linear {i * 0.7:.1f}s infinite"/>')
+parts.append(f'''
+  <g>
+    <line x1="0" y1="{VPY}" x2="{W}" y2="{VPY}" stroke="url(#hairline)" stroke-width="1.4" opacity=".8"/>
+    {''.join(rays)}
+    {''.join(falls)}
+  </g>''')
 
-# Neural Network / Constellation Generator (Floating nodes + edges)
-nodes = []
-for i in range(40):
-    x = random.randint(50, width-50)
-    y = random.randint(50, height-50)
-    nodes.append((x, y))
-
-edges_svg = []
-nodes_svg = []
-for i, n1 in enumerate(nodes):
-    for j, n2 in enumerate(nodes):
-        if i < j:
-            dist = ((n1[0]-n2[0])**2 + (n1[1]-n2[1])**2)**0.5
-            if dist < 120:
-                op = max(0, 1 - dist/120) * 0.4
-                delay = random.uniform(0, 4)
-                edges_svg.append(f'<line x1="{n1[0]}" y1="{n1[1]}" x2="{n2[0]}" y2="{n2[1]}" stroke="#06B6D4" stroke-opacity="{op}" stroke-width="1" style="animation: pulse {random.uniform(3,7)}s infinite {delay}s" />')
-    
-    anim_delay = random.uniform(0, 5)
-    dur = random.uniform(10, 20)
-    nodes_svg.append(f'<g style="animation: float {dur}s infinite {anim_delay}s ease-in-out; transform-origin: {n1[0]}px {n1[1]}px;"><circle cx="{n1[0]}" cy="{n1[1]}" r="{random.uniform(1,3)}" fill="#8B5CF6" /></g>')
-
-svg_parts.append("\n  ".join(edges_svg))
-svg_parts.append("\n  ".join(nodes_svg))
-
-# Floating Orbits / Cybernetic HUD Rings (Left & Right)
-def make_orbit(cx, cy, color1, color2, reversed=False, delay=0):
-    rot_anim = 'orbit-ccw' if reversed else 'orbit-cw'
-    return f'''
-  <g style="transform-origin: {cx}px {cy}px; animation: floatSlow 8s infinite {delay}s ease-in-out;">
-    <g style="transform-origin: {cx}px {cy}px; animation: {rot_anim} {random.uniform(20, 40)}s infinite linear;">
-      <circle cx="{cx}" cy="{cy}" r="{random.randint(80, 150)}" class="glow-orbit" stroke="{color1}" stroke-dasharray="{random.randint(10,40)} {random.randint(5,20)}" opacity="{random.uniform(0.3, 0.7)}" preserveAspectRatio="xMidYMid slice" />
-      <circle cx="{cx}" cy="{cy}" r="{random.randint(160, 220)}" class="glow-orbit" stroke="{color2}" stroke-dasharray="2 4 {random.randint(20,60)} 10" opacity="{random.uniform(0.2, 0.5)}" />
+# ---------------------------------------------------------------- side orbits
+for ox, direction in ((150, "spin"), (W - 150, "spinRev")):
+    parts.append(f'''
+  <g style="animation:floaty 9s ease-in-out infinite">
+    <g style="transform-origin:{ox}px 168px;animation:{direction} 26s linear infinite">
+      <circle cx="{ox}" cy="168" r="66" fill="none" stroke="{P["violet"]}" stroke-opacity=".5"
+        stroke-width="1.6" stroke-dasharray="30 14"/>
+      <circle cx="{ox}" cy="168" r="94" fill="none" stroke="{P["cyan"]}" stroke-opacity=".32"
+        stroke-width="1.2" stroke-dasharray="4 10 44 10"/>
+      <circle cx="{ox + 66}" cy="168" r="3.4" fill="{P["cyan_light"]}" filter="url(#glow)"/>
     </g>
-  </g>'''
+    <rect x="{ox - 7}" y="161" width="14" height="14" fill="none" stroke="{P["pink"]}"
+      stroke-width="1.6" transform="rotate(45 {ox} 168)" opacity=".8"
+      style="transform-origin:{ox}px 168px;animation:{direction} 12s linear infinite"/>
+  </g>''')
 
-svg_parts.append(make_orbit(150, 225, "#8B5CF6", "#06B6D4", False, 0))
-svg_parts.append(make_orbit(1050, 225, "#06B6D4", "#F472B6", True, 2))
+# ---------------------------------------------------------------------- title
+TITLE, TSIZE, TLS = "MARWAYS", 118, 8
+title_w = display_text_width(TITLE, TSIZE, TLS)
+base_y = 208
+glow_copy = display_text(TITLE, TSIZE, CX, base_y, P["violet"], TLS, "middle",
+                         'filter="url(#soft)" opacity=".85"')
+main_copy = display_text(TITLE, TSIZE, CX, base_y, "url(#titleGrad)", TLS, "middle")
+sheen_copy = display_text(TITLE, TSIZE, CX, base_y, "url(#sheen)", TLS, "middle")
+glitch_cyan = display_text(TITLE, TSIZE, CX, base_y, P["cyan"], TLS, "middle")
+glitch_pink = display_text(TITLE, TSIZE, CX, base_y, P["pink"], TLS, "middle")
+
+parts.append(f'''
+  <g style="animation:floaty 10s ease-in-out infinite">
+    {glow_copy}
+    {main_copy}
+    {sheen_copy}
+    <g opacity="0" style="animation:glitch 7s steps(1) infinite">{glitch_cyan}</g>
+    <g opacity="0" style="animation:glitch 9s steps(1) 3.5s infinite">{glitch_pink}</g>
+    <line x1="{CX - title_w / 2 - 40:.0f}" y1="{base_y + 26}" x2="{CX + title_w / 2 + 40:.0f}" y2="{base_y + 26}"
+      stroke="url(#hairline)" stroke-width="2"/>
+    <rect x="{CX - 5}" y="{base_y + 21}" width="10" height="10" fill="none" stroke="{P["cyan_light"]}"
+      stroke-width="1.6" transform="rotate(45 {CX} {base_y + 26})" style="animation:breathe 3s ease-in-out infinite"/>
+  </g>''')
+
+# ------------------------------------------------------------- eyebrow captain
+parts.append(f'''
+  <g class="mono" font-size="15" style="animation:floaty 10s ease-in-out infinite">
+    <text x="{CX}" y="96" text-anchor="middle" fill="{P["muted"]}" letter-spacing="6">— 欢迎来到我的数字宇宙 —</text>
+  </g>''')
+
+# ----------------------------------------------------------- subtitle rotator
+phrases = [
+    ('<tspan fill="' + P["violet_light"] + '">Vibe Coder</tspan>'
+     '<tspan fill="' + P["muted"] + '"> · </tspan>'
+     '<tspan fill="' + P["cyan_light"] + '">AI Alchemist</tspan>'
+     '<tspan fill="' + P["muted"] + '"> · </tspan>'
+     '<tspan fill="' + P["pink"] + '">Full-Stack Builder</tspan>'),
+    ('<tspan fill="' + P["pink"] + '">const</tspan>'
+     '<tspan fill="' + P["text"] + '"> future = </tspan>'
+     '<tspan fill="' + P["pink"] + '">await</tspan>'
+     '<tspan fill="' + P["cyan_light"] + '"> ai</tspan>'
+     '<tspan fill="' + P["text"] + '">.build(</tspan>'
+     '<tspan fill="' + P["violet_light"] + '">wildIdeas</tspan>'
+     '<tspan fill="' + P["text"] + '">)</tspan>'),
+    ('<tspan fill="' + P["cyan_light"] + '">AI × Creativity</tspan>'
+     '<tspan fill="' + P["muted"] + '"> → </tspan>'
+     '<tspan fill="' + P["green"] + '">Infinite Possibilities ∞</tspan>'),
+]
+sub_y = 286
+phrase_texts = "".join(
+    f'<text x="{CX + 6}" y="{sub_y + 21}" text-anchor="middle" font-size="17" '
+    f'style="animation:phrase{i + 1} 18s ease-in-out infinite;opacity:0">{p}</text>'
+    for i, p in enumerate(phrases))
+parts.append(f'''
+  <g class="mono">
+    <rect x="{CX - 330}" y="{sub_y - 10}" width="660" height="44" rx="22"
+      fill="#0D1117" fill-opacity=".55" stroke="{P["violet"]}" stroke-opacity=".45" stroke-width="1.2"/>
+    <text x="{CX - 306}" y="{sub_y + 21}" font-size="17" fill="{P["green"]}" font-weight="700">❯</text>
+    {phrase_texts}
+    <rect x="{CX + 296}" y="{sub_y + 6}" width="9" height="20" fill="{P["cyan_light"]}"
+      style="animation:cursorBlink 1.1s steps(1) infinite"/>
+  </g>''')
+
+# -------------------------------------------------------------------- waveform
+def wave_path(amp, period, y0):
+    pts = []
+    for x in range(-period, W + period * 2 + 1, 8):
+        y = y0 + amp * math.sin(2 * math.pi * x / period)
+        pts.append(f"{x},{y:.1f}")
+    return "M" + " L".join(pts)
 
 
-# Abstract Floating Hexagons / Boxes
-svg_parts.append('''
-  <g stroke="#06B6D4" fill="none" stroke-width="2" opacity="0.4" style="animation: float 15s infinite ease-in-out;">
-    <polygon points="100,80 120,60 140,60 160,80 140,100 120,100" />
-    <polygon points="1050,350 1070,330 1090,330 1110,350 1090,370 1070,370" />
-    <polygon points="200,380 215,365 235,365 250,380 235,395 215,395" style="stroke: #8B5CF6; animation: glitch 3s infinite alternate;"/>
-    <rect x="850" y="80" width="30" height="30" style="stroke: #A78BFA; transform: rotate(45deg); transform-origin: 865px 95px; animation: orbit-cw 10s infinite linear;" />
+parts.append(f'''
+  <g opacity=".55">
+    <path d="{wave_path(7, 320, H - 26)}" fill="none" stroke="{P["cyan"]}" stroke-width="1.6"
+      style="animation:waveSlide 7s linear infinite"/>
+    <path d="{wave_path(10, 440, H - 18)}" fill="none" stroke="{P["violet"]}" stroke-width="1.2"
+      style="animation:waveSlide2 11s linear infinite"/>
+  </g>''')
+
+# ------------------------------------------------------------------ HUD frame
+parts.append(f'''
+  <g>
+    <path class="hud" d="M 26 62 L 26 26 L 62 26"/>
+    <path class="hud" d="M {W - 26} {H - 62} L {W - 26} {H - 26} L {W - 62} {H - 26}"/>
+    <path class="hud" d="M {W - 62} 26 L {W - 26} 26 L {W - 26} 62"/>
+    <path class="hud" d="M 62 {H - 26} L 26 {H - 26} L 26 {H - 62}"/>
+    <g class="mono" font-size="12" fill="{P["muted"]}" letter-spacing="2">
+      <text x="44" y="34">SYS.ONLINE</text>
+      <circle cx="36" cy="30" r="3" fill="{P["green"]}" style="animation:breathe 2s ease-in-out infinite"/>
+      <text x="{W - 44}" y="34" text-anchor="end">EST. 2023</text>
+      <text x="44" y="{H - 30}">GITHUB.COM/MARWAYS7</text>
+      <text x="{W - 44}" y="{H - 30}" text-anchor="end">OPEN SOURCE ∞</text>
+    </g>
   </g>
-''')
 
-# Code rain/Matrix effect (faded in background)
-rain = []
-chars = "10{}()[]!@#$%=+*-/^~aBcDeFgHiJkLmNoPqRsTuVwXyZ"
-for i in range(25):
-    x = random.randint(50, width-50)
-    delay = random.uniform(0, 15)
-    dur = random.uniform(5, 12)
-    s = "".join([random.choice(chars) + "\\n" for _ in range(10)]) # hacky vertical spacing in text isn't easy natively in SVG, we use separate text elements
-    
-    col = f'<g style="animation: matrixRain {dur}s infinite {delay}s linear; opacity: 0;">'
-    for j in range(random.randint(4, 12)):
-        y = j * 15
-        char = random.choice(chars)
-        col += f'<text x="{x}" y="{y}" font-family="monospace" font-size="12px" fill="#06B6D4" opacity="{1 - (j/15)}">{char}</text>'
-    col += '</g>'
-    rain.append(col)
-svg_parts.append("\n  ".join(rain))
-
-
-# MAIN TEXT & SUBTEXT
-svg_parts.append('''
-  <!-- Decorative Bracket Left -->
-  <text x="50" y="270" font-family="'Orbitron', sans-serif" font-size="200px" font-weight="900" fill="#ffffff" opacity="0.05">&lt;</text>
-  <!-- Decorative Bracket Right -->
-  <text x="1050" y="270" font-family="'Orbitron', sans-serif" font-size="200px" font-weight="900" fill="#ffffff" opacity="0.05">&gt;</text>
-
-  <!-- Title Text -->
-  <g style="animation: float 10s infinite ease-in-out;">
-    <text x="50%" y="220" text-anchor="middle" dominant-baseline="middle" class="text-marways" filter="url(#neon-glow)">
-      MARWAYS
-    </text>
-    <text x="50%" y="220" text-anchor="middle" dominant-baseline="middle" class="text-marways" style="fill: transparent; stroke: #FFFFFF; stroke-width: 2px; stroke-dasharray: 2000; animation: pulse 4s infinite;">
-      MARWAYS
-    </text>
+  <rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="17" fill="none"
+    stroke="{P["violet"]}" stroke-opacity=".4" stroke-width="1.5"/>
+  <rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="17" fill="none"
+    stroke="{P["cyan"]}" stroke-opacity=".5" stroke-width="1.5"
+    stroke-dasharray="60 140" style="animation:dashFlow 6s linear infinite"/>
   </g>
-
-  <!-- Dynamic Rotating Subtitles (Simulates Typing/Fading) -->
-  <g style="animation: float 10s infinite 1s ease-in-out;">
-    <rect x="250" y="280" width="700" height="50" fill="#0D1117" opacity="0.6" rx="10" stroke="#8B5CF6" stroke-width="1" />
-    
-    <!-- String 1 -->
-    <text x="50%" y="312" text-anchor="middle" class="text-subtitle" style="animation: typeRotate1 15s infinite; opacity: 1;">
-      <tspan fill="#A78BFA">✨ Vibe Coder · AI Alchemist · Full-Stack Builder ✨</tspan>
-    </text>
-    
-    <!-- String 2 -->
-    <text x="50%" y="312" text-anchor="middle" class="text-subtitle" style="animation: typeRotate2 15s infinite; opacity: 0;">
-      <tspan fill="#F472B6">const</tspan> <tspan fill="#67E8F9">magic</tspan> = (<tspan fill="#A78BFA">idea</tspan>) =&gt; <tspan fill="#67E8F9">AI</tspan>.transform(<tspan fill="#A78BFA">idea</tspan>).deploy();
-    </text>
-    
-    <!-- String 3 -->
-    <text x="50%" y="312" text-anchor="middle" class="text-subtitle" style="animation: typeRotate3 15s infinite; opacity: 0;">
-      <tspan fill="#06B6D4">🚀 AI × Creativity = Infinite Possibilities 🚀</tspan>
-    </text>
-  </g>
-''')
-
-# Close SVG
-svg_parts.append('''
 </svg>
 ''')
 
-with open('assets/sota-hero.svg', 'w', encoding='utf-8') as f:
-    f.write("".join(svg_parts))
-print("SOTA Hero SVG generated at assets/sota-hero.svg")
+write_svg(ASSETS_DIR / "sota-hero.svg", "".join(parts))

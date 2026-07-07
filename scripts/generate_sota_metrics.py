@@ -1,260 +1,212 @@
+"""Live metrics board — assets/sota-metrics.svg.
+
+Fetches real GitHub numbers (REST works unauthenticated; the contribution
+count needs GITHUB_TOKEN and falls back gracefully without it), then renders
+five glass stat tiles with staggered reveal animations.
+"""
+
 import json
-import math
 import os
 import urllib.request
-from pathlib import Path
 from datetime import datetime, timedelta, timezone
-from urllib.error import URLError, HTTPError
+from urllib.error import HTTPError, URLError
 
+from svgtools import (ASSETS_DIR, MONO_STACK, PALETTE, display_text,
+                      write_svg)
 
-WIDTH = 800
-HEIGHT = 280
-REQUEST_TIMEOUT = 20
-REPO_PAGE_SIZE = 100
-CONTRIBUTIONS_LOOKBACK_DAYS = 365
-HEXAGON_INNER_RADIUS = 75
-HEXAGON_OUTER_RADIUS = 85
-GITHUB_API_VERSION = "2022-11-28"
-GITHUB_REST_API_ROOT = "https://api.github.com"
-GITHUB_GRAPHQL_API_URL = f"{GITHUB_REST_API_ROOT}/graphql"
+P = PALETTE
 GITHUB_USER = os.environ.get("GITHUB_USER", "Marways7")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-METRICS_OUTPUT_PATH = Path("assets/sota-metrics.svg")
-REPOS_LIST_QUERY = f"per_page={REPO_PAGE_SIZE}&type=owner"
-GITHUB_USER_AGENT = "Marways7-profile-generator"
-THOUSAND = 1_000
-MILLION = 1_000_000
+API = "https://api.github.com"
+TIMEOUT = 20
 
-DEFAULT_METRICS = {
-    "repo_count": "7",
-    "star_count": "10",
-    "contributions_year": "110",
-    "created_year": "2023",
+DEFAULTS = {
+    "repos": "12",
+    "stars": "26",
+    "commits": "260",
+    "followers": "6",
+    "since": "2023",
 }
 
-CONTRIBUTIONS_QUERY = """
-query($login: String!, $from: DateTime!, $to: DateTime!) {
-  user(login: $login) {
-    contributionsCollection(from: $from, to: $to) {
-      contributionCalendar {
-        totalContributions
-      }
+CONTRIB_QUERY = """
+query($login:String!, $from:DateTime!, $to:DateTime!) {
+  user(login:$login) {
+    contributionsCollection(from:$from, to:$to) {
+      contributionCalendar { totalContributions }
     }
   }
 }
 """
 
 
-HEXAGON_UNIT_VECTORS = [
-    (math.cos(math.radians(60 * i - 30)), math.sin(math.radians(60 * i - 30)))
-    for i in range(6)
-]
+def _headers():
+    h = {"Accept": "application/vnd.github+json",
+         "User-Agent": "Marways7-profile-generator",
+         "X-GitHub-Api-Version": "2022-11-28"}
+    if GITHUB_TOKEN:
+        h["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+    return h
 
 
-GITHUB_BASE_HEADERS = {
-    "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": GITHUB_API_VERSION,
-    "User-Agent": GITHUB_USER_AGENT,
+def _get(url):
+    req = urllib.request.Request(url, headers=_headers())
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def _compact(n):
+    if n >= 1_000_000:
+        return f"{n / 1_000_000:.1f}".rstrip("0").rstrip(".") + "M"
+    if n >= 1_000:
+        return f"{n / 1_000:.1f}".rstrip("0").rstrip(".") + "K"
+    return str(n)
+
+
+def fetch_metrics():
+    metrics = DEFAULTS.copy()
+    try:
+        user = _get(f"{API}/users/{GITHUB_USER}")
+        metrics["followers"] = _compact(int(user.get("followers", 0) or 0))
+        created = user.get("created_at") or ""
+        if len(created) >= 4:
+            metrics["since"] = created[:4]
+
+        repo_count = int(user.get("public_repos", 0) or 0)
+        metrics["repos"] = _compact(repo_count)
+        stars = 0
+        for page in range(1, (repo_count // 100) + 2):
+            repos = _get(f"{API}/users/{GITHUB_USER}/repos?per_page=100&type=owner&page={page}")
+            stars += sum(r.get("stargazers_count", 0) for r in repos)
+            if len(repos) < 100:
+                break
+        metrics["stars"] = _compact(stars)
+    except (URLError, HTTPError, TimeoutError, json.JSONDecodeError, KeyError, TypeError) as exc:
+        print(f"[metrics] REST fetch failed, using defaults: {exc}")
+
+    if GITHUB_TOKEN:
+        try:
+            now = datetime.now(timezone.utc)
+            payload = json.dumps({
+                "query": CONTRIB_QUERY,
+                "variables": {"login": GITHUB_USER,
+                              "from": (now - timedelta(days=365)).isoformat(),
+                              "to": now.isoformat()},
+            }).encode("utf-8")
+            req = urllib.request.Request(
+                f"{API}/graphql", data=payload,
+                headers={**_headers(), "Content-Type": "application/json"},
+                method="POST")
+            with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            total = (data.get("data", {}).get("user", {})
+                     .get("contributionsCollection", {})
+                     .get("contributionCalendar", {})
+                     .get("totalContributions", 0))
+            if total:
+                metrics["commits"] = _compact(int(total))
+        except (URLError, HTTPError, TimeoutError, json.JSONDecodeError, KeyError, TypeError) as exc:
+            print(f"[metrics] GraphQL fetch failed, keeping default commits: {exc}")
+
+    print(f"[metrics] {metrics}")
+    return metrics
+
+
+# ----------------------------------------------------------------- rendering
+W, H = 1100, 250
+TILE_W, TILE_H, GAP = 196, 168, 20
+BOARD_X = (W - (TILE_W * 5 + GAP * 4)) / 2
+TILE_Y = 46
+
+ICONS = {
+    # 16x16 octicon-style paths
+    "repos": ('<path fill="{c}" fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"/>'),
+    "stars": ('<path fill="{c}" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>'),
+    "commits": ('<path fill="{c}" d="M9.5 0 2.2 9.3h4.2L5.6 16l7.4-9.6H8.6L9.5 0z"/>'),
+    "followers": ('<path fill="{c}" d="M5.5 3.5a2.5 2.5 0 115 0 2.5 2.5 0 01-5 0zM2 13.2C2 10.6 4.7 9 8 9s6 1.6 6 4.2c0 .5-.4.8-.9.8H2.9c-.5 0-.9-.3-.9-.8z"/>'),
+    "since": ('<path fill="{c}" d="M8 0l1.8 6.2L16 8l-6.2 1.8L8 16 6.2 9.8 0 8l6.2-1.8L8 0z"/>'),
 }
 
-
-def build_headers():
-    headers = GITHUB_BASE_HEADERS.copy()
-    if GITHUB_TOKEN:
-        headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
-    return headers
-
-
-def read_json_response(request):
-    with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
-        return json.loads(response.read().decode("utf-8"))
-
-
-def github_get(url):
-    request = urllib.request.Request(url, headers=build_headers())
-    return read_json_response(request)
-
-
-def github_graphql(query, variables):
-    if not GITHUB_TOKEN:
-        raise URLError("GITHUB_TOKEN is required for GraphQL contribution queries")
-
-    payload = json.dumps({"query": query, "variables": variables}).encode("utf-8")
-    request = urllib.request.Request(
-        GITHUB_GRAPHQL_API_URL,
-        data=payload,
-        headers={
-            **build_headers(),
-            "Content-Type": "application/json",
-        },
-        method="POST",
-    )
-    data = read_json_response(request)
-
-    if data.get("errors"):
-        raise URLError(f"GraphQL errors: {data['errors']}")
-
-    return data["data"]
-
-
-def format_compact(value):
-    if value >= MILLION:
-        return f"{value / MILLION:.1f}M".rstrip("0").rstrip(".")
-    if value >= THOUSAND:
-        return f"{value / THOUSAND:.1f}k".rstrip("0").rstrip(".")
-    return str(value)
-
-
-def extract_created_year(user):
-    created_at = user.get("created_at")
-    if isinstance(created_at, str) and len(created_at) >= 4:
-        return created_at[:4]
-    return DEFAULT_METRICS["created_year"]
-
-
-def fetch_live_metrics():
-    user_api_root = f"{GITHUB_REST_API_ROOT}/users/{GITHUB_USER}"
-    user = github_get(user_api_root)
-
-    public_repo_count = int(user.get("public_repos", 0) or 0)
-    repo_pages = (public_repo_count + REPO_PAGE_SIZE - 1) // REPO_PAGE_SIZE
-    repos_api_prefix = f"{user_api_root}/repos?{REPOS_LIST_QUERY}"
-    total_stars = 0
-    total_repos = 0
-
-    for repo_page in range(1, repo_pages + 1):
-        repos = github_get(f"{repos_api_prefix}&page={repo_page}")
-        total_repos += len(repos)
-        total_stars += sum(repo.get("stargazers_count", 0) for repo in repos)
-
-    end_date = datetime.now(timezone.utc)
-    start_date = end_date - timedelta(days=CONTRIBUTIONS_LOOKBACK_DAYS)
-    contributions_data = github_graphql(
-        CONTRIBUTIONS_QUERY,
-        {
-            "login": GITHUB_USER,
-            "from": start_date.isoformat(),
-            "to": end_date.isoformat(),
-        },
-    )
-    user_contributions = contributions_data.get("user") or {}
-    contribution_collection = user_contributions.get("contributionsCollection") or {}
-    contribution_calendar = contribution_collection.get("contributionCalendar") or {}
-    total_contributions = int(contribution_calendar.get("totalContributions", 0) or 0)
-
-    return {
-        "repo_count": format_compact(total_repos or public_repo_count),
-        "star_count": format_compact(total_stars),
-        "contributions_year": format_compact(total_contributions),
-        "created_year": extract_created_year(user),
-    }
-
-
-def load_metrics():
-    try:
-        metrics = fetch_live_metrics()
-        print(f"Fetched live metrics for {GITHUB_USER}: {metrics}")
-        return metrics
-    except (URLError, HTTPError, TimeoutError, json.JSONDecodeError, KeyError, TypeError) as exc:
-        print(f"Failed to fetch live metrics for {GITHUB_USER}: {exc}")
-        print("Using fallback metrics so SVG generation can still complete.")
-        return DEFAULT_METRICS.copy()
-
-
-def draw_hexagon(cx, cy, radius):
-    return " ".join(
-        f"{cx + radius * unit_x},{cy + radius * unit_y}"
-        for unit_x, unit_y in HEXAGON_UNIT_VECTORS
-    )
-
-
-METRIC_LAYOUT = [
-    {"key": "repo_count", "label": "TOTAL REPOSITORIES", "cx": 140, "cy": 140, "delay": 0},
-    {"key": "star_count", "label": "STARS EARNED", "cx": 310, "cy": 140, "delay": 0.4},
-    {"key": "contributions_year", "label": "CONTRIBUTIONS/YR", "cx": 480, "cy": 140, "delay": 0.8},
-    {"key": "created_year", "label": "VIBE SINCE", "cx": 650, "cy": 140, "delay": 1.2},
+TILES = [
+    ("repos", "REPOSITORIES", "仓库", P["violet_light"]),
+    ("stars", "STARS EARNED", "星标", P["amber"]),
+    ("commits", "COMMITS · 365D", "年度提交", P["cyan_light"]),
+    ("followers", "FOLLOWERS", "关注者", P["pink"]),
+    ("since", "VIBE SINCE", "启程之年", P["green"]),
 ]
 
 
 def build_svg(metrics):
-    svg_parts = [
-        f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" width="100%" height="auto">
+    tiles = []
+    for i, (key, label, cjk, accent) in enumerate(TILES):
+        x = BOARD_X + i * (TILE_W + GAP)
+        delay = 0.35 * i
+        value = metrics[key]
+        num = display_text(str(value), 38, x + TILE_W / 2, TILE_Y + 92,
+                           accent, 1.5, "middle")
+        icon = ICONS[key].format(c=accent)
+        tiles.append(f'''
+  <g style="animation:tileIn .8s cubic-bezier(.2,.8,.2,1) {delay:.2f}s both">
+    <g style="animation:floatTile 5.5s ease-in-out {delay:.2f}s infinite">
+      <rect x="{x}" y="{TILE_Y}" width="{TILE_W}" height="{TILE_H}" rx="14"
+        fill="#161B22" fill-opacity=".92" stroke="{P["violet"]}" stroke-opacity=".3" stroke-width="1.2"/>
+      <path d="M {x + 14} {TILE_Y + 1.5} H {x + TILE_W - 14}" stroke="{accent}" stroke-opacity=".9"
+        stroke-width="2.5" stroke-linecap="round"/>
+      <g transform="translate({x + 16},{TILE_Y + 16}) scale(1.15)" opacity=".95">{icon}</g>
+      <path d="M {x + TILE_W - 24} {TILE_Y + TILE_H - 8} h 16" stroke="{accent}" stroke-opacity=".55" stroke-width="2"/>
+      <g style="animation:numGlow 3.4s ease-in-out {delay:.2f}s infinite">{num}</g>
+      <text x="{x + TILE_W / 2}" y="{TILE_Y + 124}" text-anchor="middle" class="mono"
+        font-size="11.5" letter-spacing="2" fill="{P["muted"]}">{label}</text>
+      <text x="{x + TILE_W / 2}" y="{TILE_Y + 146}" text-anchor="middle" class="sans"
+        font-size="11" letter-spacing="3" fill="{P["muted"]}" opacity=".75">{cjk}</text>
+    </g>
+  </g>''')
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="100%" height="auto" role="img" aria-label="Live GitHub metrics">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Fira+Code:wght@600&amp;display=swap');
-      
-      .bg {{ fill: #0D1117; }}
-      
-      .hex-frame {{
-        fill: rgba(139, 92, 246, 0.05);
-        stroke: #A78BFA;
-        stroke-width: 2;
-        filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.4));
-      }}
-      .hex-frame:hover {{
-        fill: rgba(6, 182, 212, 0.1);
-        stroke: #06B6D4;
-        filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.8));
-      }}
-      
-      .value {{
-        font-family: 'Orbitron', sans-serif;
-        font-size: 34px;
-        font-weight: 900;
-        fill: #67E8F9;
-        text-anchor: middle;
-      }}
-      .label {{
-        font-family: 'Fira Code', monospace;
-        font-size: 14px;
-        font-weight: 600;
-        fill: #8B949E;
-        text-anchor: middle;
-      }}
-      @keyframes float-hex {{
-        0%, 100% {{ transform: translateY(0); }}
-        50% {{ transform: translateY(-6px); }}
-      }}
-      
-      @keyframes pulse-ring {{
-        0% {{ stroke-dasharray: 0 100; opacity: 0.8; }}
-        100% {{ stroke-dasharray: 100 0; opacity: 0; }}
-      }}
+      @keyframes tileIn {{ from {{ opacity:0; transform:translateY(22px); }} to {{ opacity:1; transform:translateY(0); }} }}
+      @keyframes floatTile {{ 0%,100% {{ transform:translateY(0); }} 50% {{ transform:translateY(-5px); }} }}
+      @keyframes numGlow {{ 0%,100% {{ filter:drop-shadow(0 0 2px rgba(103,232,249,.25)); }} 50% {{ filter:drop-shadow(0 0 9px rgba(139,92,246,.6)); }} }}
+      @keyframes scan {{ 0% {{ transform:translateX(-220px); opacity:0; }} 10% {{ opacity:.6; }} 90% {{ opacity:.6; }} 100% {{ transform:translateX({W + 220}px); opacity:0; }} }}
+      @keyframes breathe {{ 0%,100% {{ opacity:.5; }} 50% {{ opacity:1; }} }}
+      .mono {{ font-family:{MONO_STACK}; }}
+      .sans {{ font-family:-apple-system,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; }}
     </style>
+    <linearGradient id="scanG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#67E8F9" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#67E8F9" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#67E8F9" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#22D3EE" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="board"><rect width="{W}" height="{H}" rx="16"/></clipPath>
   </defs>
 
-  <rect width="100%" height="100%" class="bg" rx="15" />
-"""
-    ]
+  <g clip-path="url(#board)">
+    <rect width="{W}" height="{H}" fill="{P["bg_card"]}"/>
+    <line x1="40" y1="24" x2="{W / 2 - 210}" y2="24" stroke="url(#hair)" stroke-width="1.4"/>
+    <line x1="{W / 2 + 210}" y1="24" x2="{W - 40}" y2="24" stroke="url(#hair)" stroke-width="1.4"/>
+    <text x="{W / 2}" y="29" text-anchor="middle" class="mono" font-size="12" letter-spacing="4"
+      fill="{P["muted"]}"><tspan fill="{P["green"]}">●</tspan> LIVE TELEMETRY — 实时数据流</text>
 
-    for panel in METRIC_LAYOUT:
-        cx, cy, delay = panel["cx"], panel["cy"], panel["delay"]
-        hex_str = draw_hexagon(cx, cy, HEXAGON_INNER_RADIUS)
-        outer_hex = draw_hexagon(cx, cy, HEXAGON_OUTER_RADIUS)
-        value = metrics.get(panel["key"], DEFAULT_METRICS[panel["key"]])
-        label = panel["label"]
+    {''.join(tiles)}
 
-        svg_parts.append(
-            f"""
-  <g style="animation: float-hex 4s infinite {delay}s ease-in-out; transform-origin: {cx}px {cy}px;">
-    <polygon points="{outer_hex}" fill="none" class="hex-frame" style="animation: pulse-ring 3s infinite {delay}s linear;" />
-    <polygon points="{hex_str}" class="hex-frame" />
-    <text x="{cx}" y="{cy + 10}" class="value">{value}</text>
-    <text x="{cx}" y="{cy + 40}" class="label">{label}</text>
+    <rect x="0" y="0" width="200" height="{H}" fill="url(#scanG)"
+      style="animation:scan 6.5s ease-in-out infinite"/>
+
+    <path d="M 18 40 L 18 18 L 40 18" fill="none" stroke="{P["cyan"]}" stroke-width="2" opacity=".7"/>
+    <path d="M {W - 18} {H - 40} L {W - 18} {H - 18} L {W - 40} {H - 18}" fill="none" stroke="{P["cyan"]}" stroke-width="2" opacity=".7"/>
+    <circle cx="26" cy="{H - 24}" r="3" fill="{P["green"]}" style="animation:breathe 2.2s ease-in-out infinite"/>
+    <text x="38" y="{H - 20}" class="mono" font-size="11" letter-spacing="2" fill="{P["muted"]}">SYNCED · EVERY 6H</text>
   </g>
-"""
-        )
-
-    svg_parts.append("</svg>\n")
-    return "".join(svg_parts)
-
-
-def main():
-    metrics = load_metrics()
-    METRICS_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    METRICS_OUTPUT_PATH.write_text(build_svg(metrics), encoding="utf-8")
-    print(f"SOTA live metrics hologram generated at {METRICS_OUTPUT_PATH}")
+  <rect x=".8" y=".8" width="{W - 1.6}" height="{H - 1.6}" rx="15" fill="none"
+    stroke="{P["violet"]}" stroke-opacity=".38" stroke-width="1.5"/>
+</svg>
+'''
 
 
-if __name__ == "__main__":
-    main()
+metrics = fetch_metrics()
+write_svg(ASSETS_DIR / "sota-metrics.svg", build_svg(metrics))

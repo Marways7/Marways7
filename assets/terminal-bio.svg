@@ -1,144 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" width="100%" height="auto" xml:space="preserve" role="img" aria-label="Marways terminal profile">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;display=swap');
-      
-      .bg { fill: #0D1117; }
-      .header { fill: #161B22; }
-      
-      .text-font {
-        font-family: 'Fira Code', monospace;
-        font-size: 14px;
-      }
-      
-      .prompt { fill: #7EE787; font-weight: 700; }
-      .dir { fill: #79C0FF; font-weight: 700; }
-      .command { fill: #D2A8FF; }
-      .output { fill: #C9D1D9; }
-      .cursor { fill: #C9D1D9; animation: blink 1s step-end infinite; }
-      
-      .highlight { fill: #F78166; font-weight: 700; }
-      .accent { fill: #A5D6FF; }
-      .success { fill: #3FB950; }
-      
-      @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
-      
-      /* Typing effect delays (Significantly slower for readability) */
-      .typing-1 { opacity: 0; animation: type-in 0.1s forwards 1.0s; }
-      .typing-1-out { opacity: 0; animation: type-in 0.1s forwards 3.5s; }
-      
-      .typing-2 { opacity: 0; animation: type-in 0.1s forwards 6.5s; }
-      .typing-2-out { opacity: 0; animation: type-in 0.1s forwards 9.0s; }
-      
-      .typing-3 { opacity: 0; animation: type-in 0.1s forwards 12.0s; }
-      .typing-3-out { opacity: 0; animation: type-in 0.1s forwards 14.5s; }
-      
-      .typing-4 { opacity: 0; animation: type-in 0.1s forwards 16.5s; }
-      .typing-4-out { opacity: 0; animation: type-in 0.1s forwards 18.0s; }
-      
-      @keyframes type-in {
-        to { opacity: 1; }
-      }
-      
-      /* The final blinking cursor */
-      .final-cursor {
-        opacity: 0;
-        animation: type-in 0.1s forwards 18.0s, blink 1s step-end infinite 18.0s;
-      }
-      
-      /* Hide previous cursors as we move down */
-      .c1 { animation: cursor-hide 0.1s forwards 3.3s; }
-      .c2 { opacity: 0; animation: type-in 0.1s forwards 3.3s, blink 1s step-end infinite 3.3s, cursor-hide 0.1s forwards 6.3s; }
-      .c3 { opacity: 0; animation: type-in 0.1s forwards 6.3s, blink 1s step-end infinite 6.3s, cursor-hide 0.1s forwards 8.8s; }
-      .c4 { opacity: 0; animation: type-in 0.1s forwards 8.8s, blink 1s step-end infinite 8.8s, cursor-hide 0.1s forwards 11.8s; }
-      .c5 { opacity: 0; animation: type-in 0.1s forwards 11.8s, blink 1s step-end infinite 11.8s, cursor-hide 0.1s forwards 14.3s; }
-      .c6 { opacity: 0; animation: type-in 0.1s forwards 14.3s, blink 1s step-end infinite 14.3s, cursor-hide 0.1s forwards 16.3s; }
-      .c7 { opacity: 0; animation: type-in 0.1s forwards 16.3s, blink 1s step-end infinite 16.3s, cursor-hide 0.1s forwards 17.8s; }
-      
-      @keyframes cursor-hide {
-        to { opacity: 0; }
-      }
-      
+      @keyframes blink { 0%,49% {opacity:1;} 50%,100% {opacity:0;} }
+      @keyframes masterFade { 0%,1% {opacity:0;} 3%,92% {opacity:1;} 97%,100% {opacity:0;} }
+      @keyframes glowPulse { 0%,100% {opacity:.5;} 50% {opacity:1;} }
+      .t { font-family:ui-monospace,'SFMono-Regular','SF Mono','Cascadia Code','JetBrains Mono',Menlo,Consolas,monospace; font-size:13.5px; }
+      @keyframes ap1 { 0%,2.17% {opacity:0;} 3.33%,100% {opacity:1;} }
+      @keyframes tp2 { 0%,2.67% {transform:translateX(0);animation-timing-function:steps(6,end);} 5.67%,100% {transform:translateX(53px);} }
+      @keyframes cu3 { 0%,2.67% {opacity:0;} 2.83%,8.0% {opacity:1;} 8.17%,100% {opacity:0;} }
+      @keyframes rd4 { 0%,2.67% {transform:translateX(0);animation-timing-function:steps(6,end);} 5.67%,100% {transform:translateX(49px);} }
+      @keyframes ap5 { 0%,7.0% {opacity:0;} 8.17%,100% {opacity:1;} }
+      @keyframes ap6 { 0%,11.5% {opacity:0;} 12.67%,100% {opacity:1;} }
+      @keyframes tp7 { 0%,12.0% {transform:translateX(0);animation-timing-function:steps(14,end);} 16.67%,100% {transform:translateX(118px);} }
+      @keyframes cu8 { 0%,12.0% {opacity:0;} 12.17%,19.0% {opacity:1;} 19.17%,100% {opacity:0;} }
+      @keyframes rd9 { 0%,12.0% {transform:translateX(0);animation-timing-function:steps(14,end);} 16.67%,100% {transform:translateX(114px);} }
+      @keyframes ap10 { 0%,18.0% {opacity:0;} 19.17%,100% {opacity:1;} }
+      @keyframes ap11 { 0%,19.0% {opacity:0;} 20.17%,100% {opacity:1;} }
+      @keyframes ap12 { 0%,20.0% {opacity:0;} 21.17%,100% {opacity:1;} }
+      @keyframes ap13 { 0%,21.0% {opacity:0;} 22.17%,100% {opacity:1;} }
+      @keyframes ap14 { 0%,22.0% {opacity:0;} 23.17%,100% {opacity:1;} }
+      @keyframes ap15 { 0%,23.0% {opacity:0;} 24.17%,100% {opacity:1;} }
+      @keyframes ap16 { 0%,28.17% {opacity:0;} 29.33%,100% {opacity:1;} }
+      @keyframes tp17 { 0%,28.67% {transform:translateX(0);animation-timing-function:steps(23,end);} 36.0%,100% {transform:translateX(191px);} }
+      @keyframes cu18 { 0%,28.67% {opacity:0;} 28.83%,38.33% {opacity:1;} 38.5%,100% {opacity:0;} }
+      @keyframes rd19 { 0%,28.67% {transform:translateX(0);animation-timing-function:steps(23,end);} 36.0%,100% {transform:translateX(187px);} }
+      @keyframes ap20 { 0%,37.67% {opacity:0;} 38.83%,100% {opacity:1;} }
+      @keyframes barFill { 0%,39.33% {transform:scaleX(0);} 50.67%,100% {transform:scaleX(1);} }
+      @keyframes ap21 { 0%,39.0% {opacity:0;} 40.17%,100% {opacity:1;} }
+      @keyframes ap22 { 0%,51.33% {opacity:0;} 52.5%,100% {opacity:1;} }
+      @keyframes ap23 { 0%,53.0% {opacity:0;} 54.17%,100% {opacity:1;} }
+      @keyframes ap24 { 0%,56.0% {opacity:0;} 57.17%,100% {opacity:1;} }
+      @keyframes ap25 { 0%,60.67% {opacity:0;} 61.83%,100% {opacity:1;} }
+      @keyframes cu26 { 0%,61.33% {opacity:0;} 61.5%,91.67% {opacity:1;} 91.83%,100% {opacity:0;} }
     </style>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset=".6" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="headGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1C2330"/>
+      <stop offset="1" stop-color="#161B22"/>
+    </linearGradient>
+    <clipPath id="win"><rect width="860" height="470" rx="12"/></clipPath>
   </defs>
 
-  <!-- Terminal Window -->
-  <rect width="100%" height="100%" class="bg" rx="8" />
-  
-  <!-- Terminal Header -->
-  <rect width="100%" height="30" class="header" rx="8" />
-  <rect width="100%" height="15" y="15" class="header" /> <!-- Square bottom corners -->
-  
-  <!-- Mac Buttons -->
-  <circle cx="20" cy="15" r="6" fill="#FF5F56" />
-  <circle cx="40" cy="15" r="6" fill="#FFBD2E" />
-  <circle cx="60" cy="15" r="6" fill="#27C93F" />
-  
-  <text x="50%" y="20" class="text-font" fill="#8B949E" style="text-anchor: middle; font-size: 13px;">root@marways:~</text>
+  <g clip-path="url(#win)">
+    <rect width="860" height="470" fill="#0D1117"/>
+    <rect width="860" height="34" fill="url(#headGrad)"/>
+    <circle cx="22" cy="17" r="6" fill="#FF5F56"/>
+    <circle cx="44" cy="17" r="6" fill="#FFBD2E"/>
+    <circle cx="66" cy="17" r="6" fill="#27C93F"/>
+    <text x="430.0" y="22" text-anchor="middle" class="t" font-size="12.5" fill="#8B949E">marways@github: ~/universe — zsh</text>
+    <text x="842" y="22" text-anchor="end" class="t" font-size="11" fill="#484F58">⟳ 30s</text>
 
-  <!-- Terminal Body Content -->
-  <g class="text-font" transform="translate(20, 60)">
+    <g style="animation:masterFade 30.0s linear infinite">
+      <g style="opacity:0;animation:ap1 30.0s linear infinite"><text x="24" y="74" class="t"><tspan fill="#3FB950" font-weight="700">marways@github</tspan><tspan fill="#8B949E">:</tspan><tspan fill="#79C0FF" font-weight="700">~/universe</tspan><tspan fill="#8B949E">$ </tspan><tspan fill="#D2A8FF">whoami</tspan></text><rect x="244" y="61" width="53" height="18" fill="#0D1117" style="animation:tp2 30.0s linear infinite"/></g><g style="opacity:0;animation:cu3 30.0s linear infinite"><rect x="244" y="61" width="8" height="16" fill="#C9D1D9" style="animation:rd4 30.0s linear infinite, blink 1.05s step-end infinite"/></g>
+  <g style="opacity:0;animation:ap5 30.0s linear infinite"><text x="24" y="96" class="t"><tspan fill="#E6EDF3">marways</tspan><tspan fill="#8B949E"> · </tspan><tspan fill="#A78BFA">vibe coder</tspan><tspan fill="#8B949E"> / </tspan><tspan fill="#67E8F9">ai alchemist</tspan><tspan fill="#8B949E"> / </tspan><tspan fill="#F472B6">full-stack builder</tspan></text></g>
+  <g style="opacity:0;animation:ap6 30.0s linear infinite"><text x="24" y="130" class="t"><tspan fill="#3FB950" font-weight="700">marways@github</tspan><tspan fill="#8B949E">:</tspan><tspan fill="#79C0FF" font-weight="700">~/universe</tspan><tspan fill="#8B949E">$ </tspan><tspan fill="#D2A8FF">cat stack.json</tspan></text><rect x="244" y="117" width="118" height="18" fill="#0D1117" style="animation:tp7 30.0s linear infinite"/></g><g style="opacity:0;animation:cu8 30.0s linear infinite"><rect x="244" y="117" width="8" height="16" fill="#C9D1D9" style="animation:rd9 30.0s linear infinite, blink 1.05s step-end infinite"/></g>
+  <g style="opacity:0;animation:ap10 30.0s linear infinite"><text x="24" y="152" class="t"><tspan fill="#A5D6FF">{</tspan></text></g>
+  <g style="opacity:0;animation:ap11 30.0s linear infinite"><text x="24" y="174" class="t"><tspan fill="#79C0FF">  "ai"</tspan><tspan fill="#8B949E">:   </tspan><tspan fill="#A5D6FF">[</tspan><tspan fill="#7EE787">"PyTorch", "Agents", "MCP", "LLMs"</tspan><tspan fill="#A5D6FF">]</tspan><tspan fill="#8B949E">,</tspan></text></g>
+  <g style="opacity:0;animation:ap12 30.0s linear infinite"><text x="24" y="196" class="t"><tspan fill="#79C0FF">  "web"</tspan><tspan fill="#8B949E">:  </tspan><tspan fill="#A5D6FF">[</tspan><tspan fill="#7EE787">"React", "Next.js", "TypeScript"</tspan><tspan fill="#A5D6FF">]</tspan><tspan fill="#8B949E">,</tspan></text></g>
+  <g style="opacity:0;animation:ap13 30.0s linear infinite"><text x="24" y="218" class="t"><tspan fill="#79C0FF">  "core"</tspan><tspan fill="#8B949E">: </tspan><tspan fill="#A5D6FF">[</tspan><tspan fill="#7EE787">"Python", "Node.js", "Docker"</tspan><tspan fill="#A5D6FF">]</tspan><tspan fill="#8B949E">,</tspan></text></g>
+  <g style="opacity:0;animation:ap14 30.0s linear infinite"><text x="24" y="240" class="t"><tspan fill="#79C0FF">  "vibe"</tspan><tspan fill="#8B949E">: </tspan><tspan fill="#FBBF24">"∞"</tspan></text></g>
+  <g style="opacity:0;animation:ap15 30.0s linear infinite"><text x="24" y="262" class="t"><tspan fill="#A5D6FF">}</tspan></text></g>
+  <g style="opacity:0;animation:ap16 30.0s linear infinite"><text x="24" y="296" class="t"><tspan fill="#3FB950" font-weight="700">marways@github</tspan><tspan fill="#8B949E">:</tspan><tspan fill="#79C0FF" font-weight="700">~/universe</tspan><tspan fill="#8B949E">$ </tspan><tspan fill="#D2A8FF">./build_future.sh --now</tspan></text><rect x="244" y="283" width="191" height="18" fill="#0D1117" style="animation:tp17 30.0s linear infinite"/></g><g style="opacity:0;animation:cu18 30.0s linear infinite"><rect x="244" y="283" width="8" height="16" fill="#C9D1D9" style="animation:rd19 30.0s linear infinite, blink 1.05s step-end infinite"/></g>
+  <g style="opacity:0;animation:ap20 30.0s linear infinite"><text x="24" y="318" class="t"><tspan fill="#67E8F9">[▸]</tspan><tspan fill="#C9D1D9"> compiling wild ideas → production software ...</tspan></text></g>
   
-    <!-- LINE 1: Command -->
-    <text x="0" y="0">
-      <tspan class="prompt">root@marways</tspan>:<tspan class="dir">~/brain</tspan>$ <tspan class="command typing-1">cat identity.json</tspan>
-    </text>
-    <rect x="0" y="-12" width="8" height="15" fill="#C9D1D9" class="c1"/> <!-- Cursor dummy start -->
-    <rect x="290" y="-12" width="8" height="15" fill="#C9D1D9" class="c2"/> <!-- Cursor after command 1 -->
-    
-    <!-- LINE 1: Output -->
-    <g class="typing-1-out" transform="translate(0, 25)">
-      <text x="0" y="0"><tspan class="accent">{</tspan></text>
-      <text x="20" y="22">"name": <tspan class="success">"Marways"</tspan>,</text>
-      <text x="20" y="44">"title": <tspan class="success">"SOTA Vibe Coder &amp; AI Architect"</tspan>,</text>
-      <text x="20" y="66">"superpower": <tspan class="success">"Turning Wild Ideas -> Production Software"</tspan></text>
-      <text x="0" y="88"><tspan class="accent">}</tspan></text>
+  <g style="opacity:0;animation:ap21 30.0s linear infinite">
+    <rect x="26" y="330" width="420" height="12" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <g style="transform-origin:26px 0;animation:barFill 30.0s linear infinite">
+      <rect x="26" y="330" width="420" height="12" rx="6" fill="url(#barGrad)"/>
     </g>
-
-    <!-- LINE 2: Command -->
-    <g class="typing-2" transform="translate(0, 140)">
-      <text x="0" y="0">
-        <tspan class="prompt">root@marways</tspan>:<tspan class="dir">~/brain</tspan>$ <tspan class="command">neofetch --skills</tspan>
-      </text>
-      <rect x="0" y="-12" width="8" height="15" fill="#C9D1D9" class="c3"/>
-      <rect x="295" y="-12" width="8" height="15" fill="#C9D1D9" class="c4"/>
-    </g>
-    
-    <!-- LINE 2: Output -->
-    <g class="typing-2-out" transform="translate(0, 165)">
-      <text x="0" y="0" class="highlight">OS:</text><text x="120" y="0" class="output">Ubuntu / Kali Linux (Live)</text>
-      <text x="0" y="22" class="highlight">Specialty:</text><text x="120" y="22" class="output">AI Agents &amp; Deep Learning</text>
-      <text x="0" y="44" class="highlight">Core Env:</text><text x="120" y="44" class="output">Python, TS, React, PyTorch</text>
-      <text x="0" y="66" class="highlight">Philosophy:</text><text x="120" y="66" class="output">Open Source everything.</text>
-    </g>
-
-    <!-- LINE 3: Command -->
-    <g class="typing-3" transform="translate(0, 260)">
-      <text x="0" y="0">
-        <tspan class="prompt">root@marways</tspan>:<tspan class="dir">~/brain</tspan>$ <tspan class="command">./execute_future.sh</tspan>
-      </text>
-      <rect x="0" y="-12" width="8" height="15" fill="#C9D1D9" class="c5"/>
-      <rect x="300" y="-12" width="8" height="15" fill="#C9D1D9" class="c6"/>
-    </g>
-    
-    <!-- LINE 3: Output -->
-    <g class="typing-3-out" transform="translate(0, 285)">
-      <text x="0" y="0" class="success">[+] Connecting to neural matrix...</text>
-      <text x="0" y="22" class="success">[+] Bypassing limits... OK</text>
-      <text x="0" y="44" class="success">[+] Future built successfully.</text>
-    </g>
-    
-    <!-- LINE 4: Final Prompt -->
-    <g class="typing-4" transform="translate(0, 360)">
-      <text x="0" y="0">
-        <tspan class="prompt">root@marways</tspan>:<tspan class="dir">~/brain</tspan>$ <tspan class="command"></tspan>
-      </text>
-      <rect x="0" y="-12" width="8" height="15" fill="#C9D1D9" class="c7"/>
-      <rect x="235" y="-12" width="8" height="15" class="final-cursor"/>
-    </g>
-
   </g>
+  <g style="opacity:0;animation:ap22 30.0s linear infinite"><text x="460" y="341" class="t" fill="#3FB950" font-weight="700">100%</text></g>
+  <g style="opacity:0;animation:ap23 30.0s linear infinite"><text x="24" y="364" class="t"><tspan fill="#3FB950">[✓]</tspan><tspan fill="#C9D1D9"> future built successfully — deploying to </tspan><tspan fill="#F472B6">reality</tspan><tspan fill="#C9D1D9"> ...</tspan></text></g>
+  <g style="opacity:0;animation:ap24 30.0s linear infinite"><text x="24" y="386" class="t"><tspan fill="#3FB950">[✓]</tspan><tspan fill="#C9D1D9"> open-source spirit </tspan><tspan fill="#FBBF24">enabled</tspan><tspan fill="#8B949E"> — never stop building.</tspan></text></g>
+  <g style="opacity:0;animation:ap25 30.0s linear infinite"><text x="24" y="416" class="t"><tspan fill="#3FB950" font-weight="700">marways@github</tspan><tspan fill="#8B949E">:</tspan><tspan fill="#79C0FF" font-weight="700">~/universe</tspan><tspan fill="#8B949E">$ </tspan></text></g>
+  <g style="opacity:0;animation:cu26 30.0s linear infinite"><rect x="244" y="403" width="8" height="16" fill="#C9D1D9" style="animation:blink 1.05s step-end infinite"/></g>
+    </g>
+  </g>
+  <rect x=".8" y=".8" width="858.4" height="468.4" rx="11" fill="none"
+    stroke="#8B5CF6" stroke-opacity=".45" stroke-width="1.5" style="animation:glowPulse 4s ease-in-out infinite"/>
 </svg>

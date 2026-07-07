@@ -1,118 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 200" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 232" width="100%" height="auto" role="img" aria-label="DeepReadX">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&amp;family=Orbitron:wght@700;900&amp;display=swap');
-      
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-3px); }
-      }
-      @keyframes scanline {
-        0% { transform: translateY(-50px); }
-        100% { transform: translateY(200px); }
-      }
-      @keyframes neonPulse {
-        0%, 100% { filter: drop-shadow(0 0 5px rgba(103,232,249,0.5)); }
-        50% { filter: drop-shadow(0 0 15px rgba(103,232,249,0.9)); }
-      }
-      @keyframes blink {
-        0%, 96%, 100% { opacity: 1; }
-        98% { opacity: 0; }
-      }
-
-      .bg { fill: #050814; }
-      
-      .hud-frame {
-        fill: #0D1117;
-        stroke: #A78BFA;
-        stroke-width: 1.5;
-        filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.2));
-      }
-      
-      .hud-glow {
-        fill: none;
-        stroke: #06B6D4;
-        stroke-width: 2;
-        filter: drop-shadow(0 0 8px rgba(6,182,212,0.8));
-      }
-
-      .title-font {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        fill: #67E8F9;
-      }
-      .desc-font {
-        font-family: 'Fira Code', monospace;
-        font-size: 12px;
-        fill: #C9D1D9;
-      }
-      .lang-font {
-        font-family: 'Fira Code', monospace;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-      }
-      
-      .scan-group {
-        clip-path: url(#pad-clip);
-      }
+      @keyframes borderFlow { to { stroke-dashoffset:-320; } }
+      @keyframes scanline { 0% { transform:translateY(-60px); } 100% { transform:translateY(252px); } }
+      @keyframes cardFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px); } }
+      @keyframes blinkDot { 0%,88%,100% { opacity:1; } 92%,96% { opacity:.25; } }
+      @keyframes chipPulse { 0%,100% { opacity:.75; } 50% { opacity:1; } }
+      @keyframes arrowNudge { 0%,100% { transform:translateX(0); } 50% { transform:translateX(3px); } }
+      @keyframes trace { to { stroke-dashoffset:-120; } }
+      .mono { font-family:ui-monospace,'SFMono-Regular','SF Mono','Cascadia Code','JetBrains Mono',Menlo,Consolas,monospace; }
     </style>
-    
-    <clipPath id="pad-clip">
-      <rect width="370" height="190" x="5" y="5" rx="8" />
-    </clipPath>
-    
-    <linearGradient id="scan-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0" />
-      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+    <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#11182a"/>
     </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A78BFA" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#A78BFA" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip"><rect x="4" y="4" width="412" height="224" rx="14"/></clipPath>
   </defs>
 
-  <!-- Deep space background -->
-  <rect width="100%" height="100%" class="bg" rx="12" />
-
-  <!-- Data Pad Core Container -->
-  <g transform="translate(5, 5)" style="animation: float 5s infinite 1.4s ease-in-out;">
-    <g class="scan-group">
-      <rect width="370" height="190" rx="8" class="hud-frame" />
-      <!-- Scanning Line inside Pad -->
-      <rect width="100%" height="40" fill="url(#scan-grad)" style="animation: scanline 3.5s infinite linear 1.4s;" />
+  <g style="animation:cardFloat 6s ease-in-out 1.10s infinite">
+    <g clip-path="url(#clip)">
+      <rect x="4" y="4" width="412" height="224" fill="url(#cardBg)"/>
+      <rect x="4" y="0" width="412" height="48" fill="url(#scan)"
+        style="animation:scanline 4.5s linear 1.10s infinite"/>
+      <path d="M 302 228 v -26 h 44 v -18 h 62" fill="none" stroke="#A78BFA"
+        stroke-opacity=".28" stroke-width="1.3" stroke-dasharray="7 5"
+        style="animation:trace 5s linear infinite"/>
+      <circle cx="302" cy="202" r="2.2" fill="#A78BFA" opacity=".5"/>
     </g>
-    
-    <!-- Cybernetic Hud Corner Accents -->
-    <path d="M 0 25 L 0 0 L 25 0" class="hud-glow" />
-    <path d="M 370 165 L 370 190 L 345 190" class="hud-glow" />
-    
-    <!-- Decorative side ticks -->
-    <rect x="365" y="30" width="8" height="2" fill="#8B5CF6" />
-    <rect x="365" y="38" width="8" height="2" fill="#8B5CF6" />
-    <rect x="365" y="46" width="8" height="2" fill="#8B5CF6" />
-    
-    <!-- Repo Icon -->
-    <svg x="15" y="20" viewBox="0 0 16 16" width="18" height="18">
-      <path fill="#8B5CF6" fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+
+    <rect x="4" y="4" width="412" height="224" rx="14" fill="none"
+      stroke="#8B5CF6" stroke-opacity=".35" stroke-width="1.3"/>
+    <rect x="4" y="4" width="412" height="224" rx="14" fill="none"
+      stroke="#A78BFA" stroke-width="1.6" stroke-dasharray="46 114" stroke-opacity=".9"
+      style="animation:borderFlow 7s linear infinite"/>
+
+    <path d="M 16 34 L 16 16 L 34 16" fill="none" stroke="#A78BFA" stroke-width="2.2" opacity=".9"/>
+    <path d="M 404 198 L 404 216 L 386 216" fill="none" stroke="#A78BFA" stroke-width="2.2" opacity=".9"/>
+
+    <svg x="22" y="36" viewBox="0 0 16 16" width="20" height="20">
+      <path fill="#A78BFA" fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"/>
     </svg>
-    
-    <!-- Title -->
-    <text x="40" y="34" class="title-font" style="animation: neonPulse 3s infinite 1.4s;">DeepReadX</text>
-    
-    <!-- Description -->
-    <text x="20" y="70" class="desc-font">Autonomous Research Agent.</text>
-    <text x="20" y="90" class="desc-font">Reads, digests, and outputs insights.</text>
-    
-    <!-- Status / Metrics Footer -->
-    <g transform="translate(0, 160)">
-        <!-- Language Circle -->
-        <circle cx="25" cy="-4" r="5" fill="#A78BFA" style="animation: blink 4s infinite;" />
-        <text x="35" y="0" class="lang-font" fill="#A78BFA">Java</text>
-        
-        <!-- Star Icon -->
-        <svg x="250" y="-12" viewBox="0 0 16 16" width="14" height="14">
-          <path fill="#C9D1D9" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
-        </svg>
-        <text x="270" y="0" class="lang-font" fill="#C9D1D9">1</text>
+    <g transform="translate(52.0,52.0)"><path d="M1.2 0.0V-15.1H13.3Q14.1 -15.1 14.8 -14.7Q15.5 -14.3 15.9 -13.6Q16.3 -12.9 16.3 -12.1V-3.0Q16.3 -2.2 15.9 -1.5Q15.5 -0.8 14.8 -0.4Q14.1 0.0 13.3 0.0ZM4.3 -3.0H13.1Q13.2 -3.0 13.2 -3.1Q13.3 -3.1 13.3 -3.2V-11.9Q13.3 -12.0 13.2 -12.0Q13.2 -12.1 13.1 -12.1H4.3Q4.3 -12.1 4.3 -12.0Q4.2 -12.0 4.2 -11.9V-3.2Q4.2 -3.1 4.3 -3.1Q4.3 -3.0 4.3 -3.0Z M22.0 0.0Q21.2 0.0 20.6 -0.4Q19.9 -0.8 19.5 -1.5Q19.1 -2.2 19.1 -3.0V-9.2Q19.1 -10.0 19.5 -10.7Q19.9 -11.4 20.6 -11.8Q21.2 -12.2 22.0 -12.2H28.5Q29.3 -12.2 30.0 -11.8Q30.6 -11.4 31.0 -10.7Q31.4 -10.0 31.4 -9.2V-4.6H22.1V-3.1Q22.1 -3.1 22.1 -3.0Q22.2 -3.0 22.2 -3.0H31.4V0.0H22.0ZM22.1 -7.2H28.5V-9.1Q28.5 -9.1 28.4 -9.2Q28.4 -9.2 28.3 -9.2H22.2Q22.2 -9.2 22.1 -9.2Q22.1 -9.1 22.1 -9.1Z M37.1 0.0Q36.3 0.0 35.6 -0.4Q34.9 -0.8 34.5 -1.5Q34.1 -2.2 34.1 -3.0V-9.2Q34.1 -10.0 34.5 -10.7Q34.9 -11.4 35.6 -11.8Q36.3 -12.2 37.1 -12.2H43.5Q44.3 -12.2 45.0 -11.8Q45.7 -11.4 46.1 -10.7Q46.5 -10.0 46.5 -9.2V-4.6H37.1V-3.1Q37.1 -3.1 37.1 -3.0Q37.2 -3.0 37.2 -3.0H46.5V0.0H37.1ZM37.1 -7.2H43.5V-9.1Q43.5 -9.1 43.4 -9.2Q43.4 -9.2 43.4 -9.2H37.2Q37.2 -9.2 37.1 -9.2Q37.1 -9.1 37.1 -9.1Z M49.2 4.8V-12.2H58.6Q59.4 -12.2 60.1 -11.8Q60.8 -11.4 61.2 -10.7Q61.6 -10.0 61.6 -9.2V-3.0Q61.6 -2.2 61.2 -1.5Q60.8 -0.8 60.1 -0.4Q59.4 0.0 58.6 0.0H52.2V4.8ZM52.3 -3.0H58.5Q58.5 -3.0 58.5 -3.0Q58.6 -3.1 58.6 -3.1V-9.1Q58.6 -9.1 58.5 -9.2Q58.5 -9.2 58.5 -9.2H52.3Q52.3 -9.2 52.2 -9.2Q52.2 -9.1 52.2 -9.1V-3.1Q52.2 -3.1 52.2 -3.0Q52.3 -3.0 52.3 -3.0Z M75.6 0.0 71.1 -5.3H75.1L78.8 -0.9V0.0ZM63.7 0.0V-15.1H75.8Q76.6 -15.1 77.3 -14.7Q78.0 -14.3 78.4 -13.6Q78.8 -12.9 78.8 -12.1V-8.1Q78.8 -7.3 78.4 -6.6Q78.0 -5.9 77.3 -5.5Q76.6 -5.1 75.8 -5.1L66.7 -5.1V0.0ZM66.8 -8.1H75.6Q75.7 -8.1 75.7 -8.2Q75.8 -8.2 75.8 -8.2V-11.9Q75.8 -12.0 75.7 -12.0Q75.7 -12.1 75.6 -12.1H66.8Q66.8 -12.1 66.8 -12.0Q66.7 -12.0 66.7 -11.9V-8.2Q66.7 -8.2 66.8 -8.2Q66.8 -8.1 66.8 -8.1Z M84.4 0.0Q83.6 0.0 82.9 -0.4Q82.2 -0.8 81.8 -1.5Q81.4 -2.2 81.4 -3.0V-9.2Q81.4 -10.0 81.8 -10.7Q82.2 -11.4 82.9 -11.8Q83.6 -12.2 84.4 -12.2H90.8Q91.6 -12.2 92.3 -11.8Q93.0 -11.4 93.4 -10.7Q93.8 -10.0 93.8 -9.2V-4.6H84.4V-3.1Q84.4 -3.1 84.4 -3.0Q84.5 -3.0 84.5 -3.0H93.8V0.0H84.4ZM84.4 -7.2H90.8V-9.1Q90.8 -9.1 90.7 -9.2Q90.7 -9.2 90.7 -9.2H84.5Q84.5 -9.2 84.4 -9.2Q84.4 -9.1 84.4 -9.1Z M99.4 0.0Q98.6 0.0 98.0 -0.4Q97.3 -0.8 96.9 -1.5Q96.5 -2.2 96.5 -3.0V-7.6H105.8V-9.1Q105.8 -9.1 105.8 -9.2Q105.8 -9.2 105.7 -9.2H96.5V-12.2H105.9Q106.7 -12.2 107.3 -11.8Q108.0 -11.4 108.4 -10.7Q108.8 -10.0 108.8 -9.2V0.0ZM99.6 -3.0H105.8V-4.9H99.5V-3.1Q99.5 -3.1 99.5 -3.0Q99.5 -3.0 99.6 -3.0Z M113.9 0.0Q113.1 0.0 112.4 -0.4Q111.7 -0.8 111.3 -1.5Q110.9 -2.2 110.9 -3.0V-9.2Q110.9 -10.0 111.3 -10.7Q111.7 -11.4 112.4 -11.8Q113.1 -12.2 113.9 -12.2H120.3V-16.2H123.3V0.0H113.9ZM114.1 -3.0H120.2Q120.2 -3.0 120.3 -3.0Q120.3 -3.1 120.3 -3.1V-9.1Q120.3 -9.1 120.3 -9.2Q120.2 -9.2 120.2 -9.2H114.1Q114.0 -9.2 114.0 -9.2Q113.9 -9.1 113.9 -9.1V-3.1Q113.9 -3.1 114.0 -3.0Q114.0 -3.0 114.1 -3.0Z M125.9 0.0V-0.9L131.5 -7.6L125.9 -14.2V-15.1H129.1L133.5 -10.0L137.8 -15.1H141.0V-14.2L135.5 -7.6L141.0 -1.0V0.0H137.8L133.4 -5.1L129.1 0.0Z" fill="#A78BFA" /></g>
+
+    <rect x="22" y="70" width="94" height="20" rx="10"
+      fill="#A78BFA" fill-opacity=".1" stroke="#A78BFA" stroke-opacity=".45" stroke-width="1"/>
+    <text x="35" y="84" class="mono" font-size="10.5" letter-spacing="2" fill="#A78BFA">AI AGENT</text>
+
+    <text x="24" y="122" class="mono" font-size="13" fill="#E6EDF3" opacity=".88">Autonomous research agent that reads,</text>
+    <text x="24" y="143" class="mono" font-size="13" fill="#E6EDF3" opacity=".88">digests and distills insight from papers.</text>
+
+    <line x1="22" y1="170" x2="398" y2="170" stroke="#8B5CF6" stroke-opacity=".25" stroke-width="1"/>
+
+    <circle cx="32" cy="194" r="5.5" fill="#3572A5" style="animation:blinkDot 4s ease-in-out infinite"/>
+    <text x="45" y="199" class="mono" font-size="12.5" font-weight="600" fill="#3572A5">Python</text>
+
+    <svg x="168" y="185" viewBox="0 0 16 16" width="15" height="15">
+      <path fill="#FBBF24" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+    </svg>
+    <text x="189" y="199" class="mono" font-size="12.5" font-weight="600" fill="#FBBF24">★</text>
+
+    <g style="animation:chipPulse 2.8s ease-in-out infinite">
+      <rect x="294" y="182" width="104" height="26" rx="13"
+        fill="#A78BFA" fill-opacity=".14" stroke="#A78BFA" stroke-opacity=".6" stroke-width="1.1"/>
+      <text x="308" y="200" class="mono" font-size="11.5" letter-spacing="1" fill="#A78BFA">EXPLORE</text>
+      <g style="animation:arrowNudge 1.6s ease-in-out infinite">
+        <text x="380" y="200" class="mono" font-size="12.5" fill="#A78BFA">→</text>
+      </g>
     </g>
   </g>
 </svg>
