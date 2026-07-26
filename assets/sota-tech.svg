@@ -99,9 +99,7 @@
       <g style="transform-origin:787.5px 405.7px;animation:spinCW 40s linear infinite">
         <g style="transform-origin:787.5px 405.7px;transform:rotate(10deg)">
           <circle cx="787.5" cy="405.7" r="27" class="node"/>
-          <g transform="translate(767.5,385.7) scale(0.3125) translate(-0.0,-0.0)">
-  <path d="m61.55 128-21.84-12.68V40.55L6.81 59.56l.08-28.32L61.55 0zM66.46 0v128l21.84-12.68V79.31l16.49 9.53-.1-24.63-16.39-9.36v-14.3l32.89 19.01-.08-28.32z" fill="#ff6f00" />
-</g>
+          <circle cx="787.5" cy="405.7" r="14" fill="#FF6F00"/><text x="787.5" y="410.7" text-anchor="middle" class="mono" font-size="14" font-weight="700" fill="#0D1117">T</text>
         </g>
       </g>
       <g style="transform-origin:412.5px 405.7px;animation:spinCW 40s linear infinite">
