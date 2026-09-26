@@ -62,7 +62,7 @@
     <svg x="168" y="185" viewBox="0 0 16 16" width="15" height="15">
       <path fill="#FBBF24" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
     </svg>
-    <text x="189" y="199" class="mono" font-size="12.5" font-weight="600" fill="#FBBF24">★</text>
+    <text x="189" y="199" class="mono" font-size="12.5" font-weight="600" fill="#FBBF24">2</text>
 
     <g style="animation:chipPulse 2.8s ease-in-out infinite">
       <rect x="294" y="182" width="104" height="26" rx="13"
