@@ -53,7 +53,7 @@
         stroke-width="2.5" stroke-linecap="round"/>
       <g transform="translate(252.0,62) scale(1.15)" opacity=".95"><path fill="#FBBF24" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></g>
       <path d="M 408.0 206 h 16" stroke="#FBBF24" stroke-opacity=".55" stroke-width="2"/>
-      <g style="animation:numGlow 3.4s ease-in-out 0.35s infinite"><g transform="translate(318.4,138.0)"><path d="M8.9 0.0V-19.3L7.2 -17.2H0.0L8.5 -27.4H14.3V0.0Z M25.2 0.0V-19.3L23.6 -17.2H16.4L24.9 -27.4H30.7V0.0Z" fill="#FBBF24" /></g></g>
+      <g style="animation:numGlow 3.4s ease-in-out 0.35s infinite"><g transform="translate(310.1,138.0)"><path d="M8.9 0.0V-19.3L7.2 -17.2H0.0L8.5 -27.4H14.3V0.0Z M18.5 0.0V-10.6Q18.5 -12.0 19.3 -13.3Q20.0 -14.5 21.2 -15.2Q22.4 -15.9 23.9 -15.9H39.9Q40.0 -15.9 40.0 -16.0Q40.1 -16.1 40.1 -16.1V-21.7Q40.1 -21.8 40.0 -21.9Q40.0 -22.0 39.9 -22.0H24.1Q24.1 -22.0 24.0 -21.9Q23.9 -21.8 23.9 -21.7V-19.7H18.5V-22.0Q18.5 -23.5 19.3 -24.7Q20.0 -25.9 21.2 -26.6Q22.4 -27.4 23.9 -27.4H40.1Q41.6 -27.4 42.8 -26.6Q44.0 -25.9 44.8 -24.7Q45.5 -23.5 45.5 -22.0V-15.9Q45.5 -14.4 44.8 -13.2Q44.0 -12.0 42.8 -11.2Q41.6 -10.5 40.1 -10.5H24.1Q24.1 -10.5 24.0 -10.4Q23.9 -10.3 23.9 -10.3V-5.6Q23.9 -5.5 24.0 -5.5Q24.1 -5.4 24.1 -5.4H45.5V0.0Z" fill="#FBBF24" /></g></g>
       <text x="334.0" y="170" text-anchor="middle" class="mono"
         font-size="11.5" letter-spacing="2" fill="#8B949E">STARS EARNED</text>
       <text x="334.0" y="192" text-anchor="middle" class="sans"
