@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070B18">
+  <meta name="description" content="Marways 的交互作品展厅。从心电信号、AI 阅读到桌面自动化，让好奇心变成可以体验的作品。">
+  <title>Marways — Curiosity, in motion.</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#work">跳到作品</a>
+  <header class="navigation">
+    <a class="wordmark" href="#top" aria-label="Marways 首页">m<span>7</span></a>
+    <nav aria-label="主导航"><a href="#work">探索作品</a><a href="https://space.bilibili.com/604578545" target="_blank" rel="noopener noreferrer">AI 创意屋</a><a class="github-link" href="https://github.com/Marways7">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="ambient" aria-hidden="true"></div>
+      <div class="hero-name" aria-hidden="true">Marways</div>
+      <canvas id="sculpture" aria-label="可拖动的立体雕塑：数字 7、轨道与信号三种形态。也可通过下方按钮操作。" tabindex="0"></canvas>
+      <img id="fallback" src="./art/hero-still.svg" alt="Marways 的光学数字 7" hidden>
+      <div class="hero-copy"><p class="intro">你好，我是 Marways。</p><h1 id="hero-title">Curiosity,<br>in motion.</h1><p class="hero-chinese">让好奇心，发生一点什么。</p><a class="primary" href="#work">进入我的实验现场 <span aria-hidden="true">↓</span></a></div>
+      <aside class="interaction" aria-label="主视觉交互控制">
+        <p class="interaction-hint"><span class="hint-dot"></span><span id="gesture-hint">拖动雕塑，改变视角</span></p>
+        <div class="forms" role="group" aria-label="选择雕塑形态">
+          <button data-form="0" aria-pressed="true"><span aria-hidden="true">7</span> 标识</button>
+          <button data-form="1" aria-pressed="false"><span aria-hidden="true">∞</span> 轨道</button>
+          <button data-form="2" aria-pressed="false"><span aria-hidden="true">∿</span> 信号</button>
+        </div>
+        <div class="motion-actions"><button id="burst">让灵感散开 <span aria-hidden="true">✳</span></button><button id="pause" aria-pressed="false">暂停动态</button></div>
+        <p class="key-hint">也支持方向键调整 · 空格暂停</p>
+      </aside>
+      <div class="hero-bottom"><span>AI tools, signal intelligence &amp; creative code.</span><a href="#work">继续探索 <span aria-hidden="true">↓</span></a></div>
+      <p class="sr-only" id="scene-status" role="status" aria-live="polite">当前形态：标识 7。</p>
+    </section>
+
+    <section class="manifesto" aria-labelledby="manifesto-title"><div class="tiny-seven" aria-hidden="true">7</div><h2 id="manifesto-title">一个「能不能」，<br>就是一个开始。</h2><p>我用 AI 写代码，也用代码追问 AI 的可能性。<br>把信号变成理解，把意图变成行动，<br>把一个奇怪的念头，做成你能亲手试试的东西。</p></section>
+
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="section-top"><div><p class="intro">作品不是终点，是好奇心的坐标。</p><h2 id="work-title">Pick a question.</h2></div><span class="project-counter"><span id="project-number">01</span> / 06</span></div>
+      <div class="project-explorer">
+        <div class="project-tabs" role="tablist" aria-label="选择作品" aria-orientation="vertical">
+          <button role="tab" id="tab-0" aria-selected="true" aria-controls="project-panel" data-project="0"><span>心跳能成为身份吗？</span><small>ECG Identification</small><span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button role="tab" id="tab-1" aria-selected="false" aria-controls="project-panel" data-project="1" tabindex="-1"><span>对话能成为界面吗？</span><small>AiliaoX</small><span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button role="tab" id="tab-2" aria-selected="false" aria-controls="project-panel" data-project="2" tabindex="-1"><span>难懂的一页能变清晰吗？</span><small>DeepReadX</small><span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button role="tab" id="tab-3" aria-selected="false" aria-controls="project-panel" data-project="3" tabindex="-1"><span>AI 能真正动手吗？</span><small>Desktop Operator</small><span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button role="tab" id="tab-4" aria-selected="false" aria-controls="project-panel" data-project="4" tabindex="-1"><span>直播能再快一点吗？</span><small>Signal Sprint</small><span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button role="tab" id="tab-5" aria-selected="false" aria-controls="project-panel" data-project="5" tabindex="-1"><span>知识能找到需要它的人吗？</span><small>Campus Guide</small><span class="tab-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <article id="project-panel" role="tabpanel" aria-labelledby="tab-0" tabindex="0">
+          <div class="project-art"><canvas id="project-canvas" aria-hidden="true"></canvas><span id="project-symbol" aria-hidden="true">ECG</span></div>
+          <div class="project-info"><p id="project-tech">Python / PyTorch / Signal processing</p><h3 id="project-title">ECG Identification</h3><p id="project-description">从一段心电信号出发，探索人体自身的身份特征。结合信号处理与轻量 CNN 的心电身份识别实验。</p><div class="project-links"><a id="project-link" class="primary" href="https://github.com/Marways7/ECG_IdentificationX" target="_blank" rel="noopener noreferrer">打开项目 <span aria-hidden="true">↗</span></a><a id="project-secondary" href="https://github.com/Marways7/cua_desktop_operator_cli_skill" target="_blank" rel="noopener noreferrer" hidden>查看 CLI 版 ↗</a></div></div>
+        </article>
+      </div>
+      <noscript><p>交互需要 JavaScript。你也可以直接阅读 <a href="https://github.com/Marways7/Marways7">GitHub 作品目录</a>。</p></noscript>
+    </section>
+
+    <section class="closing"><p>有趣的事情，往往从一次交流开始。</p><h2>What if<span class="closing-dot">?</span></h2><div><a class="primary" href="https://github.com/Marways7?tab=repositories">在 GitHub 探索 <span aria-hidden="true">↗</span></a><a href="https://space.bilibili.com/604578545" target="_blank" rel="noopener noreferrer">去 B站看创意与实践 ↗</a></div></section>
+  </main>
+  <footer><a class="wordmark" href="#top">m<span>7</span></a><p>Always curious. Always in the making.</p><a href="https://github.com/Marways7/Marways7">这个展厅也是开源作品 ↗</a></footer>
+</body>
+</html>

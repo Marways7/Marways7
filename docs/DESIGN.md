@@ -1,4 +1,22 @@
-# Ideas take shape
+# Curiosity, in motion
+
+第二版将主页分为两个相连的展示界面：GitHub README 展示可自动变形的封面和整块可点击的作品图；[交互展厅](https://marways7.github.io/Marways7/) 提供可拖动的立体雕塑、形态切换、粒子扩散和项目浏览。
+
+## 交互展厅
+
+源码位于 `site/`，无需打包工具和外部运行时依赖。使用自托管 Sora 字体、自定义 WebGL 材质与几何、Canvas 作品图形。数字 7、折叠轨道和流动信号共用顶点结构，切换时连续插值。拖动和方向键调整视角，空格或按钮暂停动态。
+
+支持 `prefers-reduced-motion`，后台标签页停止刷新，无 WebGL 时展示静态备用图。作品导航支持鼠标、触摸、方向键和 Home/End。所有外链保持原生链接行为。页面不收集访客数据，也不加载追踪脚本。
+
+`Deploy interactive exhibition` 将 `site/` 目录发布至 GitHub Pages。README 本身不会运行 WebGL 或 JavaScript；完整交互通过封面链接进入。作品链接由 README 中包在图片外的 `<a>` 提供，不依赖图片内部链接。
+
+```sh
+python -m http.server 8000 --directory site
+```
+
+打开本地地址即可预览。字体授权随网站源文件附带。
+
+## 第一版视觉基础
 
 Marways 的 GitHub 主页围绕一个视觉动作展开：一束光线弯折成数字 **7**，再延伸为各个项目的图形。心电波形、书页、对话框、指针、信号线和知识层叠，对应六个真实的探索方向。
 
@@ -16,6 +34,7 @@ Marways 的 GitHub 主页围绕一个视觉动作展开：一束光线弯折成�
 ```sh
 python -m pip install -r requirements-profile.txt
 python scripts/build_shape_profile.py
+python scripts/build_cinema_profile.py
 python scripts/validate_shape_profile.py
 ```
 

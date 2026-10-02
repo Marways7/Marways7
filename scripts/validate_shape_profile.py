@@ -27,7 +27,7 @@ def main():
         assert value.startswith('./assets/shape/'), f'Unexpected image dependency: {value}'
         assert (ROOT/value).is_file(), f'Missing image: {value}'
     files = list((ROOT/'assets/shape').glob('*.svg'))
-    assert len(files) == 14
+    assert len(files) == 30
     for file in files:
         raw = file.read_text(encoding='utf-8')
         node = ET.fromstring(raw)
@@ -38,8 +38,8 @@ def main():
         assert node.find('.//'+NS+'image') is None
         assert 'prefers-reduced-motion:reduce' in raw
         assert not re.search(r'\b(?:NaN|Infinity)\b', raw)
-        assert file.stat().st_size < 350_000, f'Unexpected asset size: {file.name}'
-        if 'hero' in file.name:
+        assert file.stat().st_size < 600_000, f'Unexpected asset size: {file.name}'
+        if 'hero' in file.name and 'cinema' not in file.name:
             assert len(node.findall('.//'+NS+'path')) > 80
         if 'projects' in file.name:
             anchors = node.findall('.//'+NS+'a')
