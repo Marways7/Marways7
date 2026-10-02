@@ -1,74 +1,56 @@
-name: Update SOTA Profile SVGs
+name: Refresh Ideas take shape profile
 
 on:
   schedule:
-    - cron: '0 */6 * * *'         # Run every 6 hours
-  workflow_dispatch:              # Allow manual trigger
+    - cron: '23 2 * * *'
+  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
+    paths:
+      - 'scripts/build_shape_profile.py'
+      - 'scripts/refresh_public_data.py'
+      - 'scripts/validate_shape_profile.py'
+      - 'assets/fonts/Sora.ttf'
+      - 'requirements-profile.txt'
+      - '.github/workflows/update-profile.yml'
 
 concurrency:
   group: main-branch-auto-update
   cancel-in-progress: false
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write             # Allow pushing to the repo
-      
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+permissions:
+  contents: write
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Install Dependencies (vector typography)
-        run: pip install fonttools brotli
-
-      - name: Build Aurora Hero Banner
-        run: python scripts/generate_sota_hero.py
-
-      - name: Build Section Headers / Divider / Footer
-        run: python scripts/generate_sections.py
-
-      - name: Build Dynamic Project Cards
-        run: python scripts/build_dynamic_projects.py
-
-      - name: Build Live Metrics Board
-        run: python scripts/generate_sota_metrics.py
+      - run: pip install -r requirements-profile.txt
+      - name: Read public repository metadata
+        run: python scripts/refresh_public_data.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build Tech Orbit (inlined vectors)
-        run: python scripts/generate_sota_tech.py
-
-      - name: Build Terminal Bio
-        run: python scripts/generate_terminal_bio.py
-
-      - name: Commit & Push Changes
+      - name: Build and validate profile artwork
+        run: |
+          python scripts/build_shape_profile.py
+          python scripts/validate_shape_profile.py
+      - name: Publish refreshed artwork
         run: |
           set -euo pipefail
-
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add assets/*.svg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/shape data/public-profile.json
           git diff --cached --quiet && exit 0
-          git commit -m "🤖 auto-update: SOTA SVG components"
-
+          git commit -m "chore: refresh public profile snapshot"
           for attempt in 1 2 3; do
             git fetch origin main
             git rebase origin/main
-            if git push origin HEAD:main; then
-              echo "Pushed SVG refresh on attempt ${attempt}."
-              exit 0
-            fi
+            if git push origin HEAD:main; then exit 0; fi
             sleep 5
           done
-
-          echo "Failed to push SVG refresh after retries." >&2
           exit 1

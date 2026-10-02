@@ -1,293 +1,84 @@
-<!--
-    ███╗   ███╗ █████╗ ██████╗ ██╗    ██╗ █████╗ ██╗   ██╗███████╗███████╗
-    ████╗ ████║██╔══██╗██╔══██╗██║    ██║██╔══██╗╚██╗ ██╔╝██╔════╝╚════██║
-    ██╔████╔██║███████║██████╔╝██║ █╗ ██║███████║ ╚████╔╝ ███████╗    ██╔╝
-    ██║╚██╔╝██║██╔══██║██╔══██╗██║███╗██║██╔══██║  ╚██╔╝  ╚════██║   ██╔╝
-    ██║ ╚═╝ ██║██║  ██║██║  ██║╚███╔███╔╝██║  ██║   ██║   ███████║   ██║
-    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝   ╚═╝
-
-    AURORA CYBERPUNK · 全部动效为构建期生成的纯矢量 SVG，字体已烘焙为路径
--->
-
-<!-- ══════════════════════════ HERO ══════════════════════════ -->
-
-<div align="center">
-  <a href="https://github.com/Marways7">
-    <img src="./assets/sota-hero.svg" width="100%" alt="Marways — Vibe Coder · AI Alchemist · Full-Stack Builder"/>
-  </a>
-</div>
-
-<br/>
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 640px)" srcset="./assets/shape/hero-mobile-still.svg" />
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/shape/hero-still.svg" />
+  <source media="(max-width: 640px)" srcset="./assets/shape/hero-mobile.svg" />
+  <img src="./assets/shape/hero.svg" width="100%" alt="Marways — Ideas take shape. 把想法，做成看得见的作品。" />
+</picture>
 
 <p align="center">
-  <a href="https://github.com/Marways7?tab=followers"><img src="https://img.shields.io/github/followers/Marways7?style=for-the-badge&logo=github&logoColor=white&color=8B5CF6&labelColor=0D1117" alt="followers"/></a>&nbsp;
-  <a href="https://github.com/Marways7?tab=stars"><img src="https://img.shields.io/github/stars/Marways7?style=for-the-badge&logo=github&logoColor=white&color=22D3EE&labelColor=0D1117" alt="stars"/></a>&nbsp;
-  <a href="https://space.bilibili.com/604578545"><img src="https://img.shields.io/badge/Bilibili-Marways的AI创意屋-FB7299?style=for-the-badge&logo=bilibili&logoColor=white&labelColor=0D1117" alt="bilibili"/></a>&nbsp;
-  <img src="https://komarev.com/ghpvc/?username=Marways7&style=for-the-badge&color=F472B6&label=VISITORS&labelColor=0D1117" alt="visitors"/>
+  <a href="#作品地图">作品地图</a> &nbsp; / &nbsp;
+  <a href="https://github.com/Marways7?tab=repositories">全部仓库</a> &nbsp; / &nbsp;
+  <a href="https://space.bilibili.com/604578545">B站 · AI创意屋</a> &nbsp; / &nbsp;
+  <a href="./docs/STATIC.md">静态阅读</a>
 </p>
 
-<br/>
+<br />
 
-<!-- Live telemetry board (auto-refreshed every 6h by GitHub Actions) -->
-<p align="center">
-  <a href="https://github.com/Marways7">
-    <img src="./assets/sota-metrics.svg" width="96%" alt="Live GitHub metrics"/>
-  </a>
-</p>
+### 你好，我是 Marways。
 
-<p align="center"><img src="./assets/neon-divider.svg" width="94%" alt=""/></p>
+我喜欢把「能不能这样做？」变成一个可以打开、运行、体验的东西。
 
-<!-- ══════════════════════════ 01 · ABOUT ══════════════════════════ -->
+从心电信号里的身份特征，到能读懂一页 PDF 的 AI；从自然语言驱动的信息系统，到让 AI 真正操作桌面的工具——我在探索 **AI 与现实之间，具体能发生什么**。
 
-<p align="center">
-  <img src="./assets/section-about.svg" width="92%" alt="01 · About Me — 关于我"/>
-</p>
+**想法可以跳跃，作品要落地。** 这里记录我的实验、学习和开源作品，也欢迎你一起把它们做得更好。
 
-<div align="center">
-<table>
-<tr>
-<td width="50%" valign="top">
+<sub>I build with AI, follow unusual questions, and turn experiments into things people can try.</sub>
 
-```yaml
-# ⚡ current_focus.yaml
-🔭 Building:
-   ├── AI × MCP Desktop Automation
-   ├── Deep Learning · Biomedical Signals
-   └── Autonomous Agent Systems
+<br />
 
-🏥 Healthcare AI:
-   └── AiliaoX — 智能医疗系统
+## 作品地图
 
-📺 Content Creator:
-   └── B站 · Marways的AI创意屋
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 640px)" srcset="./assets/shape/projects-mobile-still.svg" />
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/shape/projects-still.svg" />
+  <source media="(max-width: 640px)" srcset="./assets/shape/projects-mobile.svg" />
+  <img src="./assets/shape/projects.svg" width="100%" alt="作品地图：ECG Identification 心电身份识别、AiliaoX 医院信息系统、DeepReadX AI 阅读、Desktop Operator 桌面自动化、Signal Sprint 本地播放优化、Campus Guide 学习资源分享。" />
+</picture>
 
-📱 Cross-Platform:
-   └── AI-Powered App Development
-```
+| 如果你对这些感兴趣 | 从这里开始 |
+| :--- | :--- |
+| 心电信号与深度学习 | **[ECG Identification](https://github.com/Marways7/ECG_IdentificationX)** — 从信号处理到轻量 CNN 的心电身份识别实验 |
+| 自然语言与信息系统 | **[AiliaoX](https://github.com/Marways7/AiliaoX)** — 通过 MCP 连接 AI 与医院信息管理 |
+| AI 与阅读理解 | **[DeepReadX](https://github.com/Marways7/DeepReadX)** — Android PDF 阅读、OCR 与可自定义风格的 AI 讲解 |
+| AI 与桌面操作 | **[MCP 版](https://github.com/Marways7/cua_desktop_operator_skill)** / **[CLI 版](https://github.com/Marways7/cua_desktop_operator_cli_skill)** — 面向 AI Agent 的桌面操作工具 |
+| 浏览器与播放体验 | **[Signal Sprint](https://github.com/Marways7/signal-sprint)** — 直播本地播放优化与测量 |
+| 校园与知识分享 | **[Campus Guide](https://github.com/Marways7/college_student_self-rescue_guide_website)** — 学习资源的发现、管理与分享 |
 
-</td>
-<td width="50%" valign="top">
+<details>
+<summary><b>我用什么，把想法做出来</b></summary>
 
-```yaml
-# 🧬 identity.yaml
-💡 Philosophy:
-   Wild ideas → Production software
+<br />
 
-🌌 Identity:
-   Vibe Coder since 2023
+| 探索方向 | 作品中用到的工具 |
+| :--- | :--- |
+| 信号与模型 | Python、PyTorch、信号处理 |
+| 产品与界面 | TypeScript、JavaScript、Web、Java、Android |
+| AI 与行动 | MCP、AI 服务集成、桌面自动化 |
 
-🎨 Aesthetic:
-   Cyberpunk × Minimalist × Functional
+这些是作品中的技术选择，而不是熟练度评分。项目能力、运行条件与当前状态，以各仓库说明为准。
 
-🔮 Vision:
-   AI × Human Creativity = ∞
+</details>
 
-⭐ Principle:
-   Open source everything!
-```
+<br />
 
-</td>
-</tr>
-</table>
-</div>
+<picture>
+  <source media="(max-width: 640px)" srcset="./assets/shape/pulse-mobile.svg" />
+  <img src="./assets/shape/pulse.svg" width="100%" alt="公开 GitHub 数据快照，包含公开仓库数、仓库获得的 Star 总数和主要语言种类；图片内标有更新日期。" />
+</picture>
 
-<div align="center">
-<table>
-<tr>
-<td>
+<sub>数据来自公开仓库，每日刷新。仓库 Star 为各公开仓库获得的 Star 之和；语言为各仓库主要语言的去重计数。</sub>
 
-```text
-📊 Weekly Dev Energy Distribution
+<br />
 
-AI & Agents        ████████████████▓░░░░░░░░   65.2%   🤖
-Frontend · React   ████░░░░░░░░░░░░░░░░░░░░░   15.8%   🎨
-Backend · Python   ██▓░░░░░░░░░░░░░░░░░░░░░░   10.5%   ⚙️
-Documentation      █▓░░░░░░░░░░░░░░░░░░░░░░░    5.3%   📝
-DevOps · CI/CD     █░░░░░░░░░░░░░░░░░░░░░░░░    3.2%   🚀
-```
+### 让好奇心继续传递。
 
-</td>
-</tr>
-</table>
-</div>
+在 **[B站 · Marways的AI创意屋](https://space.bilibili.com/604578545)** 看创意与实践；在 **[GitHub](https://github.com/Marways7?tab=repositories)** 看代码与过程。遇到问题或有新想法，欢迎到相应项目交流。
 
-<p align="center"><img src="./assets/neon-divider.svg" width="94%" alt=""/></p>
+<br />
 
-<!-- ══════════════════════════ 02 · TECH ══════════════════════════ -->
+<picture>
+  <source media="(max-width: 640px)" srcset="./assets/shape/footer-mobile.svg" />
+  <img src="./assets/shape/footer.svg" width="100%" alt="The next idea is already taking shape. 保持好奇。把下一次灵感，做出来。" />
+</picture>
 
-<p align="center">
-  <img src="./assets/section-tech.svg" width="92%" alt="02 · Tech Arsenal — 技术军火库"/>
-</p>
-
-<p align="center">
-  <img src="./assets/sota-tech.svg" width="100%" alt="Tech stack orbit — languages, AI frameworks, infra"/>
-</p>
-
-<br/>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=0D1117" alt="Python"/>
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white&labelColor=0D1117" alt="PyTorch"/>
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white&labelColor=0D1117" alt="TensorFlow"/>
-  <img src="https://img.shields.io/badge/MCP-8B5CF6?style=for-the-badge&logo=anthropic&logoColor=white&labelColor=0D1117" alt="MCP"/>
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=0D1117" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=0D1117&labelColor=0D1117" alt="React"/>
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=0D1117" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white&labelColor=0D1117" alt="Node.js"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&labelColor=0D1117" alt="Docker"/>
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=0D1117&labelColor=0D1117" alt="Linux"/>
-</p>
-
-<p align="center"><img src="./assets/neon-divider.svg" width="94%" alt=""/></p>
-
-<!-- ══════════════════════════ 03 · ANALYTICS ══════════════════════════ -->
-
-<p align="center">
-  <img src="./assets/section-analytics.svg" width="92%" alt="03 · GitHub Analytics — 数据观测站"/>
-</p>
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&theme=default&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github"/>
-    <img src="https://github-readme-stats.vercel.app/api?username=Marways7&show_icons=true&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=67E8F9&text_color=C9D1D9&ring_color=8B5CF6&include_all_commits=true&count_private=true&rank_icon=github" height="180" alt="GitHub stats"/>
-  </picture>
-  &nbsp;&nbsp;
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&theme=default&hide_border=true&langs_count=10"/>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marways7&layout=compact&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&langs_count=10" height="180" alt="Top languages"/>
-  </picture>
-</div>
-
-<br/>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=Marways7&theme=default&hide_border=true"/>
-    <img src="https://streak-stats.demolab.com?user=Marways7&hide_border=true&background=0D1117&ring=8B5CF6&fire=F472B6&currStreakLabel=A78BFA&sideLabels=C9D1D9&currStreakNum=E6EDF3&sideNums=E6EDF3&dates=8B949E" width="62%" alt="Contribution streak"/>
-  </picture>
-</p>
-
-<br/>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Marways7&theme=default&utcOffset=8"/>
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Marways7&theme=tokyonight&utcOffset=8" width="92%" alt="Productive time"/>
-  </picture>
-</p>
-
-<p align="center"><img src="./assets/neon-divider.svg" width="94%" alt=""/></p>
-
-<!-- ══════════════════════════ 04 · PROJECTS ══════════════════════════ -->
-
-<p align="center">
-  <img src="./assets/section-projects.svg" width="92%" alt="04 · Featured Projects — 精选项目"/>
-</p>
-
-<div align="center">
-  <a href="https://github.com/Marways7/ECG_IdentificationX">
-    <img src="./assets/sota-project-1.svg" width="47%" alt="ECG_IdentificationX — deep learning ECG classification"/>
-  </a>
-  &nbsp;
-  <a href="https://github.com/Marways7/AiliaoX">
-    <img src="./assets/sota-project-2.svg" width="47%" alt="AiliaoX — intelligent medical system"/>
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/Marways7/DeepReadX">
-    <img src="./assets/sota-project-3.svg" width="47%" alt="DeepReadX — autonomous research agent"/>
-  </a>
-  &nbsp;
-  <a href="https://github.com/Marways7/cua_desktop_operator_skill">
-    <img src="./assets/sota-project-4.svg" width="47%" alt="CUA Desktop Operator — computer-use automation via MCP"/>
-  </a>
-</div>
-
-<br/>
-
-<p align="center">
-  <a href="https://github.com/Marways7?tab=repositories">
-    <img src="https://img.shields.io/badge/⌘_EXPLORE_ALL_REPOSITORIES-8B5CF6?style=for-the-badge&labelColor=0D1117" alt="View all repositories"/>
-  </a>
-</p>
-
-<p align="center"><img src="./assets/neon-divider.svg" width="94%" alt=""/></p>
-
-<!-- ══════════════════════════ 05 · ACTIVITY ══════════════════════════ -->
-
-<p align="center">
-  <img src="./assets/section-activity.svg" width="92%" alt="05 · Contribution Galaxy — 贡献星图"/>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=FFFFFF&color=6366F1&line=06B6D4&point=7C3AED&area_color=818CF8&area=true&hide_border=true&custom_title=Contribution%20Timeline"/>
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Marways7&bg_color=0D1117&color=A78BFA&line=67E8F9&point=F472B6&area_color=8B5CF6&area=true&hide_border=true&custom_title=Contribution%20Timeline" width="96%" alt="Contribution timeline"/>
-  </picture>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-south-season-animate.svg"/>
-    <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="96%" alt="3D contribution graph"/>
-  </picture>
-</p>
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Marways7/Marways7/output/github-snake.svg"/>
-    <img src="https://raw.githubusercontent.com/Marways7/Marways7/output/github-snake-dark.svg" width="100%" alt="Contribution snake"/>
-  </picture>
-</div>
-
-<p align="center"><img src="./assets/neon-divider.svg" width="94%" alt=""/></p>
-
-<!-- ══════════════════════════ 06 · TERMINAL ══════════════════════════ -->
-
-<p align="center">
-  <img src="./assets/section-terminal.svg" width="92%" alt="06 · Terminal — 终端名片"/>
-</p>
-
-<p align="center">
-  <img src="./assets/terminal-bio.svg" width="88%" alt="Animated terminal session introducing Marways"/>
-</p>
-
-<p align="center"><img src="./assets/neon-divider.svg" width="94%" alt=""/></p>
-
-<!-- ══════════════════════════ 07 · CONNECT ══════════════════════════ -->
-
-<p align="center">
-  <img src="./assets/section-connect.svg" width="92%" alt="07 · Connect — 联系我"/>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Marways7">
-    <img src="https://img.shields.io/badge/GitHub-Marways7-8B5CF6?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="GitHub"/>
-  </a>&nbsp;&nbsp;
-  <a href="https://space.bilibili.com/604578545">
-    <img src="https://img.shields.io/badge/Bilibili-Marways的AI创意屋-FB7299?style=for-the-badge&logo=bilibili&logoColor=white&labelColor=0D1117" alt="Bilibili"/>
-  </a>&nbsp;&nbsp;
-  <a href="https://github.com/Marways7?tab=repositories">
-    <img src="https://img.shields.io/badge/Open_Source-∞-22D3EE?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=0D1117" alt="Open source"/>
-  </a>
-</p>
-
-<br/>
-
-<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
-
-<div align="center">
-  <a href="https://github.com/Marways7">
-    <img src="./assets/footer.svg" width="100%" alt="The best way to predict the future is to build it."/>
-  </a>
-</div>
-
-<!--
-  ╔════════════════════════════════════════════════════════════════╗
-  ║  Every SVG on this page is generated by scripts/*.py and       ║
-  ║  auto-refreshed by GitHub Actions — fonts baked to vector      ║
-  ║  paths, zero external font/CDN dependencies.                   ║
-  ║  Made with 💜 & ☕ & AI  ·  github.com/Marways7                ║
-  ╚════════════════════════════════════════════════════════════════╝
--->
+<!-- Original, repository-owned SVG artwork. Design and build notes: docs/DESIGN.md. -->

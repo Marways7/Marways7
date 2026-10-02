@@ -1,12 +1,8 @@
 name: Generate Profile Summary Cards
 
+# Legacy artwork is retained for optional manual regeneration.
 on:
-  schedule:
-    - cron: "0 */12 * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 concurrency:
   group: output-branch-publish

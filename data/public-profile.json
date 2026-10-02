@@ -1,0 +1,62 @@
+{
+  "updated_at": "2026-10-02T09:21:50+00:00",
+  "source": "https://api.github.com/users/Marways7/repos",
+  "repositories": [
+    {
+      "name": "AiliaoX",
+      "html_url": "https://github.com/Marways7/AiliaoX",
+      "language": "TypeScript",
+      "stargazers_count": 2,
+      "forks_count": 0
+    },
+    {
+      "name": "DeepReadX",
+      "html_url": "https://github.com/Marways7/DeepReadX",
+      "language": "Java",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "ECG_IdentificationX",
+      "html_url": "https://github.com/Marways7/ECG_IdentificationX",
+      "language": "Python",
+      "stargazers_count": 2,
+      "forks_count": 0
+    },
+    {
+      "name": "Marways7",
+      "html_url": "https://github.com/Marways7/Marways7",
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "college_student_self-rescue_guide_website",
+      "html_url": "https://github.com/Marways7/college_student_self-rescue_guide_website",
+      "language": "TypeScript",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "cua_desktop_operator_cli_skill",
+      "html_url": "https://github.com/Marways7/cua_desktop_operator_cli_skill",
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0
+    },
+    {
+      "name": "cua_desktop_operator_skill",
+      "html_url": "https://github.com/Marways7/cua_desktop_operator_skill",
+      "language": "Python",
+      "stargazers_count": 3,
+      "forks_count": 0
+    },
+    {
+      "name": "signal-sprint",
+      "html_url": "https://github.com/Marways7/signal-sprint",
+      "language": "JavaScript",
+      "stargazers_count": 1,
+      "forks_count": 0
+    }
+  ]
+}
