@@ -1,49 +1,45 @@
-# Curiosity, in motion
+# Marways — 把好奇，变成作品。
 
-第二版将主页分为两个相连的展示界面：GitHub README 展示可自动变形的封面和整块可点击的作品图；[交互展厅](https://marways7.github.io/Marways7/) 提供可拖动的立体雕塑、形态切换、粒子扩散和项目浏览。
+[个人主页](https://marways7.github.io/Marways7/) 将个人介绍和六个项目连接成一段可往返浏览的体验。首屏、项目与关于我共享一件连续变形的参数化形态，颜色、光线和形态随内容变化。详细的视觉取舍见 [设计说明](LIVING-ATLAS.md)。
 
-## 交互展厅
+## 交互
 
-源码位于 `site/`，无需打包工具和外部运行时依赖。使用自托管 Sora 字体、自定义 WebGL 材质与几何、Canvas 作品图形。数字 7、折叠轨道和流动信号共用顶点结构，切换时连续插值。拖动和方向键调整视角，空格或按钮暂停动态。
+- 原生滚动控制场景变化，可以随时反向；右侧导航和作品索引可直接跳转。
+- 拖动形态或旋转按钮改变角度；旋转按钮支持方向键，空格展开。
+- “绽放”展开形态；暂停时再次点击收束。动态模式下会缓慢回归。
+- “暂停动态”停止呼吸与自动运动，保留手动操作和导航。
+- “纯粹观看”隐藏正文，保留返回按钮与章节导航；Escape 返回介绍。
+- 项目入口始终使用普通链接，包括 Desktop Operator 的 MCP 与 CLI 两个仓库。
 
-支持 `prefers-reduced-motion`，后台标签页停止刷新，无 WebGL 时展示静态备用图。作品导航支持鼠标、触摸、方向键和 Home/End。所有外链保持原生链接行为。页面不收集访客数据，也不加载追踪脚本。
+## 实现
 
-`Deploy interactive exhibition` 将 `site/` 目录发布至 GitHub Pages。README 本身不会运行 WebGL 或 JavaScript；完整交互通过封面链接进入。作品链接由 README 中包在图片外的 `<a>` 提供，不依赖图片内部链接。
+`site/` 是无需构建的静态网站。一个 WebGL 画布绘制七种共享拓扑的曲面，使用预计算顶点与法线进行连续插值。原生滚动不被劫持；页面未设置强制加载动画、鼠标替代光标或声音自动播放。
+
+Sora 字体随站点提供。网站没有外部运行时库、分析脚本或访客追踪。图形尺寸根据窗口调整，限制像素比；持续长帧时降低渲染分辨率，标签页隐藏后暂停绘制。实际流畅度取决于设备与浏览器。
+
+减少动态设置默认暂停自动运动并直接切换场景；访客仍可主动开启动态。没有 WebGL 时显示静态插图并保留文字与项目链接。没有 JavaScript 时按普通文档阅读。
 
 ```sh
 python -m http.server 8000 --directory site
 ```
 
-打开本地地址即可预览。字体授权随网站源文件附带。
+## GitHub 介绍页
 
-## 第一版视觉基础
+README 使用自包含 SVG。英文标题在生成时转为路径，中文保留系统字体。首图、六个项目和静态阅读页都有手机排版。动画遵循减少动态偏好，另有明确的静态首图。
 
-Marways 的 GitHub 主页围绕一个视觉动作展开：一束光线弯折成数字 **7**，再延伸为各个项目的图形。心电波形、书页、对话框、指针、信号线和知识层叠，对应六个真实的探索方向。
-
-## 视觉与内容
-
-- 深海蓝 `#081C2C`、冰白 `#EDF7FA`、钴蓝 `#527CFF`、珊瑚色 `#FFAA8A`、水绿色 `#93E5DD`。
-- Sora 英文标题在构建时转成路径。中文短句使用系统字体，正文保留可选择、可复制的 Markdown。
-- 桌面与手机分别构图；`picture` 根据浏览器视口选择资源。
-- 主视觉使用缓慢的呼吸与流光，遵循 `prefers-reduced-motion`；另提供显式的[静态版本](STATIC.md)。
-- 项目介绍以公开仓库为依据，不用装饰性百分比描述能力或时间投入。
-- 所有展示图片都保存在本仓库，无外部统计图片服务、追踪像素或运行时字体请求。
-
-## 本地构建
+完整互动通过首图或“进入互动主页”链接进入。项目图片外层的链接指向各仓库；不依赖图片内部交互。旧版生成器与资源保留，当前 README 使用 `living-` 系列资源。
 
 ```sh
 python -m pip install -r requirements-profile.txt
 python scripts/build_shape_profile.py
 python scripts/build_cinema_profile.py
+python scripts/build_living_profile.py
 python scripts/validate_shape_profile.py
+node --check site/app.js
 ```
 
-`scripts/refresh_public_data.py` 从 GitHub 的公开用户仓库接口获取元数据，可用 `GITHUB_TOKEN` 提高请求限额。失败时不会覆盖上一次成功的数据文件。数据包括公开仓库名、地址、主要语言、Star 和 Fork 数量，不读取私有仓库、事件或提交内容。
+## 公开数据与发布
 
-`Refresh Ideas take shape profile` 每日运行，也支持手动触发。刷新后只提交 `assets/shape/` 和 `data/public-profile.json`。展示的日期是成功获取快照的 UTC 日期。语言数量指各公开仓库主要语言的去重数，不代表完整技术栈。
+`refresh_public_data.py` 读取 GitHub 公开仓库元数据。失败时保留上次成功的数据；不获取私有仓库或提交内容。每日刷新工作流生成图像与公开快照。统计说明、日期和来源随数据展示，默认收在 README 的展开区域。
 
-旧版图形与生成脚本保留在 Git 历史和原路径中，旧版辅助工作流改为手动运行；新主页使用 `assets/shape/`。
-
-## 字体
-
-[Sora](https://github.com/google/fonts/tree/main/ofl/sora) 使用 SIL Open Font License。字体文件及许可证位于 `assets/fonts/Sora.ttf` 和 `assets/fonts/Sora-OFL.txt`。旧版 Orbitron 字体及其许可证保留。
+GitHub Pages 工作流仅发布 `site/` 目录。字体使用 SIL Open Font License，许可证与字体位于同一目录；原始字体见 [Sora](https://github.com/google/fonts/tree/main/ofl/sora)。

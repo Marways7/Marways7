@@ -1,4 +1,4 @@
-name: Refresh Ideas take shape profile
+name: Refresh public profile artwork
 
 on:
   schedule:
@@ -9,6 +9,7 @@ on:
     paths:
       - 'scripts/build_shape_profile.py'
       - 'scripts/build_cinema_profile.py'
+      - 'scripts/build_living_profile.py'
       - 'scripts/refresh_public_data.py'
       - 'scripts/validate_shape_profile.py'
       - 'assets/fonts/Sora.ttf'
@@ -40,6 +41,7 @@ jobs:
         run: |
           python scripts/build_shape_profile.py
           python scripts/build_cinema_profile.py
+          python scripts/build_living_profile.py
           python scripts/validate_shape_profile.py
       - name: Publish refreshed artwork
         run: |

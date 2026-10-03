@@ -27,7 +27,7 @@ def main():
         assert value.startswith('./assets/shape/'), f'Unexpected image dependency: {value}'
         assert (ROOT/value).is_file(), f'Missing image: {value}'
     files = list((ROOT/'assets/shape').glob('*.svg'))
-    assert len(files) == 30
+    assert len(files) == 46
     for file in files:
         raw = file.read_text(encoding='utf-8')
         node = ET.fromstring(raw)
@@ -39,7 +39,7 @@ def main():
         assert 'prefers-reduced-motion:reduce' in raw
         assert not re.search(r'\b(?:NaN|Infinity)\b', raw)
         assert file.stat().st_size < 600_000, f'Unexpected asset size: {file.name}'
-        if 'hero' in file.name and 'cinema' not in file.name:
+        if file.name.startswith('hero'):
             assert len(node.findall('.//'+NS+'path')) > 80
         if 'projects' in file.name:
             anchors = node.findall('.//'+NS+'a')
@@ -47,6 +47,10 @@ def main():
             assert all(a.attrib['href'].startswith('https://github.com/Marways7/') for a in anchors)
         if '-mobile' in file.name:
             assert node.attrib['viewBox'].split()[2] == '640'
+        if file.name.startswith('living-'):
+            assert len(node.findall('.//'+NS+'path')) >= 144
+            if '-still' in file.name:
+                assert '.form{animation:none!important}' in raw
     data = json.loads((ROOT/'data/public-profile.json').read_text(encoding='utf-8-sig'))
     assert data['repositories'] and data['source'] == 'https://api.github.com/users/Marways7/repos'
     for repo in data['repositories']:

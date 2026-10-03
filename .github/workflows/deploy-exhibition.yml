@@ -1,4 +1,4 @@
-name: Deploy interactive exhibition
+name: Deploy personal website
 
 on:
   push:
