@@ -10,6 +10,8 @@ on:
       - 'scripts/build_shape_profile.py'
       - 'scripts/build_cinema_profile.py'
       - 'scripts/build_living_profile.py'
+      - 'scripts/build_playground_profile.py'
+      - 'scripts/templates/playground.html'
       - 'scripts/refresh_public_data.py'
       - 'scripts/validate_shape_profile.py'
       - 'assets/fonts/Sora.ttf'
@@ -42,13 +44,14 @@ jobs:
           python scripts/build_shape_profile.py
           python scripts/build_cinema_profile.py
           python scripts/build_living_profile.py
+          python scripts/build_playground_profile.py
           python scripts/validate_shape_profile.py
       - name: Publish refreshed artwork
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/shape data/public-profile.json
+          git add assets/shape assets/play data/public-profile.json
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh public profile snapshot"
           for attempt in 1 2 3; do

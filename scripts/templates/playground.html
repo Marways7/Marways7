@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#EEEAFB"><meta name="description" content="你好，我是 Marways。用 AI 和代码，把好奇心变成可以体验的作品。探索心电识别、AI 阅读、桌面工具与更多开源实验。">
+  <title>Marways — 好奇心，正在运行。</title>
+  <link rel="canonical" href="https://marways7.github.io/Marways7/">
+  <meta property="og:title" content="Marways — 好奇心，正在运行。"><meta property="og:description" content="用 AI 和代码，让想法发生。探索我的开源作品与创意工作台。"><meta property="og:type" content="website"><meta property="og:url" content="https://marways7.github.io/Marways7/"><meta property="og:image" content="https://marways7.github.io/Marways7/art/idea-machine.png">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="preload" href="./Sora.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="./art/idea-machine.png" as="image">
+  <link rel="stylesheet" href="./style.css?v=4.0"><script defer src="./app.js?v=4.0"></script>
+</head>
+<body>
+  <a class="skip" href="#directory">跳至全部作品</a>
+  <header class="header"><a class="wordmark" href="#hello" aria-label="Marways 首页"><span class="logo-mark" aria-hidden="true">✳</span>Marways<span class="logo-dot">.</span></a><nav aria-label="主导航"><a href="#work">作品</a><a href="#about">关于</a><a href="https://github.com/Marways7" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><button class="motion-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true">Ⅱ</span><span class="motion-label">暂停动态</span></button></nav></header>
+  <main>
+    <section class="hero" id="hello" aria-labelledby="intro-title">
+      <div class="hero-copy"><p class="hello-line"><span class="hello-dot" aria-hidden="true"></span>你好，我是 Marways</p><h1 id="intro-title">好奇心，<br>正在运行<span class="title-dot">。</span></h1><p class="hero-english">Ideas are made to happen.</p><p class="hero-desc">用 AI 和代码，把「能不能」做成「可以了」。<br>这里是我的开源项目，也是想法的试验场。</p><div class="hero-actions"><a class="solid-link" href="#work">打开作品工作台 <span aria-hidden="true">↓</span></a><a class="hero-secondary" href="https://space.bilibili.com/604578545" target="_blank" rel="noopener noreferrer">逛逛 AI 创意屋 <span aria-hidden="true">↗</span></a></div><div class="hero-signature"><span class="hand-arrow" aria-hidden="true">⤷</span><span>认真做点有意思的东西。</span></div></div>
+      <div class="hero-world"><div class="world-orbit" aria-hidden="true"></div><span class="world-word" aria-hidden="true">What if?</span><div class="machine-wrap"><img class="idea-machine" src="./art/idea-machine.png" width="1280" height="1280" alt="由电脑、书页、信号与光标组成的立体创意装置"></div><a class="hotspot hotspot-read" href="#read"><span aria-hidden="true">⌑</span>从阅读出发</a><a class="hotspot hotspot-ecg" href="#ecg"><span aria-hidden="true">∿</span>捕捉一个信号</a><a class="hotspot hotspot-desktop" href="#desktop"><span aria-hidden="true">↖</span>让想法行动</a><span class="world-footnote">点击标签，沿着一个想法探索。</span></div>
+      <div class="hero-bottom"><span>好奇驱动 · 持续探索</span><a href="#work">向下，还有更多可能 <span aria-hidden="true">↓</span></a></div>
+    </section>
+    <div class="idea-ribbon" aria-hidden="true"><span>Curiosity</span><b>✳</b><span>Code</span><b>✳</b><span>Make it real.</span><b>✳</b><span>保持好奇，让想法发生。</span></div>
+    <section class="work-section" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><div><p class="section-note">想法的不同打开方式</p><h2 id="work-title">挑一个，<br class="mobile-break">进入它的世界。</h2></div><p>从一段心跳，到一页书。<br>每个项目，都从一个具体的问题开始。</p></div>
+      <div class="workbench"><div class="project-tabs" role="tablist" aria-label="选择一个项目">{{TABS}}</div><div class="scene-stack"><div class="scene-back" aria-hidden="true"></div><div class="scene-stage">{{PANELS}}</div></div><div class="workbench-footer"><span class="scene-status" aria-live="polite">正在探索：ECG Identification</span><div><button type="button" class="scene-prev" aria-label="上一个项目">←</button><button type="button" class="scene-next" aria-label="下一个项目">→</button></div></div></div>
+    </section>
+    <section class="directory-section" id="directory" aria-labelledby="directory-title"><div class="directory-heading"><h2 id="directory-title">作品，都在这里。</h2><a href="https://github.com/Marways7?tab=repositories" target="_blank" rel="noopener noreferrer">全部仓库 <span aria-hidden="true">↗</span></a></div><div class="project-directory">{{DIRECTORY}}</div><p class="directory-note">Desktop Operator 也有 <a href="https://github.com/Marways7/cua_desktop_operator_cli_skill" target="_blank" rel="noopener noreferrer">CLI 版本</a>。项目功能、环境要求与进展，请以仓库说明为准。</p></section>
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="about-top"><div><p class="section-note">代码是工具。好奇，才是起点。</p><h2 id="about-title">想法要大胆。<br>实现要认真。</h2></div><div class="about-spark" aria-hidden="true">✳</div></div><div class="about-columns"><div><h3>从一个问题出发</h3><p>能不能让阅读多一种解释？能不能让 AI 真正帮上忙？我喜欢把具体的问题拆开，再动手试一试。</p></div><div><h3>和 AI 一起做</h3><p>用 AI 写代码，也用代码探索 AI。从信号与模型，到界面与工具，把零散的想法连接起来。</p></div><div><h3>把过程打开</h3><p>在 GitHub 留下代码，在 B站分享创意实验。让作品被使用、被讨论，也有机会继续长大。</p></div></div><div class="tool-shelf"><span>常用的创造工具</span><p>Python <i>✳</i> TypeScript <i>✳</i> JavaScript <i>✳</i> Java <i>✳</i> PyTorch <i>✳</i> Android <i>✳</i> MCP</p></div></section>
+  </main>
+  <footer><div class="footer-top"><p>下一个想法，<br>也许从这里开始。</p><div><a href="https://github.com/Marways7" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://space.bilibili.com/604578545" target="_blank" rel="noopener noreferrer">B站 · AI 创意屋 <span aria-hidden="true">↗</span></a><a href="#hello">回到顶部 ↑</a></div></div><div class="footer-name" aria-hidden="true">Marways<span>✳</span></div><div class="footer-bottom"><span>保持好奇。动手创造。</span><a href="?view=static">静态浏览</a></div></footer>
+  <p class="sr-only demo-status" role="status"></p>
+</body></html>

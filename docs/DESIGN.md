@@ -1,45 +1,35 @@
-# Marways — 把好奇，变成作品。
+# Marways — 好奇心，正在运行。
 
-[个人主页](https://marways7.github.io/Marways7/) 将个人介绍和六个项目连接成一段可往返浏览的体验。首屏、项目与关于我共享一件连续变形的参数化形态，颜色、光线和形态随内容变化。详细的视觉取舍见 [设计说明](LIVING-ATLAS.md)。
+[互动主页](https://marways7.github.io/Marways7/) 是一个围绕真实项目的创意工作台。首页的立体装置连接书页、信号、电脑与光标；六个作品使用各自的概念图解。设计说明见 [PLAYGROUND.md](PLAYGROUND.md)。
 
-## 交互
+## 浏览与交互
 
-- 原生滚动控制场景变化，可以随时反向；右侧导航和作品索引可直接跳转。
-- 拖动形态或旋转按钮改变角度；旋转按钮支持方向键，空格展开。
-- “绽放”展开形态；暂停时再次点击收束。动态模式下会缓慢回归。
-- “暂停动态”停止呼吸与自动运动，保留手动操作和导航。
-- “纯粹观看”隐藏正文，保留返回按钮与章节导航；Escape 返回介绍。
-- 项目入口始终使用普通链接，包括 Desktop Operator 的 MCP 与 CLI 两个仓库。
+选择项目标签，或点击首页的项目入口。作品切换会同时更新图解、背景、介绍、探索路径和仓库链接。标签支持方向键、Home 和 End。每个场景提供一个小型概念演示；它们不接入实际项目服务。
+
+暂停按钮停止自动动态和场景转场。减少动态偏好默认暂停，静态模式可从页脚进入。无 JavaScript 时，六个项目以连续内容展示，目录链接仍然可用。页面保持原生滚动，不锁定滚轮，也不劫持触摸手势。
 
 ## 实现
 
-`site/` 是无需构建的静态网站。一个 WebGL 画布绘制七种共享拓扑的曲面，使用预计算顶点与法线进行连续插值。原生滚动不被劫持；页面未设置强制加载动画、鼠标替代光标或声音自动播放。
-
-Sora 字体随站点提供。网站没有外部运行时库、分析脚本或访客追踪。图形尺寸根据窗口调整，限制像素比；持续长帧时降低渲染分辨率，标签页隐藏后暂停绘制。实际流畅度取决于设备与浏览器。
-
-减少动态设置默认暂停自动运动并直接切换场景；访客仍可主动开启动态。没有 WebGL 时显示静态插图并保留文字与项目链接。没有 JavaScript 时按普通文档阅读。
-
-```sh
-python -m http.server 8000 --directory site
-```
-
-## GitHub 介绍页
-
-README 使用自包含 SVG。英文标题在生成时转为路径，中文保留系统字体。首图、六个项目和静态阅读页都有手机排版。动画遵循减少动态偏好，另有明确的静态首图。
-
-完整互动通过首图或“进入互动主页”链接进入。项目图片外层的链接指向各仓库；不依赖图片内部交互。旧版生成器与资源保留，当前 README 使用 `living-` 系列资源。
+网站为原生 HTML、CSS 和 JavaScript，无外部运行时依赖。Sora 字体与图像保存在仓库内。作品图解使用可访问的 SVG，标题和项目介绍保持原生文本。作品选择同步生效，局部 CSS 转场只负责呈现；连续点击会结束前一段动画，立即呈现最后的选择。标签页隐藏后暂停装饰动画。
 
 ```sh
 python -m pip install -r requirements-profile.txt
-python scripts/build_shape_profile.py
-python scripts/build_cinema_profile.py
-python scripts/build_living_profile.py
+python scripts/build_playground_profile.py
 python scripts/validate_shape_profile.py
 node --check site/app.js
+python -m http.server 8000 --directory site
 ```
 
-## 公开数据与发布
+页面模板是 `scripts/templates/playground.html`；项目内容和图解生成器是 `scripts/build_playground_profile.py`。修改后重新生成 `site/index.html` 并一并提交。
 
-`refresh_public_data.py` 读取 GitHub 公开仓库元数据。失败时保留上次成功的数据；不获取私有仓库或提交内容。每日刷新工作流生成图像与公开快照。统计说明、日期和来源随数据展示，默认收在 README 的展开区域。
+## GitHub 介绍页
 
-GitHub Pages 工作流仅发布 `site/` 目录。字体使用 SIL Open Font License，许可证与字体位于同一目录；原始字体见 [Sora](https://github.com/google/fonts/tree/main/ofl/sora)。
+README 使用专属封面、动态 SVG 图解、原生文字与项目链接。宽屏采用跨栏和双图编排，手机为封面、重点项目和工具箱提供单独构图。图片外层使用原生链接，点击后进入对应仓库或主页。减少动态时选用静态 SVG。
+
+封面从 `site/profile-cover.html` 渲染，桌面为 1200 × 610，手机为 640 × 820。它们是固定设计资产，不由每日数据任务重新截图。主视觉生成提示保存在 [IMAGE-PROMPT.md](IMAGE-PROMPT.md)。
+
+## 自动更新
+
+每日工作流更新公开仓库元数据并验证本地 SVG。旧版本图形保留供历史设计参考，当前 README 使用 `assets/play/`，公开快照继续使用 `assets/shape/pulse.svg`。网站通过 GitHub Pages 工作流发布 `site/` 目录。
+
+字体使用 SIL Open Font License，许可与字体文件保存在相同目录。没有追踪脚本或私有数据依赖。
