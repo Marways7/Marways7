@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T08:57:26+00:00",
+  "updated_at": "2026-11-08T09:13:27+00:00",
   "source": "https://api.github.com/users/Marways7/repos",
   "repositories": [
     {
@@ -49,6 +49,13 @@
       "html_url": "https://github.com/Marways7/cua_desktop_operator_skill",
       "language": "Python",
       "stargazers_count": 3,
+      "forks_count": 0
+    },
+    {
+      "name": "pinyalu",
+      "html_url": "https://github.com/Marways7/pinyalu",
+      "language": "Kotlin",
+      "stargazers_count": 1,
       "forks_count": 0
     },
     {
